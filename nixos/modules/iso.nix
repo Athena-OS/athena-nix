@@ -2,7 +2,6 @@
 
   imports = [
     ./installation-cd-graphical-xfce.nix
-    <home-manager/nixos>
   ];
 
   boot = {
@@ -103,7 +102,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     home-manager
+  #   home-manager
   #   dialog
   #   dosfstools
   #   edk2-uefi-shell

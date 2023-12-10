@@ -6,11 +6,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    athenix = {
-      url = "github:Athena-OS/athena-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {
@@ -22,14 +17,11 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = let
-          modulesPath = "./nixos/modules";
+          modulesPath = "${self}/nixos/modules";
         in
           [
             "${modulesPath}/iso.nix"
-
-            ./dots.nix
-          ]
-          ++ extraModules;
+          ];
       };
   in {
     nixosConfigurations = let
