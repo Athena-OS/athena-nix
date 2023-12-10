@@ -29,12 +29,7 @@
       #packages = {pkgs, ...}: {environment.systemPackages = nixpkgs.lib.attrValues inputs.athenix.packages.${pkgs.system};};
     in {
       "live-image" = mkSystem [
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.athena = import ./dots.nix;
-          }
+          ./home.nix
         #packages
       ];#AthenaOS-xfce
       /*"AthenaOS-xfce-light" = mkSystem [

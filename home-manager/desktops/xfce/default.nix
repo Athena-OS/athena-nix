@@ -23,7 +23,6 @@ in
 
   config = mkIf (cfg != null) (mkMerge [
     {
-      # If either are enabled
       home.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "Cousine" "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
         #mugshot
@@ -45,6 +44,7 @@ in
         xfdesktop # Xfce's desktop manager
         xfwm4 # Window manager for Xfce
       ]);
+
       home.sessionVariables = { QT_AUTO_SCREEN_SCALE_FACTOR = 0; };
 
       qt.style.name = "qt5ct";
@@ -55,19 +55,21 @@ in
         categories = [ "Application" ];
         noDisplay = true;
       };
+
+      # To understand about env variables of xdg, refer to https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix
       # xdg.systemDirs.config is used to source /etc/xdg AND ${config.xdg.configHome}/xfce4/xdg, like a $PATH. In practice, the specified dirs are added in $XDG_CONFIG_DIRS
       xdg.systemDirs.config = [ "/etc/xdg" "${config.xdg.configHome}/xfce4/xdg" ]; # Not working?
 
       # It copies "./config/menus/xfce-applications.menu" source file to the nix store, and then symlinks it to the location.
       xdg.configFile."menus/xfce-applications.menu".source = ./config/menus/xfce-applications.menu;
-      #xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".source = ./config/xfce4-keyboard-shortcuts.xml;
+      xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".source = ./config/xfce4-keyboard-shortcuts.xml;
 
       # Everblush xfwm4 theme
       # home.file refers to $HOME dir
       home.file.".themes".source = ./themes;
 
       home.activation.flag-xfce-once = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        touch ${config.xdg.configHome}/.flag-xfce-once
+        touch ${config.home.homeDirectory}/.flag-xfce-once
       '';
     }
 
