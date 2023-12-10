@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="xfce4-session" version="1.0">
-  <property name="splash" type="empty">
-    <property name="Engine" type="empty"/>
-    <property name="engines" type="empty">
-      <property name="simple" type="empty">
-        <property name="Font" type="empty"/>
-        <property name="BgColor" type="empty"/>
-        <property name="FgColor" type="empty"/>
-        <property name="Image" type="empty"/>
-      </property>
-    </property>
-  </property>
   <property name="general" type="empty">
     <property name="FailsafeSessionName" type="empty"/>
-    <property name="LockCommand" type="string" value="i3lock-everblush"/>
+    <property name="LockCommand" type="empty"/>
     <property name="SessionName" type="string" value="Default"/>
     <property name="SaveOnExit" type="bool" value="false"/>
   </property>
@@ -38,8 +27,5 @@
       <property name="Client4_Priority" type="empty"/>
       <property name="Client4_PerScreen" type="empty"/>
     </property>
-  </property>
-  <property name="shutdown" type="empty">
-    <property name="LockScreen" type="empty"/>
   </property>
 </channel>
