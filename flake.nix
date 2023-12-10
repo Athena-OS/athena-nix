@@ -60,3 +60,4 @@
         default = self.packages."x86_64-linux"."AthenaOS-xfce";
       };
   };
+}
