@@ -11,6 +11,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    home-manager,
     ...
   }: let
     mkSystem = extraModules:
@@ -27,8 +28,13 @@
     nixosConfigurations = let
       #packages = {pkgs, ...}: {environment.systemPackages = nixpkgs.lib.attrValues inputs.athenix.packages.${pkgs.system};};
     in {
-      "AthenaOS-xfce" = mkSystem [
-        ./dots.nix
+      "live-image" = mkSystem [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.athena = import ./dots.nix;
+          }
         #packages
       ];#AthenaOS-xfce
       /*"AthenaOS-xfce-light" = mkSystem [
