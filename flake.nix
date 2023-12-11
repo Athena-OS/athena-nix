@@ -11,7 +11,6 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    home-manager,
     ...
   }: let
     mkSystem = extraModules:
@@ -24,6 +23,7 @@
           [
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
+            "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
           ];
       };
   in {
@@ -35,12 +35,11 @@
       ];
       "xfce" = mkSystem [
         "${self}/modules/desktops/xfce"
-        "${self}/home-manager/desktops/xfce"
-        "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
+        "${self}/home-manager/desktops/xfce/home.nix"
       ];
       "gnome" = mkSystem [
         "${self}/modules/desktops/gnome"
-        "${self}/home-manager/desktops/gnome"
+        "${self}/home-manager/desktops/gnome/home.nix"
       ];
     };
 
