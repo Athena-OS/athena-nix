@@ -36,7 +36,7 @@
       "xfce" = mkSystem [
         "${self}/modules/desktops/xfce"
         "${self}/home-manager/desktops/xfce"
-        #"${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
+        "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
       ];
       "gnome" = mkSystem [
         "${self}/modules/desktops/gnome"
