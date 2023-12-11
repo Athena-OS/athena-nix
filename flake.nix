@@ -16,6 +16,9 @@
     mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          username = "athena";
+        };
         modules = let
           modulesPath = "${self}/nixos/modules";
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules

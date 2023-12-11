@@ -1,9 +1,9 @@
-{ home-manager, ... }:
+{ home-manager, username, ... }:
 {
   imports = [
     ./.
   ];
-  home.username = "athena";
-  home.homeDirectory = "/home/athena";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
 }
