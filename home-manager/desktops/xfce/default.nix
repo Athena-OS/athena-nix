@@ -62,7 +62,7 @@ in
 
       # It copies "./config/menus/xfce-applications.menu" source file to the nix store, and then symlinks it to the location.
       xdg.configFile."menus/xfce-applications.menu".source = ./config/menus/xfce-applications.menu;
-      xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".source = ./config/xfce4-keyboard-shortcuts.xml;
+      #xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".source = ./config/xfce4-keyboard-shortcuts.xml;
 
       # Everblush xfwm4 theme
       # home.file refers to $HOME dir
@@ -73,12 +73,15 @@ in
       '';
     }
 
-    (mkIf cfg.refined {
+    (mkIf cfg.refined rec {
       # If xfce refined is enabled
       home.packages = with pkgs; [
         gnome.nautilus  
       ];
-      xdg.configFile."xfce4".source = ./config/xfce4-refined;
+      xdg.configFile."xfce4" = {
+        source = ./config/xfce4-refined;
+        #recursive = true;
+      };
     })
 
     (mkIf cfg.picom {
