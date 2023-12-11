@@ -19,38 +19,32 @@
         system = "x86_64-linux";
         modules = let
           modulesPath = "${self}/nixos/modules";
+          #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
         in
           [
-            "${modulesPath}/iso.nix"
+            #"${modulesPath}/iso.nix"
+            #"/etc/nixos/hardware-configuration.nix"
           ];
       };
   in {
     nixosConfigurations = let
-      #packages = {pkgs, ...}: {environment.systemPackages = nixpkgs.lib.attrValues inputs.athenix.packages.${pkgs.system};};
+      modulesPath = "${self}/nixos/modules";
     in {
       "live-image" = mkSystem [
-          ./home.nix
-        #packages
-      ];#AthenaOS-xfce
-      /*"AthenaOS-xfce-light" = mkSystem [
-        ./xfce.nix
+        "${modulesPath}/iso.nix"
       ];
-      "AthenaOS-kde" = mkSystem [
-        ./kde.nix
-        #packages
+      "xfce" = mkSystem [
+        "${self}/modules/desktops/xfce"
       ];
-      "AthenaOS-kde-light" = mkSystem [
-        ./kde.nix
+      "gnome" = mkSystem [
+        "${self}/modules/desktops/gnome"
       ];
-      "AthenaOS-headless" = mkSystem [
-        #packages
-      ];*/
     };
 
     packages."x86_64-linux" =
       (builtins.mapAttrs (n: v: v.config.system.build.isoImage) self.nixosConfigurations)
       // {
-        default = self.packages."x86_64-linux"."AthenaOS-xfce";
+        default = self.packages."x86_64-linux"."xfce";
       };
   };
 }

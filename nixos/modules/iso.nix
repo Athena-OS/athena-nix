@@ -31,7 +31,7 @@
       enable = true;
     };
 
-    printing.enable = true;
+    printing.enable = false;
     vnstat.enable = true;
 
     avahi = {
