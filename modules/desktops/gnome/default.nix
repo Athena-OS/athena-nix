@@ -4,6 +4,7 @@
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable=true;
+    #displayManager.lightdm.enable = true;
     displayManager.gdm = {
       enable = true;
       wayland = true;

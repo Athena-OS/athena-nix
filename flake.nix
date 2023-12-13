@@ -8,18 +8,14 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    ...
-  }: let
-    mkSystem = extraModules:
+  outputs = { self, nixpkgs, ... } @ attrs:
+    let mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           username = "athena";
           hostname = "athenaos";
-        };
+        } // attrs; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
         modules = let
           modulesPath = "${self}/nixos/modules";
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
@@ -40,11 +36,11 @@
       ];
       "xfce" = mkSystem [
         "${self}/modules/desktops/xfce"
-        "${self}/home-manager/desktops/xfce/home.nix"
+        "${self}/home-manager/desktops/xfce"
       ];
       "gnome" = mkSystem [
         "${self}/modules/desktops/gnome"
-        "${self}/home-manager/desktops/gnome/home.nix"
+        "${self}/home-manager/desktops/gnome"
       ];
     };
 
