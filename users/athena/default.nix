@@ -5,6 +5,13 @@
     shell = pkgs.bash;
     isNormalUser = true;
     initialPassword = "temp123";
-    extraGroups = [ "wheel" "input" "video" "render" ];
+    extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
+    packages = with pkgs; [
+      firefox
+      git
+      vscodium
+      wget
+    #  thunderbird
+    ];
   };
 }

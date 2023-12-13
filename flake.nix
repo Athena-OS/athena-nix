@@ -18,6 +18,7 @@
         system = "x86_64-linux";
         specialArgs = {
           username = "athena";
+          hostname = "athenaos";
         };
         modules = let
           modulesPath = "${self}/nixos/modules";
@@ -27,7 +28,8 @@
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
             "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
-          ];
+          ]
+          ++ extraModules;
       };
   in {
     nixosConfigurations = let
