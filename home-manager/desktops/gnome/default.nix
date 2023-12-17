@@ -11,10 +11,14 @@ let
     #ubuntu-dock
     vitals
   ];
+
+  fontList = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+  ];
 in
 {
   home-manager.users.${username} = { pkgs, ...}: {
-    home.packages = gnomeExtensionsList;
+    home.packages = gnomeExtensionsList ++ fontList;
 
     dconf.settings = {
       "org/gnome/shell".disable-user-extensions = false;
@@ -50,12 +54,12 @@ in
       # /desktop/interface
       "org/gnome/desktop/interface" = {
         cursor-theme = "Breeze_Hacked";
-        document-font-name = "JetBrains Mono 11";
+        document-font-name = "JetBrainsMono Nerd Font Mono 11";
         enable-hot-corners = false;
         font-antialiasing = "grayscale";
         font-hinting = "slight";
-        monospace-font-name = "JetBrains Mono 11";
-        font-name = "JetBrains Mono 11";
+        monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
+        font-name = "JetBrainsMono Nerd Font Mono 11";
       };
 
       # /desktop/wm/keybindings

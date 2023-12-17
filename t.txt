@@ -1,0 +1,66 @@
+[app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[applications/terminal]
+exec='alacritty'
+
+[input-sources]
+sources=[('xkb', 'us')]
+xkb-options=['terminate:ctrl_alt_bksp']
+
+[interface]
+cursor-theme='Breeze_Hacked'
+document-font-name='JetBrainsMono 11'
+enable-hot-corners=false
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='JetBrainsMono 11'
+monospace-font-name='JetBrainsMono 11'
+
+[wm/keybindings]
+close=['<Super>w']
+maximize='disabled'
+minimize='disabled'
+move-to-center='disabled'
+move-to-corner-ne='disabled'
+move-to-corner-nw='disabled'
+move-to-corner-se='disabled'
+move-to-corner-sw='disabled'
+move-to-monitor-down='disabled'
+move-to-monitor-left='disabled'
+move-to-monitor-right='disabled'
+move-to-monitor-up='disabled'
+move-to-side-e='disabled'
+move-to-side-n='disabled'
+move-to-side-s='disabled'
+move-to-side-w='disabled'
+move-to-workspace-down='disabled'
+move-to-workspace-up='disabled'
+show-desktop=['<Super>D']
+toggle-maximized='disabled'
+toggle-message-tray='disabled'
+unmaximize='disabled'
+
+[wm/preferences]
+action-middle-click-titlebar='none'
+button-layout='appmenu:minimize,maximize,close'
+num-workspaces=6
+resize-with-right-button=true
+titlebar-font='JetBrains Mono Bold 11'
+workspace-names=['🕵️', '📖', '🍒', '🎸', '🎮', '🐝']
