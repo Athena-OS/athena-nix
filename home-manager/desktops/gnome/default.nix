@@ -3,8 +3,9 @@ let
   gnomeExtensionsList = with pkgs.gnomeExtensions; [
 	  appindicator
 	  arcmenu
+    dash-to-dock
     desktop-icons-ng-ding
-    #flypie
+    #fly-pie
     hide-activities-button
     pop-shell
     top-bar-organizer
@@ -29,7 +30,7 @@ in
         "arcmenu@arcmenu.com"
         "dash-to-dock@micxgx.gmail.com"
         "ding@rastersoft.com"
-        #"flypie@schneegans.github.com"
+        "flypie@schneegans.github.com"
         "Hide_Activities@shay.shayel.org"
         "pop-shell@system76.com"
         "top-bar-organizer@julian.gse.jsts.xyz"

@@ -68,9 +68,9 @@ in
       # home.file refers to $HOME dir
       home.file.".themes".source = ./themes;
 
-      home.activation.flag-xfce-once = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      /*home.activation.flag-xfce-once = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         touch ${config.home.homeDirectory}/.flag-xfce-once
-      '';
+      '';*/
     }
 
     (mkIf cfg.refined rec {
@@ -87,7 +87,7 @@ in
     (mkIf cfg.picom {
       # If xfce picom is enabled
       home.packages = with pkgs; [
-        #xfce.xfce4-docklike-plugin
+        xfce.xfce4-docklike-plugin
         findex # Highly customizable application finder written in Rust and uses Gtk3
         i3lock-color # A simple screen locker like slock, enhanced version with extra configuration options
         picom # A fork of XCompMgr, a sample compositing manager for X servers
