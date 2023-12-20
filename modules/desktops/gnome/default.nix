@@ -24,7 +24,6 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-    gnomeExtensions.fly-pie
     ]) ++ (with pkgs.gnome; [
     gnome-music
     gedit
