@@ -5,7 +5,7 @@ let
 	  arcmenu
     dash-to-dock
     desktop-icons-ng-ding
-    #fly-pie
+    fly-pie
     hide-activities-button
     pop-shell
     top-bar-organizer
