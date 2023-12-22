@@ -37,10 +37,12 @@
       ];
       "xfce" = mkSystem [
         "${self}/modules/desktops/xfce"
+        "${self}/modules/dms/lightdm"
         "${self}/home-manager/desktops/xfce/home.nix"
       ];
       "gnome" = mkSystem [
         "${self}/modules/desktops/gnome"
+        "${self}/modules/dms/lightdm"
         "${self}/home-manager/desktops/gnome"
       ];
     };
