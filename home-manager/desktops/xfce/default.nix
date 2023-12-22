@@ -96,7 +96,6 @@ in
         roboto-mono # Google Roboto Mono fonts
       ] ++ (with pkgs.xfce; [
         thunar # Xfce file manager
-        xfce4-genmon-plugin # Generic monitor plugin for the Xfce panel
       ]) ++ [
         genmon-cpu
         genmon-datetime
