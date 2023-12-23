@@ -38,6 +38,7 @@
       "xfce" = mkSystem [
         "${self}/modules/desktops/xfce"
         "${self}/modules/dms/lightdm"
+        "${self}/modules/themes/graphite"
         "${self}/home-manager/desktops/xfce/home.nix"
       ];
       "gnome" = mkSystem [
