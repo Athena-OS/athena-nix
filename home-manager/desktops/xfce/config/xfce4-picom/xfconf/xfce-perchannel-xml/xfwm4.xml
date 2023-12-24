@@ -3,7 +3,7 @@
 <channel name="xfwm4" version="1.0">
   <property name="general" type="empty">
     <property name="button_layout" type="string" value="|"/>
-    <property name="theme" type="string" value="Everblush-xfwm"/>
+    <property name="theme" type="string" value="everblush"/>
     <property name="title_font" type="string" value="Roboto 0"/>
     <property name="easy_click" type="string" value="Super"/>
     <property name="workspace_count" type="int" value="4"/>

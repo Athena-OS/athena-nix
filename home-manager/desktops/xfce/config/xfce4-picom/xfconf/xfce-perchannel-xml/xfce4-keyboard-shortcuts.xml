@@ -67,8 +67,8 @@
       <property name="Right" type="empty"/>
       <property name="Up" type="empty"/>
       <property name="Down" type="empty"/>
-      <property name="&lt;Alt&gt;Tab" type="empty"/>
-      <property name="&lt;Alt&gt;&lt;Shift&gt;Tab" type="empty"/>
+      <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
+      <property name="&lt;Alt&gt;&lt;Shift&gt;Tab" type="string" value="cycle_reverse_windows_key"/>
       <property name="&lt;Alt&gt;Delete" type="empty"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Down" type="empty"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Left" type="empty"/>
@@ -100,7 +100,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;Right" type="empty"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;d" type="empty"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Up" type="empty"/>
-      <property name="&lt;Super&gt;Tab" type="empty"/>
+      <property name="&lt;Super&gt;Tab" type="string" value="switch_window_key"/>
       <property name="&lt;Primary&gt;F1" type="empty"/>
       <property name="&lt;Primary&gt;F2" type="empty"/>
       <property name="&lt;Primary&gt;F3" type="empty"/>

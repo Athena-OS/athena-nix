@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, theme, ... }:
 with lib;
 let
   cfg = config.athena.desktops.xfce;
@@ -24,7 +24,7 @@ in
   config = mkIf (cfg != null) (mkMerge [
     {
       home.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "Cousine" "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+        (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
         #mugshot
         networkmanagerapplet # NetworkManager control applet for GNOME
         xdg-user-dirs # A tool to help manage well known user directories like the desktop folder and the music folder
@@ -62,7 +62,6 @@ in
 
       # It copies "./config/menus/xfce-applications.menu" source file to the nix store, and then symlinks it to the location.
       xdg.configFile."menus/xfce-applications.menu".source = ./config/menus/xfce-applications.menu;
-      #xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml".source = ./config/xfce4-keyboard-shortcuts.xml;
 
       # Everblush xfwm4 theme
       # home.file refers to $HOME dir
@@ -71,6 +70,19 @@ in
       /*home.activation.flag-xfce-once = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         touch ${config.home.homeDirectory}/.flag-xfce-once
       '';*/
+
+      # IMPORTANT: if a specified xfconf setting doesn't work, check if there is an hardcoded xfconf setting inside $HOME/xfce4/xfconf/xfce4-perchannel/<filename>.xml dir and delete the entry in your the .xml file of your flake repository
+      xfconf.settings = {
+        xsettings = {
+          "Net/ThemeName" = "${theme.gtk-theme}";
+          "Net/IconThemeName" = "${theme.icon-theme}";
+          "Gtk/CursorThemeName" = "${theme.cursor-theme}";
+        };
+        /*xfce4-desktop = {
+          "backdrop/screen0/monitorLVDS-1/workspace0/last-image" =
+            "''${pkgs.nixos-artwork.wallpapers.stripes-logo.gnomeFilePath}";
+        };*/
+      };
     }
 
     (mkIf cfg.refined rec {
@@ -103,6 +115,12 @@ in
         i3lock-everblush
         xfce-init
       ];
+      # IMPORTANT: if a specified xfconf setting doesn't work, check if there is an hardcoded xfconf setting inside $HOME/xfce4 dir and delete it
+      xfconf.settings = {
+        xfwm4 = {
+          "general/theme" = "everblush";
+        };
+      };
       # If picom is enabled
       programs.eww.enable = true;
       programs.eww.configDir = ./config/eww;
@@ -122,6 +140,7 @@ in
         };
       };
       # xdg.dataFile refers to .local/share dir
+      xdg.dataFile."icons/assets".source = ./assets;
       xdg.dataFile."fonts/feather.ttf".source = ./fonts/feather.ttf;
       xdg.configFile."picom/picom.conf".source = ./config/picom/picom.conf;
 
