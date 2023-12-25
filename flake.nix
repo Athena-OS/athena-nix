@@ -77,6 +77,41 @@
           "${self}/home-manager/desktops/xfce/home.nix"
           "${self}/home-manager/roles/cracker"
         ];
+        "dos" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/dos"
+        ];
+        "forensic" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/forensic"
+        ];
+        "malware" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/malware"
+        ];
+        "mobile" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/mobile"
+        ];
+        "network" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/network"
+        ];
       };
   
       packages."x86_64-linux" =

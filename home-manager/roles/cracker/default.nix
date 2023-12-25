@@ -16,7 +16,7 @@
         cmospwd
         cowpatty
         crackle
-        crackq
+        crackql
         crowbar
         dislocker
         fcrackzip
@@ -28,7 +28,6 @@
         hashdeep
         hashpump
         hashrat
-        haskellPackages.hasherize
         john
         johnny
         jwt-hack
