@@ -56,6 +56,27 @@
           "${self}/home-manager/desktops/gnome"
           "${self}/modules/themes/graphite"
         ];
+        "blue" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/blue"
+        ];
+        "bounty" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/bounty"
+        ];
+        "cracker" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/cracker"
+        ];
       };
   
       packages."x86_64-linux" =
