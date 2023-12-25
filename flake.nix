@@ -112,6 +112,20 @@
           "${self}/home-manager/desktops/xfce/home.nix"
           "${self}/home-manager/roles/network"
         ];
+        "osint" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/osint"
+        ];
+        "student" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/student"
+        ];
       };
   
       packages."x86_64-linux" =

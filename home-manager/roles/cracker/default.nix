@@ -49,12 +49,12 @@
         python311Packages.pypykatz
         rarcrack
         reaverwps
+        reaverwps-t6x
         sha1collisiondetection
         snow
         spiped
         ssdeep
         sslscan
-        swarm
         testssl
         thc-hydra
         veracrypt
