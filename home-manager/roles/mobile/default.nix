@@ -20,6 +20,7 @@
         flasm
         frida-tools
         ghidra
+        ghost
         hopper
         iaito
         jadx

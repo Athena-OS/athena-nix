@@ -126,6 +126,13 @@
           "${self}/home-manager/desktops/xfce/home.nix"
           "${self}/home-manager/roles/student"
         ];
+        "web" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/web"
+        ];
       };
   
       packages."x86_64-linux" =
