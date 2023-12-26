@@ -45,6 +45,8 @@
         mdk4
         metasploit
         mitm6
+        mitmproxy
+        mitmproxy2swagger
         mongoaudit
         monsoon
         nikto
@@ -54,6 +56,7 @@
         plecost
         psudohash
         python311Packages.arsenic
+        python311Packages.httpx
         python311Packages.pyjsparser
         python311Packages.scrapy
         python311Packages.scrapy-deltafetch

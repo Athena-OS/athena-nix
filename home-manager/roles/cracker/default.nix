@@ -28,6 +28,7 @@
         hashdeep
         hashpump
         hashrat
+        hcxtools
         john
         johnny
         jwt-hack

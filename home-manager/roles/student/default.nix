@@ -19,6 +19,7 @@
         gobuster
         hashcat
         hashcat-utils
+        hcxtools
         john
         kismet
         medusa

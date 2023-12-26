@@ -119,6 +119,13 @@
           "${self}/home-manager/desktops/xfce/home.nix"
           "${self}/home-manager/roles/osint"
         ];
+        "red" = mkSystem [
+          "${self}/modules/desktops/xfce"
+          "${self}/modules/dms/lightdm"
+          "${self}/modules/themes/graphite"
+          "${self}/home-manager/desktops/xfce/home.nix"
+          "${self}/home-manager/roles/red"
+        ];
         "student" = mkSystem [
           "${self}/modules/desktops/xfce"
           "${self}/modules/dms/lightdm"

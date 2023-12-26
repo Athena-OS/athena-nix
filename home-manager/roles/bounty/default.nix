@@ -26,6 +26,7 @@
         gowitness
         graphqlmap
         hakrawler
+        httpx
         jaeles
         joomscan
         jwt-hack
