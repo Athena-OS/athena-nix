@@ -49,96 +49,13 @@
           "${self}/modules/dms/lightdm"
           "${self}/modules/themes/graphite"
           "${self}/home-manager/desktops/xfce/home.nix"
+          #"${self}/home-manager/roles/osint"
         ];
         "gnome" = mkSystem [
           "${self}/modules/desktops/gnome"
           "${self}/modules/dms/lightdm"
           "${self}/home-manager/desktops/gnome"
           "${self}/modules/themes/graphite"
-        ];
-        "blue" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/blue"
-        ];
-        "bounty" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/bounty"
-        ];
-        "cracker" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/cracker"
-        ];
-        "dos" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/dos"
-        ];
-        "forensic" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/forensic"
-        ];
-        "malware" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/malware"
-        ];
-        "mobile" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/mobile"
-        ];
-        "network" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/network"
-        ];
-        "osint" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/osint"
-        ];
-        "red" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/red"
-        ];
-        "student" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/student"
-        ];
-        "web" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          "${self}/home-manager/roles/web"
         ];
       };
   
