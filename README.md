@@ -223,6 +223,58 @@ To prevent this, you can try to install packages at system-level, without home-m
 ```
 if you want to give priority to `ligolo-ng` package.
 
+## Submit a package in nixpkgs repository
+
+Once you are sure that the locally built package works correctly, you are ready to submit the package to [nixpkgs repository](https://github.com/NixOS/nixpkgs).
+
+First, if you decide to maintain a package but you are still not a Nixpkgs maintainer, you must create a Pull Request named `maintainers: add <your-maintainer-id>` and add your info in [maintainers/maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix). It is good practice this PR is merged before you submit any new package.
+
+Check of course in [nixpkgs/issues](https://github.com/NixOS/nixpkgs/issues) and [nixpkgs/pulls](https://github.com/NixOS/nixpkgs/pulls) if someone has already submitted the tool you want to upload. If not, you can proceed.
+
+To submit a package, according to the new [RFC](https://github.com/nixpkgs-architecture/rfc-140/blob/master/rfcs/0140-simple-package-paths.md), you need to create a Pull Request as **Draft**, named `<tool-name>: init at <version-tool>`, in order to add all needed files (as **package.nix** file, containing the nix code) in [pkgs/by-name/${shard}/${name}](https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name) where *name* is usually the name of the tool/package and *shard* is the lowercased first two letters of *name*.
+
+Remember that when you create a new PR, it will create a forked repository in your GitHub account. At this point, in the future, until your PR is not merged, DON'T sync your forked repository with the original one because it will create conflict issues when Nix devs will try to merge the PR or you will try to edit some commit info.
+
+Check always if someone has already opened an issue or a PR and, if still opened, link them in your PR message. Remember also to check the boxes shown in the first message of the PR.
+
+Not sure if it occurs already in **Draft**, but several checks should start. Be sure noone of the fails. Usually the **EditorConfig** check could fail, just enter in its details and fix your `.nix` file.
+
+Once you applied all the needed changes to this PR, switch it from **Draft** to **Open**. Remember that it is a good practice that there should be only one single commit name `<tool-name>: init at <version-tool>` in the PR. You can ask people to thumb up it in order to get more attention for review.
+
+To get people to review your PR, you can add the link of your PR in:
+* [Nix/NixOS (unofficial) Discord server - #pr-review-request](https://discord.com/channels/568306982717751326/679366467904471040)
+* [NixOS Discourse](https://discourse.nixos.org/t/prs-ready-for-review/3032/99999) by just pasting the clean PR URL without any code tag, wrapping and similar
+
+### Issues resolution
+
+In case you synced the forked repository with the original one, you must restore the git state to the commit before this sync. To do this run `git log` to identify the commit before the merge of original nixpkgs to your forked repository, and then run:
+```
+git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (try different number values by replacing N (starting from 1) until you don't see the commit of synching between the forked repository and the original one)
+git reset --hard <previous-commit-id>
+git push -f origin <branch-name>
+```
+In this manner, you should not have any conflict issues coming from commits of other users.
+
+In case you wrote the wrong commit message and you need to change it, run:
+```
+git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (N depends on how many commits you submitted ahead of the one that needs the message to be changed)
+git rebase -i HEAD~<N>
+```
+at this point a text editor will be opened showing several commits. Identify your commit, change `pick` to `reword`, change its message string and save and close the file. Finally:
+```
+git push -f origin <branch-name>
+```
+
+In case you submitted more than one commit on your PR and you need to merge all of them in one, run:
+```
+git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (N depends on how many commits you submitted ahead of the ones that need to be merged)
+git rebase -i HEAD~<N>
+```
+at this point a text editor will be opened showing several commits. Identify the commits to merge, leave unchanged the main commit to keep and change `pick` to `squash` on all the remaining commits that must merge with the unchanged one. Finally:
+```
+git push -f origin <branch-name>
+```
+
 ## Home Manager
 
 The deployment of tools by `/etc/nixos/configuration.nix` is used mainly for system-wide scenarios. What if we want to deploy tools or config dotfiles for a specific user? To do this, we must use **home-manager**. So, system-wide and user-level deployments must be managed separately.
