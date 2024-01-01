@@ -111,7 +111,7 @@
         ghdorker
         ghidra
         girsh
-        #git-hound https://github.com/NixOS/nixpkgs/issues/276787
+        git-hound
         gitleaks
         go-cve-search
         gobuster
