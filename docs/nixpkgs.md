@@ -14,10 +14,18 @@ In general, to build packages based on usual functions (like `mkDerivation`) req
 ```sh
 nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
+Note that, if you are getting an error reporting `abort` string, probably the invoked `callPackage` command is wrong, so you must use some specific case.
 
-For specific cases, like the usage of `buildPythonPackage` function, it is required to use:
+For specific cases, it is required to use a little different command:
+
+For Python3 `buildPythonPackage` function:
 ```sh
 nix-build -E 'with import <nixpkgs> {}; python3Packages.callPackage ./package.nix {}'
+```
+
+For qmake to be used in `mkDerivation` function:
+```sh
+nix-build -E 'with import <nixpkgs> {}; libsForQt5.callPackage ./package.nix {}'
 ```
 
 ## Dependencies
