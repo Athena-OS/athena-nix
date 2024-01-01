@@ -31,7 +31,7 @@ All dependencies used in **buildInputs** allow to link header and lib files corr
 
 ## mkDerivation
 
-This function automatically compiles source files if a **Makefile** exists. It means that we don't need to specify `make` commands in `buildPhase` or `installPhase`. We need only to eventually set make flags if needed. Use `makeFlags` to specify flags used on each phase or `buildFlags` to speciify flags to be used only during the `buildPhase`.
+This function automatically compiles source files if a **Makefile** exists. It means that we don't need to specify `make` commands in `buildPhase` or `installPhase`. Indeed, often it is not necessary to write any build instructions because the stdenv build system is based on autoconf, which automatically detected the structure of the project directory. We need only to eventually set make flags if needed. Use `makeFlags` to specify flags used on each phase or `buildFlags` to specify flags to be used only during the `buildPhase`.
 
 For example, if `Makefile` is not in the root directory of the project source, you can instruct mkDerivation to find Makefile by:
 ```nix
@@ -41,6 +41,8 @@ For example, if `Makefile` is not in the root directory of the project source, y
 ```
 
 Add `enableParallelBuilding = true;` to enable parallel building.
+
+Only in case where the structure of the project does not allow to run autoconf process correctly, then we could be forced to write some code in some of nix phases.
 
 ### Usage of hooks
 
