@@ -31,24 +31,18 @@ All dependencies used in **buildInputs** allow to link header and lib files corr
 
 ## mkDerivation
 
-### Syntax
+This function automatically compiles source files if a **Makefile** exists. It means that we don't need to specify `make` commands in `buildPhase` or `installPhase`. We need only to eventually set make flags if needed. Use `makeFlags` to specify flags used on each phase or `buildFlags` to speciify flags to be used only during the `buildPhase`.
 
-When using **mkDerivation** in a `.nix` package file, and its variables need to be used in other elements, instead of using `rec` you can use `finalAttrs`, as the following example:
+For example, if `Makefile` is not in the root directory of the project source, you can instruct mkDerivation to find Makefile by:
 ```nix
-stdenv.mkDerivation (finalAttrs: {
-  pname = "maltego";
-  version = "4.6.0";
-
-  src = fetchzip {
-    url = "https://downloads.maltego.com/maltego-v4/linux/Maltego.v${finalAttrs.version}.linux.zip";
-    hash = "sha256-q+1RYToZtBxAIDSiUWf3i/3GBBDwh6NWteHiK4VM1HY=";
-  };
-  ...
-})
+  makeFlags = [
+    "-C src"
+  ];
 ```
-In this manner, all the declared variables like `pname` or `version` can be accessed by `finalAttrs.<variable-name>`.
 
-### make
+Add `enableParallelBuilding = true;` to enable parallel building.
+
+### Usage of hooks
 
 #### autoconf
 
@@ -72,27 +66,36 @@ configurePlatforms = [ "build" ];
 ```
 Along with it, `configureFlags` can be used for adding additional flags. In this example we don't add the flag `--prefix=$out` because in Nix the default value of `--prefix` is already `$out`.
 
-#### make
+### Syntax
 
-In case we need to run a **make** command with specific flags, we can use **makeFlags**. If you need to run `make` only in `buildPhase`, then you can use **buildFlags**. When one of them is used, I'm not sure if writing explicitely the `make` command in `buildPhase` or `installPhase` is needed or not.
-
-#### Parallel building
-
-Add `enableParallelBuilding = true;` to enable parallel building.
+When using **mkDerivation** in a `.nix` package file, and its variables need to be used in other elements, instead of using `rec` you can use `finalAttrs`, as the following example:
+```nix
+  stdenv.mkDerivation (finalAttrs: {
+    pname = "maltego";
+    version = "4.6.0";
+  
+    src = fetchzip {
+      url = "https://downloads.maltego.com/maltego-v4/linux/Maltego.v${finalAttrs.version}.linux.zip";
+      hash = "sha256-q+1RYToZtBxAIDSiUWf3i/3GBBDwh6NWteHiK4VM1HY=";
+    };
+    ...
+  })
+```
+In this manner, all the declared variables like `pname` or `version` can be accessed by `finalAttrs.<variable-name>`.
 
 ## Meta information
 
 **meta** allows to specify several information about the package. The needed fields to set are mainly:
 ```nix
-meta = with lib; {
-  homepage = "https://www.packagetool.com";
-  description = "Description of the tool";
-  mainProgram = "<tool-name>";
-  maintainers = with maintainers; [ <maintainer list separated by space> ];
-  platforms = with platforms; <platform list separated by ++>;
-  sourceProvenance = with sourceTypes; [ <sourceTypes-value> ];
-  license = licenses.<license-type>;
-};
+  meta = with lib; {
+    homepage = "https://www.packagetool.com";
+    description = "Description of the tool";
+    mainProgram = "<tool-name>";
+    maintainers = with maintainers; [ <maintainer list separated by space> ];
+    platforms = with platforms; <platform list separated by ++>;
+    sourceProvenance = with sourceTypes; [ <sourceTypes-value> ];
+    license = licenses.<license-type>;
+  };
 ```
 Some of these fields accept only specific input values. For each one of these fields, to know what are the possible values to use, refer to the following:
 * maintainers: [maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix) and [team-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/team-list.nix) or running:
@@ -123,30 +126,30 @@ Some of these fields accept only specific input values. For each one of these fi
 
 The creation of a binary wrapper is very comfortable since it allows to set environment variables along with it. An example:
 ```nix
-installPhase = ''
-  runHook preInstall
-
-  mkdir -p $out/{bin,share}
-  chmod +x bin/maltego
-
-  cp -aR . "$out/share/maltego/"
-
-  makeWrapper $out/share/maltego/bin/maltego $out/bin/${finalAttrs.meta.mainProgram} \
-    --set JAVA_HOME ${jre} \
-    --prefix PATH : ${lib.makeBinPath [ jre ]}
-
-  runHook postInstall
-'';
+  installPhase = ''
+    runHook preInstall
+  
+    mkdir -p $out/{bin,share}
+    chmod +x bin/maltego
+  
+    cp -aR . "$out/share/maltego/"
+  
+    makeWrapper $out/share/maltego/bin/maltego $out/bin/${finalAttrs.meta.mainProgram} \
+      --set JAVA_HOME ${jre} \
+      --prefix PATH : ${lib.makeBinPath [ jre ]}
+  
+    runHook postInstall
+  '';
 ```
 
 ### Replace code strings
 
 If it is needed to replace code strings inside source files, it is possible to use `substituteInPlace`, usually in `postPatch` for example:
 ```nix
-postPatch = ''
-    substituteInPlace bin/maltego \
-          --replace /usr/bin/awk ${lib.getExe gawk}
-'';
+  postPatch = ''
+      substituteInPlace bin/maltego \
+            --replace /usr/bin/awk ${lib.getExe gawk}
+  '';
 ```
 Note also the usage of `${lib.getExe gawk}`: **lib.getExe** can be used to retrive the path of a binary file.
 
@@ -154,52 +157,52 @@ Note also the usage of `${lib.getExe gawk}`: **lib.getExe** can be used to retri
 
 In a Nix package it is possible to create desktop files by importing `copyDesktopItems` and `makeDesktopItem` and use `desktopItems` as:
 ```nix
-nativeBuildInputs = [
-  copyDesktopItems
-];
+  nativeBuildInputs = [
+    copyDesktopItems
+  ];
 ```
 and
 ```nix
-desktopItems = [
-  (makeDesktopItem {
-    name = finalAttrs.pname;
-    desktopName = "Maltego";
-    exec = finalAttrs.meta.mainProgram;
-    icon = finalAttrs.pname;
-    comment = "An open source intelligence and forensics application";
-    categories = [ "Network" "Security" ];
-    startupNotify = false;
-  })
-];
+  desktopItems = [
+    (makeDesktopItem {
+      name = finalAttrs.pname;
+      desktopName = "Maltego";
+      exec = finalAttrs.meta.mainProgram;
+      icon = finalAttrs.pname;
+      comment = "An open source intelligence and forensics application";
+      categories = [ "Network" "Security" ];
+      startupNotify = false;
+    })
+  ];
 ```
 
 ### Create multiple icons from .ico file
 
 If a source project has a `.ico` file, it is possible to generate icon images in different sizes that could be used in the desktop file of the tool. It can be reached by importing `icoutils` and use the following structure:
 ```nix
-nativeBuildInputs = [
-  icoutils
-];
+  nativeBuildInputs = [
+    icoutils
+  ];
 ```
 and
 ```nix
-installPhase = ''
-    runHook preInstall
-
-    mkdir -p $out/{bin,share}
-    chmod +x bin/maltego
-
-    icotool -x bin/maltego.ico
-
-    for size in 16 32 48 256
-    do
-      mkdir -p $out/share/icons/hicolor/$size\x$size/apps
-      cp maltego_*_$size\x$size\x32.png $out/share/icons/hicolor/$size\x$size/apps/maltego.png
-    done
-
-    rm -r *.png
-
-    cp -aR . "$out/share/maltego/"
-...
+  installPhase = ''
+      runHook preInstall
+  
+      mkdir -p $out/{bin,share}
+      chmod +x bin/maltego
+  
+      icotool -x bin/maltego.ico
+  
+      for size in 16 32 48 256
+      do
+        mkdir -p $out/share/icons/hicolor/$size\x$size/apps
+        cp maltego_*_$size\x$size\x32.png $out/share/icons/hicolor/$size\x$size/apps/maltego.png
+      done
+  
+      rm -r *.png
+  
+      cp -aR . "$out/share/maltego/"
+  ...
 ```
 
