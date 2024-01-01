@@ -171,10 +171,11 @@ buildPythonPackage rec {
 If it is needed to replace code strings inside source files, it is possible to use `substituteInPlace`, usually in `postPatch` for example:
 ```nix
   postPatch = ''
-      substituteInPlace bin/maltego \
-            --replace /usr/bin/awk ${lib.getExe gawk}
+    substituteInPlace bin/maltego \
+      --replace /usr/bin/awk ${lib.getExe gawk}
   '';
 ```
+To intend, the number of spaces is two.
 Note also the usage of `${lib.getExe gawk}`: **lib.getExe** can be used to retrive the path of a binary file.
 
 ### Create Desktop file
