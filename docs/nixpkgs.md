@@ -144,6 +144,20 @@ The creation of a binary wrapper is very comfortable since it allows to set envi
   '';
 ```
 
+### Usage of macros
+
+The usage of macros in some fields of the `.nix` file is discouraged. For example, in:
+```nix
+buildPythonPackage rec {
+  pname = "pysqlite3";
+  version = "0.5.2";
+  src = fetchFromGitHub {
+    owner = "coleifer";
+    repo = pname;
+  ...
+```
+`repo = pname;` must be changed to `repo = "pysqlite3";`. The motivation to avoid the usage of macros/variables on some fiels is explained here: https://github.com/NixOS/nixpkgs/issues/277994
+
 ### Replace code strings
 
 If it is needed to replace code strings inside source files, it is possible to use `substituteInPlace`, usually in `postPatch` for example:
