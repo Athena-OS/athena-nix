@@ -170,7 +170,7 @@ buildPythonPackage rec {
 
 ### Source link
 
-If using SourceForge as source, use `mirror://sourceforge` instead of `https://downloads.sf.net/sourceforge`.
+If using SourceForge as source, use `mirror://sourceforge/project`.
 
 ### Replace code strings
 
