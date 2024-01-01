@@ -10,5 +10,9 @@
   environment.systemPackages = with pkgs; [
     nodejs
     sqlite
+    unzip
+    jdk11
+    gradle
   ];
+  nixpkgs.config.allowUnfree = true;
 }

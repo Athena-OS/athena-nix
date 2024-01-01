@@ -6,6 +6,6 @@
           ./.
         ];
     _module.args.theme = theme;
-    athena.desktops.xfce.picom = true;
+    athena.desktops.xfce.refined = true;
   };
 }
