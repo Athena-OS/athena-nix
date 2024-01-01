@@ -130,6 +130,8 @@ Some of these fields accept only specific input values. For each one of these fi
   builtins.attrNames lib.licenses
   ```
 
+  Furthermore, the link at **homepage** must be `https`.
+
 ## Misc
 
 ### Make binary wrapper
@@ -165,6 +167,10 @@ buildPythonPackage rec {
   ...
 ```
 `repo = pname;` must be changed to `repo = "pysqlite3";`. The motivation to avoid the usage of macros/variables on some fiels is explained here: https://github.com/NixOS/nixpkgs/issues/277994
+
+### Source link
+
+If using SourceForge as source, use `mirror://sourceforge` instead of `https://downloads.sf.net/sourceforge`.
 
 ### Replace code strings
 
