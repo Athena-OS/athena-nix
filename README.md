@@ -179,6 +179,11 @@ Once you built correctly it, you can test it by:
 sudo nix-shell -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'
 ```
 
+Note that if you are creating a Python module (i.e., PyPi), you must use:
+```
+nix-build -E 'with import <nixpkgs> {}; python3Packages.callPackage ./package.nix {}'
+```
+
 ### Learn by studying example .nix files
 
 Studying existing nix derivatives is the best way to learn how to create a package in Nix.
