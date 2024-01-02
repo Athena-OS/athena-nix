@@ -232,6 +232,8 @@ if you want to give priority to `ligolo-ng` package.
 
 Once you are sure that the locally built package works correctly, you are ready to submit the package to [nixpkgs repository](https://github.com/NixOS/nixpkgs).
 
+Below I try to summarize the process but I strongly suggest to study and follow the official [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md) guide.
+
 First, if you decide to maintain a package but you are still not a Nixpkgs maintainer, you must create a Pull Request named `maintainers: add <your-maintainer-id>` and add your info in [maintainers/maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix). It is good practice this PR is merged before you submit any new package.
 
 Check of course in [nixpkgs/issues](https://github.com/NixOS/nixpkgs/issues) and [nixpkgs/pulls](https://github.com/NixOS/nixpkgs/pulls) if someone has already submitted the tool you want to upload. If not, you can proceed.
