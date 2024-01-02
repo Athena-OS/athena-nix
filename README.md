@@ -238,13 +238,17 @@ First, if you decide to maintain a package but you are still not a Nixpkgs maint
 
 Check of course in [nixpkgs/issues](https://github.com/NixOS/nixpkgs/issues) and [nixpkgs/pulls](https://github.com/NixOS/nixpkgs/pulls) if someone has already submitted the tool you want to upload. If not, you can proceed.
 
-To submit a package, according to the new [RFC](https://github.com/nixpkgs-architecture/rfc-140/blob/master/rfcs/0140-simple-package-paths.md), you need to create a Pull Request as **Draft**, named `<tool-name>: init at <version-tool>`, in order to add all needed files (as **package.nix** file, containing the nix code) in [pkgs/by-name/${shard}/${name}](https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name) where *name* is usually the name of the tool/package and *shard* is the lowercased first two letters of *name*.
+To submit a package, according to the new [RFC](https://github.com/nixpkgs-architecture/rfc-140/blob/master/rfcs/0140-simple-package-paths.md), check always if someone has already opened a PR. If yes, try to ask information about that PR and check if it has the latest version of the software to be packaged.
+
+If there are no PR, then you can create your PR. you need to create a Pull Request as **Draft**, named `<tool-name>: init at <version-tool>`, in order to add all needed files (as **package.nix** file, containing the nix code) in [pkgs/by-name/${shard}/${name}](https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name) where *name* is usually the name of the tool/package and *shard* is the lowercased first two letters of *name*.
 
 Note that for Python, Perl, Ruby (and other scripting languages) modules, the current rule to submit is still the old one, that means to create the package file as `default.nix`, submit it in the related directory in [nixpkgs/pkgs/development](https://github.com/NixOS/nixpkgs/tree/master/pkgs/development) and then insert the package entry also in the related directory in [nixpkgs/pkgs/top-level](https://github.com/NixOS/nixpkgs/tree/master/pkgs/top-level). The name of the first commit must be something like `<Language>.pkgs.tool-name>: init at <version-tool>`, for example `python3.pkgs.pysqlite3: init at 0.5.2`.
 
 Remember that when you create a new PR, it will create a forked repository in your GitHub account. At this point, in the future, until your PR is not merged, DON'T sync your forked repository with the original one because it will create conflict issues when Nix devs will try to merge the PR or you will try to edit some commit info.
 
-Check always if someone has already opened an issue or a PR and, if still opened, link them in your PR message. Remember also to check the boxes shown in the first message of the PR.
+Check always if there is an open issue in nixpkgs repository, link it in your PR message. Remember also to check the boxes shown in the first message of the PR.
+
+If you want that your package should be backported, use **labels** in your PR.
 
 Not sure if it occurs already in **Draft**, but several checks should start. Be sure noone of the fails. Usually the **EditorConfig** check could fail, just enter in its details and fix your `.nix` file.
 
