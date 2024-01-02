@@ -63,7 +63,7 @@ in
     ];
   }
 ```
-Now, run `nix-shell` and, if `package.nix` files don't produce any errors, you should be inside `nix-shell` environment and you can access to the created `result` directories to check the content and to test if the binary of the main program calls the dependency correctly.
+Now, run `nix-shell` and, if `package.nix` files don't produce any errors, you should be inside `nix-shell` environment and you can invoke the program to check if the binary of the main program calls the dependency correctly.
 
 ### Clean environment
 
