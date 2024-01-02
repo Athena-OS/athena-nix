@@ -27,6 +27,15 @@ For qmake to be used in `mkDerivation` function:
 ```sh
 nix-build -E 'with import <nixpkgs> {}; libsForQt5.callPackage ./package.nix {}'
 ```
+In this case, remember to use `wrapQtAppsHook`. If it is not needed to wrap, keep it and add `dontWrapQtApps = true;`.
+
+### Build local packages with local dependencies
+
+Refer to https://summer.nixos.org/blog/callpackage-a-tool-for-the-lazy/#3-benefit-flexible-dependency-injection
+
+### Clean environment
+
+To clean the environment from all the files created by the build process, run `nix-collect-garbage` and remove `result` directories.
 
 ## Dependencies
 
