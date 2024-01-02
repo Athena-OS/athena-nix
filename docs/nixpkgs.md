@@ -33,6 +33,38 @@ In this case, remember to use `wrapQtAppsHook`. If it is not needed to wrap, kee
 
 Refer to https://summer.nixos.org/blog/callpackage-a-tool-for-the-lazy/#3-benefit-flexible-dependency-injection
 
+Another, more effective, method is to use **niix-shell** because you can create an environment where the package and the related dependencies are actually installed in this environment, so the package will be able to retrieve the related dependencies.
+
+Let's guess our main package to test is `regripper` and the related dependency to test with is `Parse-Win32Registry`. Let's assume you already packaged both of them and they are stored as:
+```sh
+├── package.nix (regripper)
+├── Parse-Win32Registry
+│   ├── package.nix
+```
+There is no need to insert `Parse-Win32Registry` dependency inside `package.nix` of `regripper` because it does not exist in the real nixpkgs repository.
+
+Now create a `shell.nix` file that will deploy your environment:
+```nix
+with import <nixpkgs> {};
+let 
+  Parse-Win32Registry = pkgs.callPackage ./Parse-Win32Registry/package.nix { };
+  regripper = pkgs.callPackage ./package.nix { };
+in
+  stdenv.mkDerivation rec {
+    name = "env";
+    
+    buildInputs = [
+      curl
+      git
+      nix
+      perl
+      Parse-Win32Registry
+      regripper
+    ];
+  }
+```
+Now, run `nix-shell` and, if `package.nix` files don't produce any errors, you should be inside `nix-shell` environment and you can access to the created `result` directories to check the content and to test if the binary of the main program calls the dependency correctly.
+
 ### Clean environment
 
 To clean the environment from all the files created by the build process, run `nix-collect-garbage` and remove `result` directories.
