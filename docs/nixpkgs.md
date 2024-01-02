@@ -195,6 +195,49 @@ The creation of a binary wrapper is very comfortable since it allows to set envi
   '';
 ```
 
+### Make a bash wrapper
+
+Currently, to wrap a program in a bash script, it is possible to use:
+```nix
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p $out/{bin,share}
+
+    cp -aR . "$out/share/toolname/"
+
+    cat > "$out/bin/${pname}" << EOF
+    #!${runtimeShell}
+    exec ${perl}/bin/perl $out/share/toolname/toolname.pl "\$@"
+    EOF
+
+    chmod u+x  "$out/bin/${pname}"
+
+    runHook postInstall
+  '';
+```
+Some packages in other Linux distributions are wrapped by using `cd` command before using `exec` like:
+```nix
+  cat > "$pkgdir/usr/bin/$pkgname" << EOF
+#!/bin/sh
+cd /usr/share/$pkgname/
+exec perl ./rip.pl "\${@}"
+EOF
+```
+This approach is usually used because some tool scripts call other files that work, as example, as plugins, by "relative" path as i.e. `./plugins/`. If `cd` was removed, the tool script is not able to find `plugins` directory anymore.
+
+In Nix, this usage of `cd` in wrappers must be discouraged because it forces you to land in `$out/share/toolname` that is inside `/nix/store`. At this point, how can we prevent `cd` usage and still access to paths like `plugins`?
+
+A good strategy is to use `postPatch` and `substituteInPlace` to replace `plugins` by `$out/share/toolname/plugins` inside the tool script files that define the plugin path. An example comes from `regripper` nix package file:
+```nix
+  postPatch = ''
+    substituteInPlace rip.pl rr.pl \
+      --replace \"plugins/\" \"$out/share/regripper/plugins/\"
+    substituteInPlace rip.pl rr.pl \
+      --replace \"plugins\" \"$out/share/regripper/plugins\"
+  '';
+```
+
 ### Usage of macros
 
 The usage of macros in some fields of the `.nix` file is discouraged. For example, in:
