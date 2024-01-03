@@ -242,8 +242,7 @@ A good strategy is to use `postPatch` and `substituteInPlace` to replace `plugin
 ```nix
   postPatch = ''
     substituteInPlace rip.pl rr.pl \
-      --replace \"plugins/\" \"$out/share/regripper/plugins/\"
-    substituteInPlace rip.pl rr.pl \
+      --replace \"plugins/\" \"$out/share/regripper/plugins/\" \
       --replace \"plugins\" \"$out/share/regripper/plugins\"
   '';
 ```
