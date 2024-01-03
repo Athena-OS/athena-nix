@@ -168,6 +168,7 @@
         ldapdomaindump
         ldeep
         libargon2
+        libpst
         libtins
         ligolo-ng
         linux-exploit-suggester
