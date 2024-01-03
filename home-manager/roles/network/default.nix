@@ -122,6 +122,7 @@
         sshuttle
         ssldump
         sslh
+        sslscan
         sslsplit
         stunnel
         suricata
