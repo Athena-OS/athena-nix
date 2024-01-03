@@ -270,11 +270,31 @@ If it is needed to replace code strings inside source files, it is possible to u
 ```nix
   postPatch = ''
     substituteInPlace bin/maltego \
-      --replace /usr/bin/awk ${lib.getExe gawk}
+      --replace /usr/bin/awk ${lib.getExe gawk} \
+      --replace "string" "anotherstring"
   '';
 ```
 To intend, the number of spaces is two.
 Note also the usage of `${lib.getExe gawk}`: **lib.getExe** can be used to retrive the path of a binary file.
+
+### Linking libraries
+
+If I'm not wrong, `mkDerivation` should automatically detect `/usr/<path-to-lib>/<lib-file>` at build time and replace `/usr` by `$out`. It occurs when `/usr` as written according to a specific pattern, for example `/usr/local/lib/libguytools.a`.
+
+In case a source file contains something like:
+```cpp
+const QString ThreadScanLibSearchDirs     = "/lib,/usr/lib,/usr/lib64,/usr/local/lib";  // Separate directories by commas
+```
+where `ThreadScanLibSearchDirs` will be used as base to find libraries as `libudev` and/or `libparted` at **run-time**, it is needed to change those paths like:
+```nix
+substituteInPlace threadscan.cpp \
+  --replace '/lib,/usr/lib,/usr/lib64,/usr/local/lib' '${builtins.replaceStrings [":"] [","] (lib.makeLibraryPath [ udev parted ])}'
+```
+It will result in something like:
+```cpp
+const QString ThreadScanLibSearchDirs     = "/nix/store/2cvhyiblil0vgrcbr4x46pvx9150pqfi-systemd-minimal-libs-254.6/lib,/nix/store/nswzq08675i33c0smqrhyww4r8z3r6v5-parted-3.6/lib";  // Separate directories by commas
+```
+In case you are using a `substituteInPlace` that replaces `/usr` by `$out` to the file containing the code above, be sure that this general `substituteInPlace` is placed after the `substituteInPlace` of those specific libraries.
 
 ### Create Desktop file
 
