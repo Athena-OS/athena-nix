@@ -8,6 +8,7 @@
     ./users
   ];
   environment.systemPackages = with pkgs; [
+    netcat-openbsd
     nodejs
     sqlite
     unzip
