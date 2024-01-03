@@ -17,6 +17,7 @@
         firefox_decrypt
         foremost
         libewf
+        libpst
         mdbtools
         ms-sys
         networkminer
