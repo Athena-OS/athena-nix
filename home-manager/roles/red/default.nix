@@ -306,6 +306,7 @@
         ssldump
         sslh
         sslscan
+        sslsplit
         stacs
         stunnel
         subfinder
