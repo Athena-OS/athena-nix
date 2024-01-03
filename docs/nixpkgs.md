@@ -35,20 +35,26 @@ Refer to https://summer.nixos.org/blog/callpackage-a-tool-for-the-lazy/#3-benefi
 
 Another, more effective, method is to use **niix-shell** because you can create an environment where the package and the related dependencies are actually installed in this environment, so the package will be able to retrieve the related dependencies.
 
-Let's guess our main package to test is `regripper` and the related dependency to test with is `Parse-Win32Registry`. Let's assume you already packaged both of them and they are stored as:
+Let's guess our main package to test is `guymager` and the related local dependencies to test with are `libewf-legacy`, `libbfio` and `libguytools`. Let's assume you already packaged both of them and they are stored as:
 ```sh
-├── package.nix (regripper)
-├── Parse-Win32Registry
+├── package.nix (guymager)
+├── libewf-legacy
+│   ├── package.nix
+├── libbfio
+│   ├── package.nix
+├── libguytools
 │   ├── package.nix
 ```
-There is no need to insert `Parse-Win32Registry` dependency inside `package.nix` of `regripper` because it does not exist in the real nixpkgs repository.
+Insert these local dependencies inside `package.nix` of `guymager` because we will add them in our nix-shell environment file.
 
 Now create a `shell.nix` file that will deploy your environment:
 ```nix
 with import <nixpkgs> {};
 let 
-  Parse-Win32Registry = pkgs.callPackage ./Parse-Win32Registry/package.nix { };
-  regripper = pkgs.callPackage ./package.nix { };
+  libewf-legacy = pkgs.callPackage ./libewf-legacy/package.nix { };
+  libbfio = pkgs.callPackage ./libbfio/package.nix { };
+  libguytools = pkgs.libsForQt5.callPackage ./libguytools/package.nix { };
+  guymager = pkgs.libsForQt5.callPackage ./package.nix { inherit libewf-legacy libbfio libguytools; };
 in
   stdenv.mkDerivation rec {
     name = "env";
@@ -58,12 +64,14 @@ in
       git
       nix
       perl
-      Parse-Win32Registry
-      regripper
+      libewf-legacy
+      libbfio
+      libguytools
+      guymager
     ];
   }
 ```
-Now, run `nix-shell` and, if `package.nix` files don't produce any errors, you should be inside `nix-shell` environment and you can invoke the program to check if the binary of the main program calls the dependency correctly.
+Now, run `nix-shell` and, if `package.nix` files don't produce any errors, you should be inside `nix-shell` environment and you can invoke the program to check if the binary of the main program calls the dependency correctly both at build and run time.
 
 ### Clean environment
 
