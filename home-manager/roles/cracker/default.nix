@@ -58,6 +58,7 @@
         sslscan
         testssl
         thc-hydra
+        truecrack
         veracrypt
         wifite2
         xortool
