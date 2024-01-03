@@ -306,6 +306,7 @@ If you are dealing with a Java project, you can link libraries at runtime as fol
       --prefix LD_LIBRARY_PATH : "${pcsclite.out}/lib"
   '';
 ```
+where `pcsclite` is the dependency package of the needed library.
 
 ### Create Desktop file
 
