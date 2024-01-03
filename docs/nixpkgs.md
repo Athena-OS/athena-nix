@@ -101,6 +101,8 @@ Add `enableParallelBuilding = true;` to enable parallel building.
 
 Only in case where the structure of the project does not allow to run autoconf process correctly, then we could be forced to write some code in some of nix phases.
 
+Note that, if you don't need to run C/C++ compiler, replace `stdenv.mkDerivation` by `stdenvNoCC.mkDerivation` and `stdenv` by `stdenvNoCC` on top of the file.
+
 ### Usage of hooks
 
 #### autoconf
