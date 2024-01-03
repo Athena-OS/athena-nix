@@ -9,11 +9,9 @@
   ];
   environment.systemPackages = with pkgs; [
     netcat-openbsd
-    nodejs
-    sqlite
     unzip
-    jdk11
-    gradle
+    tree
+    git
   ];
   nixpkgs.config.allowUnfree = true;
 }
