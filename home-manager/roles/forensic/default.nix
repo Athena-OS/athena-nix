@@ -16,6 +16,7 @@
         exiftool
         firefox_decrypt
         foremost
+        libewf
         mdbtools
         ms-sys
         networkminer
