@@ -12,6 +12,7 @@
     unzip
     tree
     git
+    file
   ];
   nixpkgs.config.allowUnfree = true;
 }
