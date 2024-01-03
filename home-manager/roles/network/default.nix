@@ -72,6 +72,7 @@
         metasploit
         mfcuk
         mfoc
+        miredo
         mitm6
         mitmproxy
         mitmproxy2swagger
