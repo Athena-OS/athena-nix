@@ -102,6 +102,7 @@
         flasm
         fping
         freeipmi
+        freerdp
         fscan
         gau
         gdb
