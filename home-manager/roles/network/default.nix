@@ -9,6 +9,7 @@
         argus
         argus-clients
         arp-scan
+        arping
         arpoison
         asnmap
         atftp
