@@ -15,10 +15,10 @@ stdenv.mkDerivation (finalAttrs: {
   };
 
   installPhase = ''
-    mkdir -p $out/share/{athena-graphite-theme,background/athena}
-    cp -r icons/apps $out/share/athena-graphite-theme/
-    cp -r icons/categories $out/share/athena-graphite-theme/
-    cp -r arch-ascii.png $out/share/background/athena/
+    mkdir -p $out/share/{icons/hicolor/scalable/{apps,categories},backgrounds/athena}
+    cp -r icons/apps/* $out/share/icons/hicolor/scalable/apps/
+    cp -r icons/categories/* $out/share/icons/hicolor/scalable/categories/
+    cp -r arch-ascii.png $out/share/backgrounds/athena/
   '';
 
   meta = with lib; {

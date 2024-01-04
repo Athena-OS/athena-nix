@@ -11,5 +11,6 @@
     nmap
     lsd
     bat
+    alacritty
   ];
 }

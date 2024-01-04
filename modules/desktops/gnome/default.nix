@@ -1,5 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, home-manager, username,  ... }:
+let
+  gnomeExtensionsList = with pkgs.gnomeExtensions; [
+	user-themes
+	blur-my-shell
+	pano
+	desktop-cube
+	desktop-clock
+	pop-shell
+	vitals
+	docker
+	unblank
+	custom-accent-colors	
+	tailscale-qs
+	tailscale-status
+  ];
+in
 {
+
   # ---- System Configuration ----
   services.xserver = {
     enable = true;
@@ -11,17 +28,17 @@
   programs.dconf.enable = true;
 
   services.gnome = {
+    evolution-data-server.enable = true;
     gnome-keyring.enable = true;
   };
 
-  #environment.systemPackages = with pkgs; [ nordic ];
+  environment.systemPackages = with pkgs; [ nordic ];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
     ]) ++ (with pkgs.gnome; [
     gnome-music
-    gedit
     epiphany
     geary
     evince

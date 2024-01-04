@@ -18,5 +18,13 @@
       };
       theme.name = "Graphite-Dark";
     };
+    dconf.settings = {
+        "org/gnome/desktop/background" = {
+            "picture-uri" = "/run/current-system/sw/share/backgrounds/athena/arch-ascii.png";
+        };
+        "org/gnome/desktop/background" = {
+            "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/arch-ascii.png";
+        };
+    };
   };
 }
