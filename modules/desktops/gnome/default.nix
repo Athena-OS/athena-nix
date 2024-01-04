@@ -32,6 +32,8 @@ in
     gnome-keyring.enable = true;
   };
 
+  gtk.iconCache.enable = true;
+
   environment.systemPackages = with pkgs; [ nordic ];
 
   environment.gnome.excludePackages = (with pkgs; [
