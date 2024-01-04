@@ -1,6 +1,8 @@
 { lib
 , stdenv
 , fetchFromGitHub
+, pciutils
+, bash
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -13,6 +15,14 @@ stdenv.mkDerivation (finalAttrs: {
     rev = "1005952a365de3afb70d132e62ee404468ca9dfe";
     hash = "sha256-7t4y20CbQEh0J5BgDUqwtcyMdPq0GvWQaXdzKft0+hA=";
   };
+
+  buildInputs = [ pciutils ];
+
+  postPatch = ''
+    patchShebangs athena-motd shell-rocket troubleshoot
+    substituteInPlace bin/shell-rocket \
+      --replace /usr/bin/bash ${lib.getExe bash}
+  '';
 
   installPhase = ''
     mkdir -p $out/{bin,share}
