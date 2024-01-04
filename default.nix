@@ -6,6 +6,7 @@
     ./hosts
     ./modules
     ./users
+    ./pkgs
   ];
   environment.systemPackages = with pkgs; [
     netcat-openbsd
