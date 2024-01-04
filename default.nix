@@ -9,15 +9,5 @@
     ./users
     ./pkgs
   ];
-  environment.systemPackages = with pkgs; [
-    netcat-openbsd
-    unzip
-    tree
-    git
-    file
-    nmap
-    lsd
-    bat
-  ];
   nixpkgs.config.allowUnfree = true;
 }
