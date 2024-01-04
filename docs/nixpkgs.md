@@ -2,6 +2,8 @@
 
 The purpose of this document is to provide guidelines to package tools following Nix best practices.
 
+Official docs related to the rules to consider when creating a Nix package: https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md
+
 ## Build packages
 
 There are several ways to build local packages. What I'm currently using are `nix-build` and `nix-shell`.
