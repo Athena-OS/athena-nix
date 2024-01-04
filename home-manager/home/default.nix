@@ -24,7 +24,7 @@ in
   xdg.configFile."menus/blue-applications.menu".source = ./config/menus/blue-applications.menu;
   xdg.configFile."menus/red-applications.menu".source = ./config/menus/red-applications.menu;
 
-  # Everblush xfwm4 theme
   # home.file refers to $HOME dir
-  #home.file.".themes".source = ./themes;
+  home.file.".bash_aliases".source = ./bash_aliases;
+  home.file.".blerc".source = ./blerc;
 }
