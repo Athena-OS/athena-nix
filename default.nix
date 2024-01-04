@@ -3,6 +3,7 @@
 {
   imports = [
     home-manager.nixosModules.home-manager
+    ./home-manager
     ./hosts
     ./modules
     ./users
@@ -15,6 +16,8 @@
     git
     file
     nmap
+    lsd
+    bat
   ];
   nixpkgs.config.allowUnfree = true;
 }

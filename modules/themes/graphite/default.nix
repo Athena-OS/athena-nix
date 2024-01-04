@@ -19,7 +19,4 @@
       theme.name = "Graphite-Dark";
     };
   };
-  environment.systemPackages = with pkgs; [
-    (callPackage ../../../pkgs/athena-graphite-theme { })
-  ];
 }
