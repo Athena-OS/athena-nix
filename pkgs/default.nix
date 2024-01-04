@@ -1,6 +1,6 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, ... }:
 {
-  imports = [
-    ./athena-config
+  environment.systemPackages = with pkgs; [
+    (callPackage ./athena-config { })
   ];
 }

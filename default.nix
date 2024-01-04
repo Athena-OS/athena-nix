@@ -14,6 +14,7 @@
     tree
     git
     file
+    nmap
   ];
   nixpkgs.config.allowUnfree = true;
 }
