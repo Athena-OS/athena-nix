@@ -162,6 +162,8 @@ In this manner, all the declared variables like `pname` or `version` can be acce
 ```
 You can also use a direct form like `platforms = platforms.unix;`
 
+Note, if you use the pattern with `with` like `sourceProvenance = with sourceTypes;`, the assigned values should be in a list, so between `[ ]`.
+
 Some of these fields accept only specific input values. For each one of these fields, to know what are the possible values to use, refer to the following:
 * maintainers: [maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix) and [team-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/team-list.nix) or running:
   ```nix
