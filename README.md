@@ -168,15 +168,15 @@ sudo nix run --extra-experimental-features "flakes nix-command" github:nix-commu
 Enter url: https://github.com/orgname/reponame
 Check and enter the other information.
 
-Then, let's build the produced default.nix file by:
+Then, let's build the produced `package.nix` file by:
 ```
-sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'
+sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
 If you get some error, fix them. You can use ChatGPT as helper.
 
 Once you built correctly it, you can test it by:
 ```
-sudo nix-shell -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'
+sudo nix-shell -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
 
 Note that if you are creating a Python module (i.e., PyPi), you must use:
@@ -600,9 +600,9 @@ Usually, themes, icons and cursors packages could install different flavors of a
 
 How in Nix you can know the list of all possible themes inside a GTK or icon theme package?
 
-Let's guess we would like to have the list of all icon themes inside [tela-circle-icon-theme](https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/icons/tela-circle-icon-theme). The method is to build the package. Usually we can retrieve its `default.nix` package and all the needed files in the same directory, and then building it by:
+Let's guess we would like to have the list of all icon themes inside [tela-circle-icon-theme](https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/icons/tela-circle-icon-theme). The method is to build the package. Usually we can retrieve its `package.nix` package and all the needed files in the same directory, and then building it by:
 ```nix
-sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'
+sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
 Some packages could return some error because they need to use other modules. In case of our icon theme above, it could return the error:
 ```
@@ -615,9 +615,9 @@ To run the correct build command, you need to give a look to [all-packages.nix](
     inherit (libsForQt5) breeze-icons;
   };
 ```
-It means that, in order to be built correctly, our `default.nix` package needs to inherit all the modules specified between `{}`. In this manner, the correct build command will be:
+It means that, in order to be built correctly, our `package.nix` package needs to inherit all the modules specified between `{}`. In this manner, the correct build command will be:
 ```
-sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {inherit (gnome) adwaita-icon-theme; inherit (libsForQt5) breeze-icons;}'
+sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {inherit (gnome) adwaita-icon-theme; inherit (libsForQt5) breeze-icons;}'
 ```
 After building the package, check inside the `result` directory to see the directory names of the installed themes. They will be the list of theme names you need.
 
