@@ -4,7 +4,7 @@
   users.users.${username} = {
     shell = pkgs.bash;
     isNormalUser = true;
-    initialPassword = "temp123";
+    initialPassword = "athena";
     extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
     packages = with pkgs; [
       firefox
