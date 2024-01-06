@@ -136,6 +136,7 @@ in
       };
 
       "org/gnome/shell/extensions/arcmenu" = {
+        arc-menu-icon=69;
         dash-to-panel-standalone = false;
         directory-shortcuts-list = [["Home" "user-home-symbolic" "ArcMenu_Home"] ["Documents" ". GThemedIcon folder-documents-symbolic folder-symbolic folder-documents folder" "ArcMenu_Documents"] ["Downloads" ". GThemedIcon folder-download-symbolic folder-symbolic folder-download folder" "ArcMenu_Downloads"] ["Music" ". GThemedIcon folder-music-symbolic folder-symbolic folder-music folder" "ArcMenu_Music"] ["Pictures" ". GThemedIcon folder-pictures-symbolic folder-symbolic folder-pictures folder" "ArcMenu_Pictures"] ["Videos" ". GThemedIcon folder-videos-symbolic folder-symbolic folder-videos folder" "ArcMenu_Videos"]];
         menu-background-color = "rgba(48,48,49,0.98)";

@@ -12,7 +12,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config";
-    rev = "1005952a365de3afb70d132e62ee404468ca9dfe";
+    rev = "b7dcc50520e41c2af96b5e1558068fcd3634e009";
     hash = "sha256-7t4y20CbQEh0J5BgDUqwtcyMdPq0GvWQaXdzKft0+hA=";
   };
 
