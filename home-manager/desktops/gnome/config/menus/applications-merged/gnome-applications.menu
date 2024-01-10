@@ -15,8 +15,6 @@
     <MergeFile>../blue-applications.menu</MergeFile>
   </Menu>
 
-
-
   <Menu>
     <Name>Red Team</Name>
     <Directory>00-red-team.directory</Directory>
