@@ -2,12 +2,10 @@
 { pkgs, home-manager, ... }:
 {
   imports = [
-    home-manager.nixosModules.home-manager
     ./home-manager
     ./hosts
     ./modules
     ./users
     ./pkgs
   ];
-  nixpkgs.config.allowUnfree = true;
 }

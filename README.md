@@ -382,6 +382,19 @@ https://github.com/yrashk/nix-home/blob/master/home.nix
 Useful docs:
 https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager
 
+## Nix Channels
+
+### Deploy configuration by channels
+
+To deploy your configuration by channels, you need to create or edit `/etc/nixos/configuration.nix` file. Once completed, run:
+```sh
+sudo nixos-rebuild switch
+```
+or
+```sh
+sudo nixos-rebuild switch -I nixos-config=path/to/configuration.nix
+```
+
 ## Flakes
 
 ### Creation of ISO NixOS-based
@@ -425,7 +438,7 @@ https://nixos.wiki/wiki/Flakes
 
 ### Deploy configuration by Flakes
 
-Another advantage of using Flakes is the possibility to deploy your configuration in a flexible manner, instead of using the classic way that consists of editing each time `/etc/nixos/configuration.nix` and running `sudo nixos-rebuild switch` command. By flakes, we can define N configuration deployments in one single `flakes.nix` file.
+Another advantage of using Flakes is the possibility to deploy your configuration in a flexible manner, instead of using the classic way that consists of editing each time `/etc/nixos/configuration.nix` and running `sudo nixos-rebuild switch` or `sudo nixos-rebuild switch -I nixos-config=path/to/configuration.nix` command. By flakes, we can define N configuration deployments in one single `flakes.nix` file.
 
 Once you created your `flake.nix` (look [athena-nix](https://github.com/Athena-OS/athena-nix) as example), you can deploy your configuration by running:
 ```
@@ -594,6 +607,23 @@ In this manner, `default.nix` can ask directly for `home-manager`, so it will be
 This approach does not need to specify the inheritance of inputs because `attrs` take the elements defined in `inputs` and merges sets (even currently it is not so clear to me).
 
 Additional methods: https://blog.nobbz.dev/2022-12-12-getting-inputs-to-modules-in-a-flake/
+
+## Upgrade
+
+Over time new packages could be added in the stable repository. To make your system aware of these new packages, you need to upgrade your nix channel or your flake (depending on what you are using).
+
+**Nix channel**
+```sh
+nix-channel --update
+sudo nix-channel --update
+```
+
+**Flake**
+```sh
+cd <path/to/your/flake.nix>
+nix flake update
+sudo nix flake update
+```
 
 ## Themes, Icons and Cursors
 

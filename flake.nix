@@ -31,6 +31,7 @@
           [
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
+            home-manager.nixosModules.home-manager
             "${self}/modules/themes/${theme.module-name}"
             "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
             {
