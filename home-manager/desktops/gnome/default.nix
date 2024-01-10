@@ -10,6 +10,7 @@ let
     pop-shell
     top-bar-organizer
     vitals
+    window-title-is-back
   ];
 
   fontList = with pkgs; [
@@ -38,6 +39,7 @@ in
         "top-bar-organizer@julian.gse.jsts.xyz"
         "Vitals@CoreCoding.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "window-title-is-back@fthx"
       ];
 
       "org/gnome/shell".disabled-extensions = [
@@ -158,18 +160,19 @@ in
       };
 
       "org/gnome/shell/extensions/dash-to-dock" = {
-        apply-custom-theme = false;
+        apply-custom-theme = true;
         autohide-in-fullscreen = false;
-        background-opacity = 0.90000000000000002;
+        background-opacity = 0.9;
+        custom-theme-shrink = true;
         dash-max-icon-size = 48;
         dock-position = "BOTTOM";
-        height-fraction = 0.90000000000000002;
+        height-fraction = 0.9;
         intellihide = true;
         intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
         multi-monitor = true;
         preferred-monitor = -2;
         preferred-monitor-by-connector = "Virtual-1";
-        preview-size-scale = 0.20000000000000001;
+        preview-size-scale = 0.2;
         require-pressure-to-show = false;
         show-trash = false;
         transparency-mode = "FIXED";
@@ -187,6 +190,11 @@ in
         center-box-order = ["Workspace Indicator" "media-player" "Space Bar" "media-player-controls"];
         left-box-order = ["LogoMenu" "ArcMenu" "menuButton" "appMenu" "Notifications" "places-menu" "apps-menu" "dateMenu" "activities"];
         right-box-order = ["dash-button" "power-menu" "battery-bar" "vitalsMenu" "pop-shell" "screenRecording" "screenSharing" "dwellClick" "a11y" "keyboard" "quickSettings"];
+      };
+
+      "org/gnome/shell/extensions/window-title-is-back" = {
+        colored-icon = true;
+        show-title = false;
       };
 
       "org/gnome/shell/extensions/flypie" = {
