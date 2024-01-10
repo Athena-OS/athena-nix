@@ -8,7 +8,7 @@ A configuration can be deployed in several ways:
 
 #### Remote
 ```
-sudo nixos-rebuild switch --flake 'github:Athena-OS/athena-nix#gnome'
+sudo nixos-rebuild switch --flake 'github:Athena-OS/athena-nix#gnome' --impure
 ```
 
 #### Local
@@ -16,12 +16,13 @@ Running command inside `athena-nix` directory:
 ```
 git clone https://github.com/Athena-OS/athena-nix
 cd athena-nix
-sudo nixos-rebuild switch --flake '.#gnome'
+sudo nixos-rebuild switch --flake '.#gnome' --impure
 ```
 Running command outside `athena-nix` directory:
 ```
-sudo nixos-rebuild switch --flake '<local-path-to-dir-containing-flake.nix>/.#gnome'
+sudo nixos-rebuild switch --flake '<local-path-to-dir-containing-flake.nix>/.#gnome' --impure
 ```
+`--impure` is used because the deployment can be applied according to your `hardware-configuration.nix`.
 
 # Nix Wiki
 
