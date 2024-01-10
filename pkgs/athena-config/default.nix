@@ -12,8 +12,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config";
-    rev = "0faab7db54977588fa6651c62d41639c37c75c5f";
-    hash = "sha256-p5ewUfnt00Tcz02Y5vry4jrDlrItn0E5sGqFHCWj1v4=";
+    rev = "3ec186b227d25fe810d66162e6eb84168af8a09e";
+    hash = "sha256-7c9UDPUHjgIjwN19ZezCLCS1atc+sGKYi088tb/hFfY=";
   };
 
   buildInputs = [ pciutils ];
