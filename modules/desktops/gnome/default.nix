@@ -1,20 +1,4 @@
-{ pkgs, home-manager, username,  ... }:
-let
-  gnomeExtensionsList = with pkgs.gnomeExtensions; [
-	user-themes
-	blur-my-shell
-	pano
-	desktop-cube
-	desktop-clock
-	pop-shell
-	vitals
-	docker
-	unblank
-	custom-accent-colors	
-	tailscale-qs
-	tailscale-status
-  ];
-in
+{ pkgs, ... }:
 {
 
   # ---- System Configuration ----
@@ -34,7 +18,7 @@ in
 
   gtk.iconCache.enable = true;
 
-  environment.systemPackages = with pkgs; [ nordic ];
+  environment.systemPackages = with pkgs; [ gnome.eog ];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos

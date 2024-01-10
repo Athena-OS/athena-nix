@@ -9,7 +9,6 @@ let
     hide-activities-button
     pop-shell
     top-bar-organizer
-    #ubuntu-dock
     vitals
   ];
 
@@ -37,7 +36,6 @@ in
         "Hide_Activities@shay.shayel.org"
         "pop-shell@system76.com"
         "top-bar-organizer@julian.gse.jsts.xyz"
-        #"ubuntu-dock@ubuntu.com"
         "Vitals@CoreCoding.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];

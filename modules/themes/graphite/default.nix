@@ -25,6 +25,9 @@
         "org/gnome/desktop/background" = {
             "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
         };
+        "org/gnome/desktop/background" = {
+            "picture-options" = "stretched";
+        };
     };
   };
 }

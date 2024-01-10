@@ -10,8 +10,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-graphite-theme";
-    rev = "d692d3e36daf3c05e96851c2136f620a76dd15be";
-    hash = "sha256-Xnyolz5St3LIjlra9iemDLIGNzYY2q/y0TuWuZD59ps=";
+    rev = "8670ec2a528bf83828e7fa0d1b9890ed0c24db7b";
+    hash = "sha256-KZoyD4e7FhpO9auczTt7ZaOcp1mfSVlQHG9/9t7k3jA=";
   };
 
   installPhase = ''
