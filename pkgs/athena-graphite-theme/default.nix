@@ -5,20 +5,20 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "athena-graphite-theme";
-  version = "unstable-2024-01-04";
+  version = "unstable-2024-01-10";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-graphite-theme";
-    rev = "020a034b10114d7938d31d3591e1fadb0d861e99";
-    hash = "sha256-hQur2KJjD5vubLnkCz4P3OMPBw8dPrp51TabP/z8uyY=";
+    rev = "d692d3e36daf3c05e96851c2136f620a76dd15be";
+    hash = "sha256-Xnyolz5St3LIjlra9iemDLIGNzYY2q/y0TuWuZD59ps=";
   };
 
   installPhase = ''
     mkdir -p $out/share/{icons/hicolor/scalable/{apps,categories},backgrounds/athena}
     cp -r icons/apps/* $out/share/icons/hicolor/scalable/apps/
     cp -r icons/categories/* $out/share/icons/hicolor/scalable/categories/
-    cp -r arch-ascii.png $out/share/backgrounds/athena/
+    cp -r nix-behind.png $out/share/backgrounds/athena/
   '';
 
   meta = with lib; {

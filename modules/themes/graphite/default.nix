@@ -20,10 +20,10 @@
     };
     dconf.settings = {
         "org/gnome/desktop/background" = {
-            "picture-uri" = "/run/current-system/sw/share/backgrounds/athena/arch-ascii.png";
+            "picture-uri" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
         };
         "org/gnome/desktop/background" = {
-            "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/arch-ascii.png";
+            "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
         };
     };
   };
