@@ -12,8 +12,8 @@ let
     (builtins.readFile ./bin/genmon-mem);
   i3lock-everblush = pkgs.writeShellScriptBin "i3lock-everblush"
     (builtins.readFile ./bin/i3lock-everblush);
-  xfce-init = pkgs.writeShellScriptBin "xfce-init"
-    (builtins.readFile ./bin/xfce-init);
+  #xfce-init = pkgs.writeShellScriptBin "xfce-init"
+    #(builtins.readFile ./bin/xfce-init);
 in
 {
   options.athena.desktops.xfce = {
@@ -49,12 +49,12 @@ in
 
       qt.style.name = "qt5ct";
       
-      xdg.desktopEntries."xfce-init" = {
-        name = "XFCE Initialization";
-        exec = "xfce-init";
-        categories = [ "Application" ];
-        noDisplay = true;
-      };
+      #xdg.desktopEntries."xfce-init" = {
+      #  name = "XFCE Initialization";
+      #  exec = "xfce-init";
+      #  categories = [ "Application" ];
+      #  noDisplay = true;
+      #};
 
       # To understand about env variables of xdg, refer to https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix
       # xdg.systemDirs.config is used to source /etc/xdg AND ${config.xdg.configHome}/xfce4/xdg, like a $PATH. In practice, the specified dirs are added in $XDG_CONFIG_DIRS
@@ -113,7 +113,7 @@ in
         genmon-datetime
         genmon-mem
         i3lock-everblush
-        xfce-init
+        #xfce-init
       ];
       # IMPORTANT: if a specified xfconf setting doesn't work, check if there is an hardcoded xfconf setting inside $HOME/xfce4 dir and delete it
       xfconf.settings = {

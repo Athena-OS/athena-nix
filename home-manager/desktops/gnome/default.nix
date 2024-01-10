@@ -21,6 +21,9 @@ in
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = gnomeExtensionsList ++ fontList;
 
+    # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
+    xdg.configFile."menus/applications-merged/gnome-applications.menu".source = ./config/menus/applications-merged/gnome-applications.menu;
+
     dconf.settings = {
       "org/gnome/shell".disable-user-extensions = false;
       "org/gnome/shell".enabled-extensions = (map (extension: extension.extensionUuid) gnomeExtensionsList)

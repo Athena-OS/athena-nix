@@ -11,6 +11,7 @@
   outputs = {self, nixpkgs, home-manager}@inputs:
     let
       theme = {
+        module-name = "graphite";
         gtk-theme = "Graphite-Dark";
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
@@ -30,6 +31,7 @@
           [
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
+            "${self}/modules/themes/${theme.module-name}"
             "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
             {
               _module.args.theme = theme;
@@ -47,7 +49,6 @@
         "xfce" = mkSystem [
           "${self}/modules/desktops/xfce"
           "${self}/modules/dms/lightdm"
-          "${self}/modules/themes/graphite"
           "${self}/home-manager/desktops/xfce/home.nix"
           #"${self}/home-manager/roles/osint"
         ];
@@ -55,7 +56,6 @@
           "${self}/modules/desktops/gnome"
           "${self}/modules/dms/lightdm"
           "${self}/home-manager/desktops/gnome"
-          "${self}/modules/themes/graphite"
         ];
       };
   
