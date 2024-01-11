@@ -17,7 +17,7 @@ in
         _module.args.hostname = hostname;
       }
       (import "${home-manager}/nixos")
-      "/etc/nixos/hardware-configuration.nix"
+      ./hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
       ./modules/themes/graphite
       ./modules/desktops/gnome
       ./modules/dms/lightdm
