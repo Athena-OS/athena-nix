@@ -141,247 +141,6 @@ In case for some reason you need to delete all Nix environments, run:
 sudo nix --experimental-features nix-command store delete --all --ignore-liveness
 ```
 
-## Test existing packages
-
-If you want to test an existing package in [nixpkgs](https://github.com/NixOS/nixpkgs) repository, for example `OSCAR`,  just get its `default.nix` file locally, then run:
-```
-nix-build '<nixpkgs>' -A OSCAR
-```
-Running simply `nix-build -A OSCAR`, it will look for the `default.nix` file in the current directory and it produces an error because this file has not lib args. For this reason, you must refer to the [default.nix](https://github.com/NixOS/nixpkgs/blob/master/default.nix) file at the root of nixpkgs repository. We can call this .nix file by using `'<nixpkgs>'`. This, upon evaluating, produces an instance of the nixpkgs package set, which then has an attribute called [OSCAR](https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix#L40979), which you select with `-A OSCAR`.
-
-It means that, if you submit a new package on nixpkgs repository, you need also to add the attribute in the [all-packages.nix](https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix) file.
-
-If you edit the local OSCAR `default.nix` and you build by the command above, it won't build this local `default.nix` file, but it'll always use the one from the channel you set. If you want to build the local one, you do the callPackage thing as described in the [nix.dev guide](https://nix.dev/tutorials/learning-journey/packaging-existing-software#hello-world). It occurs because you have a local copy of the repo through the channel and that's what's used here. To find out where it is, you can run `nix-instantiate --eval -E '<nixpkgs>'`.
-
-Note that if you create a `.nix` file, when you you `install` command to copy files, at InstallPhase, use only `444` or `555` permissions because write permissions cannot exist in Nix store. If you try to provide write permissions, nix flattens the permissions to `444` or `555`. To create directories, instead to use `install -dm`, use `mkdir -p`.
-
-A very useful tool that can help you to create Nix derivations is [nix-init](https://github.com/nix-community/nix-init). Just note that, for anything tricky, it falls back to stdenv.mkderivation.
-
-## Create Nix package
-
-### nix-init
-
-**nix-init** is a useful tool that can help on Nix package creation.
-Let's suppose we would like to create a tool with source in GitHub like https://github.com/orgname/reponame. Let's run:
-```
-sudo nix run --extra-experimental-features "flakes nix-command" github:nix-community/nix-init --
-```
-Enter url: https://github.com/orgname/reponame
-Check and enter the other information.
-
-Then, let's build the produced `package.nix` file by:
-```
-sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
-```
-If you get some error, fix them. You can use ChatGPT as helper.
-
-Once you built correctly it, you can test it by:
-```
-sudo nix-shell -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
-```
-
-Note that if you are creating a Python module (i.e., PyPi), you must use:
-```
-nix-build -E 'with import <nixpkgs> {}; python3Packages.callPackage ./package.nix {}'
-```
-
-### Learn by studying example .nix files
-
-Studying existing nix derivatives is the best way to learn how to create a package in Nix.
-
-To learn how to create packages, follow [Packaging Tutorial](https://nix.dev/tutorials/learning-journey/packaging-existing-software#hello-world).
-
-### Set a license
-
-During the creation of a derivation, you need to specify a license. Licenses strings are stored in `licenses` set. You can access to its list by:
-```
-nix repl -f '<nixpkgs>'
-```
-Note that `-f '<nixpkgs>'` will load all variables and libs you need to run nix statements.
-
-Then run:
-```
-nix-repl> builtins.attrNames lib.licenses
-```
-If you don't use  `-f '<nixpkgs>'`, you need to load the needed variables manually, for example by `:l <nixpkgs>`, then write `lib.` and use TAB completion to find `licenses`.
-
-### Manage Collisions
-
-If you install two packages (i.e., `_3proxy` and  `ligolo-ng`) that will install a binary file with the same name in the same place, you can get the following error:
-```
-error: builder for '/nix/store/gzgn99b4siq286gr4ybcl70zqp2h8y61-home-manager-path.drv' failed with exit code 25;
-       last 1 log lines:
-       > error: collision between `/nix/store/92qf7acxvg6acl4vxji5712n7lhi0q35-ligolo-ng-0.4.4/bin/proxy' and `/nix/store/xz1v4ry2g50jha4gkll9f0didcgbdwnf-3proxy-0.9.4/bin/proxy'
-       For full logs, run 'nix log /nix/store/gzgn99b4siq286gr4ybcl70zqp2h8y61-home-manager-path.drv'.
-error: 1 dependencies of derivation '/nix/store/1vnxv0cs63cpyvr9ihjhd1gg5gdy9xyp-home-manager-generation.drv' failed to build
-error: 1 dependencies of derivation '/nix/store/xxwnh88y46pkcylxgrf0p6q9zf3l1lwc-unit-home-manager-athena.service.drv' failed to build
-error: 1 dependencies of derivation '/nix/store/yikxvsvgmla8j7gjd6mr3f5jzpn7a7cb-system-units.drv' failed to build
-error: 1 dependencies of derivation '/nix/store/8nrmdivjn6aj6k9r5fqswvy8q0mvfy71-etc.drv' failed to build
-error: 1 dependencies of derivation '/nix/store/557gh4yh0cxl3f7vcpnpbpj00a42vk3g-nixos-system-athenaos-24.05.20231219.54aac08.drv' failed to build
-```
-To prevent this, you can try to install packages at system-level, without home-manager, or you can use [prio functions](https://github.com/NixOS/nixpkgs/blob/7daf35532d2d8bf5e6f7f962e6cd13a66d01a71d/lib/meta.nix#L48-L69) from nixpkgs lib, for example:
-```nix
-{ lib, pkgs, ...}: {
-  home.packages = [
-    (lib.highPrio pkgs.ligolo-ng)
-  ];
-}
-```
-if you want to give priority to `ligolo-ng` package.
-
-## Submit a package in nixpkgs repository
-
-Once you are sure that the locally built package works correctly, you are ready to submit the package to [nixpkgs repository](https://github.com/NixOS/nixpkgs).
-
-Below I try to summarize the process but I strongly suggest to study and follow the official [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md) guide.
-
-First, if you decide to maintain a package but you are still not a Nixpkgs maintainer, you must create a Pull Request named `maintainers: add <your-maintainer-id>` and add your info in [maintainers/maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix). It is good practice this PR is merged before you submit any new package.
-
-Check of course in [nixpkgs/issues](https://github.com/NixOS/nixpkgs/issues) and [nixpkgs/pulls](https://github.com/NixOS/nixpkgs/pulls) if someone has already submitted the tool you want to upload. If not, you can proceed.
-
-To submit a package, according to the new [RFC](https://github.com/nixpkgs-architecture/rfc-140/blob/master/rfcs/0140-simple-package-paths.md), check always if someone has already opened a PR. If yes, try to ask information about that PR and check if it has the latest version of the software to be packaged.
-
-If there are no PR, then you can create your PR. you need to create a Pull Request as **Draft**, named `<tool-name>: init at <version-tool>`, in order to add all needed files (as **package.nix** file, containing the nix code) in [pkgs/by-name/${shard}/${name}](https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name) where *name* is usually the name of the tool/package and *shard* is the lowercased first two letters of *name*.
-
-Note that for Python, Perl, Ruby (and other scripting languages) modules, the current rule to submit is still the old one, that means to create the package file as `default.nix`, submit it in the related directory in [nixpkgs/pkgs/development](https://github.com/NixOS/nixpkgs/tree/master/pkgs/development) and then insert the package entry also in the related directory in [nixpkgs/pkgs/top-level](https://github.com/NixOS/nixpkgs/tree/master/pkgs/top-level). The name of the first commit must be something like `<Language>.pkgs.tool-name>: init at <version-tool>`, for example `python3.pkgs.pysqlite3: init at 0.5.2`.
-
-Remember that when you create a new PR, it will create a forked repository in your GitHub account. At this point, in the future, until your PR is not merged, DON'T sync your forked repository with the original one because it will create conflict issues when Nix devs will try to merge the PR or you will try to edit some commit info.
-
-Check always if there is an open issue in nixpkgs repository, link it in your PR message. Remember also to check the boxes shown in the first message of the PR.
-
-If you want that your package should be backported, use **labels** in your PR.
-
-Not sure if it occurs already in **Draft**, but several checks should start. Be sure noone of the fails. Usually the **EditorConfig** check could fail, just enter in its details and fix your `.nix` file.
-
-Once you applied all the needed changes to this PR, switch it from **Draft** to **Open**. Remember that it is a good practice that there should be only one single commit name `<tool-name>: init at <version-tool>` in the PR. You can ask people to thumb up it in order to get more attention for review.
-
-To get people to review your PR, you can add the link of your PR in:
-* [Nix/NixOS (unofficial) Discord server - #pr-review-request](https://discord.com/channels/568306982717751326/679366467904471040)
-* [NixOS Discourse](https://discourse.nixos.org/t/prs-ready-for-review/3032/99999) by just pasting the clean PR URL without any code tag, wrapping and similar
-
-### Issues resolution
-
-In case you synced the forked repository with the original one, you must restore the git state to the commit before this sync. To do this run `git log` to identify the commit before the merge of original nixpkgs to your forked repository, and then run:
-```
-git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (try different number values by replacing N (starting from 1) until you don't see the commit of synching between the forked repository and the original one)
-git reset --hard <previous-commit-id>
-git push -f origin <branch-name>
-```
-In this manner, you should not have any conflict issues coming from commits of other users.
-
-In case you wrote the wrong commit message and you need to change it, run:
-```
-git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (N depends on how many commits you submitted ahead of the one that needs the message to be changed)
-git rebase -i HEAD~<N>
-```
-at this point a text editor will be opened showing several commits. Identify your commit, change `pick` to `reword`, change its message string and save and close the file. Finally:
-```
-git push -f origin <branch-name>
-```
-
-In case you submitted more than one commit on your PR and you need to merge all of them in one, run:
-```
-git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (N depends on how many commits you submitted ahead of the ones that need to be merged)
-git rebase -i HEAD~<N>
-```
-at this point a text editor will be opened showing several commits. Identify the commits to merge, leave unchanged the main commit to keep and change `pick` to `squash` on all the remaining commits that must merge with the unchanged one. Finally:
-```
-git push -f origin <branch-name>
-```
-
-## Home Manager
-
-The deployment of tools by `/etc/nixos/configuration.nix` is used mainly for system-wide scenarios. What if we want to deploy tools or config dotfiles for a specific user? To do this, we must use **home-manager**. So, system-wide and user-level deployments must be managed separately.
-
-To install home-manager, you need to add the following in `/etc/nixos/configuration.nix` inside `import`:
-```nix
-imports =
-  [
-    <home-manager/nixos>
-  ]
-```
-and install place `home-manager` inside:
-```nix
-packages = with pkgs; [
-  home-manager
-]
-```
-Then, since we edited the system-level configuration file, we need to edit `sudo nano /root/.nix-channels` file and add:
-```
-https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
-```
-(note: also nixos channel version should be set as 23.11)
-and run:
-```
-sudo nix-channel --update
-sudo nixos-rebuild switch
-```
-To use home-manager, you need to create a `.nix` file.
-
-In general, when you use it without specifying a file by `home-manager switch`, it will refer to `$HOME/.config/home-manager/home.nix` file that you should create. In case you created `.nix` file in another location, you can run `home-manager switch -f <your-nix-file-location>`.
-
-You can create a `home.nix` file referring to the actual derivation to install by the following content:
-```nix
-{ home-manager, ... }:
-{
-  imports = [
-    ./home-manager/desktops/xfce
-  ];
-  home.username = "athena";
-  home.homeDirectory = "/home/athena";
-  home.stateVersion = "23.11";
-  athena.desktops.xfce.refined = true;
-}
-```
-Note that, when you import without specifying a `.nix` file, it will check for an existing `default.nix` file.
-
-**Install a package built locally**
-
-If we use **home-manager**, it is not used as a classic pkg manager where we give as argument the name of the package and it installs it. No. It works in a different manner. **home-manager** should work in this manner:
-* I define a `home.nix` configuration file containing all the packages I want to set in my environment. They could be local or remote packages.
-* Then I run `home-manager switch` and it reads the configuration file above and set any declared env variable and install the declared packages. Though environment variables may need a session logout or reboot.
-
-An example of `home.nix` configuration file is:
-```
-home.packages = [
-  (pkgs.callPackage ./path/to/file.nix {})
-]
-```
-HM usually adds a custom shell script sourced by your shell to set environment variables, so you need to manage your shell via HM with programs.name.enable. This means that env variables only will be visible to child processes of the shell, not graphical applications started from your launcher.
-
-Note that the wiki at https://nixos.wiki is unofficial and has a lot of wrong things, so don't follow it.
-
-The official docs are [here](https://nixos.org/learn).
-
-**Important Note**
-
-The usage of `home-manager switch` command will apply the effect on the current session but if you reboot the system, any changes made by this command will be reverted. It occurs due to the immutability of NixOS. If you want to have permanent change, you must invoke the `.nix` file inside `/etc/nixos/configuration.nix`, by adding as example:
-```nix
-  home-manager.users.athena = { pkgs, ... }: {
-    home.packages = [ pkgs.atool pkgs.httpie ];
-    imports = [ "/home/athena/athena-nix/home.nix" ];
-    programs.bash.enable = true;
-    
-    # The state version is required and should stay at the version you
-    # originally installed.
-    home.stateVersion = "23.11";
-  };
-```
-
-**Deploy dotfiles in HOME folder**
-
-What it is not clear is "How can we deploy config dotfiles to a user?".
-
-In order to do this, we can use `home-manager` as explained above. But how the target `.nix` package must be created? Which content it should contain?
-
-The best approach is to check on already existing files:
-https://github.com/bobvanderlinden/nix-home
-https://github.com/siraben/dotfiles/blob/master/home-manager/.config/nixpkgs/home.nix
-https://github.com/yrashk/nix-home/blob/master/home.nix
-
-Useful docs:
-https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager
-
 ## Nix Channels
 
 ### Deploy configuration by channels
@@ -624,6 +383,253 @@ cd <path/to/your/flake.nix>
 nix flake update
 sudo nix flake update
 ```
+
+## Home Manager
+
+The deployment of tools by `/etc/nixos/configuration.nix` is used mainly for system-wide scenarios. What if we want to deploy tools or config dotfiles for a specific user? To do this, we must use **home-manager**. So, system-wide and user-level deployments must be managed separately.
+
+To install home-manager, you need to add the following in `/etc/nixos/configuration.nix` inside `import`:
+```nix
+imports =
+  [
+    <home-manager/nixos>
+  ]
+```
+and install place `home-manager` inside:
+```nix
+packages = with pkgs; [
+  home-manager
+]
+```
+Then, since we edited the system-level configuration file, we need to edit `sudo nano /root/.nix-channels` file and add:
+```
+https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+```
+(note: also nixos channel version should be set as 23.11)
+and run:
+```
+sudo nix-channel --update
+sudo nixos-rebuild switch
+```
+To use home-manager, you need to create a `.nix` file.
+
+In general, when you use it without specifying a file by `home-manager switch`, it will refer to `$HOME/.config/home-manager/home.nix` file that you should create. In case you created `.nix` file in another location, you can run `home-manager switch -f <your-nix-file-location>`.
+
+You can create a `home.nix` file referring to the actual derivation to install by the following content:
+```nix
+{ home-manager, ... }:
+{
+  imports = [
+    ./home-manager/desktops/xfce
+  ];
+  home.username = "athena";
+  home.homeDirectory = "/home/athena";
+  home.stateVersion = "23.11";
+  athena.desktops.xfce.refined = true;
+}
+```
+Note that, when you import without specifying a `.nix` file, it will check for an existing `default.nix` file.
+
+**Install a package built locally**
+
+If we use **home-manager**, it is not used as a classic pkg manager where we give as argument the name of the package and it installs it. No. It works in a different manner. **home-manager** should work in this manner:
+* I define a `home.nix` configuration file containing all the packages I want to set in my environment. They could be local or remote packages.
+* Then I run `home-manager switch` and it reads the configuration file above and set any declared env variable and install the declared packages. Though environment variables may need a session logout or reboot.
+
+An example of `home.nix` configuration file is:
+```
+home.packages = [
+  (pkgs.callPackage ./path/to/file.nix {})
+]
+```
+HM usually adds a custom shell script sourced by your shell to set environment variables, so you need to manage your shell via HM with programs.name.enable. This means that env variables only will be visible to child processes of the shell, not graphical applications started from your launcher.
+
+Note that the wiki at https://nixos.wiki is unofficial and has a lot of wrong things, so don't follow it.
+
+The official docs are [here](https://nixos.org/learn).
+
+**Important Note**
+
+The usage of `home-manager switch` command will apply the effect on the current session but if you reboot the system, any changes made by this command will be reverted. It occurs due to the immutability of NixOS. If you want to have permanent change, you must invoke the `.nix` file inside `/etc/nixos/configuration.nix`, by adding as example:
+```nix
+  home-manager.users.athena = { pkgs, ... }: {
+    home.packages = [ pkgs.atool pkgs.httpie ];
+    imports = [ "/home/athena/athena-nix/home.nix" ];
+    programs.bash.enable = true;
+    
+    # The state version is required and should stay at the version you
+    # originally installed.
+    home.stateVersion = "23.11";
+  };
+```
+
+**Deploy dotfiles in HOME folder**
+
+What it is not clear is "How can we deploy config dotfiles to a user?".
+
+In order to do this, we can use `home-manager` as explained above. But how the target `.nix` package must be created? Which content it should contain?
+
+The best approach is to check on already existing files:
+https://github.com/bobvanderlinden/nix-home
+https://github.com/siraben/dotfiles/blob/master/home-manager/.config/nixpkgs/home.nix
+https://github.com/yrashk/nix-home/blob/master/home.nix
+
+Useful docs:
+https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager
+
+## NixOS Install
+
+NixOS installation can be performed by using `nixos-install` command that allows you to install a system according to your `configuration.nix` file. You can use a NixOS ISO and follow the [official Nix docs](https://nixos.org/manual/nixos/stable/#sec-installation-installing).
+
+## Nix packages
+
+### Create Nix package
+
+#### nix-init
+
+**nix-init** is a useful tool that can help on Nix package creation.
+Let's suppose we would like to create a tool with source in GitHub like https://github.com/orgname/reponame. Let's run:
+```
+sudo nix run --extra-experimental-features "flakes nix-command" github:nix-community/nix-init --
+```
+Enter url: https://github.com/orgname/reponame
+Check and enter the other information.
+
+Then, let's build the produced `package.nix` file by:
+```
+sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
+```
+If you get some error, fix them. You can use ChatGPT as helper.
+
+Once you built correctly it, you can test it by:
+```
+sudo nix-shell -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
+```
+
+Note that if you are creating a Python module (i.e., PyPi), you must use:
+```
+nix-build -E 'with import <nixpkgs> {}; python3Packages.callPackage ./package.nix {}'
+```
+
+#### Learn by studying example .nix files
+
+Studying existing nix derivatives is the best way to learn how to create a package in Nix.
+
+To learn how to create packages, follow [Packaging Tutorial](https://nix.dev/tutorials/learning-journey/packaging-existing-software#hello-world).
+
+#### Set a license
+
+During the creation of a derivation, you need to specify a license. Licenses strings are stored in `licenses` set. You can access to its list by:
+```
+nix repl -f '<nixpkgs>'
+```
+Note that `-f '<nixpkgs>'` will load all variables and libs you need to run nix statements.
+
+Then run:
+```
+nix-repl> builtins.attrNames lib.licenses
+```
+If you don't use  `-f '<nixpkgs>'`, you need to load the needed variables manually, for example by `:l <nixpkgs>`, then write `lib.` and use TAB completion to find `licenses`.
+
+#### Manage Collisions
+
+If you install two packages (i.e., `_3proxy` and  `ligolo-ng`) that will install a binary file with the same name in the same place, you can get the following error:
+```
+error: builder for '/nix/store/gzgn99b4siq286gr4ybcl70zqp2h8y61-home-manager-path.drv' failed with exit code 25;
+       last 1 log lines:
+       > error: collision between `/nix/store/92qf7acxvg6acl4vxji5712n7lhi0q35-ligolo-ng-0.4.4/bin/proxy' and `/nix/store/xz1v4ry2g50jha4gkll9f0didcgbdwnf-3proxy-0.9.4/bin/proxy'
+       For full logs, run 'nix log /nix/store/gzgn99b4siq286gr4ybcl70zqp2h8y61-home-manager-path.drv'.
+error: 1 dependencies of derivation '/nix/store/1vnxv0cs63cpyvr9ihjhd1gg5gdy9xyp-home-manager-generation.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/xxwnh88y46pkcylxgrf0p6q9zf3l1lwc-unit-home-manager-athena.service.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/yikxvsvgmla8j7gjd6mr3f5jzpn7a7cb-system-units.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/8nrmdivjn6aj6k9r5fqswvy8q0mvfy71-etc.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/557gh4yh0cxl3f7vcpnpbpj00a42vk3g-nixos-system-athenaos-24.05.20231219.54aac08.drv' failed to build
+```
+To prevent this, you can try to install packages at system-level, without home-manager, or you can use [prio functions](https://github.com/NixOS/nixpkgs/blob/7daf35532d2d8bf5e6f7f962e6cd13a66d01a71d/lib/meta.nix#L48-L69) from nixpkgs lib, for example:
+```nix
+{ lib, pkgs, ...}: {
+  home.packages = [
+    (lib.highPrio pkgs.ligolo-ng)
+  ];
+}
+```
+if you want to give priority to `ligolo-ng` package.
+
+### Submit a package in nixpkgs repository
+
+Once you are sure that the locally built package works correctly, you are ready to submit the package to [nixpkgs repository](https://github.com/NixOS/nixpkgs).
+
+Below I try to summarize the process but I strongly suggest to study and follow the official [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md) guide.
+
+First, if you decide to maintain a package but you are still not a Nixpkgs maintainer, you must create a Pull Request named `maintainers: add <your-maintainer-id>` and add your info in [maintainers/maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix). It is good practice this PR is merged before you submit any new package.
+
+Check of course in [nixpkgs/issues](https://github.com/NixOS/nixpkgs/issues) and [nixpkgs/pulls](https://github.com/NixOS/nixpkgs/pulls) if someone has already submitted the tool you want to upload. If not, you can proceed.
+
+To submit a package, according to the new [RFC](https://github.com/nixpkgs-architecture/rfc-140/blob/master/rfcs/0140-simple-package-paths.md), check always if someone has already opened a PR. If yes, try to ask information about that PR and check if it has the latest version of the software to be packaged.
+
+If there are no PR, then you can create your PR. you need to create a Pull Request as **Draft**, named `<tool-name>: init at <version-tool>`, in order to add all needed files (as **package.nix** file, containing the nix code) in [pkgs/by-name/${shard}/${name}](https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name) where *name* is usually the name of the tool/package and *shard* is the lowercased first two letters of *name*.
+
+Note that for Python, Perl, Ruby (and other scripting languages) modules, the current rule to submit is still the old one, that means to create the package file as `default.nix`, submit it in the related directory in [nixpkgs/pkgs/development](https://github.com/NixOS/nixpkgs/tree/master/pkgs/development) and then insert the package entry also in the related directory in [nixpkgs/pkgs/top-level](https://github.com/NixOS/nixpkgs/tree/master/pkgs/top-level). The name of the first commit must be something like `<Language>.pkgs.tool-name>: init at <version-tool>`, for example `python3.pkgs.pysqlite3: init at 0.5.2`.
+
+Remember that when you create a new PR, it will create a forked repository in your GitHub account. At this point, in the future, until your PR is not merged, DON'T sync your forked repository with the original one because it will create conflict issues when Nix devs will try to merge the PR or you will try to edit some commit info.
+
+Check always if there is an open issue in nixpkgs repository, link it in your PR message. Remember also to check the boxes shown in the first message of the PR.
+
+If you want that your package should be backported, use **labels** in your PR.
+
+Not sure if it occurs already in **Draft**, but several checks should start. Be sure noone of the fails. Usually the **EditorConfig** check could fail, just enter in its details and fix your `.nix` file.
+
+Once you applied all the needed changes to this PR, switch it from **Draft** to **Open**. Remember that it is a good practice that there should be only one single commit name `<tool-name>: init at <version-tool>` in the PR. You can ask people to thumb up it in order to get more attention for review.
+
+To get people to review your PR, you can add the link of your PR in:
+* [Nix/NixOS (unofficial) Discord server - #pr-review-request](https://discord.com/channels/568306982717751326/679366467904471040)
+* [NixOS Discourse](https://discourse.nixos.org/t/prs-ready-for-review/3032/99999) by just pasting the clean PR URL without any code tag, wrapping and similar
+
+#### Issues resolution
+
+In case you synced the forked repository with the original one, you must restore the git state to the commit before this sync. To do this run `git log` to identify the commit before the merge of original nixpkgs to your forked repository, and then run:
+```
+git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (try different number values by replacing N (starting from 1) until you don't see the commit of synching between the forked repository and the original one)
+git reset --hard <previous-commit-id>
+git push -f origin <branch-name>
+```
+In this manner, you should not have any conflict issues coming from commits of other users.
+
+In case you wrote the wrong commit message and you need to change it, run:
+```
+git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (N depends on how many commits you submitted ahead of the one that needs the message to be changed)
+git rebase -i HEAD~<N>
+```
+at this point a text editor will be opened showing several commits. Identify your commit, change `pick` to `reword`, change its message string and save and close the file. Finally:
+```
+git push -f origin <branch-name>
+```
+
+In case you submitted more than one commit on your PR and you need to merge all of them in one, run:
+```
+git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth=<N> (N depends on how many commits you submitted ahead of the ones that need to be merged)
+git rebase -i HEAD~<N>
+```
+at this point a text editor will be opened showing several commits. Identify the commits to merge, leave unchanged the main commit to keep and change `pick` to `squash` on all the remaining commits that must merge with the unchanged one. Finally:
+```
+git push -f origin <branch-name>
+```
+
+### Test existing packages
+
+If you want to test an existing package in [nixpkgs](https://github.com/NixOS/nixpkgs) repository, for example `OSCAR`,  just get its `default.nix` file locally, then run:
+```
+nix-build '<nixpkgs>' -A OSCAR
+```
+Running simply `nix-build -A OSCAR`, it will look for the `default.nix` file in the current directory and it produces an error because this file has not lib args. For this reason, you must refer to the [default.nix](https://github.com/NixOS/nixpkgs/blob/master/default.nix) file at the root of nixpkgs repository. We can call this .nix file by using `'<nixpkgs>'`. This, upon evaluating, produces an instance of the nixpkgs package set, which then has an attribute called [OSCAR](https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix#L40979), which you select with `-A OSCAR`.
+
+It means that, if you submit a new package on nixpkgs repository, you need also to add the attribute in the [all-packages.nix](https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix) file.
+
+If you edit the local OSCAR `default.nix` and you build by the command above, it won't build this local `default.nix` file, but it'll always use the one from the channel you set. If you want to build the local one, you do the callPackage thing as described in the [nix.dev guide](https://nix.dev/tutorials/learning-journey/packaging-existing-software#hello-world). It occurs because you have a local copy of the repo through the channel and that's what's used here. To find out where it is, you can run `nix-instantiate --eval -E '<nixpkgs>'`.
+
+Note that if you create a `.nix` file, when you you `install` command to copy files, at InstallPhase, use only `444` or `555` permissions because write permissions cannot exist in Nix store. If you try to provide write permissions, nix flattens the permissions to `444` or `555`. To create directories, instead to use `install -dm`, use `mkdir -p`.
+
+A very useful tool that can help you to create Nix derivations is [nix-init](https://github.com/nix-community/nix-init). Just note that, for anything tricky, it falls back to stdenv.mkderivation.
 
 ## Themes, Icons and Cursors
 
