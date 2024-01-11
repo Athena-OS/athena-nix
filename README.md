@@ -111,7 +111,7 @@ In practice you can install a package in several ways:
 You could ask: "Since declarative approach is based on editing configuration files, it could seem less comfortable than using the imperative approach as `sudo pacman -S pkgname`, so why an average user should use the declarative approach?"
 Answer: on long term, declarative approach is more comfortable because it does not allow only to install packages, but also to configure them. When you reach your final configuration, you can export it in another Nix system. Furthermore, the imperative approach has a lot limitations that have been solved by Nix/declarative approach and that are explained in section 1.3 of [The Purely Functional Software Deployment Model](https://edolstra.github.io/pubs/phd-thesis.pdf).
 
-**Prepare the environment**
+**Prepare the environment (non-NixOS system only)**
 
 If you want to use a non-root user (multi-user) you need to start the **nix daemon** (Arch Linux only):
 ```
