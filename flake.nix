@@ -16,6 +16,7 @@
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
       };
+      terminal = "alacritty";
       mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -25,38 +26,41 @@
           inherit (inputs) home-manager;
         }; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
         modules = let
-          modulesPath = "${self}/nixos/modules";
+          modulesPath = "./nixos/modules";
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
         in
           [
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
             home-manager.nixosModules.home-manager
-            "${self}/modules/themes/${theme.module-name}"
-            "${self}/." # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
+            ./modules/themes/${theme.module-name}
+            ./. # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
             {
               _module.args.theme = theme;
+              _module.args.terminal = terminal;
             }
           ]
           ++ extraModules;
       };
     in {
       nixosConfigurations = let
-        modulesPath = "${self}/nixos/modules";
+        modulesPath = "./nixos/modules";
       in {
         "live-image" = mkSystem [
           "${modulesPath}/iso.nix"
         ];
         "xfce" = mkSystem [
-          "${self}/modules/desktops/xfce"
-          "${self}/modules/dms/lightdm"
-          "${self}/home-manager/desktops/xfce/home.nix"
-          #"${self}/home-manager/roles/osint"
+          ./modules/desktops/xfce
+          ./modules/dms/lightdm
+          ./home-manager/desktops/xfce/home.nix
+          ./home-manager/terminals/${terminal}
+          #./home-manager/roles/osint
         ];
         "gnome" = mkSystem [
-          "${self}/modules/desktops/gnome"
-          "${self}/modules/dms/lightdm"
-          "${self}/home-manager/desktops/gnome"
+          ./modules/desktops/gnome
+          ./modules/dms/lightdm
+          ./home-manager/desktops/gnome
+          ./home-manager/terminals/${terminal}
         ];
       };
   

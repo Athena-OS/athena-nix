@@ -663,3 +663,9 @@ A simpler method to check what are the installed GTK themes or Icon themes from 
 ## Reporting Issues
 
 When reporting issues for nixpkgs, remember to mention always the maintainers of a package. If they are not specified in the `.nix` file, access to [team-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/team-list.nix)  or [maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix) and search for the language used to develop the involved tool.
+
+# Troubleshooting
+
+** Some icons disappeared from menu **
+
+Directories where NixOS searches for icons are specified in `XCURSOR_PATH` env variable. It could happen that, due to bad configuration, the symlinked icons could be duplicated in more than one path. Due to `nix-collection-garbage` command, some of Nix store resources where the symlinked icons were pointing to, could be deleted. If these broken symlinked icons are stored in a path that is checked before the actual path where you store the symlinked icons, then your icons could disappear. To fix it, just identify the broken symlinked icons and delete them. Finally, logout/login.
