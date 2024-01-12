@@ -1,4 +1,4 @@
-{ pkgs, lib, home-manager, username, terminal, ... }:
+{ pkgs, lib, home-manager, username, terminal, browser, ... }:
 let
   shellrocket = pkgs.writeShellScriptBin "shell-rocket" ''
     TERMINAL_EXEC="$TERMINAL -e"
@@ -28,7 +28,7 @@ in
 
   environment.sessionVariables = {
     EDITOR = "nano";
-    BROWSER = "firefox";
+    BROWSER = "${browser}";
     TERMINAL = "${terminal}";
   };
 

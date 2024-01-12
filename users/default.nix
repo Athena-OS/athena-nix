@@ -7,7 +7,6 @@
     initialPassword = "athena";
     extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
     packages = with pkgs; [
-      firefox
       git
       vscodium
       wget

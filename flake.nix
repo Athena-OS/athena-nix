@@ -17,6 +17,7 @@
         cursor-theme = "Bibata-Modern-Ice";
       };
       terminal = "kitty";
+      browser = "firefox";
       mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -38,6 +39,7 @@
             {
               _module.args.theme = theme;
               _module.args.terminal = terminal;
+              _module.args.browser = browser;
             }
           ]
           ++ extraModules;
@@ -62,6 +64,7 @@
           ./modules/dms/lightdm
           ./home-manager/desktops/gnome
           ./home-manager/terminals/${terminal}
+          ./home-manager/browsers/${browser}
           ./home-manager/shells
         ];
       };

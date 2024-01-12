@@ -10,5 +10,5 @@
         terminal = false;
         categories = [ "Application" "Utility" ];
       };
-  };
+    };
 }
