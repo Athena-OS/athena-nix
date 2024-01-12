@@ -1,9 +1,9 @@
-{ home-manager, username,  ... }:
+{ home-manager, username, ... }:
 {
   home-manager.users.${username} = { pkgs, ...}: {
-        imports = [
-          ./home
-        ];
+    imports = [
+      ./home
+    ];
   };
   environment.interactiveShellInit = ''
     #tmux
@@ -90,9 +90,6 @@
     alias give-me-azerty-be="sudo localectl set-x11-keymap be"
     alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
     
-    #pacman unlock
-    alias unlock="sudo rm /var/lib/pacman/db.lck"
-    
     #free
     #alias free="free -mt"
     
@@ -107,14 +104,6 @@
     
     #merge new settings
     alias merge="xrdb -merge ~/.Xresources"
-    
-    # Aliases for software managment
-    # pacman or pm
-    alias pacman='pacman --color auto'
-    alias update='sudo pacman -Syyu'
-    
-    # paru as aur helper - updates everything
-    alias upall="paru -Syu --noconfirm"
     
     #ps
     alias psa="ps auxf"
@@ -142,13 +131,6 @@
     alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
     alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
     
-    #switch between lightdm and sddm
-    alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
-    alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
-    alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
-    alias togdm="sudo pacman -S gdm --noconfirm --needed ; sudo systemctl enable gdm.service -f ; echo 'Gdm is active - reboot now'"
-    alias tolxdm="sudo pacman -S lxdm --noconfirm --needed ; sudo systemctl enable lxdm.service -f ; echo 'Lxdm is active - reboot now'"
-    
     # kill commands
     # quickly kill conkies
     alias kc='killall conky'
@@ -160,26 +142,8 @@
     #hardware info --short
     alias hw="hwinfo --short"
     
-    #skip integrity check
-    alias paruskip='paru -S --mflags --skipinteg'
-    alias yayskip='yay -S --mflags --skipinteg'
-    alias trizenskip='trizen -S --skipinteg'
-    
     #check vulnerabilities microcode
     alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
-    
-    #get fastest mirrors in your neighborhood
-    alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-    alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-    alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-    alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-    #our experimental - best option for the moment
-    alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-    alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-    alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
-    alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
-    alias rbm='rate-mirrors --concurrency 40 --allow-root --disable-comments --save /etc/pacman.d/blackarch-mirrorlist blackarch'
-    alias rbc='rate-mirrors --concurrency 40 --allow-root --disable-comments --save /etc/pacman.d/chaotic-mirrorlist chaotic-aur'
     
     #enabling vmware services
     alias start-vmware="sudo systemctl enable --now vmtoolsd.service"
@@ -200,9 +164,6 @@
     #iso and version used to install Athena
     alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
     
-    #Cleanup orphaned packages
-    alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-    
     #clear
     alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
     
@@ -216,17 +177,14 @@
     #know what you do in these files
     alias nlxdm="sudo $EDITOR /etc/lxdm/lxdm.conf"
     alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
-    alias npacman="sudo $EDITOR /etc/pacman.conf"
     alias ngrub="sudo $EDITOR /etc/default/grub"
     alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
     alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
-    alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
     alias nsddm="sudo $EDITOR /etc/sddm.conf"
     alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
     alias nfstab="sudo $EDITOR /etc/fstab"
     alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
     alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-    alias ngnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
     alias nhosts="sudo $EDITOR /etc/hosts"
     alias nhostname="sudo $EDITOR /etc/hostname"
     alias nb="$EDITOR ~/.bashrc"
@@ -235,7 +193,6 @@
     
     #reading logs with bat
     alias laegis="bat /var/log/aegis.log"
-    alias lpacman="bat /var/log/pacman.log"
     alias lxorg="bat /var/log/Xorg.0.log"
     alias lxorgo="bat /var/log/Xorg.0.log.old"
     
@@ -244,8 +201,6 @@
     alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
     #receive the key of a developer
     alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-    alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
-    alias init-keys="sudo rm -rf /etc/pacman.d/gnupg; sudo pacman-key --init; sudo pacman-key --populate; sudo pacman -Syy"
     
     #fixes
     alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
@@ -345,11 +300,9 @@
     #fix obvious typo's
     alias cd..='cd ..'
     alias pdw='pwd'
-    alias udpate='sudo pacman -Syyu'
-    alias upate='sudo pacman -Syyu'
-    alias updte='sudo pacman -Syyu'
-    alias updqte='sudo pacman -Syyu'
-    alias upqll='paru -Syu --noconfirm'
-    alias upal='paru -Syu --noconfirm'
+    alias udpate='sudo nix-channel --update'
+    alias upate='sudo nix-channel --update'
+    alias updte='sudo nix-channel --update'
+    alias updqte='sudo nix-channel --update'
   '';
 }

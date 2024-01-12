@@ -7,21 +7,19 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "athena-config";
-  version = "unstable-2024-01-04";
+  version = "unstable-2024-01-12";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config";
-    rev = "3ec186b227d25fe810d66162e6eb84168af8a09e";
-    hash = "sha256-7c9UDPUHjgIjwN19ZezCLCS1atc+sGKYi088tb/hFfY=";
+    rev = "d15875e9f783faf5bf7687cef8550460b491d69e";
+    hash = "sha256-+l4SurjuZQkGEWIa78eBAr4m131OGY8M1HTfITtnjHc=";
   };
 
   buildInputs = [ pciutils ];
 
   postPatch = ''
     patchShebangs athena-motd shell-rocket troubleshoot
-    substituteInPlace bin/shell-rocket \
-      --replace /usr/bin/bash ${lib.getExe bash}
   '';
 
   installPhase = ''

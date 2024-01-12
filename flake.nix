@@ -16,7 +16,7 @@
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
       };
-      terminal = "alacritty";
+      terminal = "kitty";
       mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -54,6 +54,7 @@
           ./modules/dms/lightdm
           ./home-manager/desktops/xfce/home.nix
           ./home-manager/terminals/${terminal}
+          ./home-manager/shells
           #./home-manager/roles/osint
         ];
         "gnome" = mkSystem [
@@ -61,6 +62,7 @@
           ./modules/dms/lightdm
           ./home-manager/desktops/gnome
           ./home-manager/terminals/${terminal}
+          ./home-manager/shells
         ];
       };
   

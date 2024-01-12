@@ -1,9 +1,5 @@
 { pkgs, home-manager, username, ... }:
 {
-  #environment.systemPackages = with pkgs; [
-  #  alacritty # Needed to get alacritty icon and dash 2 dock working correctly
-  #];
-
   home-manager.users.${username}.programs.alacritty = {
     enable = true;
     settings = {
