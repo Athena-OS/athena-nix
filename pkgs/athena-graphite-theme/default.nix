@@ -24,7 +24,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = with lib; {
     description = "Graphite Dark theme resources";
     mainProgram = "athena-graphite-theme";
-    homepage = "https://github.com/Athena-OS/athena-graphite";
+    homepage = "https://github.com/Athena-OS/athena-graphite-theme";
     maintainers = with maintainers; [ d3vil0p3r ];
     platforms = platforms.unix;
     license = licenses.gpl3;

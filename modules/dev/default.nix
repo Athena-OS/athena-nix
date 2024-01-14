@@ -3,5 +3,6 @@
     ./neovim
     ./starship
     ./tmux
+    ./vscodium
   ];
 }

@@ -11,8 +11,8 @@
   outputs = {self, nixpkgs, home-manager}@inputs:
     let
       theme = {
-        module-name = "graphite";
-        gtk-theme = "Graphite-Dark";
+        module-name = "sweet";
+        gtk-theme = "Sweet-Dark-v40";
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
       };
@@ -65,6 +65,9 @@
           "${modulesPath}/iso.nix"
         ];
         "gnome" = mkSystem [
+          #./modules/roles/osint
+        ];
+        "xfce" = mkSystem [
           #./modules/roles/osint
         ];
         "network" = mkSystem [

@@ -8,7 +8,6 @@
     extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
     packages = with pkgs; [
       git
-      vscodium
       wget
     #  thunderbird
     ];

@@ -12,6 +12,7 @@ let
   shell = "zsh";
   terminal = "kitty";
   browser = "firefox";
+  role = "";
   hm-version = "release-23.11"; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
@@ -39,5 +40,7 @@ in
       ./home-manager/browsers/${browser}
       ./home-manager/shells/${shell}
       ./.
+
+      ./modules/roles/${role}
     ];
 }

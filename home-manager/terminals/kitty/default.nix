@@ -2,13 +2,11 @@
 {
   home-manager.users.${username}.programs.kitty = {
     enable = true;
-    theme = if theme.module-name == "akame"
+    /*theme = if theme.module-name == "akame"
             then "Crayon Pony Fish"
             else if theme.module-name == "cyborg"
             then "Gruvbox Dark"
             else if theme.module-name == "everblush"
-            then "Atom"
-            else if theme.module-name == "graphite"
             then "Atom"
             else if theme.module-name == "hackthebox"
             then "Box"
@@ -18,9 +16,8 @@
             then "Adventure Time"
             else if theme.module-name == "xxe"
             then "Gruvbox Dark"
-            else "Atom";
+            else "Atom";*/
     settings = {
-
       font_family = "JetBrainsMono NF Medium";
       bold_font = "JetBrainsMono NF Bold";
       italic_font = "JetBrainsMono NF Italic";

@@ -1,12 +1,14 @@
 { pkgs, nixpkgs, home-manager, username, ... }:
 {
   environment.systemPackages = with pkgs; [
-    (callPackage ../../../pkgs/athena-graphite-theme { })
+    (callPackage ../../../pkgs/athena-sweet-theme { })
   ];
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = with pkgs; [
       bibata-cursors
+      #sweet
     ];
+    xdg.configFile."gtk-4.0/gtk.css".source = ./gtk.css;
     gtk = {
       enable = true;
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
@@ -15,24 +17,21 @@
         colorVariants = [ "black" ];
       };
       iconTheme.name = "Tela-circle-black-dark";
-      theme.package = pkgs.graphite-gtk-theme.override {
-        tweaks = [ "rimless" ];
-      };
-      theme.name = "Graphite-Dark";
+      theme.name = "Sweet-Dark-v40";
     };
     dconf.settings = {
         "org/gnome/desktop/background" = {
-            "picture-uri" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
+            "picture-uri" = "/run/current-system/sw/share/backgrounds/athena/neon-circle.jpg";
         };
         "org/gnome/desktop/background" = {
-            "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
+            "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/neon-circle.jpg";
         };
         "org/gnome/desktop/background" = {
             "picture-options" = "stretched";
         };
     };
     programs.kitty = {
-      theme = "Atom";
+      theme = "Adventure Time";
     };
     programs.vscode = {
       extensions = with pkgs.vscode-extensions; [

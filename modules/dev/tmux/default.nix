@@ -1,12 +1,31 @@
-{pkgs, shell, username, ...}:
+{lib, pkgs, shell, username, theme, ...}:
+let
+  tmuxcolor = {
+    graphite = "snow";
+    sweet = "violet";
+  }."${theme.module-name}" or (throw "unsupported theme '${theme.module-name}'");
+in
 {
   home-manager.users.${username} = { pkgs, ... }: {
 
     programs.tmux = {
       enable = true;
+
       plugins = with pkgs.tmuxPlugins; [
         net-speed
         power-theme
+        {
+          plugin = power-theme;
+          extraConfig = ''
+            set -g @tmux_power_theme '${tmuxcolor}'
+            set -g @tmux_power_show_upload_speed true
+            set -g @tmux_power_show_download_speed true
+            # 'L' for left only, 'R' for right only and 'LR' for both
+            set -g @tmux_power_prefix_highlight_pos 'LR'
+            set -g @tmux_power_date_format '%F'
+            set -g @tmux_power_time_format '%T'
+          '';
+        }
         prefix-highlight
         sensible
         yank
@@ -20,15 +39,9 @@
         setw -g pane-base-index 1
         
         # Plugin Customizaion
-        set -g @tmux_power_theme 'everforest'
-        set -g status-right   "#{playerctl_full}"
-        set -g @tmux_power_show_upload_speed true
-        set -g @tmux_power_show_download_speed true
-        # 'L' for left only, 'R' for right only and 'LR' for both
-        set -g @tmux_power_prefix_highlight_pos 'LR'
-        set -g @tmux_power_date_format '%F'
-        set -g @tmux_power_time_format '%T'
         
+        set -g status-right   "#{playerctl_full}"
+
         # Set the prefix key to Ctrl+s
         set -g prefix C-s
         unbind C-b
