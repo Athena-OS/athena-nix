@@ -16,6 +16,9 @@
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
       };
+      desktop = "gnome";
+      dmanager = "lightdm";
+      shell = "zsh";
       terminal = "kitty";
       browser = "firefox";
       mkSystem = extraModules:
@@ -24,6 +27,7 @@
         specialArgs = {
           username = "athena";
           hostname = "athenaos";
+          hashed = "athena";
           inherit (inputs) home-manager;
         }; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
         modules = let
@@ -34,10 +38,19 @@
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
             home-manager.nixosModules.home-manager
-            ./modules/themes/${theme.module-name}
             ./. # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
+            ./modules/desktops/${desktop}
+            ./modules/dms/${dmanager}
+            ./modules/themes/${theme.module-name}
+            ./home-manager/desktops/${desktop}
+            ./home-manager/terminals/${terminal}
+            ./home-manager/browsers/${browser}
+            ./home-manager/shells/${shell}
             {
               _module.args.theme = theme;
+              _module.args.dmanager = dmanager;
+              _module.args.desktop = desktop;
+              _module.args.shell = shell;
               _module.args.terminal = terminal;
               _module.args.browser = browser;
             }
@@ -51,21 +64,11 @@
         "live-image" = mkSystem [
           "${modulesPath}/iso.nix"
         ];
-        "xfce" = mkSystem [
-          ./modules/desktops/xfce
-          ./modules/dms/lightdm
-          ./home-manager/desktops/xfce/home.nix
-          ./home-manager/terminals/${terminal}
-          ./home-manager/shells
-          #./home-manager/roles/osint
-        ];
         "gnome" = mkSystem [
-          ./modules/desktops/gnome
-          ./modules/dms/lightdm
-          ./home-manager/desktops/gnome
-          ./home-manager/terminals/${terminal}
-          ./home-manager/browsers/${browser}
-          ./home-manager/shells
+          #./modules/roles/osint
+        ];
+        "network" = mkSystem [
+          ./modules/roles/network
         ];
       };
   

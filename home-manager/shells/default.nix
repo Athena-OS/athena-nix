@@ -1,14 +1,23 @@
-{ home-manager, username, terminal, ... }:
+{ home-manager, username, terminal, shell, ... }:
 {
-    home-manager.users.${username} = { pkgs, ...}: {
-      xdg.desktopEntries."shell" = {
-        type = "Application";
-        name = "Shell";
-        comment = "Shell";
-        icon = "shell";
-        exec = "${terminal}";
-        terminal = false;
-        categories = [ "Application" "Utility" ];
-      };
+  imports = [
+    ./powershell
+  ];
+
+  home-manager.users.${username} = { pkgs, ...}: {
+    home.file.".bash_aliases".source = ./bash_aliases;
+    #home.packages = with pkgs; [
+    #  neofetch
+    #  zoxide
+    #];
+    xdg.desktopEntries."shell" = {
+      type = "Application";
+      name = "Shell";
+      comment = "Shell";
+      icon = "shell";
+      exec = "${terminal}";
+      terminal = false;
+      categories = [ "Application" "Utility" ];
     };
+  };
 }

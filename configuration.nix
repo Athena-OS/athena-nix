@@ -6,6 +6,12 @@
 let
   username = "athena";
   hostname = "athenaos";
+  theme = "graphite";
+  desktop = "gnome";
+  dmanager = "lightdm";
+  shell = "zsh";
+  terminal = "kitty";
+  browser = "firefox";
   hm-version = "release-23.11"; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
@@ -15,13 +21,23 @@ in
       {
         _module.args.username = username;
         _module.args.hostname = hostname;
+        _module.args.theme.module-name = theme;
+        _module.args.desktop = desktop;
+        _module.args.dmanager = dmanager;
+        _module.args.shell = shell;
+        _module.args.terminal = terminal;
+        _module.args.browser = browser;
       }
       (import "${home-manager}/nixos")
-      ./hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
-      ./modules/themes/graphite
-      ./modules/desktops/gnome
-      ./modules/dms/lightdm
-      ./home-manager/desktops/gnome
+      /etc/nixos/hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
+      #./hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
+      ./modules/desktops/${desktop}
+      ./modules/dms/${dmanager}
+      ./modules/themes/${theme}
+      ./home-manager/desktops/${desktop}
+      ./home-manager/terminals/${terminal}
+      ./home-manager/browsers/${browser}
+      ./home-manager/shells/${shell}
       ./.
     ];
 }
