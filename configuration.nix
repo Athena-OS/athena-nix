@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 let
   username = "athena";
+  hashed = "athena";
   hostname = "athenaos";
   theme = "graphite";
   desktop = "gnome";
@@ -21,6 +22,7 @@ in
     [ # Include the results of the hardware scan.
       {
         _module.args.username = username;
+        _module.args.hashed = hashed;
         _module.args.hostname = hostname;
         _module.args.theme.module-name = theme;
         _module.args.desktop = desktop;
@@ -41,6 +43,6 @@ in
       ./home-manager/shells/${shell}
       ./.
 
-      ./modules/roles/${role}
+      #./modules/roles/${role}
     ];
 }
