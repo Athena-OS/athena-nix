@@ -555,6 +555,23 @@ To prevent this, you can try to install packages at system-level, without home-m
 ```
 if you want to give priority to `ligolo-ng` package.
 
+#### Dependency Binaries
+
+One of the main characteristics of Nix is the dependency isolation. It means that, when a dependency is installed by the installation of a package, any binary of the dependency won't be linked to `/run/current-system/sw/bin` so it is not in `PATH`. In case a program is needed to use a binary of a dependency, you need to wrap the binary. You can do by using:
+* `makeWrapper`
+* `makeBinaryWrapper`
+* `makeShellWrapper`
+* `wrapProgram`
+
+`makeWrapper` and `wrapProgram` are shell functions in the `makeShellWrapper` and `makeBinaryWrapper` hooks.
+
+So it could be preferred to use `wrapProgram` as it is a bit easier to use (it wraps in-place and doesn't require manual moving around binaries).
+
+Also it could be preferred shell wrappers whereever possible as:
+* They are usually smaller (in file size while the bash in the closure usually is there anyway)
+* They allow for appending quoted arguments
+* They are easier to debug
+
 ### Submit a package in nixpkgs repository
 
 Once you are sure that the locally built package works correctly, you are ready to submit the package to [nixpkgs repository](https://github.com/NixOS/nixpkgs).

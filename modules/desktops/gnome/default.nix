@@ -18,7 +18,7 @@
 
   gtk.iconCache.enable = true;
 
-  environment.systemPackages = with pkgs; [ gnome.eog gnome.gnome-tweaks ];
+  environment.systemPackages = with pkgs; [ gnome.eog gnome.gnome-tweaks gnome.gnome-screenshot ];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos

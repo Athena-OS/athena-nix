@@ -1,6 +1,7 @@
 { lib
 , rustPlatform
 , fetchFromGitHub
+, makeBinaryWrapper
 , pkg-config
 , openssl
 , stdenv
@@ -8,13 +9,11 @@
 , coreutils
 , noto-fonts-color-emoji
 , gnome
-, imagemagick
 , libsecret
 , bash
 , openvpn
 , nerdfonts
 }:
-
 
 rustPlatform.buildRustPackage rec {
   pname = "htb-toolkit";
@@ -23,27 +22,30 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "D3vil0p3r";
     repo = "htb-toolkit";
-    rev = "58e00e5e63f644fb6a2d7f9ccd73671019d164fa";
-    hash = "sha256-rVjR+bvxa/HSqjuN6Vmkz6/yYj+IGnRkSnSvnZsB5vw=";
+    rev = "f4830f5629c8ed171758fb484dd8f0ccf95be512";
+    hash = "sha256-QYUqdqFV9Qn+VbJTnz5hx5I0XV1nrzCoCKtRS7jBLsE=";
   };
 
   cargoHash = "sha256-o71/BbCTTfUDDAxAPmeWy86CmiGuRUTovxkb5hCOLCc=";
 
   nativeBuildInputs = [
+    makeBinaryWrapper
     pkg-config
   ];
 
   buildInputs = [
+    openssl
+  ] ++ lib.optionals stdenv.isDarwin [
+    darwin.apple_sdk.frameworks.Security
+  ];
+
+  propagateBuildInputs = [
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     coreutils
     noto-fonts-color-emoji
     gnome.gnome-keyring
-    imagemagick
     libsecret
-    openssl
     openvpn
-    #nerdfonts
-  ] ++ lib.optionals stdenv.isDarwin [
-    darwin.apple_sdk.frameworks.Security
   ];
 
   postPatch = ''
@@ -51,6 +53,12 @@ rustPlatform.buildRustPackage rec {
       --replace /usr/share/htb-toolkit/icons/ $out/share/htb-toolkit/icons/
     substituteInPlace src/utils.rs \
       --replace /usr/bin/bash ${bash}
+  '';
+
+  postInstall = ''
+    mkdir -p $out/bin
+    makeBinaryWrapper ${libsecret}/bin/secret-tool $out/bin/secret-tool
+    makeBinaryWrapper ${openvpn}/bin/openvpn $out/bin/openvpn
   '';
 
   meta = with lib; {
