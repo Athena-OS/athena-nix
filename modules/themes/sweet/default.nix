@@ -1,4 +1,9 @@
 { pkgs, nixpkgs, home-manager, username, ... }:
+let
+  gtkTheme = "Sweet-Dark-v40";
+  gtkIconTheme = "Tela-circle-black-dark";
+  gtkCursorTheme = "Bibata-Modern-Ice";
+in
 {
   environment.systemPackages = with pkgs; [
     (callPackage ../../../pkgs/athena-sweet-theme { })
@@ -12,12 +17,12 @@
     gtk = {
       enable = true;
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
-      cursorTheme.name = "Bibata-Modern-Ice";
       iconTheme.package = pkgs.tela-circle-icon-theme.override {
         colorVariants = [ "black" ];
       };
-      iconTheme.name = "Tela-circle-black-dark";
-      theme.name = "Sweet-Dark-v40";
+      iconTheme.name = gtkIconTheme;
+      theme.name = gtkTheme;
+      cursorTheme.name = gtkCursorTheme;
     };
     dconf.settings = {
         "org/gnome/desktop/background" = {

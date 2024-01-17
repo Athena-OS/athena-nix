@@ -1,4 +1,5 @@
-{ pkgs, home-manager, username, shell, ... }:
+{ pkgs, lib, home-manager, username, shell, ... }:
+with lib;
 let
   shopt = pkgs.writeShellScriptBin "shopt"
     (builtins.readFile ./shopt);
@@ -18,6 +19,9 @@ in
       home.file.".zshrc".source = ./zshrc;
       programs.zsh = {
         enable = true;
+        enableAutosuggestions = true;
+        enableCompletion = true;
+        syntaxHighlighting.enable = true;
         /*shellAliases = {
           ll = "ls -l";
           update = "sudo nixos-rebuild switch";
@@ -32,6 +36,12 @@ in
             { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
             { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
           ];
+        };
+        history = {
+          expireDuplicatesFirst = true;
+          save = 1000;
+          size = 10000;
+          path = "~/.zsh_history";
         };
         completionInit = ''
           # The following lines were added by compinstall

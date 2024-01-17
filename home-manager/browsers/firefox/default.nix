@@ -1,35 +1,11 @@
-{ config, pkgs, lib, home-manager, username, ... }:
-
+{ config, pkgs, home-manager, username, ... }:
 {
   home-manager.users.${username} = { pkgs, ...}: {
 
     programs.firefox = {
       enable = true;
       # package = pkgs.firefox.override {cfg.enableTridactylNative = true;};
-      package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-          extraPolicies = {
-              CaptivePortal = false;
-              DisableFirefoxStudies = true;
-              DisablePocket = true;
-              DisableTelemetry = true;
-              DisableFirefoxAccounts = false;
-              NoDefaultBookmarks = true;
-              OfferToSaveLogins = false;
-              OfferToSaveLoginsDefault = false;
-              PasswordManagerEnabled = false;
-              FirefoxHome = {
-                  Search = true;
-                  Pocket = false;
-                  Snippets = false;
-                  TopSites = false;
-                  Highlights = false;
-              };
-              UserMessaging = {
-                  ExtensionRecommendations = false;
-                  SkipOnboarding = true;
-              };
-          };
-      };
+      package = pkgs.firefox;
       
       profiles = {
           athena = {
@@ -66,7 +42,7 @@
               settings = {
                   "general.smoothScroll" = true;
                   # Re-bind ctrl to super (would interfere with tridactyl otherwise)
-                  "ui.key.accelKey" = 91;
+                  #"ui.key.accelKey" = 91; # Commented otherwise cannot use shortcuts using CTRL
                   # Hide the "sharing indicator", it's especially annoying
                   # with tiling WMs on wayland
                   "privacy.webrtc.legacyGlobalIndicator" = false;
@@ -138,6 +114,22 @@
           Locked = true;
           Cryptomining = true;
           Fingerprinting = true;
+        };
+        CaptivePortal = false;
+        NoDefaultBookmarks = true;
+        OfferToSaveLogins = false;
+        OfferToSaveLoginsDefault = false;
+        PasswordManagerEnabled = false;
+        FirefoxHome = {
+            Search = true;
+            Pocket = false;
+            Snippets = false;
+            TopSites = false;
+            Highlights = false;
+        };
+        UserMessaging = {
+            ExtensionRecommendations = false;
+            SkipOnboarding = true;
         };
         DisablePocket = true;
         DisableFirefoxAccounts = true;

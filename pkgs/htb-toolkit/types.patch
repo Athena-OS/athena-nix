@@ -1,0 +1,49 @@
+--- a/src/types.rs	2024-01-17 23:40:14.341769452 +0100
++++ b/src/types.rs	2024-01-17 23:43:14.159871196 +0100
+@@ -2,7 +2,6 @@
+ use crate::colors::*;
+ use crate::utils::get_interface_ip;
+ use core::time::Duration;
+-use std::fs;
+ use std::process;
+ use std::thread::sleep;
+ 
+@@ -485,37 +484,4 @@
+             ip: userip,
+         }
+     }
+-}
+-
+-pub struct HTBConfig {
+-    pub promptchange: bool,
+-}
+-
+-impl HTBConfig {
+-
+-    pub fn get_current_config(htb_config: &str) -> Self {
+-        HTBConfig {
+-            promptchange: Self::get_prompt_change(htb_config),
+-        }
+-    }
+-
+-    fn get_prompt_change(htb_config: &str) -> bool {
+-        let prompt_change = fs::read_to_string(htb_config).expect("Failed to read htconfig.");
+-
+-        let change_prompt = prompt_change.lines()
+-            .find(|line| line.starts_with("prompt_change="))
+-            .map(|line| line.split('=').nth(1).unwrap_or_default())
+-            .unwrap_or_default();
+-
+-        // Convert the change_prompt string to a bool
+-        
+-        match change_prompt {
+-            "true" => true,
+-            "false" => false,
+-            _ => {
+-                // Handle other cases if needed, e.g., return a default value
+-                false
+-            }
+-        }
+-    }
+ }
+\ No newline at end of file

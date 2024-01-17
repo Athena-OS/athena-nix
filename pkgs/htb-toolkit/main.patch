@@ -1,0 +1,41 @@
+--- a/src/main.rs	2024-01-17 23:44:21.346253718 +0100
++++ b/src/main.rs	2024-01-17 23:48:54.536921610 +0100
+@@ -15,7 +15,6 @@
+ use crate::utils::*;
+ use crate::vpn::*;
+ use std::fs;
+-use std::path::Path;
+ use std::process::Command;
+ 
+ #[tokio::main]
+@@ -44,16 +43,6 @@
+             eprintln!("Error creating folder: {}", err);
+         }
+     }
+-    
+-    // Create HTB config file if not existing
+-    let htb_config = format!("{}/.htb.conf", home);
+-
+-    let file = Path::new(&htb_config);
+-    if !file.exists() {
+-        let lines = ["# HTB configuration file.\n\n", "# Enable/Disable shell prompt change\n", "prompt_change=true\n"];
+-        fs::write(&htb_config, lines.join(""))
+-            .expect("Failed to create HTB config file");
+-    }
+ 
+     // Initialize Xorg in WSL for secret-tool popup window
+     if is_wsl() && is_display_zero() {
+@@ -104,13 +93,6 @@
+                 let _ = play_machine(&args[2]).await;
+             }
+         }
+-        "-p" => {
+-            if args.len() < 3 || (args[2] != "true" && args[2] != "false") {
+-                println!("Usage: {} -p <true|false>", args[0]);
+-            } else {
+-                prompt_setting(&args[2]);
+-            }
+-        }
+         "-r" => {
+             reset_machine().await;
+         }

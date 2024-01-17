@@ -5,9 +5,39 @@
         neofetch
         zoxide
       ];
-      xdg.configFile."fish/functions/fish_prompt.fish".source = ./fish_prompt.fish;
       programs.fish = {
         enable = true;
+        functions = {
+          fish_prompt.body = ''
+            set -l var (tty)
+            switch $var
+                case '*/dev/tty*'
+                    set_color 00ff00
+                    echo -n "[HQ:"
+                    set_color ff00d7
+                    echo -n "$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)"
+                    echo -n " | $USER"
+                    set_color 00ff00
+                    echo "]"
+                    set_color 00ff00
+                    echo -n "[>]"
+                    set_color 00ffff
+                    echo (pwd) '$' (set_color normal)
+                case '*'
+                    set_color 00ff00
+                    echo -n "┌──[HQ🚀🌐"
+                    set_color ff00d7
+                    echo -n "$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)"
+                    echo -n "🔥$USER"
+                    set_color 00ff00
+                    echo "]"
+                    set_color 00ff00
+                    echo -n "└──╼[👾]"
+                    set_color 00ffff
+                    echo (pwd) '$' (set_color normal)
+            end
+          '';
+        };
         interactiveShellInit = ''
           set fish_greeting # Disable greeting
           if status is-interactive
@@ -52,7 +82,6 @@
           set -x WEBAPI_MAZEN "$SECLISTS/Discovery/Web-Content/common-api-endpoints-mazen160.txt"
           set -x WEBCOMMON "$SECLISTS/Discovery/Web-Content/common.txt"
           set -x WEBPARAM "$SECLISTS/Discovery/Web-Content/burp-parameter-names.txt"
-
 
           set -gx TERM xterm-256color
           if status is-interactive

@@ -17,16 +17,26 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "htb-toolkit";
-  version = "unstable-2024-01-16";
+  version = "unstable-2024-01-17";
 
   src = fetchFromGitHub {
     owner = "D3vil0p3r";
     repo = "htb-toolkit";
-    rev = "f4830f5629c8ed171758fb484dd8f0ccf95be512";
+    rev = "54e11774ea8746ea540548082d3b25c22306b4fc";
     hash = "sha256-QYUqdqFV9Qn+VbJTnz5hx5I0XV1nrzCoCKtRS7jBLsE=";
   };
 
   cargoHash = "sha256-o71/BbCTTfUDDAxAPmeWy86CmiGuRUTovxkb5hCOLCc=";
+
+  patchPhase = ''
+    runHook prePatch
+    patch -p1 < ${./main.patch}
+    patch -p1 < ${./manage.patch}
+    patch -p1 < ${./play.patch}
+    patch -p1 < ${./types.patch}
+    patch -p1 < ${./utils.patch}
+    runHook postPatch
+  '';
 
   nativeBuildInputs = [
     makeBinaryWrapper

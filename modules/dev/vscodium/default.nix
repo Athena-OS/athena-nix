@@ -1,7 +1,7 @@
 { pkgs, nixpkgs, home-manager, username, ... }:
 {
   # To run VSCodium in Wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   home-manager.users.${username} = { pkgs, ...}: {
     programs.vscode = {

@@ -18,7 +18,7 @@
       };
       desktop = "gnome";
       dmanager = "lightdm";
-      shell = "zsh";
+      shell = "fish";
       terminal = "kitty";
       browser = "firefox";
       mkSystem = extraModules:
