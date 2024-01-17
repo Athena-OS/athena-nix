@@ -602,6 +602,12 @@ To get people to review your PR, you can add the link of your PR in:
 * [Nix/NixOS (unofficial) Discord server - #pr-review-request](https://discord.com/channels/568306982717751326/679366467904471040)
 * [NixOS Discourse](https://discourse.nixos.org/t/prs-ready-for-review/3032/99999) by just pasting the clean PR URL without any code tag, wrapping and similar
 
+One of the reasons useful to submit packages to Nixpkgs repository from the user point of view is about building. If we create a `package.nix` locally and we install it by `configuration.nix` or `flake` by referring the package locally, it will build locally it. In case the package is in the remote Nixpkgs repository, when it is installed by `configuration.nix`` or `flake``, the package will be built before installing?
+
+Hydra builds non-broken, free packages in Nixpkgs for supported systems. If make some override on a package, overlay it or any of its dependency, or disable substitution, or use a marked-broken package, or an unfree package, or an unsupported system, you have to rebuild it yourself, so the building will occur locally in your host because Hydra would not handle those cases.
+
+You can of course set up your own builders and binary cache for convenience, so that you only have to build the thing once and deploy to multiple machines if you are customising packages or such.
+
 #### Issues resolution
 
 In case you synced the forked repository with the original one, you must restore the git state to the commit before this sync. To do this run `git log` to identify the commit before the merge of original nixpkgs to your forked repository, and then run:
