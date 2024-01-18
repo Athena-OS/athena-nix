@@ -558,10 +558,13 @@ if you want to give priority to `ligolo-ng` package.
 #### Dependency Binaries
 
 One of the main characteristics of Nix is the dependency isolation. It means that, when a dependency is installed by the installation of a package, any binary of the dependency won't be linked to `/run/current-system/sw/bin` so it is not in `PATH`. In case a program is needed to use a binary of a dependency, you need to wrap the binary. You can do by using:
+* `lib.getExe toolname` or `${toolname}/bin/binaryname`
 * `makeWrapper`
 * `makeBinaryWrapper`
 * `makeShellWrapper`
 * `wrapProgram`
+
+`lib.getExe toolname` is one of the easiest methods. It works only if the `package.nix` file of the tool has `mainProgram` in its metadata information. `mainProgram` contains the binary name of the tool. In case it does not exist, just use `${toolname}/bin/binaryname`.
 
 `makeWrapper` and `wrapProgram` are shell functions in the `makeShellWrapper` and `makeBinaryWrapper` hooks.
 

@@ -1,7 +1,6 @@
 { lib
 , rustPlatform
 , fetchFromGitHub
-, makeBinaryWrapper
 , pkg-config
 , openssl
 , stdenv
@@ -26,7 +25,7 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-QYUqdqFV9Qn+VbJTnz5hx5I0XV1nrzCoCKtRS7jBLsE=";
   };
 
-  cargoHash = "sha256-o71/BbCTTfUDDAxAPmeWy86CmiGuRUTovxkb5hCOLCc=";
+  cargoHash = "sha256-XDE6A6EIAUbuzt8Zb/ROfDAPp0ZyN0WQ4D1gWHjRVhg=";
 
   patchPhase = ''
     runHook prePatch
@@ -39,7 +38,6 @@ rustPlatform.buildRustPackage rec {
   '';
 
   nativeBuildInputs = [
-    makeBinaryWrapper
     pkg-config
   ];
 
@@ -63,12 +61,10 @@ rustPlatform.buildRustPackage rec {
       --replace /usr/share/htb-toolkit/icons/ $out/share/htb-toolkit/icons/
     substituteInPlace src/utils.rs \
       --replace /usr/bin/bash ${bash}
-  '';
-
-  postInstall = ''
-    mkdir -p $out/bin
-    makeBinaryWrapper ${libsecret}/bin/secret-tool $out/bin/secret-tool
-    makeBinaryWrapper ${openvpn}/bin/openvpn $out/bin/openvpn
+    substituteInPlace src/appkey.rs \
+      --replace secret-tool ${lib.getExe libsecret}
+    substituteInPlace src/vpn.rs \
+      --replace "arg(\"openvpn\")" "arg(\"${openvpn}/bin/openvpn\")"
   '';
 
   meta = with lib; {
