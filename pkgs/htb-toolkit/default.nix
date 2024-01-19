@@ -12,9 +12,11 @@
 , bash
 , openvpn
 , nerdfonts
+, gzip
+, killall
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "htb-toolkit";
   version = "unstable-2024-01-17";
 
@@ -54,17 +56,23 @@ rustPlatform.buildRustPackage rec {
     gnome.gnome-keyring
     libsecret
     openvpn
+    gzip
+    killall
   ];
 
   postPatch = ''
     substituteInPlace src/manage.rs \
       --replace /usr/share/htb-toolkit/icons/ $out/share/htb-toolkit/icons/
     substituteInPlace src/utils.rs \
-      --replace /usr/bin/bash ${bash}
+      --replace /usr/bin/bash ${bash} \
+      --replace "\"base64\"" "\"${coreutils}/bin/base64\"" \
+      --replace "\"gunzip\"" "\"${gzip}/bin/gunzip\""
     substituteInPlace src/appkey.rs \
       --replace secret-tool ${lib.getExe libsecret}
     substituteInPlace src/vpn.rs \
-      --replace "arg(\"openvpn\")" "arg(\"${openvpn}/bin/openvpn\")"
+      --replace "arg(\"openvpn\")" "arg(\"${openvpn}/bin/openvpn\")" \
+      --replace "arg(\"killall\")" "arg(\"${killall}/bin/killall\")"
+    cat src/vpn.rs
   '';
 
   meta = with lib; {

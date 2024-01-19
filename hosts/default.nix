@@ -74,9 +74,7 @@ in
     lsd
     bat
     shellrocket
-    cargo
-    openssl
-    pkg-config
+    killall
   ];
 
   system.nixos = {
