@@ -9,7 +9,7 @@ let
   hostname = "athenaos";
   theme = "sweet";
   desktop = "gnome";
-  dmanager = "lightdm";
+  dmanager = "gdm";
   shell = "fish";
   terminal = "kitty";
   browser = "firefox";

@@ -6,7 +6,6 @@
 , stdenv
 , darwin
 , coreutils
-, noto-fonts-color-emoji
 , gnome
 , libsecret
 , bash
@@ -23,41 +22,31 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "D3vil0p3r";
     repo = "htb-toolkit";
+    # https://github.com/D3vil0p3r/htb-toolkit/issues/3
     rev = "54e11774ea8746ea540548082d3b25c22306b4fc";
     hash = "sha256-QYUqdqFV9Qn+VbJTnz5hx5I0XV1nrzCoCKtRS7jBLsE=";
   };
 
   cargoHash = "sha256-XDE6A6EIAUbuzt8Zb/ROfDAPp0ZyN0WQ4D1gWHjRVhg=";
 
-  patchPhase = ''
-    runHook prePatch
-    patch -p1 < ${./main.patch}
-    patch -p1 < ${./manage.patch}
-    patch -p1 < ${./play.patch}
-    patch -p1 < ${./types.patch}
-    patch -p1 < ${./utils.patch}
-    runHook postPatch
-  '';
+  # Patches only relevant for Nixpkgs
+  patches = [
+    ./main.patch
+    ./manage.patch
+    ./play.patch
+    ./types.patch
+    ./utils.patch
+  ];
 
   nativeBuildInputs = [
     pkg-config
   ];
 
   buildInputs = [
+    gnome.gnome-keyring
     openssl
   ] ++ lib.optionals stdenv.isDarwin [
     darwin.apple_sdk.frameworks.Security
-  ];
-
-  propagateBuildInputs = [
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-    coreutils
-    noto-fonts-color-emoji
-    gnome.gnome-keyring
-    libsecret
-    openvpn
-    gzip
-    killall
   ];
 
   postPatch = ''
@@ -72,7 +61,6 @@ rustPlatform.buildRustPackage {
     substituteInPlace src/vpn.rs \
       --replace "arg(\"openvpn\")" "arg(\"${openvpn}/bin/openvpn\")" \
       --replace "arg(\"killall\")" "arg(\"${killall}/bin/killall\")"
-    cat src/vpn.rs
   '';
 
   meta = with lib; {

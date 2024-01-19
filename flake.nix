@@ -17,7 +17,7 @@
         cursor-theme = "Bibata-Modern-Ice";
       };
       desktop = "gnome";
-      dmanager = "lightdm";
+      dmanager = "gdm";
       shell = "fish";
       terminal = "kitty";
       browser = "firefox";

@@ -74,7 +74,7 @@ in
     lsd
     bat
     shellrocket
-    killall
+    cargo
   ];
 
   system.nixos = {

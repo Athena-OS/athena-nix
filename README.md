@@ -611,7 +611,9 @@ Hydra builds non-broken, free packages in Nixpkgs for supported systems. If make
 
 You can of course set up your own builders and binary cache for convenience, so that you only have to build the thing once and deploy to multiple machines if you are customising packages or such.
 
-#### Issues resolution
+#### Commit issues resolution
+
+**Editing commit messages**
 
 In case you synced the forked repository with the original one, you must restore the git state to the commit before this sync. To do this run `git log` to identify the commit before the merge of original nixpkgs to your forked repository, and then run:
 ```
@@ -637,6 +639,27 @@ git clone -b <branch-name> https://github.com/<your-GitHub-user>/nixpkgs --depth
 git rebase -i HEAD~<N>
 ```
 at this point a text editor will be opened showing several commits. Identify the commits to merge, leave unchanged the main commit to keep and change `pick` to `squash` on all the remaining commits that must merge with the unchanged one. Finally:
+```
+git push -f origin <branch-name>
+```
+
+**Editing code on old commits**
+
+In case you have more commits in a PR that need to deploy (for example different VSCode theme extensions), and you need to edit the code of some or all of them, it is not too late. You can come back to each one of these submitted commits by:
+```
+git rebase -i HEAD~<N> (where "N" is the number of commits you need to edit the code)
+```
+Change **pick** to **edit** for each one of the N commits. Save it, then you will be reverted to the first of the N commits.
+Open and edit `default.nix`` and edit the needed code to the first commit. After the editing, save the file and:
+```
+git commit --all --amend --no-edit
+git rebase --continue
+```
+Now you will go to the second commit and repeat the steps above. The last `git rebase --continue` should show something like:
+```
+Successfully rebased and updated refs/heads/<branch-name>.
+```
+At the end, once you edited the code of all commits, run:
 ```
 git push -f origin <branch-name>
 ```

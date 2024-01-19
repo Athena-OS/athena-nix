@@ -88,6 +88,26 @@ Dependencies can be used by the following expressions:
 
 All dependencies used in **buildInputs** allow to link header and lib files correctly during the compilation of a tool.
 
+Note that dependencies containing binaries won't install their binaries due to the Nix isolation nature. Maybe, for all the dependencies that the package needs to use their binaries, put these dependencies in `propagatedBuildInputs`.
+
+Another way to install dependencies is by [string context](https://shealevy.com/blog/2018/08/05/understanding-nixs-string-context/) that means to use `${}` to expand the value of a package. An example of this usage is the following:
+```nix
+  postPatch = ''
+    substituteInPlace src/manage.rs \
+      --replace /usr/share/htb-toolkit/icons/ $out/share/htb-toolkit/icons/
+    substituteInPlace src/utils.rs \
+      --replace /usr/bin/bash ${bash} \
+      --replace "\"base64\"" "\"${coreutils}/bin/base64\"" \
+      --replace "\"gunzip\"" "\"${gzip}/bin/gunzip\""
+    substituteInPlace src/appkey.rs \
+      --replace secret-tool ${lib.getExe libsecret}
+    substituteInPlace src/vpn.rs \
+      --replace "arg(\"openvpn\")" "arg(\"${openvpn}/bin/openvpn\")" \
+      --replace "arg(\"killall\")" "arg(\"${killall}/bin/killall\")"
+  '';
+```
+This code will automatically install the needed dependencies specified inside `${}` like `${coreutils}`, `${gzip}`, `${lib.getExe libsecret}`, `${openvpn}` and `${killall}` and you don't need to specify them inside `buildInputs`. Note that, also in this case, the binaries of the dependencies are not installed.
+
 ## mkDerivation
 
 This function automatically compiles source files if a **Makefile** exists. It means that we don't need to specify `make` commands in `buildPhase` or `installPhase`. Indeed, often it is not necessary to write any build instructions because the stdenv build system is based on autoconf, which automatically detected the structure of the project directory. We need only to eventually set make flags if needed. Use `makeFlags` to specify flags used on each phase or `buildFlags` to specify flags to be used only during the `buildPhase`.
@@ -368,3 +388,23 @@ and
   ...
 ```
 
+### Patch files
+
+If you need to perform massive change on the code of upstream files, you can create **patch files** that will replace the diff content with respect to the original files. This is useful if a tool works on usual Linux systems but not in NixOS and some changes should be applied to make it working on NixOS.
+
+To create a patch file, you need to create a folder containing the same directory path of the upstream project. For example, if you need to patch `utils.rs` and it is stored in the `src/` folder, you should create:
+```sh
+mkdir -p a/src
+mkdir -p b/src
+```
+in `a/src/` you will store the upstream original `utils.rs` while in `b/src/` you will store the edited `utils.rs`. Then, run:
+```sh
+diff -Naur a/src/utils.rs b/src/utils.rs > utils.patch
+```
+`utils.patch` is the patch file we will use inside our Nix derivative. So, inside the `package.nix` we insert:
+```nix
+  # Patches only relevant for Nixpkgs
+  patches = [
+    ./utils.patch
+  ];
+```
