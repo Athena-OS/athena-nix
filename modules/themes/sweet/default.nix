@@ -6,7 +6,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    (callPackage ../../../pkgs/athena-sweet-theme { })
+    (callPackage ../../../pkgs/athena-sweet-theme/package.nix { })
   ];
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = with pkgs; [

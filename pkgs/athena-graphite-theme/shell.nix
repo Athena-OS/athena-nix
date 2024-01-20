@@ -1,6 +1,6 @@
 with import <nixpkgs> {};
 let 
-  athena-graphite-theme = pkgs.callPackage ./default.nix { };
+  athena-graphite-theme = pkgs.callPackage ./package.nix { };
 in
   stdenv.mkDerivation rec {
     name = "env";

@@ -416,6 +416,7 @@ and, inside the `package.nix`:
 ```nix
   # Patches only relevant for Nixpkgs
   patches = [
-    ./disable_shell_prompt_change.patch
+    ./disable-shell-prompt-change.patch
   ];
 ```
+Note that, according to the [naming convention](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#file-naming-and-organisation), filenames should contain dashes if needed, instead of underscores.

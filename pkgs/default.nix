@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    (callPackage ./athena-config { })
-    (callPackage ./cyber-toolnix { })
-    (callPackage ./htb-toolkit { })
+    (callPackage ./athena-config/package.nix { })
+    (callPackage ./cyber-toolnix/package.nix { })
+    (callPackage ./htb-toolkit/package.nix { })
   ];
 }
