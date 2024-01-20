@@ -408,3 +408,14 @@ diff -Naur a/src/utils.rs b/src/utils.rs > utils.patch
     ./utils.patch
   ];
 ```
+In case you have multiple patch files that are used for one single purpose, you must merge them in one single patch file by, for example:
+```sh
+cat main.patch manage.patch types.patch utils.patch > disable_shell_prompt_change.patch
+```
+and, inside the `package.nix`:
+```nix
+  # Patches only relevant for Nixpkgs
+  patches = [
+    ./disable_shell_prompt_change.patch
+  ];
+```

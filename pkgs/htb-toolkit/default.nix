@@ -29,13 +29,9 @@ rustPlatform.buildRustPackage {
 
   cargoHash = "sha256-XDE6A6EIAUbuzt8Zb/ROfDAPp0ZyN0WQ4D1gWHjRVhg=";
 
-  # Patches only relevant for Nixpkgs
+  # Patches to disable prompt change of the shell when a target machine is run. Needed due to Nix declarative nature. Patches only relevant for Nixpkgs
   patches = [
-    ./main.patch
-    ./manage.patch
-    ./play.patch
-    ./types.patch
-    ./utils.patch
+    ./disable_shell_prompt_change.patch
   ];
 
   nativeBuildInputs = [
