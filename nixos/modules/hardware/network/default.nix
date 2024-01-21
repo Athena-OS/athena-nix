@@ -7,5 +7,4 @@
   users.users.${username} = {
     extraGroups = [ "networkmanager" ];
   };
- 
 }

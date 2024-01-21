@@ -1,4 +1,4 @@
-{ pkgs, lib, home-manager, username, shell, ... }:
+{ pkgs, lib, home-manager, username, ... }:
 with lib;
 let
   shopt = pkgs.writeShellScriptBin "shopt"

@@ -51,6 +51,7 @@ let
     figlet
     file
     fortune
+    glxinfo
     gparted
     hw-probe
     imagemagick
@@ -101,7 +102,7 @@ in
   environment.sessionVariables = {
     EDITOR = "nano";
     BROWSER = "${browser}";
-    SHELL = "${shell}";
+    SHELL = "/run/current-system/sw/bin/${shell}";
     TERMINAL = "${terminal}";
     TERM = "xterm-256color";
   };

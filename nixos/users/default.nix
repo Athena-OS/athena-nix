@@ -15,7 +15,7 @@
     };
     extraUsers = {
        root = {
-         hashedPassword = "${hashedRoot}";
+         initialHashedPassword = "${hashedRoot}";
        };
      };
   };
