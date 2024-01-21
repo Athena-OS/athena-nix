@@ -33,11 +33,11 @@ with lib;
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "video" ];
       # Allow the graphical user to login without password
-      initialHashedPassword = "";
+      initialHashedPassword = lib.mkForce "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
     };
 
     # Allow the user to log in as root without a password.
-    users.users.root.initialHashedPassword = "";
+    users.users.root.initialHashedPassword = lib.mkForce "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
 
     # Allow passwordless sudo from athena user
     security.sudo = {

@@ -38,7 +38,7 @@
       enable = true;
       browseDomains = [];
       wideArea = false;
-      nssmdns = true;
+      nssmdns4 = true;
     };
 
     unbound = {
@@ -55,7 +55,7 @@
   };
 
   networking = {
-    hostName = "AthenaOS";
+    hostName = "athenaos";
     dhcpcd.enable = true;
     networkmanager.dhcp = "dhcpcd";
     firewall = {

@@ -1,5 +1,11 @@
 { config, pkgs, home-manager, username, ... }:
 {
+
+  programs.firefox.preferences = {
+    "browser.bookmarks.file" = ../bookmarks.html;
+    "browser.places.importBookmarksHTML" = true;
+  };
+
   home-manager.users.${username} = { pkgs, ...}: {
 
     programs.firefox = {

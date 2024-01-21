@@ -6,16 +6,14 @@
 {
   imports = [ ./installation-cd-graphical-base.nix ];
 
-  isoImage.edition = "xfce";
+  isoImage.edition = "gnome";
 
   services.xserver = {
     desktopManager = {
-      xfce.enable = true;
-      xfce.enableScreensaver = false;
-      xfce.enableXfwm = true;
+      gnome.enable = true;
     };
     displayManager = {
-      lightdm.enable = true;
+      gdm.enable = true;
       autoLogin = {
         enable = true;
         user = "athena";

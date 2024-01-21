@@ -29,7 +29,7 @@
           username = "athena";
           hostname = "athenaos";
           hashed = "athena";
-          hashedRoot = "$1$cQqUkWQ3$uf94HO9W6jtDeTGa61l8K0";
+          hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
           inherit (inputs) home-manager;
         }; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
         modules = let
@@ -37,7 +37,6 @@
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
         in
           [
-            #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
             home-manager.nixosModules.home-manager
             ./nixos/. # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
@@ -66,7 +65,7 @@
         modulesPath = "./nixos/installation";
       in {
         "live-image" = mkSystem [
-          "${modulesPath}/iso.nix"
+          ./nixos/installation/iso.nix
         ];
         "gnome" = mkSystem [
           #./modules/roles/osint
