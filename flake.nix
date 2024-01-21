@@ -37,16 +37,6 @@
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
         in
           [
-            home-manager.nixosModules.home-manager
-            ./nixos/. # It refers to the default.nix at nixos/ directory that imports in chain all the subfolder contents containing default.nix
-            ./nixos/modules/boot/${bootloader}
-            ./nixos/modules/desktops/${desktop}
-            ./nixos/modules/dms/${dmanager}
-            ./nixos/modules/themes/${theme.module-name}
-            ./nixos/home-manager/desktops/${desktop}
-            ./nixos/home-manager/terminals/${terminal}
-            ./nixos/home-manager/browsers/${browser}
-            ./nixos/home-manager/shells/${shell}
             {
               _module.args.theme = theme;
               _module.args.dmanager = dmanager;
@@ -69,6 +59,16 @@
         ];
         "runtime" = mkSystem [
           "/etc/nixos/hardware-configuration.nix"
+          home-manager.nixosModules.home-manager
+          ./nixos/. # It refers to the default.nix at nixos/ directory that imports in chain all the subfolder contents containing default.nix
+          ./nixos/modules/boot/${bootloader}
+          ./nixos/modules/desktops/${desktop}
+          ./nixos/modules/dms/${dmanager}
+          ./nixos/modules/themes/${theme.module-name}
+          ./nixos/home-manager/desktops/${desktop}
+          ./nixos/home-manager/terminals/${terminal}
+          ./nixos/home-manager/browsers/${browser}
+          ./nixos/home-manager/shells/${shell}
         ];
         "student" = mkSystem [
           "/etc/nixos/hardware-configuration.nix"

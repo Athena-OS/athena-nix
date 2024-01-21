@@ -5,6 +5,7 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages; # LTS Kernel
     kernelModules = [ "rtl8821cu" ];
     loader.grub.useOSProber = true;
   };
@@ -101,28 +102,5 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     (callPackage ../pkgs/aegis-nix/package.nix { })
-  #   home-manager
-  #   dialog
-  #   dosfstools
-  #   edk2-uefi-shell
-  #   inetutils
-  #   mkinitcpio-nfs-utils
-  #   nettools
-  #   networkmanagerapplet
-  #   ##nfs-utils ./tasks/filesystems/nfs.nix
-  #   ##ntp ./services/networking/ntp/ntpd.nix
-  #   pavucontrol
-  #   pv
-  #   ##squashfs-tools-ng ./tasks/filesystems/squashfs.nix
-  #   wirelesstools
-  #   bat
-  #   espeakup
-  #   gparted
-  #   lsd
-  #   orca
-  #   wget
-  #   which
-  #   xclip
-  #   zoxide
   ];
 }
