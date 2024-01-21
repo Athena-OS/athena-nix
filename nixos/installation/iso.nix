@@ -101,6 +101,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     (callPackage ../pkgs/aegis-nix/package.nix { })
+    (callPackage ../pkgs/athena-config/package.nix { })
   ];
 
   home-manager.users.${username} = { pkgs, ... }: {
