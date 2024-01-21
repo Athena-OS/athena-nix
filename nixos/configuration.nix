@@ -52,7 +52,6 @@ in
       ./home-manager/shells/${shell}
       ./.
 
-      ./modules/roles/student
     ];
 
     virtualisation.vmware.host.enable = true;
@@ -61,9 +60,4 @@ in
       mks.gl.allowUnsupportedDrivers = "TRUE"
       mks.vk.allowUnsupportedDevices = "TRUE"
     '';
-
-    environment.systemPackages = with pkgs; [
-      vmfs-tools
-      open-vm-tools-headless
-    ];
 }

@@ -497,13 +497,13 @@ Check and enter the other information.
 
 Then, let's build the produced `package.nix` file by:
 ```
-sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
+nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
 If you get some error, fix them. You can use ChatGPT as helper.
 
 Once you built correctly it, you can test it by:
 ```
-sudo nix-shell -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
+nix-shell -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
 
 Note that if you are creating a Python module (i.e., PyPi), you must use:

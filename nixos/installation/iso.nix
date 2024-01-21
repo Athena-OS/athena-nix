@@ -5,7 +5,6 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
     kernelModules = [ "rtl8821cu" ];
     loader.grub.useOSProber = true;
   };
@@ -98,10 +97,10 @@
     noto-fonts-cjk
     noto-fonts-emoji
   ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    (callPackage ../pkgs/aegis-nix/package.nix { })
   #   home-manager
   #   dialog
   #   dosfstools

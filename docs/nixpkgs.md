@@ -166,6 +166,24 @@ When using **mkDerivation** in a `.nix` package file, and its variables need to 
 ```
 In this manner, all the declared variables like `pname` or `version` can be accessed by `finalAttrs.<variable-name>`.
 
+## Perl Modules
+
+In case you need to upload a Perl module in Nixpkgs repository, you must not create a `default.nix` in `pkgs/development/perl-modules` (unless the module is not straight forward and needs some core dependency). In most cases, you need only to add in `pkgs/top-level/perl-packages.nix` something like this structure:
+```nix
+  ParseWin32Registry = buildPerlPackage {
+    pname = "ParseWin32Registry";
+    version = "1.1";
+    src = fetchurl {
+      url = "mirror://cpan/authors/id/J/JM/JMACFARLA/Parse-Win32Registry-1.1.tar.gz";
+      hash = "sha256-wWOyAr5q17WPSEZJT/crjJqXloPKmU5DgOmsZWTcBbo=";
+    };
+    meta = with lib; {
+      description = "Module for parsing Windows Registry files";
+      license = with licenses; [ artistic1 gpl1Only ];
+    };
+  };
+```
+
 ## Meta information
 
 **meta** allows to specify several information about the package. The needed fields to set are mainly:

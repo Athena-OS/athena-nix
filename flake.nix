@@ -33,13 +33,12 @@
           inherit (inputs) home-manager;
         }; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
         modules = let
-          modulesPath = "./nixos/installation";
+          #modulesPath = "./nixos/installation";
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
         in
           [
-            "/etc/nixos/hardware-configuration.nix"
             home-manager.nixosModules.home-manager
-            ./nixos/. # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
+            ./nixos/. # It refers to the default.nix at nixos/ directory that imports in chain all the subfolder contents containing default.nix
             ./nixos/modules/boot/${bootloader}
             ./nixos/modules/desktops/${desktop}
             ./nixos/modules/dms/${dmanager}
@@ -64,24 +63,23 @@
       nixosConfigurations = let
         modulesPath = "./nixos/installation";
       in {
+        # nix build .#nixosConfigurations.live-image.config.system.build.isoImage
         "live-image" = mkSystem [
           ./nixos/installation/iso.nix
         ];
-        "gnome" = mkSystem [
-          #./modules/roles/osint
+        "runtime" = mkSystem [
+          "/etc/nixos/hardware-configuration.nix"
         ];
-        "xfce" = mkSystem [
-          #./modules/roles/osint
-        ];
-        "network" = mkSystem [
-          ./modules/roles/network
+        "student" = mkSystem [
+          "/etc/nixos/hardware-configuration.nix"
+          ./nixos/modules/roles/student
         ];
       };
   
       packages."x86_64-linux" =
         (builtins.mapAttrs (n: v: v.config.system.build.isoImage) self.nixosConfigurations)
         // {
-          default = self.packages."x86_64-linux"."xfce";
+          default = self.packages."x86_64-linux"."live-image";
         };
     };
 }
