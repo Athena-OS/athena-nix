@@ -58,6 +58,7 @@
           ./nixos/installation/iso.nix
           ./nixos/home-manager/desktops/xfce
           ./nixos/modules/themes/graphite
+          home-manager.nixosModules.home-manager
         ];
         "runtime" = mkSystem [
           "/etc/nixos/hardware-configuration.nix"
