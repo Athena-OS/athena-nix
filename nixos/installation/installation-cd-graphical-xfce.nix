@@ -1,19 +1,19 @@
 # This module defines a NixOS installation CD that contains X11 and
-# Plasma 5.
+# XFCE.
 
 { pkgs, ... }:
 
 {
   imports = [ ./installation-cd-graphical-base.nix ];
 
-  isoImage.edition = "gnome";
+  isoImage.edition = "xfce";
 
   services.xserver = {
     desktopManager = {
-      gnome.enable = true;
+      xfce.enable = true;
     };
     displayManager = {
-      gdm.enable = true;
+      lightdm.enable = true;
       autoLogin = {
         enable = true;
         user = "athena";

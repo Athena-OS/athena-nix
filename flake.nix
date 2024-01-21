@@ -11,8 +11,8 @@
   outputs = {self, nixpkgs, home-manager}@inputs:
     let
       theme = {
-        module-name = "sweet";
-        gtk-theme = "Sweet-Dark-v40";
+        module-name = "graphite";
+        gtk-theme = "Graphite-Dark";
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
       };
@@ -56,6 +56,8 @@
         # nix build .#nixosConfigurations.live-image.config.system.build.isoImage
         "live-image" = mkSystem [
           ./nixos/installation/iso.nix
+          ./nixos/home-manager/desktops/xfce
+          ./nixos/modules/themes/graphite
         ];
         "runtime" = mkSystem [
           "/etc/nixos/hardware-configuration.nix"

@@ -90,14 +90,13 @@
   programs = {
     git.enable = true;
     nano.enable = true;
-    xfconf.enable = true;
   };
 
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
     noto-fonts-emoji
   ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
