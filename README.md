@@ -595,7 +595,7 @@ Remember that when you create a new PR, it will create a forked repository in yo
 
 Check always if there is an open issue in nixpkgs repository, link it in your PR message. Remember also to check the boxes shown in the first message of the PR.
 
-If you want that your package should be backported, use **labels** in your PR.
+If you want that your package should be backported, use **labels** in your PR. After your PR is merged, automatically a backport PR is opened. The backport PRs still needs a committer that merges it even if it does not require approvals by reviewers. But the intent of backport reviews is not so much about code quality (which should be fine since it was already merged into master), but more so about whether or not it is [acceptable to backport](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#changes-acceptable-for-releases). Usually, for a new package,  it should fit the criteria without problems.
 
 Not sure if it occurs already in **Draft**, but several checks should start. Be sure noone of the fails. Usually the **EditorConfig** check could fail, just enter in its details and fix your `.nix` file.
 

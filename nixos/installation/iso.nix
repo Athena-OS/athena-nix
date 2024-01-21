@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, username, ... }: {
 
   imports = [
     ./installation-cd-graphical-xfce.nix
@@ -102,4 +102,10 @@
   environment.systemPackages = with pkgs; [
     (callPackage ../pkgs/aegis-nix/package.nix { })
   ];
+
+  home-manager.users.${username} = { pkgs, ... }: {
+    /* The home.stateVersion option does not have a default and must be set */
+    home.stateVersion = "23.11";
+    nixpkgs.config.allowUnfree = true;
+  };
 }

@@ -13,8 +13,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "aegis-nix";
-    rev = "27eb346fdc42f4cbb59847b6d2fc29693a6cd3d5";
-    hash = "sha256-77j9p9zEy18akbzBt7P6Q417Zm0Rc8zuU8759YwvCU0=";
+    rev = "d53541c7113c0545e6bfaab7e9cef53f6e589bdb";
+    hash = "sha256-rPEMLgxxbsNknMkH+l/OjJxAu5cnOSR0zfFQgd4y/oc=";
   };
 
   cargoHash = "sha256-O5dLVFuS3NQL/pC+nXdlRHY8ChBV1A//ImkP4/bCG8w=";
@@ -23,9 +23,10 @@ rustPlatform.buildRustPackage {
     darwin.apple_sdk.frameworks.Security
   ];
 
-  propagatedBuildInputs = [
-    openssl
-  ];
+  postPatch = ''
+    substituteInPlace src/functions/users.rs \
+      --replace "\"openssl\"" "\"${openssl}/bin/openssl\""
+  '';
 
   meta = with lib; {
     description = "Aegis - secure, rust-based installer back-end for Athena OS";
