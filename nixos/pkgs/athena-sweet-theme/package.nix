@@ -24,10 +24,9 @@ stdenv.mkDerivation (finalAttrs: {
 
   meta = with lib; {
     description = "Sweet Dark theme resources";
-    mainProgram = "athena-sweet-theme";
     homepage = "https://github.com/Athena-OS/athena-sweet-theme";
     maintainers = with maintainers; [ d3vil0p3r ];
     platforms = platforms.unix;
-    license = licenses.gpl3;
+    license = licenses.gpl3Plus;
   };
 })

@@ -1,8 +1,8 @@
-{ pkgs, nixpkgs, home-manager, username, ... }:
+{ pkgs, nixpkgs, home-manager, username, theme, ... }:
 let
-  gtkTheme = "Graphite-Dark";
-  gtkIconTheme = "Tela-circle-black-dark";
-  gtkCursorTheme = "Bibata-Modern-Ice";
+  gtkTheme = "${theme.gtk-theme}";
+  gtkIconTheme = "${theme.icon-theme}";
+  gtkCursorTheme = "${theme.cursor-theme}";
 in
 {
   environment.systemPackages = with pkgs; [

@@ -1,8 +1,8 @@
-{ pkgs, nixpkgs, home-manager, username, ... }:
+{ pkgs, nixpkgs, home-manager, username, theme, ... }:
 let
-  gtkTheme = "Sweet-Dark-v40";
-  gtkIconTheme = "Tela-circle-black-dark";
-  gtkCursorTheme = "Bibata-Modern-Ice";
+  gtkTheme = "${theme.gtk-theme}";
+  gtkIconTheme = "${theme.icon-theme}";
+  gtkCursorTheme = "${theme.cursor-theme}";
 in
 {
   environment.systemPackages = with pkgs; [
@@ -11,7 +11,6 @@ in
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = with pkgs; [
       bibata-cursors
-      #sweet
     ];
     xdg.configFile."gtk-4.0/gtk.css".source = ./gtk.css;
     gtk = {

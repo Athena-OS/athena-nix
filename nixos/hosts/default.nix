@@ -40,10 +40,51 @@ let
       NO_REPETITION=1 $TERMINAL_EXEC ${lib.getExe pkgs.bash} -c "$@"
     fi
   '';
+  
+  utilities = with pkgs; [
+    asciinema
+    bat
+    bfetch
+    bless
+    cmatrix
+    cowsay
+    figlet
+    file
+    fortune
+    gparted
+    hw-probe
+    imagemagick
+    lolcat
+    lsd
+    ncdu
+    netcat-openbsd
+    nyancat
+    orca
+    pfetch
+    sl
+    timeline
+    toilet
+    tree
+    unzip
+    vnstat
+    xclip
+    xcp
+    zoxide
+  ];
+
+  devel = with pkgs; [ 
+    cargo
+    gcc
+    git
+    jq
+    killall
+    python3
+  ];
 in
 {
   imports = [
     ./locale
+    ./armcord
   ];
 
   #It is needed to enable the used shell also at system level because NixOS cannot see home-manager modules. Note: bash does not need to be enabled
@@ -65,16 +106,8 @@ in
     TERM = "xterm-256color";
   };
 
-  environment.systemPackages = with pkgs; [
-    netcat-openbsd
-    unzip
-    tree
-    git
-    file
-    lsd
-    bat
+  environment.systemPackages = devel ++ utilities ++ [
     shellrocket
-    cargo
   ];
 
   system.nixos = {

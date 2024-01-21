@@ -30,10 +30,9 @@ stdenv.mkDerivation (finalAttrs: {
 
   meta = with lib; {
     description = "Athena OS environment files";
-    mainProgram = "athena-config";
     homepage = "https://github.com/Athena-OS/athena-config";
     maintainers = with maintainers; [ d3vil0p3r ];
     platforms = platforms.unix;
-    license = licenses.gpl3;
+    license = licenses.gpl3Plus;
   };
 })

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, theme ... }:
+{ config, lib, pkgs, theme, ... }:
 with lib;
 let
   cfg = config.athena.desktops.xfce;

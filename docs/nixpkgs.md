@@ -420,3 +420,36 @@ and, inside the `package.nix`:
   ];
 ```
 Note that, according to the [naming convention](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#file-naming-and-organisation), filenames should contain dashes if needed, instead of underscores.
+
+### Testing Python programs
+
+Testing Python applications directly in the system is discouraged and the application could not find Python libraries you want to import. This testing should be done in a development environment instead of directly in you system. According to [this guide](https://ayats.org/blog/nix-workflow/#python), you can create your Python development environment by creating a `default.nix` file similar to:
+```nix
+with import <nixpkgs> {};
+
+pkgs.mkShell {
+  packages = [
+    (pkgs.python3.withPackages (python-pkgs: [
+      python-pkgs.pygobject3
+    ]))
+  ];
+
+  nativeBuildInputs = [
+    gobject-introspection
+    wrapGAppsHook
+  ];
+
+  buildInputs = [
+    gtk3
+    libwnck
+  ];
+  
+  # Workaround: make vscode's python extension read the .venv
+  shellHook = ''
+    export PYTHONPATH="$PYTHONPATH:${libwnck}"
+    venv="$(cd $(dirname $(which python)); cd ..; pwd)"
+    ln -Tsf "$venv" .venv
+  '';
+}
+```
+and then, run `nix-shell`. By this method, the application is able to find the imported libraries and it runs in an isolated environment.

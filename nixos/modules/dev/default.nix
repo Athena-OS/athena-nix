@@ -1,6 +1,5 @@
 {
   imports = [
-    ./armcord
     ./neovim
     ./starship
     ./tmux

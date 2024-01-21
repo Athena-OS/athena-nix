@@ -21,6 +21,7 @@
       shell = "fish";
       terminal = "kitty";
       browser = "firefox";
+      bootloader = "systemd";
       mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -28,24 +29,26 @@
           username = "athena";
           hostname = "athenaos";
           hashed = "athena";
+          hashedRoot = "$1$cQqUkWQ3$uf94HO9W6jtDeTGa61l8K0";
           inherit (inputs) home-manager;
         }; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
         modules = let
-          modulesPath = "./nixos/modules";
+          modulesPath = "./nixos/installation";
           #modulesPathNixPkgs = "${nixpkgs}/nixos/modules"; # Accessing remote NixOS/nixpkgs modules
         in
           [
             #"${modulesPath}/iso.nix"
             "/etc/nixos/hardware-configuration.nix"
             home-manager.nixosModules.home-manager
-            ./. # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
-            ./modules/desktops/${desktop}
-            ./modules/dms/${dmanager}
-            ./modules/themes/${theme.module-name}
-            ./home-manager/desktops/${desktop}
-            ./home-manager/terminals/${terminal}
-            ./home-manager/browsers/${browser}
-            ./home-manager/shells/${shell}
+            ./nixos/. # It refers to the default.nix at root that imports in chain all the subfolder contents containing default.nix
+            ./nixos/modules/boot/${bootloader}
+            ./nixos/modules/desktops/${desktop}
+            ./nixos/modules/dms/${dmanager}
+            ./nixos/modules/themes/${theme.module-name}
+            ./nixos/home-manager/desktops/${desktop}
+            ./nixos/home-manager/terminals/${terminal}
+            ./nixos/home-manager/browsers/${browser}
+            ./nixos/home-manager/shells/${shell}
             {
               _module.args.theme = theme;
               _module.args.dmanager = dmanager;
@@ -53,13 +56,14 @@
               _module.args.shell = shell;
               _module.args.terminal = terminal;
               _module.args.browser = browser;
+              _module.args.bootloader = bootloader;
             }
           ]
           ++ extraModules;
       };
     in {
       nixosConfigurations = let
-        modulesPath = "./nixos/modules";
+        modulesPath = "./nixos/installation";
       in {
         "live-image" = mkSystem [
           "${modulesPath}/iso.nix"
