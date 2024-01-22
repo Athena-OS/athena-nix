@@ -14,10 +14,10 @@ rustPlatform.buildRustPackage {
     owner = "Athena-OS";
     repo = "aegis-nix";
     rev = "74bc659fdcdb23e25be2e929703422543b663aa2";
-    hash = "sha256-cm8/tfcjU1is6dQVoZHRyFHKSVWreRDmohb8SI1q4Tc=";
+    hash = "sha256-Y6LXtmTl6V5w6zS9G3hGLLj6Oz8o94DvTkSIsxnbi5g=";
   };
 
-  cargoHash = "sha256-O5dLVFuS3NQL/pC+nXdlRHY8ChaV1A//ImkP4/bCG8w=";
+  cargoHash = "sha256-cm8/tfcjU1is6dQVoZHRyFHKSVWreRDmohb8SI1q4Tc=";
 
   buildInputs = lib.optionals stdenv.isDarwin [
     darwin.apple_sdk.frameworks.Security
