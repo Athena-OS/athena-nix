@@ -41,9 +41,9 @@ let
     fi
   '';
   
-  #utilities = with pkgs; [
+  utilities = with pkgs; [
   #  asciinema
-  #  bat
+    bat
   #  bfetch
   #  bless
   #  cmatrix
@@ -51,12 +51,12 @@ let
   #  figlet
   #  file
   #  fortune
-  #  glxinfo
+    glxinfo
   #  gparted
   #  hw-probe
   #  imagemagick
   #  lolcat
-  #  lsd
+    lsd
   #  ncdu
   #  netcat-openbsd
   #  nyancat
@@ -66,12 +66,12 @@ let
   #  timeline
   #  toilet
   #  tree
-  #  unzip
+    unzip
   #  vnstat
   #  xclip
   #  xcp
   #  zoxide
-  #];
+  ];
 
   #devel = with pkgs; [ 
   #  cargo
@@ -85,7 +85,7 @@ in
 {
   imports = [
     ./locale
-    ./armcord
+  #  ./armcord
   ];
 
   #It is needed to enable the used shell also at system level because NixOS cannot see home-manager modules. Note: bash does not need to be enabled
@@ -111,7 +111,7 @@ in
   #  shellrocket
   #];
 
-  environment.systemPackages = [
+  environment.systemPackages = utilities ++ [
     shellrocket
   ];
 

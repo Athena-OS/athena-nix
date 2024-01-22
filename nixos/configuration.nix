@@ -46,10 +46,10 @@ in
       ./modules/desktops/${desktop}
       ./modules/dms/${dmanager}
       ./modules/themes/${theme.module-name}
-      ./home-manager/desktops/${desktop}
-      ./home-manager/terminals/${terminal}
-      ./home-manager/browsers/${browser}
-      ./home-manager/shells/${shell}
+      #./home-manager/desktops/${desktop}
+      #./home-manager/terminals/${terminal}
+      #./home-manager/browsers/${browser}
+      #./home-manager/shells/${shell}
       ./.
 
     ];
