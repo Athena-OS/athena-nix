@@ -1,6 +1,13 @@
 { pkgs, ... }:
 {
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver = {
+    desktopManager = {
+      xfce = {
+        enable = true;
+        enableScreensaver = false;
+      };
+    };
+  };
   programs.xfconf.enable = true;
   environment.systemPackages = with pkgs; [
     xfce.xfce4-cpugraph-plugin

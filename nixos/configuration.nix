@@ -9,13 +9,13 @@ let
   hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hostname = "athenaos";
   theme = {
-    module-name = "sweet";
-    gtk-theme = "Sweet-Dark-v40";
+    module-name = "graphite";
+    gtk-theme = "Graphite-Dark";
     icon-theme = "Tela-circle-black-dark";
     cursor-theme = "Bibata-Modern-Ice";
-    background = "neon-circle.jpg";
+    background = "nix-behind.png";
   };
-  desktop = "xfce";
+  desktop = "gnome";
   dmanager = "gdm";
   shell = "fish";
   terminal = "kitty";
@@ -58,6 +58,6 @@ in
     virtualisation.vmware.host.extraConfig = ''
       # Allow unsupported device's OpenGL and Vulkan acceleration for guest vGPU
       mks.gl.allowUnsupportedDrivers = "TRUE"
-      mks.vk.allowUnsupportedDevices = "TRUE"
-    '';*/
+      mks.vk.allowUnsupportedDevices = "TRUE"*/
+    '';
 }
