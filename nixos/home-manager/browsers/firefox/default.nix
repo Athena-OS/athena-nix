@@ -41,7 +41,7 @@
                   };
               };
               settings = {
-                  "browser.bookmarks.file" = ./bookmarks.html;
+                  "browser.bookmarks.file" = ../bookmarks.html;
                   "browser.places.importBookmarksHTML" = true;
                   "general.smoothScroll" = true;
                   # Re-bind ctrl to super (would interfere with tridactyl otherwise)
