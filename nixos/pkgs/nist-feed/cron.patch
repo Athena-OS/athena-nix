@@ -1,0 +1,61 @@
+--- a/nist-feed	2024-01-22 19:41:08.088801932 +0530
++++ b/nist-feed	2024-01-22 20:25:51.992424413 +0530
+@@ -232,17 +232,22 @@
+ ############################################################
+ ############################################################
+ 
++CRON_FILE="/etc/cron.d/nist-feed-cron"
+ last_cve_file="$HOME/.last_cve"
+ cve_json_file="$HOME/.cve.json"
+ 
+ if [ "$end" ]; then
+    echo "Disabling NIST NVD feed popup notification..."
+-   crontab -l | sed '/nist-feed/d' | crontab
++   sed -i '/nist-feed/d' /etc/cron.d/nist-feed-cron
+    rm -rf $last_cve_file
+    rm -rf $cve_json_file
+    exit 0
+ fi
+ 
++CRON_DIR=$(dirname "$CRON_FILE")
++mkdir -p "$CRON_DIR"
++touch "$CRON_FILE"
++
+ baseURL="https://services.nvd.nist.gov/rest/json/cves/2.0?"
+ 
+ if [ "$severity" ] && [ ! "$cve" ]; then
+@@ -336,7 +341,7 @@
+    fi
+ fi
+ 
+-if [[ "$id" != "$LAST_CVE" ]] || [ $(crontab -l | wc -c) -eq 0 ];then #if the previous CVE is different from the current one, OR the crontab is empty, popup notification
++if [[ "$id" != "$LAST_CVE" ]] || [ ! -s "$CRON_FILE" ]; then #if the previous CVE is different from the current one, OR the crontab is empty, popup notification
+    if [[ ! "$notify" ]]; then #LAST_CVE must be set only if the user does not set the notification parameters, otherwise when crontab will call the 1st time nist-feed, $id is already = to $LAST_CVE
+       echo "$id" > $last_cve_file
+       #Generate the popup notification
+@@ -344,19 +349,15 @@
+    fi
+    
+    if [[ "$notify" -eq 1 ]] && [ ! "$severity" ] && [ ! "$metric" ]; then
+-      crontab -l | sed '/nist-feed/d' | crontab
+-      (crontab -l 2>/dev/null; echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l)") | crontab -
++      # Append the cron job to system-level cron file
++      echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l)" >> "$CRON_FILE"
+    elif [[ "$notify" -eq 1 ]] && [ "$severity" ] && [ ! "$metric" ]; then
+-      crontab -l | sed '/nist-feed/d' | crontab
+-      (crontab -l 2>/dev/null; echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l -s $severity)") | crontab -
++      echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l -s $severity)" >> "$CRON_FILE"
+    elif [[ "$notify" -eq 1 ]] && [ ! "$severity" ] && [ "$metric" ]; then
+-      crontab -l | sed '/nist-feed/d' | crontab
+-      (crontab -l 2>/dev/null; echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l -m $metric)") | crontab -
++      echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l -m $metric)" >> "$CRON_FILE"
+    elif [[ "$notify" -eq 1 ]] && [ "$severity" ] && [ "$metric" ]; then
+-      crontab -l | sed '/nist-feed/d' | crontab
+-      (crontab -l 2>/dev/null; echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l -s $severity -m $metric)") | crontab -
+-   fi
+-   
++      echo "*/30 * * * * ( killall dunst ; XDG_RUNTIME_DIR=/run/user/$(id -u) /usr/local/bin/nist-feed -l -s $severity -m $metric)" >> "$CRON_FILE"
++   fi   
+ fi
+ 
+ rm -rf $cve_json_file
