@@ -38,7 +38,7 @@
       enable = true;
       browseDomains = [];
       wideArea = false;
-      nssmdns4 = true;
+      nssmdns = true;
     };
 
     unbound = {
