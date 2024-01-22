@@ -41,46 +41,46 @@ let
     fi
   '';
   
-  utilities = with pkgs; [
-    asciinema
-    bat
-    bfetch
-    bless
-    cmatrix
-    cowsay
-    figlet
-    file
-    fortune
-    glxinfo
-    gparted
-    hw-probe
-    imagemagick
-    lolcat
-    lsd
-    ncdu
-    netcat-openbsd
-    nyancat
-    orca
-    pfetch
-    sl
-    timeline
-    toilet
-    tree
-    unzip
-    vnstat
-    xclip
-    xcp
-    zoxide
-  ];
+  #utilities = with pkgs; [
+  #  asciinema
+  #  bat
+  #  bfetch
+  #  bless
+  #  cmatrix
+  #  cowsay
+  #  figlet
+  #  file
+  #  fortune
+  #  glxinfo
+  #  gparted
+  #  hw-probe
+  #  imagemagick
+  #  lolcat
+  #  lsd
+  #  ncdu
+  #  netcat-openbsd
+  #  nyancat
+  #  orca
+  #  pfetch
+  #  sl
+  #  timeline
+  #  toilet
+  #  tree
+  #  unzip
+  #  vnstat
+  #  xclip
+  #  xcp
+  #  zoxide
+  #];
 
-  devel = with pkgs; [ 
-    cargo
-    gcc
-    git
-    jq
-    killall
-    python3
-  ];
+  #devel = with pkgs; [ 
+  #  cargo
+  #  gcc
+  #  git
+  #  jq
+  #  killall
+  #  python3
+  #];
 in
 {
   imports = [
@@ -107,7 +107,11 @@ in
     TERM = "xterm-256color";
   };
 
-  environment.systemPackages = devel ++ utilities ++ [
+  #environment.systemPackages = devel ++ utilities ++ [
+  #  shellrocket
+  #];
+
+  environment.systemPackages = [
     shellrocket
   ];
 
