@@ -40,8 +40,8 @@ in
         _module.args.bootloader = bootloader;
       }
       (import "${home-manager}/nixos")
-      /etc/nixos/hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
-      #./hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
+      #/etc/nixos/hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
+      ./hardware-configuration.nix # You need to generate or copy it to the same folder of configuration.nix
       ./modules/boot/${bootloader}
       ./modules/desktops/${desktop}
       ./modules/dms/${dmanager}
