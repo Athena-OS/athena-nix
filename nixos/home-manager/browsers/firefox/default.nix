@@ -1,11 +1,6 @@
 { config, pkgs, home-manager, username, ... }:
 {
 
-  programs.firefox.preferences = {
-    "browser.bookmarks.file" = ../bookmarks.html;
-    "browser.places.importBookmarksHTML" = true;
-  };
-
   home-manager.users.${username} = { pkgs, ...}: {
 
     programs.firefox = {
@@ -46,6 +41,8 @@
                   };
               };
               settings = {
+                  "browser.bookmarks.file" = ./bookmarks.html;
+                  "browser.places.importBookmarksHTML" = true;
                   "general.smoothScroll" = true;
                   # Re-bind ctrl to super (would interfere with tridactyl otherwise)
                   #"ui.key.accelKey" = 91; # Commented otherwise cannot use shortcuts using CTRL
