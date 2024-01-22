@@ -77,7 +77,7 @@
 
   # nix config
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixStable;
     settings = {
       extra-experimental-features = [
         "nix-command"

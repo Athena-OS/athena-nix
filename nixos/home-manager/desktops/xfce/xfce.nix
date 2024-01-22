@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.athena.desktops.xfce;
-  
+  bg-path = "/run/current-system/sw/share/backgrounds/athena/${theme.background}";
   # pkgs.writeShellScriptBin and builtins.readFile are used to take the specified shell script that can be called and installed below by home-manager. There is no a target dir because home-manager will make them inside $PATH in order to be called
   genmon-cpu = pkgs.writeShellScriptBin "genmon-cpu"
     (builtins.readFile ./bin/genmon-cpu);
@@ -78,10 +78,32 @@ in
           "Net/IconThemeName" = "${theme.icon-theme}";
           "Gtk/CursorThemeName" = "${theme.cursor-theme}";
         };
-        /*xfce4-desktop = {
-          "backdrop/screen0/monitorLVDS-1/workspace0/last-image" =
-            "''${pkgs.nixos-artwork.wallpapers.stripes-logo.gnomeFilePath}";
-        };*/
+        xfce4-desktop = {
+          "backdrop/screen0/monitor0/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitor0/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitor0/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitor0/workspace3/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorLVDS-1/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorLVDS-1/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorLVDS-1/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorLVDS-1/workspace3/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorHDMI-1/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorHDMI-1/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorHDMI-1/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorHDMI-1/workspace3/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVGA-1-2/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVGA-1-2/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVGA-1-2/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVGA-1-2/workspace3/last-image" = "${bg-path}";
+          "backdrop/screen0/monitoreDP-1/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitoreDP-1/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitoreDP-1/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitoreDP-1/workspace3/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual1/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual1/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual1/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual1/workspace3/last-image" = "${bg-path}";
+        };
       };
     }
 

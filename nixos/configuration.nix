@@ -13,8 +13,9 @@ let
     gtk-theme = "Sweet-Dark-v40";
     icon-theme = "Tela-circle-black-dark";
     cursor-theme = "Bibata-Modern-Ice";
+    background = "neon-circle.jpg";
   };
-  desktop = "gnome";
+  desktop = "xfce";
   dmanager = "gdm";
   shell = "fish";
   terminal = "kitty";
@@ -53,10 +54,10 @@ in
 
     ];
 
-    virtualisation.vmware.host.enable = true;
+    /*virtualisation.vmware.host.enable = true;
     virtualisation.vmware.host.extraConfig = ''
       # Allow unsupported device's OpenGL and Vulkan acceleration for guest vGPU
       mks.gl.allowUnsupportedDrivers = "TRUE"
       mks.vk.allowUnsupportedDevices = "TRUE"
-    '';
+    '';*/
 }

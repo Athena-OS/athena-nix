@@ -15,6 +15,7 @@
         gtk-theme = "Graphite-Dark";
         icon-theme = "Tela-circle-black-dark";
         cursor-theme = "Bibata-Modern-Ice";
+        background = "neon-circle.jpg";
       };
       desktop = "gnome";
       dmanager = "gdm";

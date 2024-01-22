@@ -47,5 +47,5 @@ with lib;
     done
   '';
 
-  system.stateVersion = lib.mkDefault lib.trivial.release;
+  system.stateVersion = "23.11"; #lib.mkDefault lib.trivial.release;
 }

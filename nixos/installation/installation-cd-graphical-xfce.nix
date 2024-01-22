@@ -10,7 +10,10 @@
 
   services.xserver = {
     desktopManager = {
-      xfce.enable = true;
+      xfce = {
+        enable = true;
+        enableScreensaver = false;
+      };
     };
     displayManager = {
       lightdm.enable = true;
