@@ -611,6 +611,10 @@ Hydra builds non-broken, free packages in Nixpkgs for supported systems. If make
 
 You can of course set up your own builders and binary cache for convenience, so that you only have to build the thing once and deploy to multiple machines if you are customising packages or such.
 
+#### Track merged Pull Requests
+
+Once a package Pull Request is merged to master or backported, it is possible to track the state of them, in particular if the package has been actually implemented in the Nixpkgs repository or still not. It can be done by the [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html) by typing the Pull Request ID of your merged pull request.
+
 #### Commit issues resolution
 
 **Editing commit messages**

@@ -53,6 +53,7 @@ let
   #  fortune
     glxinfo
   #  gparted
+    htb-toolkit
   #  hw-probe
   #  imagemagick
   #  lolcat
@@ -85,7 +86,7 @@ in
 {
   imports = [
     ./locale
-  #  ./armcord
+    ./armcord
   ];
 
   #It is needed to enable the used shell also at system level because NixOS cannot see home-manager modules. Note: bash does not need to be enabled
