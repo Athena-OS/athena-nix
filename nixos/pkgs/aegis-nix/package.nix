@@ -7,17 +7,17 @@
 }:
 
 rustPlatform.buildRustPackage {
-  pname = "athena-nix";
-  version = "unstable-2024-01-22";
+  pname = "aegis-nix";
+  version = "unstable-2024-01-23";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "aegis-nix";
-    rev = "5f235a6521dcdf9d0a44fd7c8390409e5023de3d";
-    hash = "sha256-R9O7XMAF7UmBtXZJX093MdwgGV2zd6Jvi+Rx58Z5lwA=";
+    rev = "e33466784088fa14c7ccc5d26971c1038cdcf8ba";
+    hash = "sha256-jdTAkbccU+a7Qy5aYwrSo8ZnoiZujE6qLNSr3qxtG7w=";
   };
 
-  cargoHash = "sha256-cm8/tfcjU1is6dQVoZHRyFHKSVWreRDmohb8SI1q4Tc=";
+  cargoHash = "sha256-ToH10Yb0SuHHHBbKSwhYZEF2s+X4SeB/oNS3igCAKzY=";
 
   buildInputs = lib.optionals stdenv.isDarwin [
     darwin.apple_sdk.frameworks.Security

@@ -60,4 +60,6 @@ in
       mks.gl.allowUnsupportedDrivers = "TRUE"
       mks.vk.allowUnsupportedDevices = "TRUE"
     '';*/
+    /*virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;*/
 }
