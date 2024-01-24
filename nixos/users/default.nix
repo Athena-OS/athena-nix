@@ -7,11 +7,6 @@
       isNormalUser = true;
       hashedPassword = "${hashed}";
       extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
-      packages = with pkgs; [
-        git
-        wget
-      #  thunderbird
-      ];
     };
     extraUsers = {
        root = {
