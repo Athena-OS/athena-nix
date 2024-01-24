@@ -730,6 +730,14 @@ if you want to have the `black` color variant for your `tela-circle-icon-theme`.
 
 A simpler method to check what are the installed GTK themes or Icon themes from a package is to check the folder `~/.nix-profile/share`.
 
+## User Management
+
+`initialPassword` (and its hashed variants) do only set the password when the user is created the first time. This means it do not exist in the `/etc/passwd`.
+
+`password` and its hashed variants on the other hand side, act the same way as `initialPassword` **if users are mutable**, while it will properly set the password on activation time when users are **not mutable**.
+
+It means that, if you need to change password in a declarative manner by configuration file, you need to use `users.users.${username}.password` (or `users.users.${username}.hashedPassword`) and `users.mutableUsers = false`.
+
 ## Clean system
 
 If you massively use building and install a lot of software and you want to check your disk space, consider that Nix is responsible to store data only in `/nix/store`.
