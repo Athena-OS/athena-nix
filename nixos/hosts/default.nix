@@ -69,6 +69,7 @@ let
   #  tree
     unzip
   #  vnstat
+    wget
   #  xclip
   #  xcp
   #  zoxide
@@ -77,7 +78,7 @@ let
   #devel = with pkgs; [ 
   #  cargo
   #  gcc
-  #  git
+    git
   #  jq
   #  killall
   #  python3
