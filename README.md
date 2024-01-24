@@ -192,6 +192,8 @@ nix build .#nixosConfigurations.live-image.config.system.build.isoImage
 ```
 Source: https://hoverbear.org/blog/nix-flake-live-media/
 
+In case you would like to change squashfs compression, refers to [Creating_a_NixOS_live_CD](https://nixos.wiki/wiki/Creating_a_NixOS_live_CD#Building_faster). Note that the default compression algorithm is the one with the least resulting size.
+
 In general, flake nix files are composed of two parts: input and output sections. Input section contains the import of repositories or tools by their flake files.
 
 Flake files can be used for different purposes, for example to create ISO files or to retrieve packages or to deploy your configuration. Examples of flake repositories:
