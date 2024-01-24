@@ -1,14 +1,14 @@
 # Athena Nix
 
 Athena Nix currently provides several configurations (still in test):
-* **gnome**
-* **xfce**
+* **runtime**
+* ToDo
 
 A configuration can be deployed in several ways:
 
 #### Remote
 ```
-sudo nixos-rebuild switch --flake 'github:Athena-OS/athena-nix#gnome' --impure
+sudo nixos-rebuild switch --flake 'github:Athena-OS/athena-nix#runtime' --impure
 ```
 
 #### Local
@@ -16,13 +16,24 @@ Running command inside `athena-nix` directory:
 ```
 git clone https://github.com/Athena-OS/athena-nix
 cd athena-nix
-sudo nixos-rebuild switch --flake '.#gnome' --impure
+sudo nixos-rebuild switch --flake '.#runtime' --impure
 ```
 Running command outside `athena-nix` directory:
 ```
-sudo nixos-rebuild switch --flake '<local-path-to-dir-containing-flake.nix>/.#gnome' --impure
+sudo nixos-rebuild switch --flake '<local-path-to-dir-containing-flake.nix>/.#runtime' --impure
 ```
 `--impure` is used because the deployment can be applied according to your `hardware-configuration.nix`.
+
+The default user and password in the configuration is `athena:athena`. Be sure to change user and password inside `athena-nix/flake.nix` file by editing `username` and `hashed` (or `hashedRoot` for your root account) attributes according to your needs when you deploy this configuration.
+
+Passwords must be set as hash (i.e., SHA-512) instead of cleartext. To create it in a secure way run:
+```
+nix-shell -p openssl
+openssl passwd -6 yourpassword
+```
+Finally, paste the generated hash in `hashed` or `hashedRoot` inside `flake.nix`.
+
+The usage of **nix-shell** is important to create the password in an ephimeral environment, in order to not keep the command history stored in the system.
 
 # Nix Wiki
 
