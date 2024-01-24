@@ -29,7 +29,7 @@
         specialArgs = {
           username = "athena";
           hostname = "athenaos";
-          hashed = "athena";
+          hashed = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
           hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
           inherit (inputs) home-manager;
         }; # Using // attrs prevents the error 'infinite recursion due to home-manager usage in root default.nix
