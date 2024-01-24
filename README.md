@@ -195,15 +195,16 @@ Source: https://hoverbear.org/blog/nix-flake-live-media/
 In general, flake nix files are composed of two parts: input and output sections. Input section contains the import of repositories or tools by their flake files.
 
 Flake files can be used for different purposes, for example to create ISO files or to retrieve packages or to deploy your configuration. Examples of flake repositories:
+
 https://github.com/erictossell/nixflakes/blob/main/flake.nix
 https://github.com/JoshuaFern/nixos-configuration/blob/master/flake.nix
-https://github.com/hyprwm/Hyprland/blob/main/flake.nix
+https://github.com/hyprwm/Hyprland/blob/main/flake.nix \
 https://github.com/redcode-labs/RedNixOS/blob/master/flake.nix
 https://github.com/bobvanderlinden/nixos-config/blob/master/flake.nix
 https://github.com/NixOS/nixpkgs/blob/master/flake.nix
 
-Flakes docs:
-https://www.tweag.io/blog/2020-05-25-flakes/
+Flakes docs: \
+https://www.tweag.io/blog/2020-05-25-flakes/ \
 https://nixos.wiki/wiki/Flakes
 
 ### Deploy configuration by Flakes
