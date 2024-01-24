@@ -5,6 +5,7 @@
     users.${username} = {
       shell = pkgs.${shell};
       isNormalUser = true;
+      hashedPassword = "${hashed}";
       initialHashedPassword = "${hashed}";
       extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
       packages = with pkgs; [
@@ -15,6 +16,7 @@
     };
     extraUsers = {
        root = {
+         hashedPassword = "${hashedRoot}";
          initialHashedPassword = "${hashedRoot}";
        };
      };
