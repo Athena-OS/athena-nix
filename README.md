@@ -730,6 +730,45 @@ if you want to have the `black` color variant for your `tela-circle-icon-theme`.
 
 A simpler method to check what are the installed GTK themes or Icon themes from a package is to check the folder `~/.nix-profile/share`.
 
+## Clean system
+
+If you massively use building and install a lot of software and you want to check your disk space, consider that Nix is responsible to store data only in `/nix/store`.
+
+You can measure the size of Nix Store by tools like `ncdu`:
+```
+sudo ncdu /nix/store
+```
+To clean Nix Store, it is needed to use the following commands:
+```
+nix-collect-garbage -d
+sudo nix-collect-garbage -d
+```
+Note that `-d` flag will delete the old generations.
+
+If the Nix Store is still occupying a lot of space, probably there could be some resources (probably from your local building processes or due to some bad management from Home Manager) still linked to the Nix Store.
+
+To check what are the roots that are still valid, run:
+```
+sudo nix-store --gc --print-roots | less
+```
+Ignore the `/proc` files.
+
+To check the occupied space by each one of them, just copy the single path and run a command like:
+```
+nix path-info -Sh /run/current-system
+```
+Note: `-S` shows the closure size, `-s` the size of the path, `-h` makes the numbers human readable.
+
+If you are confident, you can delete manually those paths that don't belong to the system and that you don't recognize, and after that, running the Garbage Collector command as explained above.
+
+You can try to optimize the space consumption by enabling **store-optimisation**. It is possible to enable it in your nix configuration. And after enabled it and restarted your daemon, you trigger it once to be sure that everything is optimized.
+
+The setting to enable it is `auto-optimise-store = true;` inside your `configuration.nix` file. The command to optimize the store once to do the "bootstarp" would be:
+```
+nix store optimise
+```
+Is there a performance cost for this optimization? Neglectible. This cost is paid once at path creation time.
+
 ## Reporting Issues
 
 When reporting issues for nixpkgs, remember to mention always the maintainers of a package. If they are not specified in the `.nix` file, access to [team-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/team-list.nix)  or [maintainer-list.nix](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix) and search for the language used to develop the involved tool.
