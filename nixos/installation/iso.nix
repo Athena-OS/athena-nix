@@ -34,6 +34,21 @@
     printing.enable = false;
     vnstat.enable = true;
 
+    avahi = {
+      enable = true;
+      browseDomains = [];
+      wideArea = false;
+      nssmdns = true;
+    };
+
+    unbound = {
+      enable = true;
+      settings.server = {
+        access-control = [];
+        interface = [];
+      };
+    };
+
     hardware = {
       bolt.enable = true;
     };
