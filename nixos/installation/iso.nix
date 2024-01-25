@@ -37,6 +37,8 @@
     hardware = {
       bolt.enable = true;
     };
+
+    services.xserver.exportConfiguration = true;
   };
 
   networking = {
