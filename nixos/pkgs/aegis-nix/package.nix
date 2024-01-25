@@ -14,7 +14,7 @@ rustPlatform.buildRustPackage {
     owner = "Athena-OS";
     repo = "aegis-nix";
     rev = "95914c8ab1bcd5407a25ea568d69daf05037b8f1";
-    hash = "sha256-BsKJ+wuKHe1H/I9V6lxsLq4qsj4iFGpeYg7Rmix1l0g=";
+    hash = "sha256-ynvt+Hp6y7xvhTM4f6ns4L1sWwEwEH2ATvC9t6MEUbs=";
   };
 
   cargoHash = "sha256-mBYZr/b62T6UMD3vnm/M6WI7yCY+8W2BOb2rrchKITo=";
