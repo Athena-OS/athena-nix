@@ -774,7 +774,7 @@ If you are confident, you can delete manually those paths that don't belong to t
 
 You can try to optimize the space consumption by enabling **store-optimisation**. It is possible to enable it in your nix configuration. And after enabled it and restarted your daemon, you trigger it once to be sure that everything is optimized.
 
-The setting to enable it is `auto-optimise-store = true;` inside your `configuration.nix` file. The command to optimize the store once to do the "bootstarp" would be:
+The setting to enable it is `nix.settings.auto-optimise-store = true;` inside your `configuration.nix` file. The command to optimize the store once to do the "bootstarp" would be:
 ```
 nix store optimise
 ```
