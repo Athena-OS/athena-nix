@@ -126,6 +126,8 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  services.hardware.bolt.enable = true;
+
   # ----- System Config -----
   # Enable Flakes and nix-commands
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
