@@ -111,6 +111,10 @@ sudo nixos-rebuild switch
 
 An experimental way to deploy configuration and install packages is the usage of **flakes** that will be discussed later.
 
+Each rebuild performed on the system creates a **Generation** that is a revision of a user environment, newly created every time the system is updated (with old ones being preserved until manually removed). Nix's environment rollback facilities rely on Generations. Relying on an old Generation means to rollback to one of your old configurations.
+
+Generation is different from snapshot concept. Generations are for config, snapshots for your runtime data. Please be aware that snapshots are not backups, and that the latter should also be taken into consideration. Snapshots help to get better backups, as they avoid some atomicity problems, so you can consider to implement them too.
+
 In practice you can install a package in several ways:
 * by **nix-env**: If you want to install packages directly in your OS and not in a shell sandboxed environment, you can do it by `nix-env -iA nixpkgs.nmap`. I noted that also in this case we dont need to use sudo, and the binaries will be put in `/home/youruser/.nix-profile/bin/nmap`.
 * by **nix-shell**: in my Athena I have FISH shell. When I add the nix-channel to unstable repo and I install nmap by `nix-shell -p nmap`, it creates a new environment with a BASH shell (not more FISH because the colors of my Athena prompt change to BASH one)  and it runs nmap in this environment. For the install I didnt have the need to install by sudo. In this environment nmap binary exists in a nix sandboxed dir (test by which nmap) Then, if I type `exit`, I go out from the env and I come back to FISH shell and nmap cannot be called anymore. Maybe it is a secure approach because we dont need to sudo. Note that the new environment is not an isolated or sandboxed environment. It just install and remove the declared package for on-off usage.
