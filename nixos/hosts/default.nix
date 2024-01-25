@@ -75,14 +75,14 @@ let
   #  zoxide
   ];
 
-  #devel = with pkgs; [ 
+  devel = with pkgs; [ 
   #  cargo
   #  gcc
     git
   #  jq
   #  killall
   #  python3
-  #];
+  ];
 in
 {
   imports = [
@@ -109,11 +109,7 @@ in
     TERM = "xterm-256color";
   };
 
-  #environment.systemPackages = devel ++ utilities ++ [
-  #  shellrocket
-  #];
-
-  environment.systemPackages = utilities ++ [
+  environment.systemPackages = devel ++ utilities ++ [
     shellrocket
   ];
 
