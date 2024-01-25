@@ -53,7 +53,7 @@
       bolt.enable = true;
     };
 
-    services.xserver.exportConfiguration = true;
+    xserver.exportConfiguration = true;
   };
 
   networking = {
