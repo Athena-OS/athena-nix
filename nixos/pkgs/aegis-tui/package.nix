@@ -13,8 +13,8 @@ stdenvNoCC.mkDerivation {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "aegis-tui";
-    rev = "01451b72cdfea6c1fdf10ede7922c734df5dafc8";
-    hash = "sha256-hD1Bz6SDiV9lWLuDEyglfuMs4WvqGnHjvROxncGkkLg=";
+    rev = "c7b327b4cb7eb7a6e13ef464a011be3dc5ed6eea";
+    hash = "sha256-ad1irI4Z0ZxU7dYQ02LAxRp/IWBnf/Z8BrBAqHJBdkE=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
