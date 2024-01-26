@@ -13,8 +13,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "aegis-nix";
-    rev = "ad80aac785d17df37fae3bc8df2547321521d72f";
-    hash = "sha256-f4FJb4Z8gP+fq6MSmzvy4mrwbXpdmmFHqRbL8Kr+3hY=";
+    rev = "60b7d681d7383890f11b1d06e8393c0842ba41b1";
+    hash = "sha256-0hAL9CdvY4Y96yLPA/qNkSuX1gW714/4tSBIAkMokj4=";
   };
 
   cargoHash = "sha256-mBYZr/b62T6UMD3vnm/M6WI7yCY+8W2BOb2rrchKITo=";
