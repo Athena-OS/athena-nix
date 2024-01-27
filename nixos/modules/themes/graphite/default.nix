@@ -3,6 +3,7 @@ let
   gtkTheme = "${theme.gtk-theme}";
   gtkIconTheme = "${theme.icon-theme}";
   gtkCursorTheme = "${theme.cursor-theme}";
+  backgroundTheme = "${theme.background}";
 in
 {
   environment.systemPackages = with pkgs; [
@@ -27,13 +28,48 @@ in
     };
     dconf.settings = {
         "org/gnome/desktop/background" = {
-            "picture-uri" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
+            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
         };
         "org/gnome/desktop/background" = {
-            "picture-uri-dark" = "/run/current-system/sw/share/backgrounds/athena/nix-behind.png";
+            "picture-uri-dark" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
         };
         "org/gnome/desktop/background" = {
             "picture-options" = "stretched";
+        };
+
+        "org/cinnamon/desktop/background" = {
+            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+        };
+        "org/cinnamon/desktop/background" = {
+            "picture-options" = "stretched";
+        };
+        "org/cinnamon/desktop/interface" = {
+            "gtk-theme" = gtkTheme;
+        };
+        "org/cinnamon/desktop/wm/preferences" = {
+            "theme" = gtkTheme;
+        };
+        "org/cinnamon/desktop/interface" = {
+            "icon-theme" = gtkIconTheme;
+        };
+        "org/cinnamon/desktop/interface" = {
+            "cursor-theme" = gtkCursorTheme;
+        };
+
+        "org/mate/desktop/interface" = {
+            "gtk-theme" = gtkTheme;
+        };
+        "org/mate/marco/general" = {
+            "theme" = gtkTheme;
+        };
+        "org/mate/desktop/interface" = {
+            "icon-theme" = gtkIconTheme;
+        };
+        "org/mate/desktop/peripherals/mouse" = {
+            "cursor-theme" = gtkCursorTheme;
+        };
+        "org/mate/desktop/background" = {
+            "picture-filename" = "/run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
         };
     };
     programs.kitty = {
@@ -41,11 +77,11 @@ in
     };
     programs.vscode = {
       extensions = with pkgs.vscode-extensions; [
-        enkia.tokyo-night
+        nur.just-black
       ];
       # In case extensions are not loaded, refer to https://github.com/nix-community/home-manager/issues/3507
       userSettings = {
-        "workbench.colorTheme" = "Tokyo Night";
+        "workbench.colorTheme" = "Just Black";
       };
     };
   };

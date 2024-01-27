@@ -15,5 +15,5 @@ if [[ $1 != no-repeat-flag && -z $NO_REPETITION ]]; then
   source ~/.bash_aliases
   source /run/current-system/sw/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   source /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  neofetch
+  #neofetch
 fi

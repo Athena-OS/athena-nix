@@ -7,6 +7,11 @@
     desktopManager.gnome.enable=true;
   };
 
+  # Adding this because probably the pathsToLink lines to "share" folder https://github.com/NixOS/nixpkgs/blob/nixos-23.11/nixos/modules/services/x11/desktop-managers/gnome.nix#L369-L371 will be removed because "shared" directory is too broad to link. So, below we link only the needed subdirectories of "share" dir
+  environment.pathsToLink = [
+    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  ];
+
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   programs.dconf.enable = true;

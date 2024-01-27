@@ -116,6 +116,11 @@ in
         source = ./config/xfce4-refined;
         #recursive = true;
       };
+      xfconf.settings = {
+        xfwm4 = {
+          "general/workspace_names" = ["🕵️  " "📖  " "🍒  " "🎸  " "🎮  " "🐝  "];
+        };
+      };
     })
 
     (mkIf cfg.picom {
@@ -137,6 +142,7 @@ in
         i3lock-everblush
         #xfce-init
       ];
+      
       # IMPORTANT: if a specified xfconf setting doesn't work, check if there is an hardcoded xfconf setting inside $HOME/xfce4 dir and delete it
       xfconf.settings = {
         xfwm4 = {
@@ -164,12 +170,10 @@ in
       # xdg.dataFile refers to .local/share dir
       xdg.dataFile."icons/assets".source = ./assets;
       xdg.dataFile."fonts/feather.ttf".source = ./fonts/feather.ttf;
-      xdg.configFile."picom/picom.conf".source = ./config/picom/picom.conf;
 
       # Kvantum Everblush
       xdg.configFile."Kvantum".source = ./config/Kvantum;
       xdg.configFile."gtk-3.0/gtk.css".source = ./config/gtk-3.0/gtk.css;
-      xdg.configFile."neofetch/config.conf".source = ./config/neofetch/config.conf;
       xdg.configFile."xfce4".source = ./config/xfce4-picom;
       xdg.desktopEntries."Findex" = {
         name = "Findex";

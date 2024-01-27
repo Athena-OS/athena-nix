@@ -1,7 +1,7 @@
 { pkgs, lib, username, ... }: {
 
   imports = [
-    ./installation-cd-graphical-xfce.nix
+    ./installation-cd-graphical-mate.nix
   ];
 
   boot = {

@@ -9,13 +9,13 @@ let
   hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hostname = "athenaos";
   theme = {
-    module-name = "graphite";
-    gtk-theme = "Graphite-Dark";
-    icon-theme = "Tela-circle-black-dark";
+    module-name = "sweet";
+    gtk-theme = "Sweet-Dark-v40";
+    icon-theme = "candy-icons";
     cursor-theme = "Bibata-Modern-Ice";
-    background = "nix-behind.png";
+    background = "neon-circle.jpg";
   };
-  desktop = "gnome";
+  desktop = "cinnamon";
   dmanager = "gdm";
   shell = "fish";
   terminal = "kitty";

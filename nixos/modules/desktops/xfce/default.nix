@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   services.xserver = {
+    enable = true;
     desktopManager = {
       xfce = {
         enable = true;
@@ -8,13 +9,16 @@
       };
     };
   };
+  environment.pathsToLink = [
+    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  ];
   programs.xfconf.enable = true;
-  environment.systemPackages = with pkgs; [
-    xfce.xfce4-cpugraph-plugin
-    xfce.xfce4-docklike-plugin
-    xfce.xfce4-genmon-plugin
-    xfce.xfce4-pulseaudio-plugin
-    xfce.xfce4-settings
-    xfce.xfce4-whiskermenu-plugin
+  environment.systemPackages = with pkgs.xfce; [
+    xfce4-cpugraph-plugin
+    xfce4-docklike-plugin
+    xfce4-genmon-plugin
+    xfce4-pulseaudio-plugin
+    xfce4-settings
+    xfce4-whiskermenu-plugin
   ];
 }

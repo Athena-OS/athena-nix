@@ -1,19 +1,19 @@
 { lib
-, stdenv
+, stdenvNoCC
 , fetchFromGitHub
 , pciutils
 , bash
 }:
 
-stdenv.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-config";
-  version = "unstable-2024-01-12";
+  version = "unstable-2024-01-27";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config";
-    rev = "de05e4111f95a354b53e417ab90db90cf6eeee2c";
-    hash = "sha256-PFslrVxNteL/fyNZriT7oEMdqPpzFstICes0XOATCHE=";
+    rev = "dc20b1ccdd566c2cdde1378290b2327585413e9f";
+    hash = "sha256-xqRZxbDLwDM3SUfNjNCcwClxfdSqjDotUSJJwzMLj+Q=";
   };
 
   buildInputs = [ pciutils ];

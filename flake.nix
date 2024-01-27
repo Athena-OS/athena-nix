@@ -57,7 +57,7 @@
         # nix build .#nixosConfigurations.live-image.config.system.build.isoImage
         "live-image" = mkSystem [
           ./nixos/installation/iso.nix
-          ./nixos/home-manager/desktops/xfce
+          ./nixos/home-manager/desktops/mate
           ./nixos/modules/themes/graphite
           home-manager.nixosModules.home-manager
         ];

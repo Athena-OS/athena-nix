@@ -8,7 +8,12 @@
 
   isoImage.edition = "xfce";
 
+  environment.pathsToLink = [
+    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  ];
+
   services.xserver = {
+    enable = true;
     desktopManager = {
       xfce = {
         enable = true;
