@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, terminal, ... }:
+{ pkgs, home-manager, username, terminal, theme-components, ... }:
 let
   gnomeExtensionsList = with pkgs.gnomeExtensions; [
 	  appindicator
@@ -13,6 +13,8 @@ let
     window-title-is-back
   ];
 
+  backgroundTheme = "${theme-components.background}";
+
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
@@ -20,6 +22,18 @@ in
 {
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = gnomeExtensionsList ++ fontList;
+
+    dconf.settings = {
+        "org/gnome/desktop/background" = {
+            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+        };
+        "org/gnome/desktop/background" = {
+            "picture-uri-dark" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+        };
+        "org/gnome/desktop/background" = {
+            "picture-options" = "stretched";
+        };
+    };
 
     # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
     xdg.configFile."menus/applications-merged/gnome-applications.menu".source = ./config/menus/applications-merged/gnome-applications.menu;

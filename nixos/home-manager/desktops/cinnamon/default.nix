@@ -1,12 +1,37 @@
-{ pkgs, home-manager, username, terminal, ... }:
+{ pkgs, home-manager, username, terminal, theme-components, ... }:
 let
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
+  gtkTheme = "${theme-components.gtk-theme}";
+  gtkIconTheme = "${theme-components.icon-theme}";
+  gtkCursorTheme = "${theme-components.cursor-theme}";
+  backgroundTheme = "${theme-components.background}";
 in
 {
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = fontList;
+
+    dconf.settings = {
+        "org/cinnamon/desktop/background" = {
+            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+        };
+        "org/cinnamon/desktop/background" = {
+            "picture-options" = "stretched";
+        };
+        "org/cinnamon/desktop/interface" = {
+            "gtk-theme" = gtkTheme;
+        };
+        "org/cinnamon/desktop/wm/preferences" = {
+            "theme" = gtkTheme;
+        };
+        "org/cinnamon/desktop/interface" = {
+            "icon-theme" = gtkIconTheme;
+        };
+        "org/cinnamon/desktop/interface" = {
+            "cursor-theme" = gtkCursorTheme;
+        };
+    };
 
     # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
     xdg.configFile."menus/applications-merged/cinnamon-applications.menu".source = ./config/menus/applications-merged/cinnamon-applications.menu;

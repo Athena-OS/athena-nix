@@ -8,14 +8,8 @@ let
   hashed = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hostname = "athenaos";
-  theme = {
-    module-name = "sweet";
-    gtk-theme = "Sweet-Dark-v40";
-    icon-theme = "candy-icons";
-    cursor-theme = "Bibata-Modern-Ice";
-    background = "neon-circle.jpg";
-  };
-  desktop = "cinnamon";
+  theme = "sweet";
+  desktop = "mate";
   dmanager = "gdm";
   shell = "fish";
   terminal = "kitty";
@@ -45,7 +39,7 @@ in
       ./modules/boot/${bootloader}
       ./modules/desktops/${desktop}
       ./modules/dms/${dmanager}
-      ./modules/themes/${theme.module-name}
+      ./modules/themes/${theme}
       ./home-manager/desktops/${desktop}
       ./home-manager/terminals/${terminal}
       ./home-manager/browsers/${browser}

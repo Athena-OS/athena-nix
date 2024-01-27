@@ -10,13 +10,7 @@
 
   outputs = {self, nixpkgs, home-manager}@inputs:
     let
-      theme = {
-        module-name = "graphite";
-        gtk-theme = "Graphite-Dark";
-        icon-theme = "Tela-circle-black-dark";
-        cursor-theme = "Bibata-Modern-Ice";
-        background = "neon-circle.jpg";
-      };
+      theme = "graphite";
       desktop = "gnome";
       dmanager = "gdm";
       shell = "fish";
@@ -68,7 +62,7 @@
           ./nixos/modules/boot/${bootloader}
           ./nixos/modules/desktops/${desktop}
           ./nixos/modules/dms/${dmanager}
-          ./nixos/modules/themes/${theme.module-name}
+          ./nixos/modules/themes/${theme}
           ./nixos/home-manager/desktops/${desktop}
           ./nixos/home-manager/terminals/${terminal}
           ./nixos/home-manager/browsers/${browser}

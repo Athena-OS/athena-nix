@@ -3,7 +3,7 @@ let
   tmuxcolor = {
     graphite = "snow";
     sweet = "violet";
-  }."${theme.module-name}" or (throw "unsupported theme '${theme.module-name}'");
+  }."${theme}" or (throw "unsupported theme '${theme}'");
 in
 {
   home-manager.users.${username} = { pkgs, ... }: {

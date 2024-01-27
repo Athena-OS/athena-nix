@@ -1,12 +1,34 @@
-{ pkgs, home-manager, username, terminal, ... }:
+{ pkgs, home-manager, username, terminal, theme-components, ... }:
 let
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
+  gtkTheme = "${theme-components.gtk-theme}";
+  gtkIconTheme = "${theme-components.icon-theme}";
+  gtkCursorTheme = "${theme-components.cursor-theme}";
+  backgroundTheme = "${theme-components.background}";
 in
 {
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = fontList;
+
+    dconf.settings = {
+        "org/mate/desktop/interface" = {
+            "gtk-theme" = gtkTheme;
+        };
+        "org/mate/marco/general" = {
+            "theme" = gtkTheme;
+        };
+        "org/mate/desktop/interface" = {
+            "icon-theme" = gtkIconTheme;
+        };
+        "org/mate/desktop/peripherals/mouse" = {
+            "cursor-theme" = gtkCursorTheme;
+        };
+        "org/mate/desktop/background" = {
+            "picture-filename" = "/run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+        };
+    };
 
     # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
     xdg.configFile."menus/applications-merged/mate-applications.menu".source = ./config/menus/applications-merged/mate-applications.menu;

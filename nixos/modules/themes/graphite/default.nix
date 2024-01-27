@@ -1,11 +1,23 @@
-{ pkgs, nixpkgs, home-manager, username, theme, ... }:
+{ pkgs, nixpkgs, home-manager, username, theme-components, ... }:
 let
-  gtkTheme = "${theme.gtk-theme}";
-  gtkIconTheme = "${theme.icon-theme}";
-  gtkCursorTheme = "${theme.cursor-theme}";
-  backgroundTheme = "${theme.background}";
+  theme-components = {
+    gtk-theme = "Graphite-Dark";
+    icon-theme = "Tela-circle-black-dark";
+    cursor-theme = "Bibata-Modern-Ice";
+    background = "nix-behind.jpg";
+  };
+  gtkTheme = "${theme-components.gtk-theme}";
+  gtkIconTheme = "${theme-components.icon-theme}";
+  gtkCursorTheme = "${theme-components.cursor-theme}";
+  backgroundTheme = "${theme-components.background}";
 in
 {
+  imports =
+    [
+      {
+        _module.args.theme-components = theme-components;
+      }
+    ];
   environment.systemPackages = with pkgs; [
     (callPackage ../../../pkgs/athena-graphite-theme/package.nix { })
   ];
@@ -25,52 +37,6 @@ in
       iconTheme.name = gtkIconTheme;
       theme.name = gtkTheme;
       cursorTheme.name = gtkCursorTheme;
-    };
-    dconf.settings = {
-        "org/gnome/desktop/background" = {
-            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-        };
-        "org/gnome/desktop/background" = {
-            "picture-uri-dark" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-        };
-        "org/gnome/desktop/background" = {
-            "picture-options" = "stretched";
-        };
-
-        "org/cinnamon/desktop/background" = {
-            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-        };
-        "org/cinnamon/desktop/background" = {
-            "picture-options" = "stretched";
-        };
-        "org/cinnamon/desktop/interface" = {
-            "gtk-theme" = gtkTheme;
-        };
-        "org/cinnamon/desktop/wm/preferences" = {
-            "theme" = gtkTheme;
-        };
-        "org/cinnamon/desktop/interface" = {
-            "icon-theme" = gtkIconTheme;
-        };
-        "org/cinnamon/desktop/interface" = {
-            "cursor-theme" = gtkCursorTheme;
-        };
-
-        "org/mate/desktop/interface" = {
-            "gtk-theme" = gtkTheme;
-        };
-        "org/mate/marco/general" = {
-            "theme" = gtkTheme;
-        };
-        "org/mate/desktop/interface" = {
-            "icon-theme" = gtkIconTheme;
-        };
-        "org/mate/desktop/peripherals/mouse" = {
-            "cursor-theme" = gtkCursorTheme;
-        };
-        "org/mate/desktop/background" = {
-            "picture-filename" = "/run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-        };
     };
     programs.kitty = {
       theme = "Atom";
