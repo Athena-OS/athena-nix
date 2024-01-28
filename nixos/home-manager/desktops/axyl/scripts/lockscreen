@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+IMAGE=/tmp/lockscreen.png
+
+# Turn off the screen
+xset dpms force off
+
+# Take a screenshot and save it as /tmp/lockscreen.png
+scrot $IMAGE
+
+# Apply a blur effect to the image
+convert $IMAGE -blur 0x8 $IMAGE
+
+# Lock the screen with the blurred image
+i3lock -i $IMAGE
+
+# Turn the screen back on
+xset dpms force on
+
+# Remove the temporary image
+rm $IMAGE
+

@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+# Configurations
+roficonfig=~/.config/rofi/mount/dmenu.rasi
+rofiprompt=~/.config/rofi/mount/prompt.rasi
+
+# Always mount everything here or in its subdirectories
+mountdir=/mnt/d_mount
+
+# Uncomment this line if you already have askpass set up.
+[ -z "$SUDO_ASKPASS" ] && export SUDO_ASKPASS=~/.config/rofi/mount/askpass
+
+# Function to get a valid mount point
+getmount() {
+  [ -z "$chosen" ] && exit 1
+  mp="$(find "$1" 2>/dev/null | rofi -config "$roficonfig" -dmenu -i -fuzzy -hover-select -p "Type in mount point or type a folder name to create")" || exit 1
+  test -z "$mp" && exit 1
+  if [ ! -d "$mp" ]; then
+    mkdiryn=$(printf "Yes\\nNo" | rofi -config "$rofiprompt" -dmenu -fuzzy -i -hover-select -p "$mp does not exist. Create it? (in $mountdir)") || exit 1
+    [ "$mkdiryn" = "Yes" ] && (sudo mkdir -p "$mountdir/$mp" || sudo -A mkdir -p "$mountdir/$mp") && mp=$mountdir/$mp
+  fi
+}
+
+# Function to mount a USB drive
+mountusb() {
+  chosen="$(echo "$mountable" | rofi -config "$rofiprompt" -dmenu -i -fuzzy -hover-select -p "Mount which drive?")" || exit 1
+  chosen="$(echo "$chosen" | awk '{print $1}')"
+  sudo -A mount "$chosen" 2>/dev/null && printf "exit" | rofi -config "$rofiprompt" -dmenu -i -only-match -p "Mounted $chosen to $mp" && exit 0
+  alreadymounted=$(lsblk -nrpo "name,type,mountpoint" | awk '$3!~/\/boot|\/home$|SWAP/&&length($3)>1{printf "-not ( -path *%s -prune ) ",$3}')
+  getmount "$mountdir -type d $alreadymounted"
+  partitiontype="$(lsblk -no "fstype" "$chosen")"
+  case "$partitiontype" in
+    "vfat")
+      sudo -A mount -t vfat "$chosen" "$mp" -o rw,umask=0000 && printf "exit" | rofi -config "$rofiprompt" -dmenu -i -only-match -p "Mounted $chosen to $mp" && exit 0
+      ;;
+    "exfat")
+      sudo -A mount "$chosen" "$mp" -o uid="$(id -u)",gid="$(id -g)" && printf "exit" | rofi -config "$rofiprompt" -dmenu -i -only-match -p "Mounted $chosen to $mp" && exit 0
+      ;;
+    *)
+      sudo -A mount "$chosen" "$mp"
+      user="$(whoami)"
+      ug="$(groups | awk '{print $1}')"
+      sudo -A chown "$user":"$ug" "$mp" && printf "exit" | rofi -config "$rofiprompt" -dmenu -i -only-match -p "Mounted $chosen to $mp" && exit 0
+      ;;
+  esac
+  printf "exit" | rofi -config "$rofiprompt" -dmenu -i -only-match -p "Failed to Mount $chosen to $mp" && exit 0
+}
+
+# Function to unmount a USB drive
+unmountusb() {
+  [ -z "$unmountable" ] && exit
+  chosen="$(echo "$unmountable" | rofi -config "$rofiprompt" -dmenu -fuzzy -hover-select -i -p "Unmount which drive?")" || exit 1
+  chosen="$(echo "$chosen" | awk '{print $1}')"
+  [ -z "$chosen" ] && exit
+  sudo -A umount "$chosen" && printf "exit" | rofi -config "$rofiprompt" -dmenu -i -only-match -p "Unmounted $chosen" && exit
+}
+
+# Populate the list of mountable drives
+mountable="$(lsblk -rpo "name,type,size,mountpoint" | awk '$4==""{printf "%s (%s) %s\n",$1,$3,$2}')"
+
+
+# Populate the list of unmountable drives
+unmountable=$(lsblk -nrpo "name,type,size,mountpoint,label" | awk -F':' '{gsub(/ /,":")}$4!~/\/boot|\/efi|\/home$|SWAP/&&length($4)>1{printf "%s (%s) %s\n",$4,$3,$5}')
+
+# Main menu
+chk=$(printf "Mount\nUnmount" | rofi -config "$rofiprompt" -dmenu -i -hover-select -p "USB/Drives")
+
+case $chk in
+  Unmount)
+    if [ -z "$unmountable" ]; then
+      echo "No USB drives to unmount." && exit
+    else
+      unmountusb
+    fi
+    ;;
+  Mount)
+    if [ -z "$mountable" ]; then
+      notify-send "No USB drives detected" && exit
+    else
+      mountusb
+    fi
+    ;;
+esac

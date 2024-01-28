@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+mplayer() {
+    LOCKFILE="$HOME/.cache/eww-cris-mplayer.lock"
+
+if [[ ! -f "$LOCKFILE" ]]; then
+    touch "$LOCKFILE"
+    eww open music -c ~/.config/bspwm/rices/"$RICETHEME"/widgets/ --screen 0
+elif [[ -f "$LOCKFILE" ]]; then
+    eww close music -c ~/.config/bspwm/rices/"$RICETHEME"/widgets/
+    rm "$LOCKFILE"
+fi
+}
+
+mplayer

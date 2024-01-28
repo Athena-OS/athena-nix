@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+
+## important variables
+
+read -r RICETHEME < "$HOME"/.config/bspwm/.rice
+export RICETHEME
+PATH="$HOME/.config/bspwm/scripts:$PATH"
+rice_dir="$HOME/.config/bspwm/rices/$RICETHEME"
+
+## Fix java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# setup connected monitors #
+NUM_OF_MONITORS=$(xrandr --listmonitors | grep -c "^ ")  # No. monitors #
+
+if [[ ${NUM_OF_MONITORS} -ge 1 ]];then
+	$HOME/.config/bspwm/scripts/multimonitor
+fi
+
+## workspace
+
+workspaces() {
+	name=1
+	for monitor in $(bspc query -M); do
+		bspc monitor "${monitor}" -n "$name" -d '1' '2' '3' '4' '5' '6'
+		#bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' ''
+		(( name++ ))
+	done
+}
+
+workspaces
+
+### BSPWM CONFIGURATION
+
+bspc config external_rules_command $HOME/.config/bspwm/scripts/ExternalRules
+
+bspc config split_ratio                   0.51
+bspc config single_monocle                true
+bspc config borderless_monocle            false
+bspc config gapless_monocle               false
+
+bspc config focus_follows_pointer         true
+bspc config pointer_follows_focus         false
+bspc config pointer_motion_interval       5
+bspc config pointer_modifier              mod4 
+bspc config pointer_action1               move 
+bspc config pointer_action2               resize_side 
+bspc config pointer_action3               resize_corner
+
+#bspc wm --adopt-orphans
+bspc rule -a scratch sticky=on state=floating focus=on
+
+
+### Launching Rices
+
+# Set system vars for polybar
+. SetSysVars
+
+# Terminate already running polybar, eww, picom, sxhkd and dunst instances
+processes=("picom" "polybar" "eww" "sxhkd" "dunst")
+
+for process in "${processes[@]}"; do
+  if pidof -q "$process"; then
+    pkill -9 -x "$process" > /dev/null; sleep 0.1
+  fi
+done
+
+# Load colors, dunst, bars and/or eww widgets
+. ${rice_dir}/Theme.sh
+
+# Launch picom // If you have old hardware or encounter problems 
+# uncomment the picom "--legacy-backends" line and comment the current one.
+picom --config "$HOME"/.config/bspwm/picom.conf &
+#picom --legacy-backends --config "$HOME"/.config/bspwm/picom.conf &
+
+# Launch dunst notification daemon
+dunst -config "$HOME"/.config/bspwm/dunstrc &
+
+# Set random wallpaper for actual rice
+feh -z --no-fehbg --bg-fill ${rice_dir}/walls
+#feh --no-fehbg --bg-fill path-to-your-png
+
+# Reload sxhkd daemon
+sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
+
+# Launch polkit
+pidof -q polkit-gnome-authentication-agent-1 || { /run/current-system/sw/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
+
+# Fix cursor
+xsetroot -cursor_name left_ptr
+
+
+### Secondary Monitor Setup
+bspc config -m 2 top_padding 3
+bspc config -m 2 bottom_padding 3
+bspc config -m 2 right_padding 3
+bspc config -m 2 left_padding 3
+

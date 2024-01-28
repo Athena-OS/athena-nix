@@ -1,0 +1,15 @@
+I'm excited to present my customized integration of HackTheBox, which I've poured a lot of effort into. This project was inspired by the brilliant work of z0mbi3 and adi1090x, and I've taken it a step further by enhancing themes, adding numerous scripts, and even implementing support for dual monitors. I hope you all find this integration valuable, and don't forget to show your support by giving the below repositories a star. Check out the original author's work; they've truly laid the foundation for this project.
+
+
+Forked From:
+
+Repository: 
+https://github.com/gh0stzk/dotfiles 
+https://github.com/adi1090x/rofi  
+
+
+Regard
+cr171c4!_
+
+github: https://github.com/expandpi
+

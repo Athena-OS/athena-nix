@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rofi -no-lazy-grub -show window -modi window

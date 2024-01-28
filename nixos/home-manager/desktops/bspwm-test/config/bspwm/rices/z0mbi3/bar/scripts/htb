@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+##
+# Maintainer: cr171c4!_
+# Github : https://github.com/expandpi
+##
+
+HTBIP=`$HOME/.config/bspwm/scripts/htb_ip.sh`
+
+htb_stat(){
+    if ip addr show tun0 &> /dev/null; then
+        if ip addr show tun0 | grep 'inet' &> /dev/null; then
+            echo "Hackthebox Connected: $HTBIP"
+            echo "images/icons/system/htb.png"
+        fi
+    else
+        echo "Hackthebox Not Connected"
+        echo "images/icons/system/htb_no.png"
+    fi
+}
+
+
+
+case "$1" in
+    --icon )
+            htb_stat| tail -n1 ;;
+    --ip )
+        htb_stat | head -n1;;
+esac
+
+
+

@@ -37,7 +37,6 @@ in
       (import "${home-manager}/nixos")
       /etc/nixos/hardware-configuration.nix
       ./modules/boot/${bootloader}
-      ./modules/desktops/${desktop}
       ./modules/dms/${dmanager}
       ./modules/themes/${theme}
       ./home-manager/desktops/${desktop}

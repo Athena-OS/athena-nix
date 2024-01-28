@@ -273,7 +273,7 @@ Currently, to wrap a program in a bash script, it is possible to use:
 Some packages in other Linux distributions are wrapped by using `cd` command before using `exec` like:
 ```nix
   cat > "$pkgdir/usr/bin/$pkgname" << EOF
-#!/bin/sh
+#!/usr/bin/env bash
 cd /usr/share/$pkgname/
 exec perl ./rip.pl "\${@}"
 EOF

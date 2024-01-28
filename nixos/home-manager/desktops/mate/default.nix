@@ -1,5 +1,20 @@
 { pkgs, home-manager, username, terminal, theme-components, ... }:
 let
+  mate-packages = with pkgs.mate; [
+    caja-with-extensions
+    eom
+    marco
+    mate-control-center
+    mate-desktop
+    mate-media
+    mate-netbook
+    mate-panel
+    mate-polkit
+    mate-power-manager
+    mate-session-manager
+    mate-tweak
+    mate-utils
+  ];
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
@@ -9,6 +24,21 @@ let
   backgroundTheme = "${theme-components.background}";
 in
 {
+  # ---- System Configuration ----
+  services.xserver = {
+    enable = true;
+    desktopManager = {
+      mate.enable = true;
+    };
+  };
+  environment.pathsToLink = [
+    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  ];
+  environment.systemPackages = mate-packages ++ [
+    pkgs.xdg-user-dirs
+  ];
+
+  # ---- Home Configuration ----
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = fontList;
 

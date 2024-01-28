@@ -1,0 +1,103 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: zzdyx_perfect
+  name: "哲豆·圆满"
+  version: "1.0"
+  author:
+    - 哲哲豆音形发明人：哲哲豆
+  description: |
+    哲哲豆音形圆满版
+    按`键临时拼音或者用拼音反查编码
+  dependencies:
+    - pinyin_simp
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - table_translator
+    - table_translator@custom_userdict
+
+custom_userdict:
+  dictionary: ""
+  user_dict: zzdyx_userdict
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: -1
+
+speller:
+  delimiter: " ;'"
+  #max_code_length: 4  # 四碼頂字上屏
+
+translator:
+  dictionary: zzdyx_perfect
+  prism: zzdyx_perfect
+  enable_charset_filter: true
+  enable_encoder: false
+  enable_completion: true
+  enable_sentence: false
+  encode_commit_history: true
+  enable_user_dict: false
+  max_phrase_length: 4
+
+#拼音混输
+abc_segmentor:
+  extra_tags:
+    - reverse_lookup
+
+#拼音反查
+reverse_lookup:
+  dictionary: pinyin_simp
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+punctuator:
+  import_preset: default
+  full_shape:
+    "/" : "、"
+  half_shape:
+    "/" : "、"
+
+key_binder:
+  import_preset: default
+  bindings:
+    - {accept: semicolon, send: 2, when: has_menu} #分號選第二重碼
+    - {accept: apostrophe, send: 3, when: has_menu} #引號選第三重碼
+    - {accept: "Shift+space", toggle: noop, when: always}
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "`[a-z]*'?$"

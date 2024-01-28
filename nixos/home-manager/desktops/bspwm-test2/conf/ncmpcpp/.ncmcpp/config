@@ -1,0 +1,14 @@
+mpd_music_dir = ~/Music/songs
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/mpd/lyrics
+mpd_host = localhost
+mpd_port = 6600
+#mpd_password = ""
+mpd_connection_timeout = 5
+#mpd_crossfade_time = 5
+
+audio_output {
+       type            "fifo"
+       name            "Visualizer feed"
+       path            "/tmp/mpd.fifo"
+       format          "44100:16:2"

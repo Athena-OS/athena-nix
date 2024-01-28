@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Description:	Utility shell file to migrate old genmon .rc configuration files
 #               to xfconf database entries

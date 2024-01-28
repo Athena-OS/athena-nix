@@ -1,0 +1,27 @@
+__build_info:
+  rime_version: 1.7.3
+  timestamps:
+    default: 1648183885
+    default.custom: 1648183885
+    key_bindings: 1648183886
+    key_bindings.custom: 0
+    punctuation: 1648183885
+    punctuation.custom: 0
+    spelling.custom: 0
+    spelling.schema: 1648183885
+menu:
+  page_size: 5
+schema:
+  author:
+    - "挥"
+  description: |
+    伪方案，不能打字。
+    不要选我，不要修改本方案及配套词典。
+    仅用于辅助三重注解方案实现注解功能。
+
+  name: spelling
+  schema_id: spelling
+  version: 0.2
+translator:
+  dictionary: spelling
+  enable_user_dict: false

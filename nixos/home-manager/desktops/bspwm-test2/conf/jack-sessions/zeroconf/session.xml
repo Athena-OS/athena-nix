@@ -1,0 +1,125 @@
+<!DOCTYPE qjackctlSession>
+<session name="zeroconf">
+ <client name="Internal">
+  <port name="front-left" type="in">
+   <connect client="System" port="front-left"/>
+   <connect client="Web" port="front-left"/>
+   <connect client="Media" port="front-left"/>
+   <connect client="Other" port="front-left"/>
+  </port>
+  <port name="front-right" type="in">
+   <connect client="System" port="front-right"/>
+   <connect client="Web" port="front-right"/>
+   <connect client="Media" port="front-right"/>
+   <connect client="Other" port="front-right"/>
+  </port>
+ </client>
+ <client name="System">
+  <port name="front-left" type="out">
+   <connect client="system" port="playback_1"/>
+   <connect client="Mix_all" port="front-left"/>
+   <connect client="Internal" port="front-left"/>
+  </port>
+  <port name="front-right" type="out">
+   <connect client="system" port="playback_2"/>
+   <connect client="Mix_all" port="front-right"/>
+   <connect client="Internal" port="front-right"/>
+  </port>
+ </client>
+ <client name="Web">
+  <port name="front-left" type="out">
+   <connect client="system" port="playback_1"/>
+   <connect client="Mix_all" port="front-left"/>
+   <connect client="Internal" port="front-left"/>
+  </port>
+  <port name="front-right" type="out">
+   <connect client="system" port="playback_2"/>
+   <connect client="Mix_all" port="front-right"/>
+   <connect client="Internal" port="front-right"/>
+  </port>
+ </client>
+ <client name="Discord">
+  <port name="front-left" type="in">
+   <connect client="system" port="capture_1"/>
+  </port>
+  <port name="front-right" type="in">
+   <connect client="system" port="capture_1"/>
+  </port>
+ </client>
+ <client name="Mix_all">
+  <port name="front-left" type="in">
+   <connect client="System" port="front-left"/>
+   <connect client="Web" port="front-left"/>
+   <connect client="Media" port="front-left"/>
+   <connect client="Other" port="front-left"/>
+   <connect client="system" port="capture_1"/>
+  </port>
+  <port name="front-right" type="in">
+   <connect client="System" port="front-right"/>
+   <connect client="Web" port="front-right"/>
+   <connect client="Media" port="front-right"/>
+   <connect client="Other" port="front-right"/>
+   <connect client="system" port="capture_1"/>
+  </port>
+ </client>
+ <client name="system">
+  <port name="capture_1" type="out">
+   <connect client="Mix_all" port="front-left"/>
+   <connect client="Mix_all" port="front-right"/>
+   <connect client="Discord" port="front-left"/>
+   <connect client="Discord" port="front-right"/>
+  </port>
+  <port name="capture_2" type="out"/>
+  <port name="capture_3" type="out"/>
+  <port name="capture_4" type="out"/>
+  <port name="capture_5" type="out"/>
+  <port name="capture_6" type="out"/>
+  <port name="capture_7" type="out"/>
+  <port name="capture_8" type="out"/>
+  <port name="capture_9" type="out"/>
+  <port name="capture_10" type="out"/>
+  <port name="capture_11" type="out"/>
+  <port name="capture_12" type="out"/>
+  <port name="playback_1" type="in">
+   <connect client="System" port="front-left"/>
+   <connect client="Web" port="front-left"/>
+   <connect client="Media" port="front-left"/>
+   <connect client="Other" port="front-left"/>
+  </port>
+  <port name="playback_2" type="in">
+   <connect client="System" port="front-right"/>
+   <connect client="Web" port="front-right"/>
+   <connect client="Media" port="front-right"/>
+   <connect client="Other" port="front-right"/>
+  </port>
+  <port name="playback_3" type="in"/>
+  <port name="playback_4" type="in"/>
+  <port name="playback_5" type="in"/>
+  <port name="playback_6" type="in"/>
+ </client>
+ <client name="Media">
+  <port name="front-left" type="out">
+   <connect client="system" port="playback_1"/>
+   <connect client="Mix_all" port="front-left"/>
+   <connect client="Internal" port="front-left"/>
+  </port>
+  <port name="front-right" type="out">
+   <connect client="system" port="playback_2"/>
+   <connect client="Mix_all" port="front-right"/>
+   <connect client="Internal" port="front-right"/>
+  </port>
+ </client>
+ <client name="Other">
+  <port name="front-left" type="out">
+   <connect client="system" port="playback_1"/>
+   <connect client="Mix_all" port="front-left"/>
+   <connect client="Internal" port="front-left"/>
+  </port>
+  <port name="front-right" type="out">
+   <connect client="system" port="playback_2"/>
+   <connect client="Mix_all" port="front-right"/>
+   <connect client="Internal" port="front-right"/>
+  </port>
+ </client>
+</session>
+

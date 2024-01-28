@@ -1,0 +1,305 @@
+
+;; put path to aesthetic bar config files here ;;
+(defvar eww "/run/current-system/sw/bin/eww -c $HOME/.config/bspwm/rices/z0mbi3/bar")
+
+;; Workspaces
+(deflisten workspace "./scripts/WorkSpaces")
+
+;; Volume vars
+(defvar volum false)
+(defpoll volume_icon :interval "1s" "scripts/volume --icon")
+(defpoll volumen :interval "1s" "scripts/volume --percentage")
+(defpoll volume_value :interval "1s" "scripts/volume --vol")
+
+;; Hackthebox Menu
+(defpoll HTBCON :interval "3s" "scripts/htb --icon")
+(defpoll HBTIP :interval "3s" "scripts/htb --ip")
+
+;; Network
+(defpoll WIFIICON :interval "10s" `scripts/wifi --icon`)
+(defpoll NETSTAT :interval "10s" `scripts/wifi --stat`)
+
+;; Bluetooth
+(defpoll BTICON :interval "3s" `scripts/bluetooth --icons`)
+(defpoll BTSTAT :interval "3s" `scripts/bluetooth --status`)
+
+
+;; calendar
+(defpoll calendar_day :interval "10h" "date '+%d'")
+(defpoll calendar_month :interval "10h" "date '+%m'")
+(defpoll calendar_year :interval "10h" "date '+%Y'")
+
+;; Updates vars
+(defpoll UPDATES :interval "2m" `Updates --get-updates`)
+(defvar pac false)
+
+;; Time
+(defpoll hour	:interval "1s"	"date '+%H'")
+(defpoll min	:interval "1s"	"date '+%M'")
+(defpoll time :interval "10s" "date '+%H:%M %b %d, %Y'")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Widget Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Launcher Widgets ;;
+(defwidget launcher []
+	(box :orientation "v"
+		 :space-evenly "false"
+		 :spacing -15
+
+  	(button :class "launcher_icon"
+			:halign "baseline"
+		   	:style "background-image: url('images/icons/system/athenaos-blue-crest.svg'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+		   	:onclick "cd ~ && OpenApps --menu"
+		   	:onrightclick "RiceSelector & disown")))
+
+
+;; Workspaces Widgets ;;
+(defwidget workspaces []
+	(literal :content workspace))
+
+
+;; htb_menu Widgets ;;
+(defwidget htb_menu []
+	(box		:orientation "v"
+	            :space-evenly "false"
+	            :expand "false"
+	            :class "htb_menu"
+
+	(button		:class "trayicon"
+				:tooltip "${HBTIP}"
+				:style "background-image: url('${HTBCON}'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+				:onclick "OpenApps --htb_vpn & disown & disown"
+				:onmiddleclick "OpenApps --htb_details & disown"
+				:onrightclick "OpenApps --htb_spawn & disown")))
+
+
+;; Bluetooth Widget
+(defwidget bluetooth []
+	(box		:orientation "v"
+	(button		:style "background-image: url('${BTICON}'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+				:class "trayicon"
+				:tooltip "${BTSTAT}"
+				:onclick "OpenApps --bluetooth_menu & disown" )))
+
+
+
+;; Wifi Widgets ;;
+(defwidget wifi []
+	(box		:orientation "v"  			
+	(button		:style "background-image: url('${WIFIICON}'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+				:class "trayicon"
+				:tooltip "${NETSTAT}"
+				:onclick "$HOME/.config/rofi/wifi/wifi & disown" )))
+
+
+;; control center ;;
+(defwidget notifycenter []
+	(eventbox	:onhover "${eww} update notify=true"	
+				:onhoverlost "${eww} update notify=false" 
+	(box		:orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				
+	(revealer	:transition "slideup"				
+				:reveal notify			 
+				:duration "550ms"
+	(box		:orientation "v"					
+				:space-evenly "false"
+				
+	(button		:style "background-image: url('images/icons/system/owl.png'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+				:class "trayicon" 									
+				:tooltip "Athena Welcome"
+				:onclick "OpenApps --athena-welcome & disown")))
+
+	(button		:style "background-image: url('images/icons/system/infowidgets.png'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+				:class "trayicon" 									
+				:tooltip "Info Center"		 
+				:onclick "scripts/popup --infocenter"))))
+
+(defvar notify false)
+
+
+;; Pacman Widgets ;;
+(defwidget pacman []
+	(eventbox	:onhover "${eww} update pac=true"	
+				:onhoverlost "${eww} update pac=false" 
+	(box		:orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				
+	(revealer	:transition "slideup"				
+				:reveal pac			 
+				:duration "550ms"
+	(box		:orientation "v"					
+				:space-evenly "false"
+				
+	(label  	:class "bar-updates-text" 
+				:text {UPDATES})))
+
+	(button		:style "background-image: url('images/icons/system/pac_man.png'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+				:class "trayicon" 									
+				:tooltip "Updates ${UPDATES}"
+				:onrightclick "OpenApps --checkupdates"		 
+				:onclick "OpenApps --update"))))
+
+
+;; Volume Widgets ;;
+(defwidget volum []
+	(eventbox :onhover "${eww} update volum=true" 		
+			  :onhoverlost "${eww} update volum=false"
+	(box      :orientation "v" 	  
+			  :space-evenly "false" 
+			  :spacing "2"
+	(revealer :transition "slideup" 
+			  :reveal volum         
+			  :duration "550ms"
+	(scale    :class "volbar" 	  
+			  :value volume_value
+			  :onchange "scripts/volume --set {}"
+			  :orientation "v"      
+			  :flipped true 
+			  :tooltip "Volume: ${volumen}%" 
+			  :max 101 
+			  :min 0))
+	(button   :style "background-image: url('${volume_icon}'); background-repeat: no-repeat; background-position: center; background-size: cover;"
+			  :class "trayicon"
+			  :onrightclick "OpenApps --soundcontrol"
+			  :onclick "scripts/volume --toggle-muted"))))
+
+
+;; Control Panel Widgets ;;	
+(defwidget control []
+	(box :orientation "v" 
+		 :space-evenly false  
+		 :class "control"
+
+
+(htb_menu)
+(notifycenter)
+(bluetooth)
+(wifi)
+(volum)
+(pacman)))
+
+;; Clock Widgets ;;
+(defwidget time []
+	(box	:orientation "v" 
+			:class "time" 
+			:valign "end"
+	(button	:onclick "scripts/popup --calendar"
+			:tooltip "${time}"
+			:class "time-hour" hour)
+	(button	:onclick "scripts/popup --calendar"
+			:tooltip "${time}"
+			:class "time-min"  min)))
+
+
+;; Calendar Widgets ;;
+(defwidget cal []
+	(box :class "cal-box" 
+		 :orientation "v"
+	(box :class "cal-inner-box"
+	(calendar :class "cal" 
+			  :day calendar_day 
+			  :month calendar_month 
+			  :year calendar_year))))
+
+
+;; Powermenu Widgets ;;
+(defwidget power []
+	(eventbox	:onhover "${eww} update power=true"	
+				:onhoverlost "${eww} update power=false" 
+	(box		:orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				:class "powermenu"
+	(revealer	:transition "slideup"				
+				:reveal power			 
+				:duration "550ms"
+	(box		:orientation "v"					
+				:space-evenly "false"
+
+	(button   	:class "button-bspres"  			
+				:tooltip "BSPWM Restart" 
+				:onclick "bspc wm -r" "󰑐" )
+
+  	(button		:class "button-reb"					
+	  			:tooltip "Reboot"		 
+				:onclick "reboot"	"󰜉")
+
+	(button		:class "button-quit" 				
+				:tooltip "Logout" 		 
+				:onclick "killall bspwm" "󰍃")
+
+	(button		:class "button-lock" 				
+				:tooltip "Lock Screen"	 
+				:onclick "lockscreen
+-l"	"󰌾")))
+
+	(button		:class "button-off"					
+				:tooltip "Shutdown"		 
+				:onclick "shutdown now"	"󰐥"))))
+(defvar power false)
+
+
+;; Top Widgets ;;
+(defwidget top []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "start" 
+(launcher)
+(workspaces)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+	(box	:orientation "v" 
+			:space-evenly "false"
+(time)
+(power)))
+
+;; End Widgets ;;
+(defwidget end []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :valign "end" 
+		 :spacing 5
+(control)
+(bottom)))
+
+;; Bar Widgets ;;
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation "v" 
+		 :vexpand "false" 
+		 :hexpand "false"
+
+(top)
+(end)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Window Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwindow bar
+	:geometry (geometry :x "4px" 
+						:y "0%" 
+						:anchor "left center"
+						:height "99%" 
+						:width "40px")
+	:monitor 0
+	:reserve (struts :distance "5px" 
+					 :side "left")
+	:wm-ignore false
+	:hexpand "false"
+	:vexpand "false"
+(bar))
+
+;; Calendar Windows ;;
+(defwindow calendar
+	:geometry (geometry :x "95px" 
+						:y "70%" 
+						:width "270px" 
+						:height "60px")
+(cal))

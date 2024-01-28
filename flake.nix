@@ -63,7 +63,6 @@
           ./nixos/modules/desktops/${desktop}
           ./nixos/modules/dms/${dmanager}
           ./nixos/modules/themes/${theme}
-          ./nixos/home-manager/desktops/${desktop}
           ./nixos/home-manager/terminals/${terminal}
           ./nixos/home-manager/browsers/${browser}
           ./nixos/home-manager/shells/${shell}

@@ -1,0 +1,45 @@
+
+@theme "/dev/null"
+
+* {
+  bg:			#161320;
+  fg:			#DDB6f2;
+  button:		#1E1E2E;
+  background-color:	@bg;
+  text-color:		@fg; 
+}
+
+window {
+  transparency:	"real";
+  width:		  100px;
+  height:		  260px;
+  location: east;
+  x-offset: -10px;
+}
+
+mainbox { children: [ listview ]; }
+
+listview {
+    cycle:      true;
+    dynamic:    true;
+    layout:     vertical;
+    padding:    10px;
+}
+
+element {
+  padding:		0px 0px 0px 0px;
+  border-radius:	8px;
+}
+
+element-text {
+  margin:		5px 8px 5px 12px;
+  padding:		4px 5px 4px 5px;
+  font:			"FiraCode Nerd Font 35";
+  background-color:	inherit;
+  text-color:		inherit; 
+}
+element selected {
+  background-color:	@bg;
+  text-color:		@bg;
+}
+

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+feh --no-fehbg --bg-scale "$HOME/.config/bspwm/wallpaper.jpg"

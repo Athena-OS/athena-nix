@@ -1,0 +1,5 @@
+# Rime table
+#@/db_name	cqkm
+#@/db_type	tabledb
+#@/rime_version	1.7.3
+#@/tick	0

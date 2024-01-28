@@ -1,0 +1,17 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: spelling
+  name: spelling
+  version: "0.2"
+  author:
+    - 挥
+  description: |
+    伪方案，不能打字。
+    不要选我，不要修改本方案及配套词典。
+    仅用于辅助三重注解方案实现注解功能。
+
+translator:
+  dictionary: spelling
+  enable_user_dict: false

@@ -1,0 +1,83 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.9.6" name="zeroconf">
+ <output-sockets>
+  <socket type="jack-audio" client="system" exclusive="off" name="system">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+   <plug>capture_3</plug>
+   <plug>capture_4</plug>
+   <plug>capture_5</plug>
+   <plug>capture_6</plug>
+   <plug>capture_7</plug>
+   <plug>capture_8</plug>
+   <plug>capture_9</plug>
+   <plug>capture_10</plug>
+   <plug>capture_11</plug>
+   <plug>capture_12</plug>
+  </socket>
+  <socket type="jack-audio" client="System" exclusive="off" name="System">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket type="jack-audio" client="Web" exclusive="off" name="Web">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket type="jack-audio" client="Media" exclusive="off" name="Media">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket type="jack-audio" client="Other" exclusive="off" name="Other">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket type="jack-audio" client="Music\ Player\ Daemon" exclusive="off" name="Music Player Daemon">
+   <plug>left</plug>
+   <plug>right</plug>
+  </socket>
+  <socket type="jack-audio" client="system" exclusive="off" name="system 2">
+   <plug>capture_1</plug>
+   <plug>capture_1</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket type="jack-audio" client="system" exclusive="off" name="system">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+   <plug>playback_5</plug>
+   <plug>playback_6</plug>
+  </socket>
+  <socket type="jack-audio" client="Discord" exclusive="off" name="Discord">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket type="jack-audio" client="Internal" exclusive="off" name="Internal">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket type="jack-audio" client="Mix_all" exclusive="off" name="Mix_all">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable input="Internal" type="jack-audio" output="System"/>
+  <cable input="system" type="jack-audio" output="System"/>
+  <cable input="Mix_all" type="jack-audio" output="System"/>
+  <cable input="system" type="jack-audio" output="Web"/>
+  <cable input="Mix_all" type="jack-audio" output="Web"/>
+  <cable input="Internal" type="jack-audio" output="Web"/>
+  <cable input="Internal" type="jack-audio" output="Media"/>
+  <cable input="Mix_all" type="jack-audio" output="Media"/>
+  <cable input="system" type="jack-audio" output="Media"/>
+  <cable input="Internal" type="jack-audio" output="Other"/>
+  <cable input="Mix_all" type="jack-audio" output="Other"/>
+  <cable input="system" type="jack-audio" output="Other"/>
+  <cable input="Discord" type="jack-audio" output="system 2"/>
+  <cable input="Mix_all" type="jack-audio" output="system 2"/>
+ </cables>
+</patchbay>
+

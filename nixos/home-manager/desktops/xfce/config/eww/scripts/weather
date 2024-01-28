@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # go here to get api  and documentation https://openweathermap.org/api
 

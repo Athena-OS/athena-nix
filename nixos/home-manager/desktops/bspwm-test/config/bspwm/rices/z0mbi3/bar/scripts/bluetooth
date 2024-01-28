@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+##
+# Maintainer: cr171c4!_
+# Github : https://github.com/expandpi
+##
+
+
+bluetooth_com() {
+# Check if Bluetooth is enabled
+bluetooth_status=$(bluetoothctl show | grep "Powered: yes")
+
+if [[ -n "$bluetooth_status" ]]; then
+    # Check if any device is connected
+    connected_devices=$(bluetoothctl devices Connected | awk '{print $1=$2=$3=""}1')
+    # echo $connected_devices   ## DEBUG
+
+    if [[ -n "$connected_devices" ]]; then
+        # Extract device names from connected_devices
+        # connected_names=$(echo "$connected_devices")
+        # echo $connected_names  # DEBUG
+
+        # Print connected device names
+        echo $connected_devices
+        echo "images/icons/system/bt-con.png"
+    else
+        echo "BT ON"
+        echo "images/icons/system/bt-on.png"
+    fi
+else
+    echo "BT OFF"
+    echo "images/icons/system/bt-off.png"
+fi
+}
+
+case "$1" in
+    --icons)
+          bluetooth_com | tail -n1 ;;
+    --status )
+          bluetooth_com| head -n1 ;;
+
+  esac

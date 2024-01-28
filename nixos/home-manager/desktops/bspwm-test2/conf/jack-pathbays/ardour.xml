@@ -1,0 +1,246 @@
+<!DOCTYPE patchbay>
+<patchbay name="ardour" version="0.9.6">
+ <output-sockets>
+  <socket name="system" client="system" type="jack-audio" exclusive="off">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+   <plug>capture_3</plug>
+   <plug>capture_4</plug>
+   <plug>capture_5</plug>
+   <plug>capture_6</plug>
+   <plug>capture_7</plug>
+   <plug>capture_8</plug>
+   <plug>capture_9</plug>
+   <plug>capture_10</plug>
+   <plug>capture_11</plug>
+   <plug>capture_12</plug>
+  </socket>
+  <socket name="System" client="System" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="Web" client="Web" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="Media" client="Media" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="Other" client="Other" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="ardour" client="ardour" type="jack-audio" exclusive="off">
+   <plug>LTC\-Out</plug>
+   <plug>Click\/audio_out\ 1</plug>
+   <plug>Click\/audio_out\ 2</plug>
+   <plug>Master\/audio_out\ 1</plug>
+   <plug>Master\/audio_out\ 2</plug>
+   <plug>mic\-0\/audio_out\ 1</plug>
+   <plug>send\ 2\/audio_send\ 1</plug>
+   <plug>send\ 1\/audio_send\ 1</plug>
+   <plug>send\ 2\/audio_send\ 2</plug>
+   <plug>mic\-1\/audio_out\ 1</plug>
+   <plug>mic\-1\/audio_out\ 2</plug>
+   <plug>System\/audio_out\ 1</plug>
+   <plug>System\/audio_out\ 2</plug>
+   <plug>Web\/audio_out\ 1</plug>
+   <plug>Web\/audio_out\ 2</plug>
+   <plug>Media\/audio_out\ 1</plug>
+   <plug>Media\/audio_out\ 2</plug>
+   <plug>Other\/audio_out\ 1</plug>
+   <plug>Other\/audio_out\ 2</plug>
+   <plug>Discord\/audio_out\ 1</plug>
+   <plug>Discord\/audio_out\ 2</plug>
+   <plug>Internal\/audio_out\ 1</plug>
+   <plug>Internal\/audio_out\ 2</plug>
+   <plug>Reverb\/audio_out\ 1</plug>
+   <plug>Reverb\/audio_out\ 2</plug>
+   <plug>mic\-0\/audio_out\ 2</plug>
+   <plug>auditioner\/audio_out\ 1</plug>
+   <plug>auditioner\/audio_out\ 2</plug>
+  </socket>
+  <socket name="ardour 2" client="ardour" type="jack-audio" exclusive="off">
+   <plug>mic\-0\/audio_out\ 1</plug>
+   <plug>mic\-0\/audio_out\ 1</plug>
+   <plug>send\ 2\/audio_send\ 1</plug>
+   <plug>send\ 1\/audio_send\ 1</plug>
+   <plug>send\ 2\/audio_send\ 2</plug>
+   <plug>mic\-1\/audio_out\ 1</plug>
+   <plug>mic\-1\/audio_out\ 1</plug>
+   <plug>mic\-1\/audio_out\ 2</plug>
+   <plug>mic\-1\/audio_out\ 2</plug>
+   <plug>System\/audio_out\ 1</plug>
+   <plug>System\/audio_out\ 1</plug>
+   <plug>System\/audio_out\ 2</plug>
+   <plug>System\/audio_out\ 2</plug>
+   <plug>Web\/audio_out\ 1</plug>
+   <plug>Web\/audio_out\ 1</plug>
+   <plug>Web\/audio_out\ 2</plug>
+   <plug>Web\/audio_out\ 2</plug>
+   <plug>Media\/audio_out\ 1</plug>
+   <plug>Media\/audio_out\ 1</plug>
+   <plug>Media\/audio_out\ 2</plug>
+   <plug>Media\/audio_out\ 2</plug>
+   <plug>Other\/audio_out\ 1</plug>
+   <plug>Other\/audio_out\ 1</plug>
+   <plug>Other\/audio_out\ 2</plug>
+   <plug>Other\/audio_out\ 2</plug>
+   <plug>Reverb\/audio_out\ 1</plug>
+   <plug>Reverb\/audio_out\ 1</plug>
+   <plug>Reverb\/audio_out\ 2</plug>
+   <plug>Reverb\/audio_out\ 2</plug>
+   <plug>mic\-0\/audio_out\ 2</plug>
+   <plug>mic\-0\/audio_out\ 2</plug>
+  </socket>
+  <socket name="ardour 3" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Internal\/audio_out\ 1</plug>
+   <plug>Internal\/audio_out\ 2</plug>
+  </socket>
+  <socket name="ardour 4" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Master\/audio_out\ 1</plug>
+   <plug>Master\/audio_out\ 2</plug>
+  </socket>
+  <socket name="system 2" client="system" type="jack-audio" exclusive="off">
+   <plug>capture_1</plug>
+   <plug>capture_1</plug>
+  </socket>
+  <socket name="ardour 5" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Discord\/audio_out\ 1</plug>
+   <plug>Discord\/audio_out\ 2</plug>
+  </socket>
+  <socket name="ardour" client="ardour" type="jack-midi" exclusive="off">
+   <plug>MMC\ out</plug>
+   <plug>Scene\ out</plug>
+   <plug>x\-virtual\-keyboard</plug>
+   <plug>MTC\ out</plug>
+   <plug>MIDI\ Clock\ out</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket name="system" client="system" type="jack-audio" exclusive="off">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+   <plug>playback_5</plug>
+   <plug>playback_6</plug>
+  </socket>
+  <socket name="Discord" client="Discord" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="Internal" client="Internal" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="Mix_all" client="Mix_all" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="ardour" client="ardour" type="jack-audio" exclusive="off">
+   <plug>physical_audio_input_monitor_enable</plug>
+   <plug>LTC\ in</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>mic\-0\/audio_in\ 1</plug>
+   <plug>mic\-1\/audio_in\ 1</plug>
+   <plug>System\/audio_in\ 1</plug>
+   <plug>System\/audio_in\ 2</plug>
+   <plug>Web\/audio_in\ 1</plug>
+   <plug>Web\/audio_in\ 2</plug>
+   <plug>Media\/audio_in\ 1</plug>
+   <plug>Media\/audio_in\ 2</plug>
+   <plug>SC\ Media\/LSP\ Sidechain\ Compressor\ Stereo\ 1\/audio_in\ 1</plug>
+   <plug>Other\/audio_in\ 1</plug>
+   <plug>Other\/audio_in\ 2</plug>
+   <plug>Discord\/audio_in\ 1</plug>
+   <plug>Discord\/audio_in\ 2</plug>
+   <plug>Internal\/audio_in\ 1</plug>
+   <plug>Internal\/audio_in\ 2</plug>
+   <plug>Reverb\/audio_in\ 1</plug>
+   <plug>Reverb\/audio_in\ 2</plug>
+  </socket>
+  <socket name="ardour 2" client="ardour" type="jack-audio" exclusive="off">
+   <plug>System\/audio_in\ 1</plug>
+   <plug>System\/audio_in\ 2</plug>
+  </socket>
+  <socket name="ardour 3" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Other\/audio_in\ 1</plug>
+   <plug>Other\/audio_in\ 2</plug>
+  </socket>
+  <socket name="ardour 4" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Discord\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Reverb\/audio_in\ 1</plug>
+   <plug>SC\ Media\/LSP\ Sidechain\ Compressor\ Stereo\ 1\/audio_in\ 1</plug>
+   <plug>Reverb\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Discord\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>Discord\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Internal\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>Internal\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Internal\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>Internal\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Internal\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>Internal\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Internal\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>Internal\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 1</plug>
+   <plug>Discord\/audio_in\ 1</plug>
+   <plug>Master\/audio_in\ 2</plug>
+   <plug>Discord\/audio_in\ 2</plug>
+   <plug>Discord\/audio_in\ 2</plug>
+   <plug>Master\/audio_in\ 2</plug>
+  </socket>
+  <socket name="ardour 5" client="ardour" type="jack-audio" exclusive="off">
+   <plug>mic\-0\/audio_in\ 1</plug>
+   <plug>mic\-1\/audio_in\ 1</plug>
+  </socket>
+  <socket name="system 2" client="system" type="jack-audio" exclusive="off">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket name="ardour 6" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Web\/audio_in\ 1</plug>
+   <plug>Web\/audio_in\ 2</plug>
+  </socket>
+  <socket name="ardour 7" client="ardour" type="jack-audio" exclusive="off">
+   <plug>Media\/audio_in\ 1</plug>
+   <plug>Media\/audio_in\ 2</plug>
+  </socket>
+  <socket name="ardour" client="ardour" type="jack-midi" exclusive="off">
+   <plug>physical_midi_input_monitor_enable</plug>
+   <plug>MTC\ in</plug>
+   <plug>MIDI\ Clock\ in</plug>
+   <plug>MMC\ in</plug>
+   <plug>Scene\ in</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable input="ardour 2" type="jack-audio" output="System"/>
+  <cable input="ardour 6" type="jack-audio" output="Web"/>
+  <cable input="ardour 7" type="jack-audio" output="Media"/>
+  <cable input="ardour 3" type="jack-audio" output="Other"/>
+  <cable input="ardour 4" type="jack-audio" output="ardour 2"/>
+  <cable input="Internal" type="jack-audio" output="ardour 3"/>
+  <cable input="Mix_all" type="jack-audio" output="ardour 4"/>
+  <cable input="system 2" type="jack-audio" output="ardour 4"/>
+  <cable input="ardour 5" type="jack-audio" output="system 2"/>
+  <cable input="Discord" type="jack-audio" output="ardour 5"/>
+ </cables>
+</patchbay>
+

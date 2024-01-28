@@ -1,0 +1,219 @@
+__build_info:
+  rime_version: 1.7.3
+  timestamps:
+    default: 1648183885
+    default.custom: 1648183885
+    flypy.custom: 0
+    flypy.schema: 1648286362
+    key_bindings: 1648183886
+    key_bindings.custom: 0
+    punctuation: 1648183885
+    punctuation.custom: 0
+custom_phraseBQ:
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: "-1"
+  user_dict: flypy_plus
+custom_phraseVD:
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 0
+  user_dict: flypy_top
+custom_phraseXT:
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: "-1"
+  user_dict: flypy_sys
+custom_phraseYH:
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: "-1"
+  user_dict: flypy_user
+engine:
+  filters:
+    - simplifier
+    - "simplifier@simplification"
+    - uniquifier
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - "table_translator@custom_phraseVD"
+    - "table_translator@custom_phraseXT"
+    - "table_translator@custom_phraseYH"
+    - "table_translator@custom_phraseBQ"
+    - reverse_lookup_translator
+    - "history_translator@history"
+history:
+  initial_quality: 1
+  input: ";f"
+  size: 1
+key_binder:
+  bindings:
+    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: paging}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: bracketleft, send: Page_Up, when: paging}
+    - {accept: bracketright, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
+    - {accept: semicolon, send: 2, when: has_menu}
+    - {accept: apostrophe, send: 3, when: has_menu}
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}
+    - {accept: bracketleft, send: Page_Up, when: paging}
+    - {accept: bracketright, send: Page_Down, when: has_menu}
+    - {accept: comma, send: comma, when: paging}
+    - {accept: period, send: period, when: has_menu}
+    - {accept: semicolon, send: 2, when: has_menu}
+    - {accept: "Release+period", send: period, when: composing}
+    - {accept: "Release+comma", send: comma, when: composing}
+    - {accept: Tab, send: Escape, when: composing}
+    - {accept: Shift_R, send: Escape, when: composing}
+    - {accept: "Shift+space", toggle: full_shape, when: always}
+    - {accept: "Control+period", toggle: ascii_punct, when: always}
+    - {accept: "Control+j", toggle: simplification, when: always}
+  import_preset: default
+menu:
+  page_size: 5
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "＝"
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": "#"
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["%", "％", "°", "℃"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂"]
+    "+": "+"
+    ",": {commit: "，"}
+    "-": "-"
+    .: {commit: "。"}
+    "/": ["、", "/", "／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "="
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": "@"
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "\\", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "`"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "|", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": ["~", "～"]
+  import_preset: default
+recognizer:
+  import_preset: default
+  patterns:
+    expression: "^=.*$"
+    punct: ""
+    reverse_lookup: "[a-z`]*`+[a-z`]*"
+    uppercase: ""
+reverse_lookup:
+  comment_format:
+    - "xform/ / /"
+  dictionary: flypydz
+schema:
+  author:
+    - "方案设计：何海峰 <flypy@qq.com>"
+  description: |
+    小鹤音形输入法
+
+  name: "鹤形"
+  schema_id: flypy
+  version: 10.8.6
+simplification:
+  opencc_config: s2tw.json
+  option_name: simplification
+  tips: all
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;'"
+  auto_clear: max_length
+  auto_select: true
+  auto_select_pattern: "^;.$|^\\w{4}$"
+  finals: "'"
+  initials: ";abcdefghijklmnopqrstuvwxyz"
+  max_code_length: 4
+style:
+  horizontal: false
+switches:
+  - name: ascii_mode
+    reset: 0
+  - name: full_shape
+  - name: simplification
+    reset: 0
+  - name: ascii_punct
+    reset: 0
+translator:
+  dictionary: flypy
+  disable_user_dict_for_patterns:
+    - "^z.*$"
+  enable_charset_filter: false
+  enable_completion: true
+  enable_sentence: false
+  enable_user_dict: true

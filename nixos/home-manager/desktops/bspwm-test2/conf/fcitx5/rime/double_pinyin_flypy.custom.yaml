@@ -1,0 +1,45 @@
+# encoding: utf-8
+
+patch:
+  switches/@next:
+    name: emoji_suggestion
+    reset: 0
+    states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: all
+
+  menu/page_size: 5   # 候选词个数
+
+# 若caps切换大小写无效,打开系统偏好设置-键盘-输入法-取消勾选[使用大写锁定键切换“美国”输入模式]
+  ascii_composer/good_old_caps_lock: true   # 若为true，caps只切换大小写
+  ascii_composer/switch_key:
+    Caps_Lock: commit_code                    
+    Shift_L: commit_code                    # 左Shift   关闭noop
+    Shift_R: commit_code                    # 右Shift
+    Control_L: noop                         # 左Control
+    Control_R: noop                         # 右Control
+
+  key_binder/bindings: # 快捷键,若要开启,去掉前面的 # 号
+    - { when: composing, accept: Shift+Tab, send: Shift+Left }  # "Shift+Tab" 键向左选拼音分词
+    - { when: composing, accept: Tab, send: Shift+Right }       # "tab" 键选拼音分词   
+    #- { when: composing, accept: Tab, send: Page_Down }        # "tab" 键翻页
+    - { when: paging, accept: minus, send: Page_Up }            # "-"上一页
+    - { when: has_menu, accept: equal, send: Page_Down }        # "="下一页
+    - { when: paging, accept: bracketleft, send: Page_Up }      # "["上一页
+    - { when: has_menu, accept: bracketright, send: Page_Down } # "]"下一页
+    - { when: paging, accept: comma, send: Page_Up }            # ","上一页
+    - { when: has_menu, accept: period, send: Page_Down }       # "."下一页
+    - {accept: semicolon, send: 2, when: has_menu}             # 候选2 用分号
+    - {accept: apostrophe, send: 3, when: has_menu}            # 候选3 用单引号
+    #- {accept: "Control+a", send: Home, when: composing}                   # 光标移至首
+    #- {accept: "Control+e", send: End, when: composing}                    # 光标移至尾
+    #- {accept: "Control+Shift+1", select: .next, when: always}             # 切换输入方案
+    #- {accept: "Control+Shift+2", toggle: ascii_mode, when: always}        # 中英文切换
+    #- {accept: "Control+Shift+3", toggle: full_shape, when: always}        # 全角/半角切换
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}    # 繁简体切换
+    #- {accept: "Control+Shift+5", toggle: extended_charset, when: always}  # 通用/增广切换（显示生僻字）
+    #- {accept: Return, send: Escape, when: composing}                      # 回车清码

@@ -1,0 +1,79 @@
+
+configuration {
+  sort:			true;
+  sorting-method:	"normal";
+  disable-history:	false;
+  scroll-method:	0;
+  window-thumbnail:	true;
+}
+
+@theme "/dev/null"
+
+* {
+  bg:		#0C0F09;
+  fg:		#05E289;
+  bgAlt: #1B1E25;
+  button:		#05E289;
+  background-color:	@bg;
+  text-color:		@fg;
+}
+@import "../Themes/style.rasi"
+
+mainbox { children: [ inputbar, listview ]; }
+
+window {
+  transparency:		"real";
+  width:		600px;
+  border:		15px 15px 15px 15px;
+  border-radius:	12px;
+  border-color: @bg;
+  height:		500px;
+}
+
+inputbar {
+  children:		[ prompt, entry ];
+  expand:		false;
+  padding:		10px 10px 10px 10px;
+}
+
+prompt { 
+  enabled: true; 
+  padding:		10px;
+  border-radius:	15px;
+}
+
+entry {
+  background-color:	@bgAlt;
+  placeholder:		"Search";
+  expand:		true;
+  padding:		10px;
+  border-radius:	15px;
+}
+
+listview {
+  columns:		2;
+  cycle:		true;
+  dynamic:		true;
+  layout:		vertical;
+  scrollbar:		false;
+}
+
+element {
+  orientation:		vertical;
+  margin:		4px 4px 4px 4px;
+  border-radius:	10px;
+  background-color: @bgAlt;
+}
+
+element-text {
+  expand:		true;
+  margin:		12px 15px 12px 15px;
+  background-color:	inherit;
+  text-color:		inherit;
+}
+
+element selected {
+  background-color:	@fg;
+  text-color: @bgAlt;
+  border-radius:	10px;
+}

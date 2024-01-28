@@ -349,6 +349,10 @@
 				url = "https://nix-community.github.io/home-manager/options.xhtml";
 			}
 			{
+				name = "Nix Matrix";
+				url = "https://matrix.to/#/#community:nixos.org";
+			}
+			{
 				name = "NixOS Search";
 				url = "https://search.nixos.org/packages";
 			}

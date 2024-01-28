@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+monitors=($(xrandr | grep " connected " | awk '{ print$1 }'))
+resolutions=($(xrandr | grep "*" | awk '{ print $1 }'))
+
+index=0
+cmd="xrandr "
+for i in "${monitors[@]}"
+do
+   ARGS="$ARGS--output $i --mode ${resolutions[$index]} --rotate normal "
+   index=$((index+1))
+done
+set_multimonitor="$cmd $ARGS --primary --left-of ${monitors[0]}"
+echo $set_multimonitor
+$($set_multimonitor)
+polybar-msg cmd restart
+eww daemon --restart -c ~/.config/bspwm/rices/z0mbi3/bar/
+eww open -c ~/.config/bspwm/rices/z0mbi3/bar/ bar

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Thanks to: i3lock-solarized (https://github.com/parsiad/i3lock-solarized)
 
 # Colors

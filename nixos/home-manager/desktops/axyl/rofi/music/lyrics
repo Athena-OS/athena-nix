@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# this script just prints lyrics from file /tmp/lyrics
+# music script finds lyrics and puts it in /tmp/lyrics.
+
+# Your lyrics is comming from here:
+
+# api.lyrics.ovh/v1 1st preference
+# if you see "paroles de la chanson" (lyrics of the song) in first line of your lyrics it's comming from this api.
+
+# makeitpersonal.com/lyrics 2nd alternative if coudn't find on 1st 
+# if output is "Sorry, We don't have lyrics for this song yet. Add them to https://lyrics.wikia.com" it's comming from this api.
+
+printf "$(cat /tmp/lyrics)" | less
+

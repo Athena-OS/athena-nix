@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+
+function hide() {
+	
+case "${RICETHEME}" in
+    aline|silvia|pamela)
+        polybar-msg cmd hide | bspc config -m 1 top_padding 2
+        ;;
+    cristina)
+        polybar-msg cmd hide | bspc config -m 1 bottom_padding 2
+        ;;
+    melissa|cynthia)
+        polybar-msg cmd hide | bspc config -m 1 top_padding 2 | bspc config -m 1 bottom_padding 2
+        ;;
+    z0mbi3)
+        eww -c "$HOME"/.config/bspwm/rices/z0mbi3/bar close bar | bspc -m 1 config left_padding 2
+        ;;
+    karla)
+        polybar-msg cmd hide | bspc -m 1 config top_padding 2
+        ;;
+    *)
+        echo "Error: Something Went Wrong!!"
+        ;;
+esac
+	
+}
+
+function unhide() {
+	
+case "${RICETHEME}" in
+	pamela)
+		polybar-msg cmd show | bspc config -m 1 top_padding 59
+		;;
+	aline)
+		polybar-msg cmd show | bspc config -m 1 top_padding 48
+		;;
+	silvia)
+		polybar-msg cmd show | bspc config -m 1 top_padding 52
+		;;
+	melissa)
+		polybar-msg cmd show | bspc -m 1 config top_padding 42 | bspc -m 1 config bottom_padding 40
+		;;
+	cynthia)
+		polybar-msg cmd show | bspc -m 1 config top_padding 48 | bspc -m 1 config bottom_padding 48
+		;;
+	cristina)
+		polybar-msg cmd show | bspc -m 1 config bottom_padding 60
+		;;
+	z0mbi3)
+		eww -c "$HOME"/.config/bspwm/rices/z0mbi3/bar open bar | bspc -m 1 config left_padding 58
+		;;
+	karla)
+		polybar-msg cmd show | bspc -m 1 config top_padding 48
+		;;
+	*)
+		echo "Error: Something fails dud.."
+		;;
+esac
+
+}
+
+case $1 in
+	-h | --hide | hide)
+		hide
+		exit;;
+	-u | --unhide | unhide)
+		unhide
+		exit;;
+	*) # Invalid option
+		echo "Error: Invalid option"
+		exit;;
+esac

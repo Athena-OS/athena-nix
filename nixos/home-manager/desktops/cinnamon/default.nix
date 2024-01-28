@@ -1,5 +1,13 @@
 { pkgs, home-manager, username, terminal, theme-components, ... }:
 let
+  cinnamon-packages = with pkgs; [
+    ffmpeg
+    gnome.gnome-screenshot
+    xdg-user-dirs
+    xdotool
+    xorg.xdpyinfo
+    xorg.xwininfo
+  ];
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
@@ -9,6 +17,22 @@ let
   backgroundTheme = "${theme-components.background}";
 in
 {
+  # ---- System Configuration ----
+  services = {
+    cinnamon.apps.enable = true;
+    xserver = {
+      enable = true;
+      desktopManager = {
+        cinnamon.enable = true;
+      };
+    };
+  };
+  environment.pathsToLink = [
+    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  ];
+  environment.systemPackages = cinnamon-packages;
+
+  # ---- Home Configuration ----
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = fontList;
 

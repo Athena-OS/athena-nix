@@ -1,0 +1,231 @@
+﻿# Rime schema settings
+# encoding: utf-8
+#不想用某个功能可以在其相关的行首打上 # 号注释掉
+schema:
+  schema_id: cqkm_cm
+  name: "超强快码重码"
+  version: "1.0"
+  author:
+    - 付东升
+  description: |
+    超强快码。按 i 键临时拼音或者用拼音反查编码
+  dependencies:
+    - ipinyin
+    - english
+    - spelling
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: new_spelling
+    reset: 0
+    states: [ 隐, 显 ]
+  - name: new_hide_pinyin
+    reset: 1
+    states: [ 音, 哑 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+  - name: zh_trad
+    reset: 0
+    states: [ 简,繁 ]
+  - name: emoji_suggestion
+    reset: 0
+    states: ["🈚️", "🈶"]
+
+
+engine:
+  filters:
+    - charset_filter@gb2312
+    - simplifier
+    - reverse_lookup_filter@i_reverse_lookup
+    - lua_filter@new_spelling@spelling #显隐编码和拼音
+    - lua_filter@single_char #单字模式
+    - uniquifier
+    - "simplifier@emoji_suggestion" #emoji
+  processors:
+    - ascii_composer
+    - lua_processor@submit_text_processor
+    - lua_processor@switch_processor #打 kuai 出切换方案选单的
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - "affix_segmentor@mkst" #精准造词
+    - "affix_segmentor@veng" #临时英文
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - table_translator
+    - "table_translator@fixed"
+    - "table_translator@mkst" #精准造词
+    - "lua_translator@helper" #键入help出帮助菜单
+    - "lua_translator@time_date" #键入date出日期等lua功能
+    - table_translator@veng #分号临时英文
+    - history_translator@historyz #重复上次输入
+    - table_translator@i+
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz'
+  initials: 'abcdefghijklmnopqrstuvwxyz'
+  delimiter: "`"
+  auto_clear: max_length
+  auto_select: true 
+  max_code_length: 4
+  auto_select_pattern: "(^[uv].$)|^.{4}$"
+
+translator:
+  dictionary: cqkm_cm.src
+  initial_quality: 0
+  enable_charset_filter: false
+  enable_encoder: false
+  enable_completion: true #逐码提示开关
+  enable_sentence: false
+  encode_commit_history: false
+  enable_user_dict: false
+  max_phrase_length: 4
+  disable_user_dict_for_patterns:
+    - "^[ivu].*$"
+    - "^.*$"
+  preedit_format:
+    - xform/^i(.*)/$1/
+    - xform/^v/z/
+  comment_format:
+    - xform/~/ /
+
+fixed: 
+  __include: /translator
+  initial_quality: -1000
+  enable_completion: false
+  enable_encoder: true
+  enable_user_dict: true
+  db_class: tabledb
+  disable_user_dict_for_patterns:
+    - "^.{1,3}$"
+
+mkst:
+  __include: /translator
+  enable_sentence: true
+  prefix: '`'
+  tips: "〔精准造词〕"
+  tag: mkst
+
+simplifier: #繁简转换
+  opencc_config: s2t.json
+  option_name: zh_trad
+
+lua_reverse_db: #调用build里的spelling文件以此来显示编码和拼音
+  spelling: spelling
+  code: spelling
+  
+emoji_suggestion: #emoji表情，调用opencc里的文件
+  opencc_config: emoji.json
+  option_name: emoji_suggestion
+  tips: all
+  
+veng:
+  dictionary: english
+  tag: veng
+  prefix: ";"
+  suffix: " "
+  tips: "〔临时英文〕"
+  enable_completion: true
+  enable_encoder: false
+  enable_user_dict: false
+  enable_sentence: false
+  initial_quality: -100000
+  
+i+:
+  dictionary: ipinyin
+  enable_completion: true
+  enable_sentence: false
+  enable_encoder: false
+  enable_user_dict: false
+  initial_quality: -10
+
+#i_reverse_lookup:
+#  tags: [ i_reverse_lookup_pattern ]
+#  dictionary: cqkm_cm.src
+#  overwrite_comment: true
+#  comment_format: &comment
+#    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
+#    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
+#    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
+#    - xform/(^|\W)([^uioav])\W(\2\w+)/$1$3/
+#    - xform/(\W)[ivu]\w+//
+#    - xform/(^)[ivu]\w+\W/$1/
+#    - xform/(^)[ivu]\w+$//
+#    - xform/ /\ |\ /
+#    - xform/$/\] /
+#    - xform/^/ \[/
+
+historyz:
+  input: uj
+  size: 1
+  initial_quality: 0
+
+recognizer:
+  import_preset: default
+  patterns:
+    i_reverse_lookup_pattern: "^i.[a-z]+$"
+    mkst: "^[a-z]*`[a-z`]*$"
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    helper: '^help$'
+    punct: "^/([0-9]0?|[A-Za-z]+)$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$"
+    veng: "^;.*$"
+
+charset_filter:
+  option_name: gb2312
+
+key_binder:
+  import_preset: default
+  bindings:
+    - {accept: Left, send: Up, when: has_menu}
+    - {accept: Right, send: Down, when: has_menu}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: semicolon, send: 2, when: has_menu} # 分号选2重
+    - {accept: apostrophe, send: 3, when: has_menu} # 引号选3重
+    - {accept: space, send: space, when: has_menu}
+    - {accept: Return, send: Escape, when: has_menu}
+    - {accept: "Control+Shift+4", toggle: zh_trad, when: always} #繁简开关
+    - {accept: "Control+Shift+dollar", toggle: zh_trad, when: always} #繁简开关
+    - {accept: "Control+Shift+F", toggle: zh_trad, when: always} #繁简开关
+    - {accept: "Control+Shift+G", toggle: emoji_suggestion, when: always} #emoji
+    - {accept: "Control+Shift+H", toggle: new_spelling, when: always} #显隐编码
+    - {accept: "Control+Shift+J", toggle: new_hide_pinyin, when: always} #显隐拼音
+    - {accept: "Control+Shift+K", toggle: single_char, when: always} #单字模式
+
+punctuator:
+  import_preset: symbols #symbols 使用rime自带符号文件|default 不使用
+  full_shape: #全半角符号输出，调用symbols，如果常打某个符号，而其却在候选后面，其它候选符号用不到，可以在这里定义
+    "/" : "、"
+    "=" : "="
+  half_shape:
+    "/" : "、"
+    "=" : "="
+
+ascii_composer:
+  switch_key:
+    Control_L: noop # noop 无 |clear 字符被清除，转英文输入
+    Control_R: noop # noop 无 |commit_text 输入一段编码字符后汉字上屏，转英文输入
+    Shift_L: commit_code # 编码直接上屏，转英文输入
+    Shift_R: inline_ascii # 编码不上屏，转英文输入，Enter上屏，之后还是中文输入
+    Caps_Lock: clear
+    Eisu_toggle: clear
+
+menu:
+  page_size: 6 #候选数

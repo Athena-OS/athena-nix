@@ -1,0 +1,880 @@
+Apr 02 11:00 : update: added /en-嚣张.mp3
+Apr 02 11:00 : update: added /Keith Hanley-Blue.mp3
+Apr 02 11:00 : update: added /Lauris Reiniks-Banjo Laura.mp3
+Apr 02 11:00 : update: added /Matt吕彦良-飞.mp3
+Apr 02 11:00 : update: added /MOMOLAND-뿜뿜.mp3
+Apr 02 11:00 : update: added /Nono陈童言-Burrito.mp3
+Apr 02 11:00 : update: added /The Kid LAROI,Justin Bieber-STAY.mp3
+Apr 02 11:00 : update: added /The Walker,朱恩池ZGODZ-DanceMonkey.mp3
+Apr 02 11:00 : update: added /Winky诗-囚禁.mp3
+Apr 02 11:00 : update: added /一支榴莲-海底.mp3
+Apr 02 11:00 : update: added /三块木头-浮生若梦.mp3
+Apr 02 11:00 : update: added /不才-寻常歌.mp3
+Apr 02 11:00 : update: added /乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3
+Apr 02 11:00 : update: added /二胖u-我走就是了.mp3
+Apr 02 11:00 : update: added /于潼-穷极一生到不了的天堂.mp3
+Apr 02 11:00 : update: added /伏仪-记昨日书.mp3
+Apr 02 11:00 : update: added /余梓桾,张子薇-戏歌.mp3
+Apr 02 11:00 : update: added /八三夭-想见你想见你想见你.mp3
+Apr 02 11:00 : update: added /剑网3-一世心上长安.mp3
+Apr 02 11:00 : update: added /剑网3-万象长安.mp3
+Apr 02 11:00 : update: added /卞子严-挺好.mp3
+Apr 02 11:00 : update: added /叶炫清-相念于心.mp3
+Apr 02 11:00 : update: added /周兴哲-永不失联的爱.mp3
+Apr 02 11:00 : update: added /周深-请笃信一个梦.mp3
+Apr 02 11:00 : update: added /夏天Alex-那该多好.mp3
+Apr 02 11:00 : update: added /孟慧圆-哈哈哈.mp3
+Apr 02 11:00 : update: added /小时姑娘-爱晚亭边.mp3
+Apr 02 11:00 : update: added /小时姑娘-霞光.mp3
+Apr 02 11:00 : update: added /小田音乐社,傲七爷-枕边童话.mp3
+Apr 02 11:00 : update: added /张紫豪-称谓.mp3
+Apr 02 11:00 : update: added /张靓颖-想你，零点零一分.mp3
+Apr 02 11:00 : update: added /恋恋故人难,黄诗扶,妖扬-吹梦到西洲.mp3
+Apr 02 11:00 : update: added /李学仕-不想做朋友.mp3
+Apr 02 11:00 : update: added /李昂星-有谱.mp3
+Apr 02 11:00 : update: added /柏松-寻常岁月诗.mp3
+Apr 02 11:00 : update: added /柳爽-漠河舞厅·2022.mp3
+Apr 02 11:00 : update: added /潘辰-流泪.mp3
+Apr 02 11:00 : update: added /焦迈奇-你曾是少年.mp3
+Apr 02 11:00 : update: added /王天戈-侧面.mp3
+Apr 02 11:00 : update: added /艾辰-错位时空.mp3
+Apr 02 11:00 : update: added /茶茶-上一个最好.mp3
+Apr 02 11:00 : update: added /萧忆情Alex-如愿.mp3
+Apr 02 11:00 : update: added /葛东琪-囍.mp3
+Apr 02 11:00 : update: added /蔡维泽-来自尘埃的光.mp3
+Apr 02 11:00 : update: added /谢安琪-喜帖街.mp3
+Apr 02 11:00 : update: added /赵钶-有人.mp3
+Apr 02 11:00 : update: added /邓园长-毒药.mp3
+Apr 02 11:00 : update: added /郁可唯-原谅不美好.mp3
+Apr 02 11:00 : update: added /郑闯-风骚.mp3
+Apr 02 11:00 : update: added /钱润玉,李昂星-若.mp3
+Apr 02 11:00 : update: added /阿YueYue,戾格,小田音乐社-沈园外.mp3
+Apr 02 11:00 : update: added /阿里郎-错爱.mp3
+Apr 02 11:00 : update: added /陈坤-什么都没留.mp3
+Apr 02 11:00 : update: added /陈奕讯-不要说话.mp3
+Apr 02 11:00 : update: added /陈奕讯-孤勇者.flac
+Apr 02 11:00 : update: added /陈奕迅-圣诞结.mp3
+Apr 02 11:00 : update: added /陈奕迅-阴天快乐.mp3
+Apr 02 11:00 : update: added /陈红鲤,李昂星-恋曲1990.mp3
+Apr 02 11:00 : update: added /音频怪物-风骨霸刀.mp3
+Apr 02 11:00 : update: added /虎二-窗.mp3
+Apr 02 11:11 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 11:13 : jack_output: Cannot read socket fd = 21 err = Success
+Apr 02 11:13 : jack_output: CheckRes error
+Apr 02 11:13 : jack_output: JackSocketClientChannel read fail
+Apr 02 11:13 : exception: Failed to play on "mpd-jack" (jack): JACK connection shutdown: JACK server has been closed
+Apr 02 11:13 : jack_output: Server is not running
+Apr 02 11:13 : jack_output: Server is not running
+Apr 02 11:13 : exception: Failed to open audio output
+Apr 02 11:16 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 11:16 : update: updating /en-嚣张.mp3
+Apr 02 11:16 : update: updating /Keith Hanley-Blue.mp3
+Apr 02 11:16 : update: updating /Lauris Reiniks-Banjo Laura.mp3
+Apr 02 11:16 : update: updating /Matt吕彦良-飞.mp3
+Apr 02 11:16 : update: updating /MOMOLAND-뿜뿜.mp3
+Apr 02 11:16 : update: updating /Nono陈童言-Burrito.mp3
+Apr 02 11:16 : update: updating /The Kid LAROI,Justin Bieber-STAY.mp3
+Apr 02 11:16 : update: updating /The Walker,朱恩池ZGODZ-DanceMonkey.mp3
+Apr 02 11:16 : update: updating /Winky诗-囚禁.mp3
+Apr 02 11:16 : update: updating /一支榴莲-海底.mp3
+Apr 02 11:16 : update: updating /三块木头-浮生若梦.mp3
+Apr 02 11:16 : update: updating /不才-寻常歌.mp3
+Apr 02 11:16 : update: updating /乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3
+Apr 02 11:16 : update: updating /二胖u-我走就是了.mp3
+Apr 02 11:16 : update: updating /于潼-穷极一生到不了的天堂.mp3
+Apr 02 11:16 : update: updating /伏仪-记昨日书.mp3
+Apr 02 11:16 : update: updating /余梓桾,张子薇-戏歌.mp3
+Apr 02 11:16 : update: updating /八三夭-想见你想见你想见你.mp3
+Apr 02 11:16 : update: updating /剑网3-一世心上长安.mp3
+Apr 02 11:16 : update: updating /剑网3-万象长安.mp3
+Apr 02 11:16 : update: updating /卞子严-挺好.mp3
+Apr 02 11:16 : update: updating /叶炫清-相念于心.mp3
+Apr 02 11:16 : update: updating /周兴哲-永不失联的爱.mp3
+Apr 02 11:16 : update: updating /周深-请笃信一个梦.mp3
+Apr 02 11:16 : update: updating /夏天Alex-那该多好.mp3
+Apr 02 11:16 : update: updating /孟慧圆-哈哈哈.mp3
+Apr 02 11:16 : update: updating /小时姑娘-爱晚亭边.mp3
+Apr 02 11:16 : update: updating /小时姑娘-霞光.mp3
+Apr 02 11:16 : update: updating /小田音乐社,傲七爷-枕边童话.mp3
+Apr 02 11:16 : update: updating /张紫豪-称谓.mp3
+Apr 02 11:16 : update: updating /张靓颖-想你，零点零一分.mp3
+Apr 02 11:16 : update: updating /恋恋故人难,黄诗扶,妖扬-吹梦到西洲.mp3
+Apr 02 11:16 : update: updating /李学仕-不想做朋友.mp3
+Apr 02 11:16 : update: updating /李昂星-有谱.mp3
+Apr 02 11:16 : update: updating /柏松-寻常岁月诗.mp3
+Apr 02 11:16 : update: updating /柳爽-漠河舞厅·2022.mp3
+Apr 02 11:16 : update: updating /潘辰-流泪.mp3
+Apr 02 11:16 : update: updating /焦迈奇-你曾是少年.mp3
+Apr 02 11:16 : update: updating /王天戈-侧面.mp3
+Apr 02 11:16 : update: updating /艾辰-错位时空.mp3
+Apr 02 11:16 : update: updating /茶茶-上一个最好.mp3
+Apr 02 11:16 : update: updating /萧忆情Alex-如愿.mp3
+Apr 02 11:16 : update: updating /葛东琪-囍.mp3
+Apr 02 11:16 : update: updating /蔡维泽-来自尘埃的光.mp3
+Apr 02 11:16 : update: updating /谢安琪-喜帖街.mp3
+Apr 02 11:16 : update: updating /赵钶-有人.mp3
+Apr 02 11:16 : update: updating /邓园长-毒药.mp3
+Apr 02 11:16 : update: updating /郁可唯-原谅不美好.mp3
+Apr 02 11:16 : update: updating /郑闯-风骚.mp3
+Apr 02 11:16 : update: updating /钱润玉,李昂星-若.mp3
+Apr 02 11:16 : update: updating /阿YueYue,戾格,小田音乐社-沈园外.mp3
+Apr 02 11:16 : update: updating /阿里郎-错爱.mp3
+Apr 02 11:16 : update: updating /陈坤-什么都没留.mp3
+Apr 02 11:16 : update: updating /陈奕讯-不要说话.mp3
+Apr 02 11:16 : update: updating /陈奕讯-孤勇者.flac
+Apr 02 11:16 : update: updating /陈奕迅-圣诞结.mp3
+Apr 02 11:16 : update: updating /陈奕迅-阴天快乐.mp3
+Apr 02 11:16 : update: updating /陈红鲤,李昂星-恋曲1990.mp3
+Apr 02 11:16 : update: updating /音频怪物-风骨霸刀.mp3
+Apr 02 11:16 : update: updating /虎二-窗.mp3
+Apr 02 11:17 : player: played "Matt吕彦良-飞.mp3"
+Apr 02 11:21 : player: played "Matt吕彦良-飞.mp3"
+Apr 02 11:26 : player: played "陈奕迅-圣诞结.mp3"
+Apr 02 11:30 : player: played "郑闯-风骚.mp3"
+Apr 02 12:36 : player: played "不才-寻常歌.mp3"
+Apr 02 12:39 : player: played "谢安琪-喜帖街.mp3"
+Apr 02 12:43 : player: played "艾辰-错位时空.mp3"
+Apr 02 12:47 : player: played "陈坤-什么都没留.mp3"
+Apr 02 12:51 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 02 12:56 : player: played "周兴哲-永不失联的爱.mp3"
+Apr 02 13:00 : player: played "张紫豪-称谓.mp3"
+Apr 02 13:03 : player: played "二胖u-我走就是了.mp3"
+Apr 02 13:07 : player: played "郁可唯-原谅不美好.mp3"
+Apr 02 13:12 : player: played "乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3"
+Apr 02 13:16 : player: played "剑网3-万象长安.mp3"
+Apr 02 13:20 : player: played "叶炫清-相念于心.mp3"
+Apr 02 13:25 : player: played "小时姑娘-爱晚亭边.mp3"
+Apr 02 13:29 : player: played "萧忆情Alex-如愿.mp3"
+Apr 02 13:31 : jack_output: Cannot read socket fd = 21 err = Success
+Apr 02 13:31 : jack_output: CheckRes error
+Apr 02 13:31 : jack_output: JackSocketClientChannel read fail
+Apr 02 13:31 : exception: Failed to play on "mpd-jack" (jack): JACK connection shutdown: JACK server has been closed
+Apr 02 13:31 : jack_output: Server is not running
+Apr 02 13:31 : jack_output: Server is not running
+Apr 02 13:31 : exception: Failed to open audio output
+Apr 02 13:31 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 13:31 : jack_output: Cannot open shm segment  (Invalid argument)
+Apr 02 13:31 : jack_output: Map shared memory segments exception
+Apr 02 13:31 : jack_output: JackShmReadWritePtr1::~JackShmReadWritePtr1 - Init not done for 12, skipping unlock
+Apr 02 13:31 : exception: Failed to open "mpd-jack" (jack); Failed to connect to JACK server, status=33
+Apr 02 13:31 : exception: Failed to open "mpd-jack" (jack); Failed to connect to JACK server, status=33
+Apr 02 13:33 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 13:33 : jack_output: Cannot open shm segment  (Invalid argument)
+Apr 02 13:33 : jack_output: Map shared memory segments exception
+Apr 02 13:33 : jack_output: JackShmReadWritePtr1::~JackShmReadWritePtr1 - Init not done for 12, skipping unlock
+Apr 02 13:33 : exception: Failed to open "mpd-jack" (jack); Failed to connect to JACK server, status=33
+Apr 02 13:33 : exception: Failed to open "mpd-jack" (jack); Failed to connect to JACK server, status=33
+Apr 02 13:36 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 13:36 : jack_output: Cannot open shm segment  (Invalid argument)
+Apr 02 13:36 : jack_output: Map shared memory segments exception
+Apr 02 13:36 : jack_output: JackShmReadWritePtr1::~JackShmReadWritePtr1 - Init not done for 12, skipping unlock
+Apr 02 13:36 : exception: Failed to open "mpd-jack" (jack); Failed to connect to JACK server, status=33
+Apr 02 13:36 : exception: Failed to open "mpd-jack" (jack); Failed to connect to JACK server, status=33
+Apr 02 13:39 : player: played "葛东琪-囍.mp3"
+Apr 02 13:39 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 13:43 : player: played "葛东琪-囍.mp3"
+Apr 02 13:46 : player: played "蔡维泽-来自尘埃的光.mp3"
+Apr 02 13:50 : player: played "虎二-窗.mp3"
+Apr 02 13:52 : player: played "谢安琪-喜帖街.mp3"
+Apr 02 13:52 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 13:57 : player: played "萧忆情Alex-如愿.mp3"
+Apr 02 14:02 : player: played "剑网3-万象长安.mp3"
+Apr 02 14:07 : player: played "钱润玉,李昂星-若.mp3"
+Apr 02 14:11 : player: played "潘辰-流泪.mp3"
+Apr 02 14:13 : jack_output: Cannot read socket fd = 21 err = Success
+Apr 02 14:13 : jack_output: CheckRes error
+Apr 02 14:13 : jack_output: JackSocketClientChannel read fail
+Apr 02 14:13 : exception: Failed to play on "mpd-jack" (jack): JACK connection shutdown: JACK server has been closed
+Apr 02 14:13 : jack_output: Server is not running
+Apr 02 14:13 : jack_output: Server is not running
+Apr 02 14:13 : player: played "小时姑娘-爱晚亭边.mp3"
+Apr 02 14:28 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 14:28 : jack_output: Cannot connect to server request channel
+Apr 02 14:28 : jack_output: jack server is not running or cannot be started
+Apr 02 14:28 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 14:28 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 14:28 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 14:28 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 14:28 : jack_output: Cannot connect to server request channel
+Apr 02 14:28 : jack_output: jack server is not running or cannot be started
+Apr 02 14:28 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 14:28 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 14:28 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 14:30 : player: played "小时姑娘-爱晚亭边.mp3"
+Apr 02 14:30 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 14:30 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 14:30 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 14:34 : player: played "The Walker,朱恩池ZGODZ-DanceMonkey.mp3"
+Apr 02 14:34 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 14:34 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 14:38 : player: played "阿里郎-错爱.mp3"
+Apr 02 14:38 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 14:38 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 14:42 : player: played "陈奕讯-孤勇者.flac"
+Apr 02 14:46 : player: played "三块木头-浮生若梦.mp3"
+Apr 02 14:50 : player: played "周深-请笃信一个梦.mp3"
+Apr 02 14:50 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 14:50 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 14:53 : player: played "Lauris Reiniks-Banjo Laura.mp3"
+Apr 02 18:04 : player: played "蔡维泽-来自尘埃的光.mp3"
+Apr 02 18:04 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 18:04 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 18:07 : player: played "孟慧圆-哈哈哈.mp3"
+Apr 02 18:12 : player: played "余梓桾,张子薇-戏歌.mp3"
+Apr 02 18:12 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 18:12 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 18:16 : player: played "一支榴莲-海底.mp3"
+Apr 02 18:20 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 02 18:24 : player: played "剑网3-万象长安.mp3"
+Apr 02 18:28 : player: played "葛东琪-囍.mp3"
+Apr 02 18:32 : player: played "张紫豪-称谓.mp3"
+Apr 02 18:32 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 18:32 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 18:35 : player: played "The Kid LAROI,Justin Bieber-STAY.mp3"
+Apr 02 18:38 : player: played "二胖u-我走就是了.mp3"
+Apr 02 18:38 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 18:38 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 18:43 : player: played "邓园长-毒药.mp3"
+Apr 02 18:46 : player: played "MOMOLAND-뿜뿜.mp3"
+Apr 02 18:50 : player: played "潘辰-流泪.mp3"
+Apr 02 18:50 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 18:50 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 21:34 : jack_output: Cannot read socket fd = 22 err = Success
+Apr 02 21:34 : jack_output: CheckRes error
+Apr 02 21:34 : jack_output: JackSocketClientChannel read fail
+Apr 02 21:34 : exception: Failed to pause "mpd-jack" (jack): JACK connection shutdown: JACK server has been closed
+Apr 02 21:34 : jack_output: Server is not running
+Apr 02 21:34 : jack_output: Server is not running
+Apr 02 21:34 : player: played "小田音乐社,傲七爷-枕边童话.mp3"
+Apr 02 21:36 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 21:36 : jack_output: Cannot connect to server request channel
+Apr 02 21:36 : jack_output: jack server is not running or cannot be started
+Apr 02 21:36 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 21:36 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 21:36 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 21:41 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 21:41 : jack_output: Cannot connect to server request channel
+Apr 02 21:41 : jack_output: jack server is not running or cannot be started
+Apr 02 21:41 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 21:41 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 21:41 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 21:42 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 02 21:42 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 21:42 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 21:43 : player: played "小田音乐社,傲七爷-枕边童话.mp3"
+Apr 02 21:43 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 02 21:43 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 02 21:46 : player: played "Matt吕彦良-飞.mp3"
+Apr 02 22:58 : jack_output: Cannot read socket fd = 23 err = Success
+Apr 02 22:58 : jack_output: CheckRes error
+Apr 02 22:58 : jack_output: JackSocketClientChannel read fail
+Apr 02 22:58 : exception: Failed to pause "mpd-jack" (jack): JACK connection shutdown: JACK server has been closed
+Apr 02 22:58 : jack_output: Server is not running
+Apr 02 22:58 : jack_output: Server is not running
+Apr 02 23:00 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:01 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:01 : jack_output: Cannot connect to server request channel
+Apr 02 23:01 : jack_output: jack server is not running or cannot be started
+Apr 02 23:01 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:01 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:01 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:07 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:08 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:08 : jack_output: Cannot connect to server request channel
+Apr 02 23:08 : jack_output: jack server is not running or cannot be started
+Apr 02 23:08 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:08 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:08 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:13 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:15 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:15 : jack_output: Cannot connect to server request channel
+Apr 02 23:15 : jack_output: jack server is not running or cannot be started
+Apr 02 23:15 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:15 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:15 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:15 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:16 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:16 : jack_output: Cannot connect to server request channel
+Apr 02 23:16 : jack_output: jack server is not running or cannot be started
+Apr 02 23:16 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:16 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:16 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:25 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:26 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:26 : jack_output: Cannot connect to server request channel
+Apr 02 23:26 : jack_output: jack server is not running or cannot be started
+Apr 02 23:26 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:26 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:26 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:30 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:31 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:31 : jack_output: Cannot connect to server request channel
+Apr 02 23:31 : jack_output: jack server is not running or cannot be started
+Apr 02 23:31 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:31 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:31 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:37 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:38 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:38 : jack_output: Cannot connect to server request channel
+Apr 02 23:38 : jack_output: jack server is not running or cannot be started
+Apr 02 23:38 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:38 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:38 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 02 23:45 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 02 23:45 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 02 23:45 : jack_output: Cannot connect to server request channel
+Apr 02 23:45 : jack_output: jack server is not running or cannot be started
+Apr 02 23:45 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:45 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 02 23:45 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 03 00:05 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 03 09:16 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 03 09:16 : jack_output: Cannot connect to server request channel
+Apr 03 09:16 : jack_output: jack server is not running or cannot be started
+Apr 03 09:16 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 03 09:16 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 03 09:16 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 03 09:44 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 09:44 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 09:44 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 09:46 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 03 09:46 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 09:46 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 09:49 : player: played "阿YueYue,戾格,小田音乐社-沈园外.mp3"
+Apr 03 09:49 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 09:49 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 09:53 : player: played "葛东琪-囍.mp3"
+Apr 03 09:58 : player: played "恋恋故人难,黄诗扶,妖扬-吹梦到西洲.mp3"
+Apr 03 10:03 : player: played "en-嚣张.mp3"
+Apr 03 10:06 : player: played "夏天Alex-那该多好.mp3"
+Apr 03 10:06 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 10:06 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 10:10 : player: played "陈奕讯-孤勇者.flac"
+Apr 03 10:14 : player: played "王天戈-侧面.mp3"
+Apr 03 10:19 : player: played "余梓桾,张子薇-戏歌.mp3"
+Apr 03 10:23 : player: played "萧忆情Alex-如愿.mp3"
+Apr 03 10:27 : player: played "郑闯-风骚.mp3"
+Apr 03 10:31 : player: played "八三夭-想见你想见你想见你.mp3"
+Apr 03 10:31 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 10:31 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 10:35 : player: played "郁可唯-原谅不美好.mp3"
+Apr 03 10:40 : player: played "伏仪-记昨日书.mp3"
+Apr 03 10:40 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 10:40 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 10:44 : player: played "李昂星-有谱.mp3"
+Apr 03 10:44 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 10:44 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 10:48 : player: played "剑网3-一世心上长安.mp3"
+Apr 03 10:48 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 10:48 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 10:51 : player: played "三块木头-浮生若梦.mp3"
+Apr 03 10:54 : player: played "卞子严-挺好.mp3"
+Apr 03 10:57 : player: played "The Kid LAROI,Justin Bieber-STAY.mp3"
+Apr 03 11:00 : player: played "艾辰-错位时空.mp3"
+Apr 03 11:03 : player: played "The Walker,朱恩池ZGODZ-DanceMonkey.mp3"
+Apr 03 11:03 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 11:03 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 11:08 : player: played "阿里郎-错爱.mp3"
+Apr 03 11:12 : player: played "陈坤-什么都没留.mp3"
+Apr 03 11:17 : player: played "陈奕讯-不要说话.mp3"
+Apr 03 11:21 : player: played "赵钶-有人.mp3"
+Apr 03 11:25 : player: played "于潼-穷极一生到不了的天堂.mp3"
+Apr 03 11:28 : player: played "蔡维泽-来自尘埃的光.mp3"
+Apr 03 11:33 : player: played "乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3"
+Apr 03 11:37 : player: played "陈奕迅-圣诞结.mp3"
+Apr 03 11:42 : player: played "音频怪物-风骨霸刀.mp3"
+Apr 03 11:46 : player: played "周兴哲-永不失联的爱.mp3"
+Apr 03 11:49 : player: played "Keith Hanley-Blue.mp3"
+Apr 03 11:49 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 11:49 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 12:06 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 03 12:06 : jack_output: Cannot connect to server request channel
+Apr 03 12:06 : jack_output: jack server is not running or cannot be started
+Apr 03 12:06 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 03 12:06 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 03 12:06 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 03 12:06 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 12:06 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 12:06 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 12:10 : player: played "茶茶-上一个最好.mp3"
+Apr 03 12:10 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 03 12:10 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 03 23:31 : player: played "小时姑娘-霞光.mp3"
+Apr 03 23:31 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:31 : player: played "小时姑娘-霞光.mp3"
+Apr 03 23:31 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:32 : player: played "小时姑娘-霞光.mp3"
+Apr 03 23:32 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:34 : player: played "小时姑娘-霞光.mp3"
+Apr 03 23:35 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 03 23:35 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:35 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 03 23:35 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:36 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 03 23:36 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:36 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 03 23:36 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:38 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 03 23:42 : player: played "Nono陈童言-Burrito.mp3"
+Apr 03 23:46 : player: played "张紫豪-称谓.mp3"
+Apr 03 23:47 : player: played "萧忆情Alex-如愿.mp3"
+Apr 03 23:47 : exception: bind to '0.0.0.0:8000' failed (continuing anyway, because binding to '[::]:8000' succeeded): Failed to bind socket: Address already in use
+Apr 03 23:47 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:53 : player: played "陈奕讯-不要说话.mp3"
+Apr 03 23:54 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:56 : player: played "郑闯-风骚.mp3"
+Apr 03 23:56 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:57 : player: played "潘辰-流泪.mp3"
+Apr 03 23:57 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 03 23:59 : player: played "潘辰-流泪.mp3"
+Apr 04 15:52 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 04 15:52 : jack_output: Cannot connect to server request channel
+Apr 04 15:52 : jack_output: jack server is not running or cannot be started
+Apr 04 15:52 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 04 15:52 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 04 15:52 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 04 15:52 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 04 15:52 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 04 15:52 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 01:11 : player: played "潘辰-流泪.mp3"
+Apr 05 12:03 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 05 12:03 : jack_output: Cannot connect to server request channel
+Apr 05 12:03 : jack_output: jack server is not running or cannot be started
+Apr 05 12:03 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 05 12:03 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 05 12:03 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 05 16:14 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 05 16:14 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 16:14 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 16:14 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 16:14 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 22:13 : update: added /zev1993-demo.mp3
+Apr 05 22:14 : update: added /zev1993-配乐.mp3
+Apr 05 22:16 : update: added /zev1993-祭忆.mp3
+Apr 05 22:18 : update: added /zev1993-灵动.mp3
+Apr 05 22:23 : update: updating /葛东琪-囍.mp3
+Apr 05 22:23 : update: updating /萧忆情Alex-如愿.mp3
+Apr 05 22:23 : update: updating /茶茶-上一个最好.mp3
+Apr 05 22:23 : update: updating /蔡维泽-来自尘埃的光.mp3
+Apr 05 22:23 : update: updating /谢安琪-喜帖街.mp3
+Apr 05 22:23 : update: updating /赵钶-有人.mp3
+Apr 05 22:23 : update: updating /邓园长-毒药.mp3
+Apr 05 22:23 : update: updating /郁可唯-原谅不美好.mp3
+Apr 05 22:23 : update: updating /郑闯-风骚.mp3
+Apr 05 22:23 : update: updating /钱润玉,李昂星-若.mp3
+Apr 05 22:23 : update: updating /阿YueYue,戾格,小田音乐社-沈园外.mp3
+Apr 05 22:23 : update: updating /阿里郎-错爱.mp3
+Apr 05 22:23 : update: updating /陈坤-什么都没留.mp3
+Apr 05 22:23 : update: updating /陈奕讯-不要说话.mp3
+Apr 05 22:23 : update: updating /陈奕讯-孤勇者.flac
+Apr 05 22:23 : update: updating /陈奕迅-圣诞结.mp3
+Apr 05 22:23 : update: updating /陈奕迅-阴天快乐.mp3
+Apr 05 22:23 : update: updating /陈红鲤,李昂星-恋曲1990.mp3
+Apr 05 22:23 : update: updating /音频怪物-风骨霸刀.mp3
+Apr 05 22:23 : update: updating /Keith Hanley-Blue.mp3
+Apr 05 22:23 : update: updating /Lauris Reiniks-Banjo Laura.mp3
+Apr 05 22:23 : update: updating /Matt吕彦良-飞.mp3
+Apr 05 22:23 : update: updating /MOMOLAND-뿜뿜.mp3
+Apr 05 22:23 : update: updating /Nono陈童言-Burrito.mp3
+Apr 05 22:23 : update: updating /The Kid LAROI,Justin Bieber-STAY.mp3
+Apr 05 22:23 : update: updating /The Walker,朱恩池ZGODZ-DanceMonkey.mp3
+Apr 05 22:23 : update: updating /Winky诗-囚禁.mp3
+Apr 05 22:23 : update: updating /一支榴莲-海底.mp3
+Apr 05 22:23 : update: updating /三块木头-浮生若梦.mp3
+Apr 05 22:23 : update: updating /不才-寻常歌.mp3
+Apr 05 22:23 : update: updating /乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3
+Apr 05 22:23 : update: updating /二胖u-我走就是了.mp3
+Apr 05 22:23 : update: updating /于潼-穷极一生到不了的天堂.mp3
+Apr 05 22:23 : update: updating /伏仪-记昨日书.mp3
+Apr 05 22:23 : update: updating /余梓桾,张子薇-戏歌.mp3
+Apr 05 22:23 : update: updating /八三夭-想见你想见你想见你.mp3
+Apr 05 22:23 : update: updating /剑网3-一世心上长安.mp3
+Apr 05 22:23 : update: updating /剑网3-万象长安.mp3
+Apr 05 22:23 : update: updating /卞子严-挺好.mp3
+Apr 05 22:23 : update: updating /叶炫清-相念于心.mp3
+Apr 05 22:23 : update: updating /周兴哲-永不失联的爱.mp3
+Apr 05 22:23 : update: updating /周深-请笃信一个梦.mp3
+Apr 05 22:23 : update: updating /夏天Alex-那该多好.mp3
+Apr 05 22:23 : update: updating /孟慧圆-哈哈哈.mp3
+Apr 05 22:23 : update: updating /小时姑娘-爱晚亭边.mp3
+Apr 05 22:23 : update: updating /小时姑娘-霞光.mp3
+Apr 05 22:23 : update: updating /小田音乐社,傲七爷-枕边童话.mp3
+Apr 05 22:23 : update: updating /张紫豪-称谓.mp3
+Apr 05 22:23 : update: updating /张靓颖-想你，零点零一分.mp3
+Apr 05 22:23 : update: updating /恋恋故人难,黄诗扶,妖扬-吹梦到西洲.mp3
+Apr 05 22:23 : update: updating /李学仕-不想做朋友.mp3
+Apr 05 22:23 : update: updating /李昂星-有谱.mp3
+Apr 05 22:23 : update: updating /柏松-寻常岁月诗.mp3
+Apr 05 22:23 : update: updating /柳爽-漠河舞厅·2022.mp3
+Apr 05 22:23 : update: updating /潘辰-流泪.mp3
+Apr 05 22:23 : update: updating /en-嚣张.mp3
+Apr 05 22:23 : update: updating /虎二-窗.mp3
+Apr 05 22:23 : update: updating /焦迈奇-你曾是少年.mp3
+Apr 05 22:23 : update: updating /王天戈-侧面.mp3
+Apr 05 22:23 : update: updating /艾辰-错位时空.mp3
+Apr 05 22:23 : update: updating /zev1993-demo.mp3
+Apr 05 22:23 : update: updating /zev1993-配乐.mp3
+Apr 05 22:23 : update: updating /zev1993-祭忆.mp3
+Apr 05 22:23 : update: updating /zev1993-灵动.mp3
+Apr 05 22:28 : exception: Bad playlist name
+Apr 05 22:30 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 22:30 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 22:31 : player: played "zev1993-demo.mp3"
+Apr 05 22:31 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 22:31 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 22:31 : player: played "zev1993-demo.mp3"
+Apr 05 22:32 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 22:32 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 22:34 : player: played "zev1993-demo.mp3"
+Apr 05 22:34 : exception: Not playing
+Apr 05 22:34 : exception: Not playing
+Apr 05 22:40 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 22:40 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 22:40 : player: played "Matt吕彦良-飞.mp3"
+Apr 05 22:40 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 22:40 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 05 22:40 : player: played "Matt吕彦良-飞.mp3"
+Apr 05 22:41 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 05 22:41 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 06 01:46 : player: played "Matt吕彦良-飞.mp3"
+Apr 06 08:35 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 06 08:35 : jack_output: Cannot connect to server request channel
+Apr 06 08:35 : jack_output: jack server is not running or cannot be started
+Apr 06 08:35 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 06 08:35 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 06 08:35 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 06 23:14 : player: played "Matt吕彦良-飞.mp3"
+Apr 07 10:55 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 07 10:56 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 07 10:56 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 07 21:57 : jack_output: Cannot read socket fd = 21 err = Success
+Apr 07 21:57 : jack_output: CheckRes error
+Apr 07 21:57 : jack_output: JackSocketClientChannel read fail
+Apr 07 21:57 : exception: Failed to pause "mpd-jack" (jack): JACK connection shutdown: JACK server has been closed
+Apr 07 21:57 : jack_output: Server is not running
+Apr 07 21:57 : jack_output: Server is not running
+Apr 07 22:44 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 07 22:44 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 07 22:44 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 08 00:45 : player: played "Matt吕彦良-飞.mp3"
+Apr 08 09:43 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 08 09:43 : jack_output: Cannot connect to server request channel
+Apr 08 09:43 : jack_output: jack server is not running or cannot be started
+Apr 08 09:43 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 08 09:43 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 08 09:43 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 08 09:44 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 08 09:44 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 08 09:44 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 08 18:23 : player: played "Matt吕彦良-飞.mp3"
+Apr 08 18:23 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 08 18:23 : jack_output: Cannot connect to server request channel
+Apr 08 18:23 : jack_output: jack server is not running or cannot be started
+Apr 08 18:23 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 08 18:23 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 08 18:23 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 09 00:35 : player: played "Matt吕彦良-飞.mp3"
+Apr 09 11:05 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 09 11:05 : jack_output: Cannot connect to server request channel
+Apr 09 11:05 : jack_output: jack server is not running or cannot be started
+Apr 09 11:05 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 09 11:05 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 09 11:05 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 09 11:06 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 09 11:06 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 09 11:06 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 09 12:18 : player: played "Matt吕彦良-飞.mp3"
+Apr 09 14:17 : player: played "谢安琪-喜帖街.mp3"
+Apr 09 14:17 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 09 14:17 : jack_output: Cannot connect to server request channel
+Apr 09 14:17 : jack_output: jack server is not running or cannot be started
+Apr 09 14:17 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 09 14:17 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 09 14:17 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 09 23:55 : player: played "谢安琪-喜帖街.mp3"
+Apr 10 10:04 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 10 10:04 : jack_output: Cannot connect to server request channel
+Apr 10 10:04 : jack_output: jack server is not running or cannot be started
+Apr 10 10:04 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 10 10:04 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 10 10:04 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 10 16:54 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 10 16:54 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 16:54 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 16:57 : player: played "虎二-窗.mp3"
+Apr 10 16:57 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 16:57 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:02 : player: played "柏松-寻常岁月诗.mp3"
+Apr 10 17:02 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:02 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:07 : player: played "不才-寻常歌.mp3"
+Apr 10 17:10 : player: played "Lauris Reiniks-Banjo Laura.mp3"
+Apr 10 17:14 : player: played "阿里郎-错爱.mp3"
+Apr 10 17:14 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:14 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:18 : player: played "郑闯-风骚.mp3"
+Apr 10 17:18 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:18 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:22 : player: played "音频怪物-风骨霸刀.mp3"
+Apr 10 17:27 : player: played "陈奕讯-不要说话.mp3"
+Apr 10 17:31 : player: played "郁可唯-原谅不美好.mp3"
+Apr 10 17:36 : player: played "邓园长-毒药.mp3"
+Apr 10 17:36 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:36 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:40 : player: played "陈奕讯-孤勇者.flac"
+Apr 10 17:40 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:40 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:43 : player: played "Keith Hanley-Blue.mp3"
+Apr 10 17:47 : player: played "周兴哲-永不失联的爱.mp3"
+Apr 10 17:47 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:47 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:51 : player: played "三块木头-浮生若梦.mp3"
+Apr 10 17:54 : player: played "艾辰-错位时空.mp3"
+Apr 10 17:54 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 17:54 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 17:57 : player: played "蔡维泽-来自尘埃的光.mp3"
+Apr 10 18:01 : player: played "剑网3-一世心上长安.mp3"
+Apr 10 18:01 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 10 18:01 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 10 21:40 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 10 21:46 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 10 21:46 : jack_output: Cannot connect to server request channel
+Apr 10 21:46 : jack_output: jack server is not running or cannot be started
+Apr 10 21:46 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 10 21:46 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 10 21:46 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 10 23:20 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 11 09:40 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 11 09:40 : jack_output: Cannot connect to server request channel
+Apr 11 09:40 : jack_output: jack server is not running or cannot be started
+Apr 11 09:40 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 11 09:40 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 11 09:40 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 11 09:45 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 11 09:45 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 11 09:45 : jack_output: Cannot connect to server request channel
+Apr 11 09:45 : jack_output: jack server is not running or cannot be started
+Apr 11 09:45 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 11 09:45 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 11 09:45 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 11 09:47 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 11 09:47 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 09:47 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 09:50 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 11 09:55 : player: played "艾辰-错位时空.mp3"
+Apr 11 10:00 : player: played "柏松-寻常岁月诗.mp3"
+Apr 11 10:04 : player: played "郑闯-风骚.mp3"
+Apr 11 10:04 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:04 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:08 : player: played "叶炫清-相念于心.mp3"
+Apr 11 10:08 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:08 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:12 : player: played "The Walker,朱恩池ZGODZ-DanceMonkey.mp3"
+Apr 11 10:12 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:12 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:16 : player: played "周兴哲-永不失联的爱.mp3"
+Apr 11 10:20 : player: played "郁可唯-原谅不美好.mp3"
+Apr 11 10:24 : player: played "于潼-穷极一生到不了的天堂.mp3"
+Apr 11 10:27 : player: played "谢安琪-喜帖街.mp3"
+Apr 11 10:31 : player: played "葛东琪-囍.mp3"
+Apr 11 10:31 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:31 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:36 : player: played "余梓桾,张子薇-戏歌.mp3"
+Apr 11 10:36 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:36 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:40 : player: played "张靓颖-想你，零点零一分.mp3"
+Apr 11 10:40 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:40 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:43 : player: played "二胖u-我走就是了.mp3"
+Apr 11 10:43 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:43 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:48 : player: played "一支榴莲-海底.mp3"
+Apr 11 10:52 : player: played "剑网3-一世心上长安.mp3"
+Apr 11 10:52 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:52 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:54 : player: played "The Kid LAROI,Justin Bieber-STAY.mp3"
+Apr 11 10:54 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 10:54 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 10:57 : player: played "小时姑娘-霞光.mp3"
+Apr 11 11:01 : player: played "陈奕迅-圣诞结.mp3"
+Apr 11 15:42 : player: played "MOMOLAND-뿜뿜.mp3"
+Apr 11 15:47 : player: played "乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3"
+Apr 11 15:47 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 15:47 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 15:50 : player: played "王天戈-侧面.mp3"
+Apr 11 15:50 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 15:50 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 15:53 : player: played "Keith Hanley-Blue.mp3"
+Apr 11 15:57 : player: played "陈坤-什么都没留.mp3"
+Apr 11 16:01 : player: played "李学仕-不想做朋友.mp3"
+Apr 11 16:01 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:01 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:05 : player: played "卞子严-挺好.mp3"
+Apr 11 16:08 : player: played "小田音乐社,傲七爷-枕边童话.mp3"
+Apr 11 16:08 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:08 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:12 : player: played "阿里郎-错爱.mp3"
+Apr 11 16:18 : player: played "恋恋故人难,黄诗扶,妖扬-吹梦到西洲.mp3"
+Apr 11 16:18 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:18 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:21 : player: played "Nono陈童言-Burrito.mp3"
+Apr 11 16:26 : player: played "李昂星-有谱.mp3"
+Apr 11 16:26 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:26 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:30 : player: played "小时姑娘-爱晚亭边.mp3"
+Apr 11 16:34 : player: played "Matt吕彦良-飞.mp3"
+Apr 11 16:38 : player: played "剑网3-万象长安.mp3"
+Apr 11 16:41 : player: played "Lauris Reiniks-Banjo Laura.mp3"
+Apr 11 16:41 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:41 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:43 : player: played "孟慧圆-哈哈哈.mp3"
+Apr 11 16:49 : player: played "柳爽-漠河舞厅·2022.mp3"
+Apr 11 16:49 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:49 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:53 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 11 16:53 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:53 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 16:57 : player: played "阿YueYue,戾格,小田音乐社-沈园外.mp3"
+Apr 11 16:57 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 16:57 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 17:01 : player: played "赵钶-有人.mp3"
+Apr 11 17:05 : player: played "张紫豪-称谓.mp3"
+Apr 11 17:10 : player: played "陈奕迅-阴天快乐.mp3"
+Apr 11 17:10 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 17:10 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 17:14 : player: played "八三夭-想见你想见你想见你.mp3"
+Apr 11 17:14 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 11 17:14 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 11 17:18 : player: played "邓园长-毒药.mp3"
+Apr 11 17:21 : player: played "虎二-窗.mp3"
+Apr 12 00:17 : player: played "不才-寻常歌.mp3"
+Apr 12 10:30 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 12 10:30 : jack_output: Cannot connect to server request channel
+Apr 12 10:30 : jack_output: jack server is not running or cannot be started
+Apr 12 10:30 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 12 10:30 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 12 10:30 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 12 11:15 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 12 11:15 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 12 11:15 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 12 23:49 : player: played "不才-寻常歌.mp3"
+Apr 13 11:06 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 13 11:33 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 11:33 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 11:34 : player: played "不才-寻常歌.mp3"
+Apr 13 11:38 : player: played "周兴哲-永不失联的爱.mp3"
+Apr 13 11:41 : player: played "虎二-窗.mp3"
+Apr 13 11:46 : player: played "邓园长-毒药.mp3"
+Apr 13 11:51 : player: played "陈奕讯-不要说话.mp3"
+Apr 13 11:51 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 11:51 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 11:54 : player: played "艾辰-错位时空.mp3"
+Apr 13 11:54 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 11:54 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 11:59 : player: played "恋恋故人难,黄诗扶,妖扬-吹梦到西洲.mp3"
+Apr 13 12:04 : player: played "一支榴莲-海底.mp3"
+Apr 13 12:04 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 12:04 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 12:08 : player: played "周深-请笃信一个梦.mp3"
+Apr 13 12:08 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 12:08 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 12:11 : player: played "蔡维泽-来自尘埃的光.mp3"
+Apr 13 12:16 : player: played "焦迈奇-你曾是少年.mp3"
+Apr 13 12:20 : player: played "郁可唯-原谅不美好.mp3"
+Apr 13 12:24 : player: played "陈奕迅-圣诞结.mp3"
+Apr 13 12:24 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 12:24 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 12:29 : player: played "萧忆情Alex-如愿.mp3"
+Apr 13 16:15 : player: played "Nono陈童言-Burrito.mp3"
+Apr 13 16:20 : player: played "柳爽-漠河舞厅·2022.mp3"
+Apr 13 16:24 : player: played "柏松-寻常岁月诗.mp3"
+Apr 13 16:28 : player: played "三块木头-浮生若梦.mp3"
+Apr 13 16:28 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 16:28 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 16:32 : player: played "剑网3-万象长安.mp3"
+Apr 13 16:36 : player: played "于潼-穷极一生到不了的天堂.mp3"
+Apr 13 16:36 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 16:36 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 16:41 : player: played "余梓桾,张子薇-戏歌.mp3"
+Apr 13 16:45 : player: played "八三夭-想见你想见你想见你.mp3"
+Apr 13 16:45 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 16:45 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 16:49 : player: played "伏仪-记昨日书.mp3"
+Apr 13 16:53 : player: played "潘辰-流泪.mp3"
+Apr 13 16:57 : player: played "张靓颖-想你，零点零一分.mp3"
+Apr 13 16:57 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 16:57 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 17:02 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 13 17:02 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 17:02 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 17:05 : player: played "谢安琪-喜帖街.mp3"
+Apr 13 17:05 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 17:05 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 17:08 : player: played "卞子严-挺好.mp3"
+Apr 13 17:08 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 13 17:08 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 13 17:13 : player: played "乔乔乔乔乔乔乔,夜微澜Orilan,北墟归工作室-姻缘【纯歌版】.mp3"
+Apr 13 17:17 : player: played "小时姑娘-爱晚亭边.mp3"
+Apr 13 17:21 : player: played "Matt吕彦良-飞.mp3"
+Apr 13 17:25 : player: played "音频怪物-风骨霸刀.mp3"
+Apr 14 00:10 : player: played "en-嚣张.mp3"
+Apr 14 07:53 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 14 07:53 : jack_output: Cannot connect to server request channel
+Apr 14 07:53 : jack_output: jack server is not running or cannot be started
+Apr 14 07:53 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 07:53 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 07:53 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 14 07:57 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 14 07:57 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 14 07:57 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 14 08:00 : player: played "en-嚣张.mp3"
+Apr 14 08:04 : player: played "周兴哲-永不失联的爱.mp3"
+Apr 14 08:08 : player: played "郁可唯-原谅不美好.mp3"
+Apr 14 08:13 : player: played "陈奕讯-不要说话.mp3"
+Apr 14 08:15 : player: played "小时姑娘-霞光.mp3"
+Apr 14 08:19 : player: played "伏仪-记昨日书.mp3"
+Apr 14 08:23 : player: played "陈奕迅-圣诞结.mp3"
+Apr 14 08:24 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 14 08:24 : jack_output: Cannot connect to server request channel
+Apr 14 08:24 : jack_output: jack server is not running or cannot be started
+Apr 14 08:24 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:24 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:24 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 14 08:25 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 14 08:25 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 14 08:25 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 14 08:26 : player: played "陈奕迅-圣诞结.mp3"
+Apr 14 08:30 : player: played "不才-寻常歌.mp3"
+Apr 14 08:30 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 14 08:30 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 14 08:33 : player: played "卞子严-挺好.mp3"
+Apr 14 08:37 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 14 08:37 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 14 08:37 : jack_output: Cannot connect to server request channel
+Apr 14 08:37 : jack_output: jack server is not running or cannot be started
+Apr 14 08:37 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:37 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:37 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 14 08:37 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 14 08:37 : jack_output: Cannot connect to server request channel
+Apr 14 08:37 : jack_output: jack server is not running or cannot be started
+Apr 14 08:37 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:37 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:37 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 14 08:38 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 14 08:38 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 14 08:38 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 14 08:39 : player: played "陈红鲤,李昂星-恋曲1990.mp3"
+Apr 14 08:39 : player: played "The Walker,朱恩池ZGODZ-DanceMonkey.mp3"
+Apr 14 08:40 : jack_output: Cannot connect to server socket err = No such file or directory
+Apr 14 08:40 : jack_output: Cannot connect to server request channel
+Apr 14 08:40 : jack_output: jack server is not running or cannot be started
+Apr 14 08:40 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:40 : jack_output: JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Apr 14 08:40 : exception: Failed to enable output "mpd-jack" (jack); Failed to connect to JACK server, status=17
+Apr 14 08:40 : jack_output: Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Apr 14 08:40 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 14 08:40 : jack_output: JackClient::AcquireSelfRealTime error
+Apr 14 08:43 : player: played "The Walker,朱恩池ZGODZ-DanceMonkey.mp3"
+Apr 14 08:43 : jack_output: Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+Apr 14 08:43 : jack_output: JackClient::AcquireSelfRealTime error

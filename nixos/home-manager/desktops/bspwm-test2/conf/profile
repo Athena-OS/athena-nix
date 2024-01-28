@@ -1,0 +1,24 @@
+#!/bin/sh
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export INPUT_METHOD=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus
+
+pactl unload-module module-jack-sink
+pactl unload-module module-jack-source
+pactl unload-module module-loopback
+sleep 0.5
+pactl load-module module-jack-source channels=2 source_name=Discord client_name=Discord connect=no
+pactl load-module module-jack-source channels=2 source_name=Internal client_name=Internal connect=no
+pactl load-module module-jack-source channels=2 source_name=Mix_all client_name=Mix_all connect=no
+pactl load-module module-jack-source channels=2 source_name=Media_pipe client_name=Media_pipe connect=no
+pactl load-module module-jack-sink channels=2 sink_name=System client_name=System connect=no
+pactl load-module module-jack-sink channels=2 sink_name=Web client_name=Web connect=no
+pactl load-module module-jack-sink channels=2 sink_name=Media client_name=Media connect=no
+pactl load-module module-jack-sink channels=2 sink_name=Other client_name=Other connect=no
+pactl load-module module-loopback source=Media_pipe sink=Media
+
+

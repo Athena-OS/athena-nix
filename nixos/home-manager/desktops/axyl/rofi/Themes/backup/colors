@@ -1,0 +1,191 @@
+#!/usr/bin/env bash
+
+uifont="FiraCode Nerd Font 13"
+
+help() {
+  cat <<- EOF
+Run these script to change theme for rofi.
+These script works along with my rofi configs.
+
+run,
+  colors [options]
+      to change colors.
+
+options:
+  nordblue
+  nordpink
+  nordblue
+  nordgreen
+  nordpurple
+  catppuccinred
+  catppuccinblue
+  catppuccingreen
+  catppuccinmavue
+  onedarkblue
+  onedarkpink
+  onedarkgreen
+  onedarkyellow
+  onedarkpurple
+  tokyoblue
+  tokyogreen
+  tokyopurple
+EOF
+}
+
+nordblue() {
+bg="#2E3440"
+fg="#88C0D0"
+bgAlt="#3B4252"
+button="#3B4252"
+}
+
+nordgreen() {
+bg="#2E3440"
+fg="#A3BE8C"
+bgAlt="#3B4252"
+button="#3B4252"
+}
+
+nordorange() {
+bg="#2E3440"
+fg="#D08770"
+bgAlt="#3B4252"
+button="#3B4252"
+}
+
+nordpink() {
+bg="#2E3440"
+fg="#BF616A"
+bgAlt="#3B4252"
+button="#3B4252"
+}
+
+nordpurple() {
+bg="#2E3440"
+fg="#B48EAD"
+bgAlt="#3B4252"
+button="#3B4252"
+}
+
+catppuccinblue() {
+bg="#161320"
+fg="#96CDFB"
+bgAlt="#1E1E2E"
+button="#1E1E2E"
+}
+
+catppuccingreen() {
+bg="#161320"
+fg="#ABE9B3"
+bgAlt="#1E1E2E"
+button="#1E1E2E"
+}
+
+catppuccinmavue() {
+bg="#161320"
+fg="#DDB6F2"
+bgAlt="#1E1E2E"
+button="#1E1E2E"
+}
+
+catppuccinred() {
+bg="#161320"
+fg="#F28FAD"
+bgAlt="#1E1E2E"
+button="#1E1E2E"
+}
+
+onedarkblue() {
+bg="#1E222A"
+bgAlt="#252931"
+fg="#61AFEF"
+button="#252931"
+}
+
+onedarkgreen() {
+bg="#1E222A"
+bgAlt="#252931"
+fg="#7EC7A2"
+button="#252931"
+}
+
+onedarkpink() {
+bg="#1E222A"
+bgAlt="#252931"
+fg="#D46489"
+button="#252931"
+}
+
+onedarkpurple() {
+bg="#1E222A"
+bgAlt="#252931"
+fg="#C678DD"
+button="#252931"
+}
+
+onedarkyellow() {
+bg="#1E222A"
+bgAlt="#252931"
+fg="#EBCB8B"
+button="#252931"
+}
+
+tokyoblue() {
+bg="#1A1B26"
+fg="#7DCFFF"
+bgAlt="#24283B"
+button="#414868"
+}
+
+tokyogreen() {
+bg="#1A1B26"
+fg="#1ABC9C"
+bgAlt="#24283B"
+button="#414868"
+}
+
+tokyopurple() {
+bg="#1A1B26"
+fg="#BB9AF7"
+bgAlt="#24283B"
+button="#414868"
+}
+
+
+case "$1" in
+  "")
+echo "
+* {
+bg: #1E222A;
+bgAlt: #252931;
+fg: #61AFEF;
+button: @bgAlt;
+background-color: @bg;
+text-color: @fg;
+}
+
+configuration {
+  font: \""$uifont"\";
+}
+" > $HOME/.config/rofi/Themes/style.rasi
+help
+  ;;
+  *)
+$1
+echo "
+* {
+bg: $bg;
+bgAlt: $bgAlt;
+fg: $fg;
+button: $button;
+background-color: @bg;
+text-color: @fg;
+}
+
+configuration {
+  font: \""$uifont"\";
+}
+" > $HOME/.config/rofi/Themes/style.rasi
+  ;;
+esac
+

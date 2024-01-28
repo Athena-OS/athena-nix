@@ -1,0 +1,12 @@
+#! /bin/sh
+
+chosen=$(printf "  Power Off\n  Restart\n  Hibernate\n  Log Out\n  Lock" | rofi -dmenu -i -theme-str )
+
+case "$chosen" in
+	"  Power Off") poweroff ;;
+	"  Restart") reboot ;;
+	"  Hibernate") systemctl hibernate ;;
+	"  Log Out") bspc quit ;;
+	"  Lock") "$HOME/.config/bspwm/scripts/lockscreen" ;;
+	*) exit 1 ;;
+esac

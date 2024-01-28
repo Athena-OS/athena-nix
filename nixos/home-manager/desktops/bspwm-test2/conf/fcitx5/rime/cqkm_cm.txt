@@ -1,0 +1,14 @@
+# Rime table
+#@/db_name	cqkm_cm
+#@/db_type	tabledb
+#@/rime_version	1.7.3
+#@/tick	11
+和	h	1
+花	ha	1
+或	hk	1
+黄	hm	3
+惠	hmii	1
+农	ni	1
+我	o	1
+竖	sauk	1
+农花我	encnihw	1

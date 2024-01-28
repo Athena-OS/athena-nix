@@ -1,0 +1,2831 @@
+# coding: utf-8
+# 小鹤音形符号、二重简码等词库
+# 该文件以UTF-8编码保存
+# 编码格式：字词+Tab符+编码（词库本身有重码则还需后面+Tab符+权重，权重大者居前，权重数字随意）
+#    === 强调一下 === 
+# 
+#   词条和编码之间的不是空格，而是Tab符，如果你不知道，就复制下面编码中的空白处
+#   或者按住键盘 G 键，切换到功能键盘，使用上面的Tab键
+# 
+#    ================
+# 本词库默认包含了生僻字、次选词、三码二字词、二重简码、增补字、符号及部分emoji表情
+
+https://flypy.com	xhgw
+https://bbs.flypy.com	xhlt
+http://flypy.ys168.com	xhwp
+http://react.xhup.club/search	xhcx
+https://help.flypy.com	xhrm
+😊	oi
+
+# 快捷符号，使用外接键盘时调换下面两行的数字
+：“	;q
+？	;w
+（	;e
+）	;r
+@	;t
+·	;y
++	;u
+-	;i
+*	;o
+/	;p
+！	;a
+……	;s
+、	;d
+《	;g
+[	;h
+]	;j
+(	;k
+)	;l
+“	;z
+→	;x
+”	;c
+——	;v
+》	;b
+<	;n
+>	;m
+#次选词
+安装	av
+爱恨情仇	ahqi
+暗器	anqi
+背景	bj
+北戴河	bdh
+帮倒忙	bdm
+百分之	bfv
+白胡椒	bhj
+半成品	bip
+笔记本	bjb
+不客气	bkq
+闭门羹	bmg
+保密性	bmx
+不满意	bmy
+不舒服	buf
+芭蕉	bajn
+不谙世事	bauu
+本本分分	bbff
+变本加厉	bbjl
+斑驳陆离	bbll
+秉笔直书	bbvu
+保镖	bcbn
+报到	bcdc
+包袱	bcfu
+包抄	bcic
+暴涨	bcvh
+悲从中来	bcvl
+保卫	bcww
+不辞辛劳	bcxl
+包邮	bcyz
+豹子	bczi
+不打不相识	bdbu
+摆放	bdfh
+不到黄河心不死	bdhs
+不当家不知柴米贵	bdjg
+拜见	bdjm
+博大精深	bdju
+白鹭	bdlu
+宝刀未老	bdwl
+百色	bdse
+拜堂	bdth
+不得要领	bdyl
+不得已而为之	bdyv
+膀大腰圆	bdyy
+百废俱兴	bfjx
+捕风捉影	bfvy
+毕恭毕敬	bgbj
+不吃不喝	bibh
+比肩	bijm
+秘鲁	bilu
+笔直	bivi
+避险	bixm
+不紧不慢	bjbm
+八九不离十	bjbu
+半岛	bjdc
+不见经传	bjjv
+别具匠心	bjjx
+病急乱投医	bjly
+不解之谜	bjvm
+不绝于耳	bjye
+不拘一格	bjyg
+不经意间	bjyj
+并肩作战	bjzv
+闭口不言	bkby
+不可避免	bkbm
+不可分割	bkfg
+不可方物	bkfw
+不可救药	bkjy
+不可抗拒	bkkj
+不可饶恕	bkru
+不可替代	bktd
+不可调和	bkth
+不可收拾	bkuu
+不可战胜	bkvu
+不可挽回	bkwh
+不可限量	bkxl
+不可一世	bkyu
+不可言喻	bkyy
+变来变去	blbq
+暴露无遗	blwy
+贬低	bmdi
+本末倒置	bmdv
+八面玲珑	bmll
+不明所以	bmsy
+贬值	bmvi
+拔苗助长	bmvv
+便携	bmxp
+编译	bmyi
+闭门造车	bmzi
+百年大计	bndj
+博彩	bocd
+拨付	bofu
+搏击	boji
+剥离	boli
+波兰	bolj
+不求上进	bquj
+笨手笨脚	bubj
+板上钉钉	budd
+部队	budv
+不施粉黛	bufd
+备受关注	bugv
+补救	bujq
+不胜枚举	bumj
+跋山涉水	buuu
+补位	buww
+补习	buxi
+不是冤家不聚头	buyt
+捕鱼	buyu
+不畏艰难	bwjn
+百无聊赖	bwll
+不问青红皂白	bwqb
+背弃	bwqi
+不外如是	bwru
+百无一用	bwyy
+百味杂陈	bwzi
+巴西利亚	bxly
+百依百顺	bybu
+比翼齐飞	byqf
+参加	cj
+从前	cq
+璀璨夺目	ccdm
+惨淡经营	cdjy
+刺客	cike
+词频	cipb
+赐予	ciyu
+错失	coui
+璀璨	cvcj
+达到	dd
+电脑	dn
+打算	ds
+等着	dv
+大多数	ddu
+打火机	dhj
+导火线	dhx
+打交道	djd
+都江堰	djy
+电视剧	duj
+单引号	dyh
+大错	daco
+大涨	davh
+大侠	daxx
+打草惊蛇	dcju
+多此一举	dcyj
+单打独斗	dddd
+得道多助	dddv
+嘀嘀咕咕	ddgg
+大打出手	ddiu
+多多少少	dduu
+大道至简	ddvj
+独到之处	ddvi
+跌跌撞撞	ddvv
+胆大妄为	ddww
+大跌眼镜	ddyj
+多多益善	ddyu
+第二现场	dexi
+达官贵人	dggr
+蹬踏	dgta
+电光石火	dguh
+大汗淋漓	dhll
+调虎离山	dhlu
+地步	dibu
+滴答	dida
+大吃大喝	didh
+大吵大闹	didn
+低端	didr
+嫡亲	diqb
+洞察秋毫	diqh
+底气	diqi
+多愁善感	diug
+独出心裁	dixc
+大吃一惊	diyj
+地狱	diyu
+淡泊	djbo
+大吉大利	djdl
+耽搁	djge
+打家劫舍	djju
+独具匠心	djjx
+单元	djyr
+大门不出	dmbi
+点播	dmbo
+独门独户	dmdh
+独门独院	dmdy
+垫付	dmfu
+调令	dnlk
+冬暖夏凉	dnxl
+夺命	domk
+颠三倒四	dsds
+洞房	dsfh
+东京	dsjk
+第三季度	dsjd
+董事	dsui
+动手动脚	dudj
+度假	dujx
+独具	duju
+独善其身	duqu
+打蛇随棍上	dusu
+大书特书	dutu
+滴水之恩	duve
+东施效颦	duxp
+洞烛其奸	dvqj
+地主之谊	dvvy
+斗转星移	dvxy
+俄语	eeyu
+恩恩怨怨	eeyy
+分别	fb
+分钟	fv
+反悔	fh
+附件	fj
+发送	fs
+否则	fz
+放射性	fux
+服务器	fwq
+发愣	falg
+发令	falk
+法语	fayu
+愤愤不平	ffbp
+反反复复	ffff
+分分合合	ffhh
+方方面面	ffmm
+泛泛之交	ffvj
+氛围	ffww
+沸沸扬扬	ffyy
+风靡	fgmi
+奉公守法	fguf
+凤冠霞帔	fgxp
+反戈一击	fgyj
+防盗	fhdc
+放火	fhho
+防患	fhhr
+纺织	fhvi
+防患于未然	fhyr
+分久必合	fjbh
+福建省	fjug
+凡事	fjui
+翻越	fjyt
+飞来飞去	flfq
+浮标	fubn
+肥水不流外人田	fubt
+分身乏术	fufu
+俯首称臣	fuii
+妇女	funv
+付钱	fuqm
+粉饰太平	futp
+放手一搏	fuyb
+赋予	fuyu
+防微杜渐	fwdj
+福无双至	fwuv
+附庸风雅	fyfy
+刚刚	gg
+感觉	gj
+公司	gs
+更新	gx
+规则	gz
+跟着	gv
+关节炎	gjy
+高山族	guz
+感兴趣	gxq
+刽子手	gzu
+光彩夺目	gcdm
+光打雷不下雨	gdly
+古道热肠	gdri
+功到自然成	gdzi
+狗改不了吃屎	ggbu
+公共场合	ggih
+规规矩矩	ggjj
+高歌猛进	ggmj
+功高震主	ggvv
+呱呱坠地	ggvd
+各回各家	ghgj
+鬼话连篇	ghlp
+高居榜首	gjbu
+国际惯例	gjgl
+孤家寡人	gjgr
+故技重施	gjiu
+故伎重演	gjiy
+过街老鼠	gjlu
+敢于	gjyu
+高楼大厦	gldu
+咕噜咕噜	glgl
+告老还乡	glhx
+寡廉鲜耻	glxi
+功名利禄	gmll
+果实	goui
+过往	gowh
+个人原因	gryy
+宫殿	gsdm
+公愤	gsff
+工夫	gsfu
+攻克	gske
+功力	gsli
+鼓瑟齐鸣	gsqm
+公投	gstz
+甘肃省	gsug
+共识	gsui
+公证	gsvg
+古董	guds
+骨骼	guge
+顾忌	guji
+孤立	guli
+果实累累	gull
+高山流水	gulu
+鬼使神差	guui
+鼓掌	guvh
+更胜一筹	guyi
+孤身一人	guyr
+归集	gvji
+各执己见	gvjj
+闺蜜	gvmi
+孤掌难鸣	gvnm
+狗仗人势	gvru
+皈依	gvyi
+柜员	gvyr
+高瞻远瞩	gvyv
+改弦更张	gxgv
+孤言寡语	gygy
+狗眼看人低	gykd
+古已有之	gyyv
+各自为战	gzwv
+回复	hf
+回归线	hgx
+花架子	hjz
+何必当初	hbdi
+毫不留情	hblq
+胡编乱造	hblz
+湖北省	hbug
+恨不相逢未嫁时	hbxu
+耗电	hcdm
+皇帝不急太监急	hdbj
+患得患失	hdhu
+华灯初上	hdiu
+寒冬腊月	hdly
+海面	hdmm
+河东狮吼	hduh
+荒诞无稽	hdwj
+轰动一时	hdyu
+华而不实	hebu
+合资	hezi
+含含糊糊	hhhh
+悔恨交加	hhjj
+花花绿绿	hhll
+鸿鹄之志	hhvv
+环环相扣	hhxk
+花好月圆	hhyy
+合久必分	hjbf
+撼动	hjds
+换句话说	hjhu
+行家里手	hjlu
+后继有人	hjyr
+横空出世	hkiu
+画龙点睛	hldj
+晃来晃去	hlhq
+花里胡哨	hlhu
+活灵活现	hlhx
+汗流浃背	hljb
+汗流满面	hlmm
+花落谁家	hluj
+晃眼	hlyj
+湖南省	hnug
+恍如隔世	hrgu
+浑然不觉	hrbj
+缓解	hrjp
+恍若未闻	hrww
+浩如烟海	hryh
+好事不出门	hubm
+好事多磨	hudm
+好说歹说	hudu
+互换	huhr
+胡椒	hujn
+后生可畏	hukw
+欢声雷动	huld
+护理	huli
+华山论剑	hulj
+呼噜	hulu
+洪水猛兽	humu
+混世魔王	humw
+护士	huui
+含沙射影	huuy
+后事之师	huvu
+浑身解数	huxu
+会者不难	hvbn
+货真价实	hvju
+哗众取宠	hvqi
+晦涩	hvse
+会晤	hvwu
+回信	hvxb
+话中有话	hvyh
+呼之欲出	hvyi
+花无百日红	hwbh
+毫无用处	hwyi
+毫无怨言	hwyy
+横行霸道	hxbd
+滑动	hxds
+祸兮福所倚	hxfy
+活学活用	hxhy
+混淆是非	hxuf
+滑翔	hxxl
+忽隐忽现	hyhx
+慧眼如炬	hyrj
+婚俗	hysu
+慧眼识珠	hyuv
+红颜知己	hyvj
+好逸恶劳	hywl
+和颜悦色	hyys
+程度	id
+尝尝	ii
+出发点	ifd
+诧异	iayi
+潮湿	icui
+船到江心补漏迟	idji
+差遣	idqm
+撤单	iedj
+超乎想象	ihxx
+春风化雨	ifhy
+超凡入圣	ifru
+超凡脱俗	ifts
+冲锋陷阵	ifxv
+春寒料峭	ihlq
+承建	igjm
+出乖露丑	igli
+承销	igxn
+冲冠一怒为红颜	igyy
+晨昏颠倒	ihdd
+长话短说	ihdu
+超乎常人	ihir
+春华秋实	ihqu
+春花秋月	ihqy
+常识	ihui
+常委	ihww
+尝鲜	ihxm
+彻彻底底	iidd
+垂垂老矣	iily
+赤字	iizi
+蟾蜍	ijiu
+臭名远扬	imyy
+船舶	irbo
+怅然若失	irru
+喘气	irqi
+重逢	isfg
+冲剂	isji
+崇敬	isjk
+处事不惊	iubj
+长盛不衰	iubu
+出动	iuds
+成双成对	iuid
+处罚	iufa
+出糗	iuqq
+畜生	iuug
+除夕	iuxi
+重拾信心	iuxx
+乘胜追击	iuvj
+察言观色	iygs
+姹紫嫣红	izyh
+绝对	jd
+尽管	jg
+渐渐	jj
+极其	jq
+假如	jr
+极致	jv
+基本功	jbg
+几百年	jbn
+记不住	jbv
+警察局	jij
+教科书	jku
+加拿大	jnd
+吉尼斯	jns
+柬埔寨	jpv
+警惕性	jtx
+记事本	jub
+局限性	jxx
+进一步	jyb
+见不得人	jbdr
+禁锢	jbgu
+久别重逢	jbif
+紧紧	jbjb
+机不可失	jbku
+坚壁清野	jbqy
+间不容发	jbrf
+金榜题名	jbtm
+举步维艰	jbwj
+进修	jbxq
+技不压身	jbyu
+兼而有之	jeyv
+家常便饭	jibf
+季度	jidu
+绝处逢生	jifu
+籍贯	jigr
+忌讳	jihv
+鸡精	jijk
+家长里短	jild
+饥肠辘辘	jill
+纪念	jinm
+鸡肉	jirz
+缉私	jisi
+精诚所至	jisv
+精诚团结	jitj
+既成事实	jiuu
+机智	jivi
+挤占	jivj
+畸形	jixk
+吉祥	jixl
+积压	jiya
+觊觎	jiyu
+加减乘除	jjii
+句句属实	jjuu
+惊艳	jkyj
+警官	jkgr
+荆棘	jkji
+经理	jkli
+几可乱真	jklv
+静谧	jkmi
+景气	jkqi
+静止	jkvi
+艰苦卓绝	jkvj
+敬重	jkvs
+警卫	jkww
+景象	jkxl
+竞选	jkxr
+晶莹	jkyk
+吉林省	jlug
+剪刀	jmdc
+坚定	jmdk
+间断	jmdr
+坚固	jmgu
+监察	jmia
+见解	jmjp
+假模假样	jmjy
+间距	jmju
+贱人	jmrf
+肩上	jmuh
+监视	jmui
+近墨者黑	jmvh
+艰辛	jmxb
+奸细	jmxi
+监狱	jmyu
+教诲	jnhv
+较劲	jnjb
+焦急	jnji
+矫健	jnjm
+交界	jnjp
+矫情	jnqk
+教室	jnui
+倦鸟知还	jnvh
+叫嚣	jnxn
+几内亚	jnya
+解毒	jpdu
+解除	jpiu
+解禁	jpjb
+洁净	jpjk
+节俭	jpjm
+阶梯	jpti
+结实	jpui
+戒指	jpvi
+旧瓶装新酒	jpvj
+结息	jpxi
+举棋不定	jqbd
+九点	jqdm
+救救	jqjq
+驾轻就熟	jqju
+迥然不同	jrbt
+尽人皆知	jrjv
+尽人事听天命	jrum
+九天揽月	jtly
+见势不妙	jubm
+井水不犯河水	jubu
+精神抖擞	juds
+旧事重提	juit
+尽善尽美	jujm
+举手投足	jutz
+江山社稷	juuj
+矩形	juxk
+计上心来	juxl
+假手于人	juyr
+据为己有	jwjy
+坚信不疑	jxby
+即兴发挥	jxfh
+嫁祸	jxho
+尽心尽力	jxjl
+加剧	jxju
+渐行渐远	jxjy
+江西省	jxug
+假惺惺	jxxk
+假象	jxxl
+甲乙	jxyi
+节衣缩食	jysu
+郡主	jyvu
+军衔	jyxm
+锦衣夜行	jyyx
+均由	jyyz
+困难	kn
+跨时代	kud
+苦不堪言	kbky
+开刀	kddc
+苦大仇深	kdiu
+开战	kdvj
+开演	kdyj
+刻意	keyi
+勘查	kjia
+砍价	kjjx
+坑坑洼洼	kkww
+颗粒无收	klwu
+口诛笔伐	kvbf
+开枝散叶	kvsy
+苦心积虑	kxjl
+可以燎原	kyly
+枯燥乏味	kzfw
+链接	lj
+类似	ls
+轮不到	lbd
+里程碑	lib
+龙卷风	ljf
+两句话	ljh
+老年人	lnr
+两只手	lvu
+老顽童	lwt
+六月份	lyf
+懒洋洋	lyy
+聊表寸心	lbcx
+连本带利	lbdl
+拉帮结派	lbjp
+两败俱伤	lbju
+老花	lchx
+郎才女貌	lcnm
+落地生根	ldug
+来世	ldui
+立竿见影	lgjy
+利国利民	lglm
+锣鼓喧天	lgxt
+论功行赏	lgxu
+利害得失	lhdu
+乐呵乐呵	lhlh
+灵魂出窍	lhiq
+理睬	licd
+立秋	liqq
+冷嘲热讽	lirf
+荔枝	livi
+例行	lixk
+离家出走	ljiz
+浪迹江湖	ljjh
+领衔	lkxm
+来历不明	llbm
+恋恋不舍	llbu
+唠唠叨叨	lldd
+亮点	lldm
+来来回回	llhh
+绫罗绸缎	llid
+泪流满面	llmm
+来龙去脉	llqm
+冷冷清清	llqq
+啰啰嗦嗦	llss
+沦落至此	llvc
+利令智昏	llvh
+寥寥无几	llwj
+碌碌无为	llww
+陆陆续续	llxx
+流落异乡	llyx
+连蒙带猜	lmdc
+两面三刀	lmsd
+螺蛳	losi
+琉璃	lqli
+两全其美	lqqm
+留宿	lqsu
+流逝	lqui
+流血	lqxt
+利人不利己	lrbj
+令人齿冷	lril
+理所当然	lsdr
+牢骚满腹	lsmf
+掠过	ltgo
+路途遥远	ltyy
+乐善好施	luhu
+绿水青山	luqu
+料事如神	luru
+卤汁	luvi
+良师益友	luyy
+列支敦士登	lvdd
+力争上游	lvuy
+略知一二	lvye
+累积	lwji
+累死	lwsi
+立于不败之地	lybd
+络绎不绝	lybj
+龙吟虎啸	lyhx
+伶牙俐齿	lyli
+洛阳纸贵	lyvg
+燎原之势	lyvu
+临渊羡鱼	lyxy
+慢慢	mm
+面前	mq
+每天	mt
+没安好心	mahx
+面不改色	mbgs
+名不正言不顺	mbvu
+默不作声	mbzu
+茅草	mccc
+毛衣	mcyi
+满腹经纶	mfjl
+每分每秒	mfmm
+马革裹尸	mggu
+卖国求荣	mgqr
+目光如炬	mgrj
+蒙受	mguz
+梦乡	mgxl
+卖官鬻爵	mgyj
+盟友	mgyz
+糜烂	milj
+门可罗雀	mklq
+眉开眼笑	mkyx
+懵懵懂懂	mmdd
+满面春风	mmif
+朦朦胧胧	mmll
+莫名其妙	mmqm
+勉勉强强	mmqq
+茫茫人海	mmrh
+名门世家	mmuj
+冒冒失失	mmuu
+明眸善睐	mmul
+茉莉	moli
+弥天大谎	mtdh
+募集	muji
+每时每刻	mumk
+牧师	muui
+没事找事	muvu
+莫衷一是	mvyu
+美化	mwhx
+面无人色	mwrs
+美貌	mwmc
+鸟尽弓藏	njgc
+南海	njhd
+难堪	njkj
+扭扭捏捏	nnnn
+能省则省	nuzu
+能征惯战	nvgv
+能者为师	nvwu
+屁大点事	pddu
+屁颠屁颠	pdpd
+普度众生	pdvu
+披肝沥胆	pgld
+疲乏	pifa
+排除异己	piyj
+叛逃	pjtc
+攀折	pjve
+破口大骂	pkdm
+拍马难及	pmnj
+破位	poww
+情况	qk
+前面	qm
+恰恰	qq
+歧视	qu
+巧克力	qkl
+情况下	qkx
+千里眼	qly
+敲门砖	qmv
+起跑线	qpx
+情人节	qrj
+岂不快哉	qbkz
+曲不离口	qblk
+千变万化	qbwh
+取长补短	qibd
+千疮百孔	qibk
+七点	qidm
+奇耻大辱	qidr
+气愤	qiff
+起伏	qifu
+牵肠挂肚	qigd
+企划	qihx
+契机	qiji
+气量	qill
+骑马	qima
+气泡	qipc
+歧途	qitu
+千差万别	qiwb
+企稳	qiwf
+栖息	qixi
+气喘吁吁	qixx
+欺压	qiya
+起义	qiyi
+青出于蓝而胜于蓝	qiyl
+契约	qiyt
+轻敌	qkdi
+清淡	qkdj
+旗开得胜	qkdu
+轻浮	qkfu
+清除	qkiu
+青椒	qkjn
+情节	qkjp
+穷困潦倒	qkld
+轻灵	qklk
+蜻蜓	qktk
+情商	qkuh
+轻视	qkui
+轻信	qkxb
+清洗	qkxi
+情形	qkxk
+清香	qkxl
+黔驴技穷	qljq
+巧立名目	qlmm
+勤劳致富	qlvf
+青睐有加	qlyj
+奇门遁甲	qmdj
+虔诚	qmig
+青面獠牙	qmly
+前年	qmnm
+牵手	qmuz
+千兆	qmvc
+牵着	qmve
+欠账	qmvh
+潜质	qmvi
+亲密无间	qmwj
+牵线	qmxm
+前言	qmyj
+欠揍	qmzz
+窍门	qnmf
+清清白白	qqbb
+清清淡淡	qqdd
+起起伏伏	qqff
+齐齐哈尔	qqhe
+切切实实	qquu
+卿卿我我	qqww
+芊芊玉手	qqyu
+求人不如求己	qrbj
+全称	qrig
+诠释	qrui
+情人眼里出西施	qryu
+齐头并进	qtbj
+缺失	qtui
+情投意合	qtyh
+七手八脚	qubj
+秋收冬藏	qudc
+亲上加亲	qujq
+强身健体	qujt
+前世今生	quju
+青山绿水	qulu
+巧舌如簧	qurh
+屈身	quuf
+敲山震虎	quvh
+气势汹汹	quxx
+趋于	quyu
+牵一发而动全身	qyfu
+轻言细语	qyxy
+仍然	rr
+任务	rw
+人不人鬼不鬼	rbrg
+日复一日	rfyr
+如诗如画	rurh
+软硬不吃	rybi
+速度	sd
+送给	sg
+虽然	sr
+搜索	ss
+随着	sv
+所到之处	sdvi
+死而不僵	sebj
+私房	sifh
+死缠烂打	sild
+饲料	siln
+死人	sirf
+四季如春	sjri
+死记硬背	sjyb
+四两拨千斤	slbj
+损人不利己	srbj
+索然无味	srww
+松紧	ssjb
+松树	ssuu
+素菜	sucd
+丧失殆尽	sudj
+似水流年	suln
+四书五经	suwj
+三月份	syf
+推倒	td
+推广	tg
+推荐	tj
+淘汰	tt
+投资	tz
+太原	tdyr
+天寒地冻	thdd
+谈虎色变	thsb
+条件反射	tjfu
+囤积居奇	tjjq
+弹琴	tjqb
+偷奸耍滑	tjuh
+恬淡	tmdj
+填空	tmks
+天马行空	tmxk
+踏破铁鞋无觅处	tpti
+同胞	tsbc
+通缉	tsji
+同志	tsvi
+同性	tsxk
+同室操戈	tucg
+徒弟	tudi
+投鼠忌器	tujq
+太少了	tul
+他山之石	tuvu
+铁石心肠	tuxi
+退换	tvhr
+弹指一挥间	tvyj
+通宵达旦	txdd
+兔子不吃窝边草	tzbc
+天造地设	tzdu
+束缚	uf
+伤害	uh
+世纪	uj
+试试	uu
+说服力	ufl
+石家庄	ujv
+势利眼	uly
+摄氏度	uud
+省政府	uvf
+受制于	uvy
+舍不得孩子套不住狼	ubdl
+事必躬亲	ubgq
+胜败乃兵家常事	ubnu
+说曹操曹操到	uccd
+鼠肚鸡肠	udji
+射程	ueig
+射箭	uejm
+设想	uexl
+尚方宝剑	ufbj
+神采	ufcd
+是非功过	ufgg
+伸出	ufiu
+杀富济贫	ufjp
+神情	ufqk
+神色	ufse
+顺风顺水	ufuu
+深远	ufyr
+上个月	ugy
+盛会	ughv
+省长	ugvh
+尸骨未寒	ugwh
+生性	ugxk
+圣贤	ugxm
+声誉	ugyu
+神魂颠倒	uhdd
+伤痕累累	uhll
+神乎其神	uhqu
+时好时坏	uhuh
+赏识	uhui
+实话实说	uhuu
+事后诸葛亮	uhvl
+伤亡	uhwh
+商务	uhwu
+上限	uhxm
+伤员	uhyr
+说长道短	uidd
+石沉大海	uidh
+师范	uifj
+师父	uifu
+时常	uiih
+势力	uili
+石榴	uilq
+诗歌	uige
+食品	uipb
+失陪	uipw
+十七	uiqi
+市区	uiqu
+受宠若惊	uirj
+失散	uisj
+师出同门	uitm
+师长	uivh
+食指	uivi
+施展	uivj
+十五	uiwu
+视线	uixm
+视野	uiye
+事宜	uiyi
+试验	uiyj
+身价百倍	ujbb
+拾金不昧	ujbm
+伤筋动骨	ujdg
+煽动	ujds
+舒筋活血	ujhx
+十几岁	ujs
+陕西	ujxi
+身家性命	ujxm
+十里不同俗	ulbs
+上梁不正下梁歪	ulbw
+声泪俱下	uljx
+恃强凌弱	uqlr
+拾人牙慧	uryh
+授人以渔	uryy
+身手不凡	uubf
+世世代代	uudd
+世事洞明	uudm
+审时度势	uudu
+输过	uugo
+水深火热	uuhr
+书籍	uuji
+姗姗来迟	uuli
+顺顺利利	uull
+神神秘秘	uumm
+树木	uumu
+舍生取义	uuqy
+声声入耳	uure
+孰是孰非	uuuf
+省时省力	uuul
+生生世世	uuuu
+善始善终	uuuv
+杀身之祸	uuvh
+熟视无睹	uuwd
+上上下下	uuxx
+稍胜一筹	uuyi
+时势造英雄	uuzx
+胜之不武	uvbw
+身正不怕影子斜	uvbx
+失之东隅	uvdy
+首战告捷	uvgj
+失之交臂	uvjb
+实至名归	uvmg
+食之无味	uvww
+水银	uvyb
+受制于人	uvyr
+少之又少	uvyu
+省委书记	uwuj
+顺我者昌	uwvi
+双喜临门	uxlm
+山西省	uxug
+蛇蝎心肠	uxxi
+生于忧患	uyyh
+顺延	uyyj
+身在曹营心在汉	uzch
+收获	uzho
+守候	uzhz
+稍纵即逝	uzju
+十字路口	uzlk
+首饰	uzui
+手掌	uzvh
+收支	uzvi
+收养	uzyh
+手艺	uzyi
+这次	vc
+指定	vd
+征服	vf
+只会	vh
+支持	vi
+追求	vq
+只是	vu
+真正	vv
+这些	vx
+主意	vy
+支付宝	vfb
+正方形	vfx
+主持人	vir
+直性子	vxz
+照单全收	vdqu
+掷地有声	vdyu
+周而复始	vefu
+知法犯法	vfff
+侦察	vfia
+镇静	vfjk
+照方抓药	vfvy
+指腹为婚	vfwh
+正解	vgjp
+争执	vgvi
+中规中矩	vgvj
+周公之礼	vgvl
+至高无上	vgwu
+这个月	vgy
+正义	vgyi
+丈夫	vhfu
+追悔莫及	vhmj
+致辞	vici
+滞后	vihz
+职称	viig
+支出	viiu
+纸巾	vijb
+致敬	vijk
+指甲	vijx
+争长论短	vild
+智力	vili
+知名	vimk
+智商	viuh
+纸张	vivh
+制止	vivi
+支柱	vivu
+职务	viwu
+志向	vixl
+直辖	vixx
+枝丫	viya
+质疑	viyi
+职员	viyr
+指责	vize
+针尖对麦芒	vjdm
+浙江省	vjug
+战士	vjui
+朝九晚五	vjww
+战友	vjyz
+竹篮打水一场空	vldk
+直来直去	vlvq
+珍禽异兽	vqyu
+众人拾柴火焰高	vrug
+终端	vsdr
+终极	vsji
+终结	vsjp
+中指	vsvi
+中药	vsyc
+忠于	vsyu
+终身大事	vudu
+嘱咐	vufu
+主观	vugr
+著称	vuig
+主见	vujm
+著书立说	vulu
+著名	vumk
+仗势欺人	vuqr
+诸如	vuru
+众矢之的	vuvd
+重赏之下，必有勇夫	vuvf
+助威	vuww
+祝愿	vuyr
+照章办事	vvbu
+战战兢兢	vvjj
+长长见识	vvju
+整整齐齐	vvqq
+智者千虑，必有一失	vvqu
+蒸蒸日上	vvru
+置之死地而后生	vvsu
+知之甚少	vvuu
+真真正正	vvvv
+支支吾吾	vvww
+直系亲属	vxqu
+只要功夫深	vygu
+睁一只眼，闭一只眼	vyvy
+味道	wd
+完美	wm
+未知	wv
+微信	wx
+卫生间	wuj
+无外乎	wwh
+文本文件	wbwj
+外星	wdxk
+闻道有先后	wdyh
+威风扫地	wfsd
+无法忘怀	wfwh
+瘟疫	wfyi
+为虎作伥	whzi
+无坚不摧	wjbc
+万劫不复	wjbf
+无精打采	wjdc
+无计可施	wjku
+晚年	wjnm
+无拘无束	wjwu
+蜿蜒	wjyj
+无利不起早	wlbz
+无利可图	wlkt
+歪理邪说	wlxu
+为数不多	wubd
+无商不奸	wubj
+误导	wudc
+万事大吉	wudj
+蜈蚣	wugs
+无故	wugu
+无理	wuli
+忤逆	wuni
+万水千山	wuqu
+往事如烟	wury
+无事生非	wuuf
+巫山	wuuj
+午睡	wuuv
+万寿无疆	wuwj
+无时无刻	wuwk
+畏首畏尾	wuww
+诬陷	wuxm
+无暇	wuxx
+午夜	wuye
+握手言和	wuyh
+无疑	wuyi
+巫山云雨	wuyy
+瓮中之鳖	wvvb
+物我两忘	wwlw
+卫冕	wwmm
+歪歪扭扭	wwnn
+围棋	wwqi
+玩物丧志	wwsv
+唯物主义	wwvy
+呜呜呜	www
+猥亵	wwxp
+万无一失	wwyu
+五味杂陈	wwzi
+妄下断语	wxdy
+惟有饮者留其名	wyym
+修改	xg
+下面	xm
+小时	xu
+修正	xv
+学习	xx
+选择	xz
+想不到	xbd
+行不行	xbx
+想了想	xlx
+叙利亚	xly
+下马威	xmw
+小蛮腰	xmy
+先天性	xtx
+洗手间	xuj
+学术性	xux
+小心眼	xxy
+西游记	xyj
+小意思	xys
+心急	xbji
+心理	xbli
+性别歧视	xbqu
+小不忍则乱大谋	xbrm
+心比天高	xbtg
+刑不上大夫	xbuf
+心声	xbug
+邪不胜正	xbuv
+虾兵蟹将	xbxj
+新兴	xbxk
+心仪	xbyi
+想东想西	xdxx
+相得益彰	xdyv
+星光灿烂	xgcl
+新陈代谢	xidx
+西郊	xijn
+洗礼	xili
+悉尼	xini
+戏曲	xiqu
+稀释	xiui
+洗漱	xiuu
+相差甚远	xiuy
+洗手	xiuz
+相差无几	xiwj
+喜出望外	xiww
+悉心	xixb
+戏谑	xixt
+蜥蜴	xiyi
+席卷一空	xjyk
+性命	xkmk
+形势	xkui
+笑里藏刀	xlcd
+降龙伏虎	xlfh
+血流成河	xlih
+橡胶	xljn
+星罗棋布	xlqb
+镶嵌	xlqm
+血流如注	xlrv
+泄露天机	xltj
+心领神会	xluh
+想来想去	xlxq
+向下	xlxx
+笑脸相迎	xlxy
+响应	xlyk
+吓了一跳	xlyt
+显露	xmlu
+现实	xmui
+献身	xmuf
+蓄谋已久	xmyj
+心满意足	xmyz
+嚣张	xnvh
+小鸟依人	xnyr
+血浓于水	xnyu
+懈怠	xpdd
+血盆大口	xpdk
+亵玩	xpwj
+写字	xpzi
+贤妻良母	xqlm
+小桥流水	xqlu
+休整	xqvg
+心如刀绞	xrdj
+旭日东升	xrdu
+血型	xtxk
+血液	xtye
+心神不宁	xubn
+形势比人强	xubq
+心神恍惚	xuhh
+酗酒	xujq
+喜上眉梢	xumu
+修身养性	xuyx
+修修补补	xxbb
+心绪不宁	xxbn
+絮絮叨叨	xxdd
+险象环生	xxhu
+瞎扯	xxie
+新鲜出炉	xxil
+相形见绌	xxji
+小心谨慎	xxju
+稀稀拉拉	xxll
+寻寻觅觅	xxmm
+心心念念	xxnn
+潇潇洒洒	xxss
+虚虚实实	xxuu
+夏至	xxvi
+雄心壮志	xxvv
+遐想	xxxl
+下限	xxxm
+先下一城	xxyi
+心心相印	xxxy
+香消玉殒	xxyy
+咸鱼翻身	xyfu
+匈牙利	xyli
+悬崖勒马	xylm
+悬崖峭壁	xyqb
+学有所成	xysi
+心有所属	xysu
+相由心生	xyxu
+心有余悸	xyyj
+心有余而力不足	xyyz
+与其	yq
+意志	yv
+悠闲	yx
+又不是	ybu
+一次性	ycx
+一唱一和	yiy
+一句话	yjh
+郁金香	yjx
+艺术性	yux
+以至于	yvy
+犹犹豫豫	yyyy
+雅致	yavi
+以不变应万变	ybbb
+以备不测	ybbc
+欲罢不能	ybbn
+引渡	ybdu
+一般见识	ybju
+愚不可及	ybkj
+眼波流转	yblv
+一笔抹杀	ybmu
+隐匿	ybni
+一表人才	ybrc
+用兵如神	ybru
+一步之遥	ybvy
+言必有据	ybyj
+隐约	ybyt
+阴郁	ybyu
+有板有眼	ybyy
+一兵一卒	ybyz
+用词不当	ycbd
+一寸光阴一寸金	ycgj
+以次充好	ycih
+由此及彼	ycjb
+由此可见	yckj
+摇曳	ycye
+耀眼	ycyj
+有得必有失	ydbu
+愿赌服输	ydfu
+有胆有识	ydyu
+衣冠不整	ygbv
+衣冠禽兽	ygqu
+有何不可	yhbk
+银河倒泻	yhdx
+一回生二回熟	yhuu
+有话直说	yhvu
+养颜	yhyj
+有话要说	yhyu
+一成不变	yibb
+扬长避短	yibd
+一尘不染	yibr
+阳春白雪	yibx
+已成定局	yidj
+一锤定音	yidy
+依附	yifu
+摇唇鼓舌	yigu
+寅吃卯粮	yiml
+一匹	yipi
+仪器	yiqi
+遗忘	yiwh
+运筹帷幄	yiww
+羊肠小道	yixd
+阴差阳错	yiyc
+越扯越远	yiyy
+一击毙命	yjbm
+油尽灯枯	yjdk
+衣锦还乡	yjhx
+演唱	yjih
+严谨	yjjb
+眼镜	yjjk
+义结金兰	yjjl
+严苛	yjke
+冤家路窄	yjlv
+俨然	yjrj
+延伸	yjuf
+掩饰	yjui
+炎症	yjvg
+一技之长	yjvi
+一己之私	yjvs
+远见卓识	yjvu
+欲加之罪	yjvz
+厌恶	yjwu
+以儆效尤	yjxy
+言尽于此	yjyc
+咬紧牙关	yjyg
+赢过	ykgo
+有口难言	ykny
+影射	ykue
+哑口无言	ykwy
+有利无害	ylwh
+由来已久	ylyj
+榆木疙瘩	ymgd
+有模有样	ymyy
+以其人之道，还治其人之身	yqru
+于情于理	yqyl
+阴晴圆缺	yqyq
+有权有势	yqyu
+一日不见	yrbj
+用人不疑，疑人不用	yrby
+一人得道	yrdd
+一荣俱荣	yrjr
+冤家	yrjx
+怨气	yrqi
+源泉	yrqr
+跃然纸上	yrvu
+一日为师，终生为父	yrwf
+冤枉	yrwh
+阅人无数	yrwu
+音容笑貌	yrxm
+缘由	yryz
+一人做事一人当	yrzd
+一丝不挂	ysbg
+拥趸	ysdy
+伊斯兰教	yslj
+摇头摆尾	ytbw
+油头滑脑	ythn
+有条有理	ytyl
+怨天尤人	ytyr
+一声不吭	yubk
+愈发	yufa
+有伤风化	yufh
+迂腐	yufu
+浴缸	yugh
+与世隔绝	yugj
+引蛇出洞	yuid
+雨季	yuji
+远水解不了近渴	yujk
+一石激起千层浪	yujl
+雨露	yulu
+衣衫褴褛	yull
+预期	yuqi
+一身是胆	yuud
+一试身手	yuuu
+有识之士	yuvu
+云山雾罩	yuwv
+衣食无忧	yuwy
+以身相许	yuxx
+摇身一变	yuyb
+寓意	yuyi
+预言	yuyj
+有生以来	yuyl
+以势压人	yuyr
+有声有色	yuys
+愉悦	yuyt
+阴盛阳衰	yuyu
+有说有笑	yuyx
+莺声燕语	yuyy
+怨声载道	yuzd
+咬舌自尽	yuzj
+言之有理	yvyl
+言之有物	yvyw
+意味深长	ywui
+洋为中用	ywvy
+余味无穷	ywwq
+言为心声	ywxu
+一星半点	yxbd
+英雄不问出处	yxbi
+一心不能二用	yxby
+以小人之心，度君子之腹	yxrf
+一线生机	yxuj
+欲仙欲死	yxys
+言笑晏晏	yxyy
+以怨报德	yybd
+一夜暴富	yybf
+油盐不进	yybj
+怏怏不乐	yybl
+有眼不识泰山	yybu
+抑扬顿挫	yydc
+一拥而上	yyeu
+因噎废食	yyfu
+晕晕乎乎	yyhh
+以眼还眼	yyhy
+晕晕沉沉	yyii
+异于常人	yyir
+一语惊醒梦中人	yyjr
+阴雨连绵	yylm
+烟雨蒙蒙	yymm
+一言难尽	yynj
+有缘千里来相会	yyqh
+咬牙切齿	yyqi
+洋洋洒洒	yyss
+应有之义	yyvy
+引以为戒	yywj
+依依惜别	yyxb
+炎炎夏日	yyxr
+跃跃欲试	yyyu
+摇摇欲坠	yyyv
+一言一行	yyyx
+邮编	yzbm
+优点	yzdm
+以资鼓励	yzgl
+忧愁	yziz
+右键	yzjm
+有理	yzli
+一走了之	yzlv
+游说	yzuv
+优质	yzvi
+有增无减	yzwj
+优先	yzxm
+游泳	yzys
+犹豫	yzyu
+总算	zs
+座位	zw
+座右铭	zym
+匝道	zadc
+自驾	zijx
+锃亮	zgll
+姿色	zise
+紫砂	ziua
+自助	zivu
+自愿	ziyr
+自成一体	ziyt
+坐实	zoui
+纵观	zsgr
+坐失良机	zulj
+足矣	zuyi
+嘴上一套	zuyt
+载誉归来	zygl
+自怨自艾	zyzy
+# emoji表情
+😓	hj
+😭	ku
+😂	xn
+😠	nu
+😳	fd
+👍	ql
+👌	ok
+👎	ro
+☕	ia
+🍺	pj
+🎂	dg
+🙏	bt
+🌹	mg
+💤	uv
+💔	ux
+🐂	nq
+🐂🚶	nr
+🐎🐎🐅🐅	mh
+🐾🐎👀🌸	gh
+🖕	cc
+🤔	sk
+
+# 二重简码
+又	y
+遮	ve
+按	a
+吧	b
+此	c
+打	d
+嗯	e
+发	f
+管	g
+化	h
+初	i
+见	j
+块	k
+立	l
+嘛	m
+哪	n
+期	q
+入	r
+随	s
+它	t
+之	v
+位	w
+性	x
+子	z
+时	u
+室	ui
+宝	bc
+笨	bf
+甭	bg
+逼	bi
+备	bw
+猜	cd
+达	da
+道	dc
+逗	dz
+份	ff
+疯	fg
+复	fu
+搞	gc
+钙	gd
+哥	ge
+官	gr
+故	gu
+华	hx
+壶	hu
+扯	ie
+程	ig
+臭	iz
+今	jb
+极	ji
+贱	jm
+居	ju
+佳	jx
+抠	kz
+溜	lq
+骂	ma
+美	mw
+浓	ns
+弃	qi
+缺	qt
+惹	re
+忍	rf
+扔	rg
+寺	si
+淘	tc
+替	ti
+舔	tm
+通	ts
+退	tv
+省	ug
+守	uz
+症	vg
+战	vj
+终	vs
+文	wf
+忘	wh
+玩	wj
+未	ww
+心	xb
+型	xk
+凶	xs
+隐	yb
+野	ye
+杨	yh
+严	yj
+园	yr
+友	yz
+遭	zc
+揍	zz
+坐	zo
+
+#符号
+！	oa
+%	ob
+一	oba	111
+丨	obl	111
+丿	obp	111
+丶	obd	111
+乛	obv	111
+乀	obn	111
+鱼	oba
+冖	obb	100
+宀	obb	99
+丷	obb	98
+疒	obb	97
+勹	obb	96
+比左部	obb	95
+艹	obc	100
+廾	obc	99
+冫	obd	100
+氵	obd	99
+⺈	obd	98
+刂	obd	97
+阝	obe	100
+卩	obe	99
+彐	obe	98
+山	obe	97
+见下部	obe	96
+扌	obf	100
+寿带上部	obf	99
+龶	obf	98
+缶	obf	97
+既左部	obg	100
+艮	obg	99
+鬼	obg	98
+革	obg	96
+骨	obg	97
+灬	obh	100
+虍	obh	99
+黑	obh	98
+余下部	obh	97
+彳	obi	100
+亍	obi	99
+虫	obi	98
+钅	obj	100
+金	obj	99
+龹	obj	98
+匚	obk	100
+冂	obk	99
+凵	obk	98
+囗	obk	97
+㠯	obk	96
+耂	obl	100
+立	obl	99
+龙	obl	98
+朩	obm
+⺧	obn	100
+牜	obn	99
+日	obo	100
+月	obo	99
+目	obo	98
+礻	obp	100
+衤	obp	99
+犭	obq	100
+求	obq	99
+具其上部	obq	98
+亻	obr
+纟	obs	100
+厶	obs	99
+龴	obs	98
+罒	obs	97
+田	obt
+饣	obu	100
+龵	obu	99
+𠂇	obu	98
+氺	obu	97
+石	obu	96
+⺮	obv	100
+豸	obv	99
+亠	obw	100
+夂	obw	99
+攵	obw	98
+文	obw	97
+忄	obx	100
+乂	obx	99
+⺍	obx	98
+⺌	obx	97
+⺗	obx	96
+讠	oby	100
+⺷	oby	99
+⺶	oby	98
+𧘇	oby	97
+羊	oby	96
+⻊	obz	100
+廴	obz	99
+辶	obz	98
+”	oc
+、	od
+（	oh
+）	oj
+《	ok	90
+》	ol
+〔	on
+〕	om
+→	of
+标点d	ofb
+“”	ofbd	100
+（）	ofbd	99
+《》	ofbd	98
+〈〉	ofbd	97
+〔〕	ofbd	96
+‘’	ofbd	95
+「」	ofbd	94
+『』	ofbd	93
+【】	ofbd	92
+〖〗	ofbd	91
+［］	ofbd	90
+｛｝	ofbd	89
+．	ofbd	88
+。	ofbd	87
+，	ofbd	86
+、	ofbd	85
+；	ofbd	84
+：	ofbd	83
+？	ofbd	82
+！	ofbd	81
+…	ofbd	80
+—	ofbd	79
+·	ofbd	78
+ˉ	ofbd	77
+ˇ	ofbd	76
+¨	ofbd	75
+々	ofbd	74
+～	ofbd	73
+‖	ofbd	72
+∶	ofbd	71
+＂	ofbd	70
+	ofbd	69
+｀	ofbd	68
+｜	ofbd	67
+点数u	ofd	100
+⒈	ofdu	100
+⒉	ofdu	99
+⒊	ofdu	98
+⒋	ofdu	97
+⒌	ofdu	96
+⒍	ofdu	95
+⒎	ofdu	94
+⒏	ofdu	93
+⒐	ofdu	92
+⒑	ofdu	91
+⒒	ofdu	90
+⒓	ofdu	89
+⒔	ofdu	88
+⒕	ofdu	87
+⒖	ofdu	86
+⒗	ofdu	85
+⒘	ofdu	84
+⒙	ofdu	83
+⒚	ofdu	82
+⒛	ofdu	81
+单位w	ofd	99
+㎎	ofdw	100
+㎏	ofdw	99
+㎜	ofdw	98
+㎝	ofdw	97
+㎞	ofdw	96
+㎡	ofdw	95
+nm	ofdw	94
+μm	ofdw	93
+μg	ofdw	92
+㏄	ofdw	91
+㏎	ofdw	90
+㏑	ofdw	89
+㏒	ofdw	88
+㏕	ofdw	87
+俄大d	ofe	100
+А	ofed	100
+Б	ofed	99
+В	ofed	98
+Г	ofed	97
+Д	ofed	96
+Е	ofed	95
+Ж	ofed	94
+З	ofed	93
+И	ofed	92
+Й	ofed	91
+К	ofed	90
+Л	ofed	89
+М	ofed	88
+Н	ofed	87
+О	ofed	86
+П	ofed	85
+Р	ofed	84
+С	ofed	83
+Т	ofed	82
+У	ofed	81
+Ф	ofed	80
+Х	ofed	79
+Ц	ofed	78
+Ч	ofed	77
+Ш	ofed	76
+Щ	ofed	75
+Ъ	ofed	74
+Ы	ofed	73
+Ь	ofed	72
+Э	ofed	71
+Ю	ofed	70
+Я	ofed	69
+Ё	ofed	68
+俄小x	ofe	99
+а	ofex	100
+б	ofex	99
+в	ofex	98
+г	ofex	97
+д	ofex	96
+е	ofex	95
+ж	ofex	94
+з	ofex	93
+и	ofex	92
+й	ofex	91
+к	ofex	90
+л	ofex	89
+м	ofex	88
+н	ofex	87
+о	ofex	86
+п	ofex	85
+р	ofex	84
+с	ofex	83
+т	ofex	82
+у	ofex	81
+ф	ofex	80
+х	ofex	79
+ц	ofex	78
+ч	ofex	77
+ш	ofex	76
+щ	ofex	75
+ъ	ofex	74
+ы	ofex	73
+ь	ofex	72
+э	ofex	71
+ю	ofex	70
+я	ofex	69
+ё	ofex	68
+括数	ofk
+⑴	ofku	100
+⑵	ofku	99
+⑶	ofku	98
+⑷	ofku	97
+⑸	ofku	96
+⑹	ofku	95
+⑺	ofku	94
+⑻	ofku	93
+⑼	ofku	92
+⑽	ofku	91
+⑾	ofku	90
+⑿	ofku	89
+⒀	ofku	88
+⒁	ofku	87
+⒂	ofku	86
+⒃	ofku	85
+⒄	ofku	84
+⒅	ofku	83
+⒆	ofku	82
+⒇	ofku	81
+货币b	ofh
+€	ofhb	100
+$	ofhb	99
+￠	ofhb	98
+£	ofhb	97
+￡	ofhb	96
+¥	ofhb	94
+￥	ofhb	93
+฿	ofhb	92
+═	ofht	100
+║	ofht	99
+╧	ofht	98
+╪	ofht	97
+╤	ofht	96
+╡	ofht	95
+╞	ofht	94
+▁	ofht	93
+╕	ofht	92
+╒	ofht	91
+╛	ofht	90
+╘	ofht	89
+日大d	ofr	100
+ァ	ofrd	100
+ア	ofrd	99
+ィ	ofrd	98
+イ	ofrd	97
+ゥ	ofrd	96
+ウ	ofrd	95
+ェ	ofrd	94
+エ	ofrd	93
+ォ	ofrd	92
+オ	ofrd	91
+カ	ofrd	90
+ガ	ofrd	89
+キ	ofrd	88
+ギ	ofrd	87
+ク	ofrd	86
+グ	ofrd	85
+ケ	ofrd	84
+ゲ	ofrd	83
+コ	ofrd	82
+ゴ	ofrd	81
+サ	ofrd	80
+ザ	ofrd	79
+シ	ofrd	78
+ジ	ofrd	77
+ス	ofrd	76
+ズ	ofrd	75
+セ	ofrd	74
+ゼ	ofrd	73
+ソ	ofrd	72
+ゾ	ofrd	71
+タ	ofrd	70
+ダ	ofrd	69
+チ	ofrd	68
+ヂ	ofrd	67
+ッ	ofrd	66
+ツ	ofrd	65
+ヅ	ofrd	64
+テ	ofrd	63
+デ	ofrd	62
+ト	ofrd	61
+ド	ofrd	60
+ナ	ofrd	59
+ニ	ofrd	58
+ヌ	ofrd	57
+ネ	ofrd	56
+ノ	ofrd	55
+ハ	ofrd	54
+バ	ofrd	53
+パ	ofrd	52
+ヒ	ofrd	51
+ビ	ofrd	50
+ピ	ofrd	49
+フ	ofrd	48
+ブ	ofrd	47
+プ	ofrd	46
+ヘ	ofrd	45
+ベ	ofrd	44
+ペ	ofrd	43
+ホ	ofrd	42
+ボ	ofrd	41
+ポ	ofrd	40
+マ	ofrd	39
+ミ	ofrd	38
+ム	ofrd	37
+メ	ofrd	36
+モ	ofrd	35
+ャ	ofrd	34
+ヤ	ofrd	33
+ュ	ofrd	32
+ユ	ofrd	31
+ョ	ofrd	30
+ヨ	ofrd	29
+ラ	ofrd	28
+リ	ofrd	27
+ル	ofrd	26
+レ	ofrd	25
+ロ	ofrd	24
+ヮ	ofrd	23
+ワ	ofrd	22
+ヰ	ofrd	21
+ヱ	ofrd	20
+ヲ	ofrd	19
+ン	ofrd	18
+ヴ	ofrd	17
+ヵ	ofrd	16
+ヶ	ofrd	15
+ー	ofrd	14
+ヽ	ofrd	13
+ヾ	ofrd	12
+箭头t	ofj
+←	ofjt	100
+→	ofjt	99
+↑	ofjt	98
+↓	ofjt	97
+↗	ofjt	96
+↙	ofjt	95
+↘	ofjt	94
+↖	ofjt	93
+↔	ofjt	92
+↕	ofjt	91
+日小x	ofr	99
+ぁ	ofrx	100
+あ	ofrx	99
+ぃ	ofrx	98
+い	ofrx	97
+ぅ	ofrx	96
+う	ofrx	95
+ぇ	ofrx	94
+え	ofrx	93
+ぉ	ofrx	92
+お	ofrx	91
+か	ofrx	90
+が	ofrx	89
+き	ofrx	88
+ぎ	ofrx	87
+ぱ	ofrx	86
+く	ofrx	85
+ぐ	ofrx	84
+け	ofrx	83
+げ	ofrx	82
+こ	ofrx	81
+ご	ofrx	80
+さ	ofrx	79
+ざ	ofrx	78
+し	ofrx	77
+じ	ofrx	76
+す	ofrx	75
+ず	ofrx	74
+せ	ofrx	73
+ぜ	ofrx	72
+そ	ofrx	71
+ぞ	ofrx	70
+た	ofrx	69
+だ	ofrx	68
+ち	ofrx	67
+ぢ	ofrx	66
+っ	ofrx	65
+つ	ofrx	64
+づ	ofrx	63
+て	ofrx	62
+で	ofrx	61
+と	ofrx	60
+ど	ofrx	59
+な	ofrx	58
+に	ofrx	57
+ぬ	ofrx	56
+ね	ofrx	55
+の	ofrx	54
+は	ofrx	53
+ば	ofrx	52
+ひ	ofrx	51
+び	ofrx	50
+ぴ	ofrx	49
+ふ	ofrx	48
+ぶ	ofrx	47
+ぷ	ofrx	46
+へ	ofrx	45
+べ	ofrx	44
+ぺ	ofrx	43
+ほ	ofrx	42
+ぼ	ofrx	41
+ぽ	ofrx	40
+ま	ofrx	39
+み	ofrx	38
+む	ofrx	37
+め	ofrx	36
+も	ofrx	35
+ゃ	ofrx	34
+や	ofrx	33
+ゅ	ofrx	32
+ゆ	ofrx	31
+ょ	ofrx	30
+よ	ofrx	29
+ら	ofrx	28
+り	ofrx	27
+る	ofrx	26
+れ	ofrx	25
+ろ	ofrx	24
+ゎ	ofrx	23
+わ	ofrx	22
+ゐ	ofrx	21
+ゑ	ofrx	20
+を	ofrx	19
+ん	ofrx	18
+゛	ofrx	17
+゜	ofrx	16
+ゝ	ofrx	15
+ゞ	ofrx	14
+偏旁p	ofp	100
+勹	ofpp	100
+灬	ofpp	99
+冫	ofpp	98
+艹	ofpp	97
+屮	ofpp	96
+辶	ofpp	95
+刂	ofpp	94
+匚	ofpp	93
+阝	ofpp	92
+廾	ofpp	91
+丨	ofpp	90
+虍	ofpp	89
+彐	ofpp	88
+卩	ofpp	87
+钅	ofpp	86
+冂	ofpp	85
+冖	ofpp	84
+宀	ofpp	83
+疒	ofpp	82
+肀	ofpp	81
+丿	ofpp	80
+攵	ofpp	79
+凵	ofpp	78
+犭	ofpp	77
+亻	ofpp	76
+彡	ofpp	75
+饣	ofpp	74
+礻	ofpp	73
+扌	ofpp	72
+氵	ofpp	71
+纟	ofpp	70
+亠	ofpp	69
+囗	ofpp	68
+忄	ofpp	67
+讠	ofpp	66
+衤	ofpp	65
+廴	ofpp	64
+尢	ofpp	63
+夂	ofpp	62
+丶	ofpp	61
+丬	ofpp	60
+拼音y	ofp	99
+ā	ofpy	100
+á	ofpy	99
+ǎ	ofpy	98
+à	ofpy	97
+ō	ofpy	96
+ó	ofpy	95
+ǒ	ofpy	94
+ò	ofpy	93
+ê	ofpy	92
+ē	ofpy	91
+é	ofpy	90
+ě	ofpy	89
+è	ofpy	88
+ī	ofpy	87
+í	ofpy	86
+ǐ	ofpy	85
+ì	ofpy	84
+ǖ	ofpy	83
+ǘ	ofpy	82
+ǚ	ofpy	81
+ǜ	ofpy	80
+ü	ofpy	79
+ū	ofpy	78
+ú	ofpy	77
+ǔ	ofpy	76
+ù	ofpy	75
+罗大d	ofl	100
+Ⅰ	ofld	100
+Ⅱ	ofld	99
+Ⅲ	ofld	98
+Ⅳ	ofld	97
+Ⅴ	ofld	96
+Ⅵ	ofld	95
+Ⅶ	ofld	94
+Ⅷ	ofld	93
+Ⅸ	ofld	92
+Ⅹ	ofld	91
+Ⅺ	ofld	90
+Ⅻ	ofld	89
+罗小x	ofl	99
+ⅰ	oflx	100
+ⅱ	oflx	99
+ⅲ	oflx	98
+ⅳ	oflx	97
+ⅴ	oflx	96
+ⅵ	oflx	95
+ⅶ	oflx	94
+ⅷ	oflx	93
+ⅸ	oflx	92
+ⅹ	oflx	91
+特殊u	oft
+℃	oftu	100
+°	oftu	99
+‰	oftu	98
+♂	oftu	97
+♀	oftu	96
+§	oftu	95
+№	oftu	94
+☆	oftu	93
+★	oftu	92
+○	oftu	91
+●	oftu	90
+◎	oftu	89
+◇	oftu	88
+◆	oftu	87
+□	oftu	86
+■	oftu	85
+△	oftu	84
+▲	oftu	83
+※	oftu	82
+〓	oftu	81
+＃	oftu	80
+＆	oftu	79
+＠	oftu	78
+＼	oftu	77
+＾	oftu	76
+＿	oftu	75
+￣	oftu	74
+数学x	ofu
+＋	ofux	100
+－	ofux	99
+＜	ofux	98
+＝	ofux	97
+＞	ofux	96
+±	ofux	95
+×	ofux	94
+÷	ofux	93
+∈	ofux	92
+∏	ofux	91
+∑	ofux	90
+∕	ofux	89
+√	ofux	88
+∝	ofux	87
+∞	ofux	86
+∟	ofux	85
+∠	ofux	84
+∣	ofux	83
+∥	ofux	82
+∧	ofux	81
+∨	ofux	80
+∩	ofux	79
+∪	ofux	78
+∫	ofux	77
+∮	ofux	76
+∴	ofux	75
+∵	ofux	74
+∶	ofux	73
+∷	ofux	72
+∽	ofux	71
+≈	ofux	70
+≌	ofux	69
+≒	ofux	68
+≠	ofux	67
+≡	ofux	66
+≤	ofux	65
+≥	ofux	64
+≦	ofux	63
+≧	ofux	62
+≮	ofux	61
+≯	ofux	60
+⊕	ofux	59
+⊙	ofux	58
+⊥	ofux	57
+⊿	ofux	56
+中数u	ofv	100
+㈠	ofvu	100
+㈡	ofvu	99
+㈢	ofvu	98
+㈣	ofvu	97
+㈤	ofvu	96
+㈥	ofvu	95
+㈦	ofvu	94
+㈧	ofvu	93
+㈨	ofvu	92
+㈩	ofvu	91
+注音y	ofv	99
+ㄅ	ofvy	100
+ㄆ	ofvy	99
+ㄇ	ofvy	98
+ㄈ	ofvy	97
+ㄉ	ofvy	96
+ㄊ	ofvy	95
+ㄋ	ofvy	94
+ㄌ	ofvy	93
+ㄍ	ofvy	92
+ㄎ	ofvy	91
+ㄏ	ofvy	90
+ㄐ	ofvy	89
+ㄑ	ofvy	88
+ㄒ	ofvy	87
+ㄓ	ofvy	86
+ㄔ	ofvy	85
+ㄕ	ofvy	84
+ㄖ	ofvy	83
+ㄗ	ofvy	82
+ㄘ	ofvy	81
+ㄙ	ofvy	80
+ㄧ	ofvy	79
+ㄨ	ofvy	78
+ㄩ	ofvy	77
+ㄚ	ofvy	76
+ㄛ	ofvy	75
+ㄜ	ofvy	74
+ㄝ	ofvy	73
+ㄞ	ofvy	72
+ㄟ	ofvy	71
+ㄠ	ofvy	70
+ㄡ	ofvy	69
+ㄢ	ofvy	68
+ㄣ	ofvy	67
+ㄤ	ofvy	66
+ㄥ	ofvy	65
+ㄦ	ofvy	64
+西大d	ofx	100
+Α	ofxd	100
+Β	ofxd	99
+Γ	ofxd	98
+Δ	ofxd	97
+Ε	ofxd	96
+Ζ	ofxd	95
+Η	ofxd	94
+Θ	ofxd	93
+Ι	ofxd	92
+Κ	ofxd	91
+Λ	ofxd	90
+Μ	ofxd	89
+Ν	ofxd	88
+Ξ	ofxd	87
+Ο	ofxd	86
+Π	ofxd	85
+Ρ	ofxd	84
+Σ	ofxd	83
+Τ	ofxd	82
+Υ	ofxd	81
+Φ	ofxd	80
+Χ	ofxd	79
+Ψ	ofxd	78
+Ω	ofxd	77
+西小x	ofx	99
+α	ofxx	100
+β	ofxx	99
+γ	ofxx	98
+δ	ofxx	97
+ε	ofxx	96
+ζ	ofxx	95
+η	ofxx	94
+θ	ofxx	93
+ι	ofxx	92
+κ	ofxx	91
+λ	ofxx	90
+μ	ofxx	89
+ν	ofxx	88
+ξ	ofxx	87
+ο	ofxx	86
+π	ofxx	85
+ρ	ofxx	84
+σ	ofxx	83
+τ	ofxx	82
+υ	ofxx	81
+φ	ofxx	80
+χ	ofxx	79
+ψ	ofxx	78
+ω	ofxx	77
+圆数u	ofy
+①	ofyu	100
+②	ofyu	99
+③	ofyu	98
+④	ofyu	97
+⑤	ofyu	96
+⑥	ofyu	95
+⑦	ofyu	94
+⑧	ofyu	93
+⑨	ofyu	92
+⑩	ofyu	91
+制表b	ofv	99
+┌	ofvb	100
+└	ofvb	99
+┐	ofvb	98
+┘	ofvb	97
+─	ofvb	96
+│	ofvb	95
+├	ofvb	94
+┤	ofvb	93
+┬	ofvb	92
+┴	ofvb	91
+┼	ofvb	90
+上标b	ofu	99
+¹	ofub	100
+²	ofub	99
+³	ofub	98
+⁴	ofub	97
+⁵	ofub	96
+⁶	ofub	95
+⁷	ofub	94
+⁸	ofub	93
+⁹	ofub	92
+⁰	ofub	91
+⁺	ofub	90
+⁻	ofub	89
+⁼	ofub	88
+⁽	ofub	87
+⁾	ofub	86
+ⁿ	ofub	85
+ˣ	ofub	84
+下标b	ofx	99
+₁	ofxb	100
+₂	ofxb	99
+₃	ofxb	98
+₄	ofxb	97
+₅	ofxb	96
+₆	ofxb	95
+₇	ofxb	94
+₈	ofxb	93
+₉	ofxb	92
+₀	ofxb	91
+₊	ofxb	90
+₋	ofxb	89
+₌	ofxb	88
+₍	ofxb	87
+₎	ofxb	86
+ₙ	ofxb	85
+ₓ	ofxb	84
+～	op
+‰	oq
+……	os
+＆	ota	100
+α	ota	99
+%	otb	100
+β	otb	99
+©	otb	98
+℃	otc
+°	otd	100
+＝	otd	99
+≠	otd	98
+≥	otd	97
+＞	otd	96
+の	ote	100
+ε	ote	99
+′	otf	100
+Φ	otf	99
+□	otf	98
+■	otf	97
+√	otg	100
+γ	otg	99
+℉	oth	100
+※	oth	99
+¤	oth	98
+×	oti	100
+÷	oti	99
+＋	otj	100
+－	otj	99
+m³	otl	100
+″	otm	100
+μ	otm	99
+﹩	otm	98
+￠	otm	97
+♂	otn	100
+♀	otn	99
+№	otn	98
+€	oto	100
+Ω	oto	99
+㎡	otp	100
+π	otp	99
+‰	otq
+¥	otr	100
+￥	otr	99
+∴	ots	100
+∵	ots	99
+△	ots	98
+▲	ots	97
+฿	ott	100
+℡	ott	99
+™	otu	96
+§	otv	100
+®	otv	99
+㈱	otv	98
+∞	otw	100
+卍	otw	99
+卐	otw	98
+≤	otx	96
+＜	otx	95
+☆	otx	94
+★	otx	93
+£	oty	99
+≈	oty	98
+○	oty	97
+●	oty	96
+？	ow
+凹	oxa
+百	oxb	100
+白	oxb	99
+八	oxb	98
+卜	oxb	97
+匕	oxb	96
+卞	oxb	95
+不	oxb	94
+巴	oxb	93
+本	oxb	92
+必	oxb	91
+丙	oxb	90
+半	oxb	89
+办	oxb	88
+寸	oxc	100
+才	oxc	99
+匆	oxc	98
+册	oxc	97
+大	oxd	100
+丁	oxd	99
+刀	oxd	98
+歹	oxd	97
+刁	oxd	96
+东	oxd	95
+丹	oxd	94
+电	oxd	93
+氐	oxd	92
+二	oxe	100
+耳	oxe	99
+儿	oxe	98
+而	oxe	97
+非	oxf	100
+方	oxf	99
+飞	oxf	98
+夫	oxf	97
+凡	oxf	96
+甫	oxf	95
+弗	oxf	94
+乏	oxf	93
+丰	oxf	92
+广	oxg	100
+弓	oxg	99
+戈	oxg	98
+工	oxg	97
+瓜	oxg	96
+干	oxg	95
+个	oxg	94
+甘	oxg	93
+丐	oxg	92
+果	oxg	91
+更	oxg	90
+夬	oxg	88
+禾	oxh	100
+户	oxh	99
+互	oxh	98
+乎	oxh	97
+火	oxh	96
+川	oxi	100
+厂	oxi	99
+车	oxi	98
+长	oxi	97
+叉	oxi	96
+尺	oxi	95
+丑	oxi	94
+臣	oxi	93
+成	oxi	92
+垂	oxi	91
+斥	oxi	90
+串	oxi	89
+产	oxi	88
+出	oxi	87
+巾	oxj	100
+几	oxj	99
+九	oxj	98
+斤	oxj	97
+久	oxj	96
+巨	oxj	95
+己	oxj	94
+井	oxj	93
+及	oxj	92
+夹	oxj	91
+甲	oxj	90
+臼	oxj	89
+韭	oxj	88
+戋	oxj	87
+柬	oxj	86
+击	oxj	85
+口	oxk	100
+开	oxk	99
+亏	oxk	98
+了	oxl	100
+力	oxl	99
+乐	oxl	98
+来	oxl	97
+良	oxl	96
+两	oxl	95
+里	oxl	94
+吏	oxl	93
+耒	oxl	92
+卵	oxl	91
+丽	oxl	90
+木	oxm	100
+毛	oxm	99
+米	oxm	98
+门	oxm	97
+马	oxm	96
+皿	oxm	95
+末	oxm	94
+灭	oxm	93
+母	oxm	92
+民	oxm	91
+么	oxm	90
+面	oxm	89
+廿	oxn	100
+女	oxn	99
+牛	oxn	98
+鸟	oxn	97
+乃	oxn	96
+内	oxn	95
+农	oxn	94
+年	oxn	93
+片	oxp	100
+平	oxp	99
+爿	oxp	98
+七	oxq	100
+千	oxq	99
+犬	oxq	98
+且	oxq	97
+丘	oxq	96
+曲	oxq	95
+气	oxq	94
+乞	oxq	93
+人	oxr	100
+入	oxr	99
+冉	oxr	98
+壬	oxr	97
+刃	oxr	96
+三	oxs	100
+巳	oxs	99
+肃	oxs	98
+土	oxt	100
+天	oxt	99
+太	oxt	98
+屯	oxt	97
+十	oxu	100
+尸	oxu	99
+士	oxu	98
+手	oxu	97
+身	oxu	96
+水	oxu	95
+上	oxu	94
+少	oxu	93
+术	oxu	92
+失	oxu	91
+生	oxu	90
+世	oxu	89
+申	oxu	88
+史	oxu	87
+升	oxu	86
+事	oxu	85
+书	oxu	84
+束	oxu	83
+勺	oxu	82
+戍	oxu	81
+豕	oxu	80
+氏	oxu	79
+矢	oxu	78
+止	oxv	100
+爪	oxv	99
+主	oxv	98
+舟	oxv	97
+之	oxv	96
+正	oxv	95
+丈	oxv	94
+中	oxv	93
+专	oxv	92
+朱	oxv	91
+州	oxv	90
+重	oxv	89
+乍	oxv	88
+王	oxw	100
+瓦	oxw	99
+五	oxw	98
+无	oxw	97
+万	oxw	96
+午	oxw	95
+亡	oxw	93
+未	oxw	92
+乌	oxw	91
+韦	oxw	90
+勿	oxw	89
+为	oxw	88
+戊	oxw	87
+我	oxw	86
+丸	oxw	85
+兀	oxw	84
+小	oxx	100
+西	oxx	99
+心	oxx	98
+血	oxx	97
+下	oxx	96
+夕	oxx	95
+乡	oxx	94
+习	oxx	93
+戌	oxx	92
+又	oxy	100
+酉	oxy	99
+已	oxy	98
+于	oxy	97
+义	oxy	96
+与	oxy	95
+夭	oxy	94
+玉	oxy	93
+牙	oxy	92
+丫	oxy	91
+永	oxy	90
+尤	oxy	89
+也	oxy	88
+业	oxy	87
+由	oxy	86
+央	oxy	85
+亚	oxy	84
+严	oxy	83
+用	oxy	82
+幺	oxy	81
+禺	oxy	80
+臾	oxy	79
+尹	oxy	78
+禹	oxy	77
+夷	oxy	76
+弋	oxy	75
+聿	oxy	74
+雨	oxy	73
+再	oxz	100
+自	oxz	99
+子	oxz	98
+①	oyy	90
+②	oye	90
+③	oys	90
+④	oyd	90
+⑤	oyw	90
+⑥	oyl	90
+⑦	oyq	90
+⑧	oyb	90
+⑨	oyj	90
+⑩	oyu	90
+Ⅰ	oyy	30
+Ⅱ	oye	30
+Ⅲ	oys	30
+Ⅳ	oyd	30
+Ⅴ	oyw	30
+Ⅵ	oyl	30
+Ⅶ	oyq	30
+Ⅷ	oyb	30
+Ⅸ	oyj	30
+Ⅹ	oyu	30
+“	oz
+
+# 随心所欲   自定编码规则
+记忆	jyx
+指挥	vhf
+类似	lsr
+整句	vjb
+政权	vqm
+神祇	uqp
+回忆	hyx
+距离	jlw
+食物	uwn
+及时	juo
+指示	vue
+直到	vda
+哲理	vlw
+音形	yxk
+截至	jva
+觉得	jdi
+简洁	jjd
+精力	jlv
+梳理	ulw
+事实	uub
+基于	jya
+置顶	vdd
+想想	xxm
+智	viud
+计	jiyd
+辨	bmld
+辫	bmls
+东	dsh
+单元	dye
+一唱一和	yiyd

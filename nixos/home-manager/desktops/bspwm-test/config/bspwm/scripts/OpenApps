@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+#  ╔═╗╔═╗╔═╗╔═╗  ╦  ╔═╗╦ ╦╔╗╔╔═╗╦ ╦╔═╗╦═╗
+#  ╠═╣╠═╝╠═╝╚═╗  ║  ╠═╣║ ║║║║║  ╠═╣║╣ ╠╦╝
+#  ╩ ╩╩  ╩  ╚═╝  ╩═╝╩ ╩╚═╝╝╚╝╚═╝╩ ╩╚═╝╩╚═
+#	Script to control apps launcher
+
+
+case "$1" in
+  --menu)
+    rofi -show drun \
+		 -theme $HOME/.config/bspwm/rices/${RICETHEME}/launcher.rasi;;
+
+  --rice)
+	RiceSelector;;
+
+  --terminal)
+    alacritty || kitty;;
+
+  --floating)
+    alacritty --class FloaTerm,Alacritty \
+					-o window.dimensions.lines=22 \
+					window.dimensions.columns=90;;
+
+  --update)
+    alacritty --hold --class FloaTerm,Alacritty \
+					-o window.dimensions.lines=22 \
+					   window.dimensions.columns=90 \
+					-e Updates --update-system;;
+
+  --checkupdates)
+	alacritty --hold --class Updating,Alacritty \
+					-o window.dimensions.lines=22 \
+					   window.dimensions.columns=47 \
+					-e Updates --print-updates;;
+
+  --ranger)
+    alacritty --class FloaTerm,Alacritty \
+					-o window.dimensions.lines=14 \
+					   window.dimensions.columns=90 \
+					-e ranger;;
+
+  --nvim)
+    alacritty -e nvim;;
+
+  --music)
+    alacritty --class FloaTerm,Alacritty \
+					-o window.dimensions.lines=18 \
+					   window.dimensions.columns=67 \
+					-e ncmpcpp;;
+
+  --fetch)
+    alacritty --hold --class FloaTerm,Alacritty \
+					-o window.dimensions.lines=26 \
+					   window.dimensions.columns=40 \
+					-e ~/.local/bin/sysfetch;;
+
+  ## Rofiesssss
+  --rofi-workspace)
+    rofi -no-lazy-grab -show window -modi window;;
+
+  --rofi-mount)
+        $HOME/.config/rofi/mount/mountusb;;
+
+  --rofi-network)
+         $HOME/.config/rofi/wifi/wifi;;
+
+  --bluetooth_menu)
+        "$HOME"/.config/rofi/bluetooth/bluetooth;;
+
+  --power_menu)
+        $HOME/.config/bspwm/scripts/powermenu;;
+
+   ## HACKTHEBOX
+   --htb_vpn)
+        $HOME/.config/rofi/openvpn/vpn.sh;;
+
+   --htb_spawn)
+        $HOME/.config/rofi/htb/machine_spawn.sh;;
+
+   --htb_details)
+        $HOME/.config/rofi/htb/machine_details.sh;;
+
+
+  #Apps
+  --filemanager)
+	thunar;;
+
+  --browser)
+	firefox || brave;;
+
+  --editor)
+	vscodium;;
+
+  --telegram)
+	telegram;;
+
+  --soundcontrol)
+    pavucontrol;;
+    
+  --athena-welcome)
+      athena-welcome;;
+  *)
+    echo "Invalid option!!";;
+esac
