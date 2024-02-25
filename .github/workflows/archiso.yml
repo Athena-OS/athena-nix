@@ -61,7 +61,7 @@ jobs:
       - name: Build ArchISO
         run: |
           cd installation-scripts
-          ./30-build-the-iso-the-first-time.sh
+          ./build-the-iso-the-first-time.sh
           
       - name: Upload to SourceForge
         run: |
