@@ -6,12 +6,12 @@
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "athena-config";
+  pname = "athena-config-nix";
   version = "unstable-2024-02-11";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
-    repo = "athena-config";
+    repo = "athena-config-nix";
     rev = "93d9c96aa8edc28aff11139c1eaad9a31dbc7f8a";
     hash = "sha256-ShPZ2OuOOtK5nloyR1GKEe19dPkIK2NUCXBbppmI01w=";
   };
@@ -30,7 +30,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   meta = with lib; {
     description = "Athena OS environment files";
-    homepage = "https://github.com/Athena-OS/athena-config";
+    homepage = "https://github.com/Athena-OS/athena-config-nix";
     maintainers = with maintainers; [ d3vil0p3r ];
     platforms = platforms.unix;
     license = licenses.gpl3Plus;
