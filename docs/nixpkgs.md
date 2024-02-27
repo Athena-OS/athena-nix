@@ -601,14 +601,14 @@ If darwin checks do not succeed, it means there is an error. As example, if the 
 ```
 gcc: command not found
 ```
-you can see that darwin does not use `gcc` command for C compilation, it uses `cc`. There is no gcc on default darwin stdenv but you can just set `CC=cc` and that will find the C compiler for darwin and linux.
+you can see that darwin does not use `gcc` command for C compilation, it uses `cc`. There is no gcc on default darwin stdenv but you can just set `"CC=${stdenv.cc.targetPrefix}cc"` and that will find the C compiler for darwin and linux.
 
 So, it can be fixed in two ways.
 
 If `Makefile` uses `gcc` and contains a `CC=gcc` line or `CC=<anyvalue>`, just add the following in `package.nix`:
 ```nix
   makeFlags = [
-    "CC=cc"
+    "CC=${stdenv.cc.targetPrefix}cc"
   ];
 ```
 If `CC` is not defined, just use `substituteInPlace` to replace `gcc` by `cc`, for example:
