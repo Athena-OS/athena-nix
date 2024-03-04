@@ -92,7 +92,7 @@
   environment.systemPackages = with pkgs; [
     (callPackage ../pkgs/aegis-nix/package.nix { })
     (callPackage ../pkgs/aegis-tui/package.nix { })
-    (callPackage ../pkgs/athena-config/package.nix { })
+    (callPackage ../pkgs/athena-config-nix/package.nix { })
   ];
 
   home-manager.users.${username} = { pkgs, ... }: {
