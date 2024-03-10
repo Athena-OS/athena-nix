@@ -100,6 +100,12 @@ Edit `/etc/nix/nix.conf` by adding:
 ```
 experimental-features = nix-command flakes
 ```
+Verify that your user belongs to the `nix-users` group. If not, run:
+```
+sudo usermod -aG nix-users <user>
+```
+and reboot.
+
 Then:
 ```
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
