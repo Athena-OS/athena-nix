@@ -16,7 +16,9 @@
   # Configure keymap in X11
   services.xserver = {
     exportConfiguration = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 }
