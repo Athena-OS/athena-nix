@@ -7,7 +7,7 @@
 {
   home-manager.users.${username} = { pkgs, ...}: {
     home.packages = with pkgs; [
-      gcc
+      #gcc # during nixos-install on Arch seems to produce an error. To delete.
       gnumake
       nodejs
       nodePackages.npm
