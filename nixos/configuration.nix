@@ -9,14 +9,14 @@ let
   hashed = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hostname = "athenaos";
-  theme = "anunna";
+  theme = "graphite";
   desktop = "gnome";
   dmanager = "gdm";
   shell = "fish";
   terminal = "kitty";
   browser = "firefox";
   bootloader = "systemd";
-  hm-version = "release-23.11"; # Correspond to home-manager GitHub branches
+  hm-version = "master"; #"release-23.11"; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
 {
