@@ -64,7 +64,7 @@ in
 
   home-manager.users.${username} = { pkgs, ... }: {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "23.11";
+    home.stateVersion = "24.05";
     nixpkgs.config.allowUnfree = true;
   };
 
@@ -104,5 +104,5 @@ in
   nixpkgs.config.allowUnfree = true;
    
   # Dont change.
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "unstable"; # Did you read the comment?
 }
