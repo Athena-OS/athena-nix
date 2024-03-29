@@ -1,7 +1,7 @@
 # This module contains the basic configuration for building a NixOS
 # installation CD.
 
-{ config, lib, options, pkgs, modulesPath, ... }:
+{ config, lib, options, pkgs, modulesPath, version, ... }:
 
 with lib;
 
@@ -47,5 +47,5 @@ with lib;
     done
   '';
 
-  system.stateVersion = "23.11"; #lib.mkDefault lib.trivial.release;
+  system.stateVersion = "${version}"; #lib.mkDefault lib.trivial.release;
 }
