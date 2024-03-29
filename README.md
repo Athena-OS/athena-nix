@@ -57,6 +57,7 @@ Athena Nix currently provides several configurations (still in test):
 
 A configuration can be deployed in several ways:
 
+### Flakes
 #### Remote
 ```
 sudo nixos-rebuild switch --flake 'github:Athena-OS/athena-nix#runtime' --impure
@@ -74,6 +75,14 @@ Running command outside `athena-nix` directory:
 sudo nixos-rebuild switch --flake '<local-path-to-dir-containing-flake.nix>/.#runtime' --impure
 ```
 `--impure` is used because the deployment can be applied according to your `hardware-configuration.nix`.
+
+### Configuration
+
+```
+git clone https://github.com/Athena-OS/athena-nix
+cd athena-nix
+sudo nixos-rebuild switch -I nixos-config=nixos/configuration.nix
+```
 
 The default user and password in the configuration is `athena:athena`. Be sure to change user and password inside `athena-nix/flake.nix` file by editing `username` and `hashed` (or `hashedRoot` for your root account) attributes according to your needs when you deploy this configuration.
 
