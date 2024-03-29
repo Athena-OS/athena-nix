@@ -1,15 +1,17 @@
 {
+  # If change version variable, change inputs manually
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/master"; #master or release-23.11
   
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/master"; #master or release-23.11
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {self, nixpkgs, home-manager}@inputs:
     let
+      version = "unstable"; # unstable or 23.11
       theme = "graphite";
       desktop = "mate";
       dmanager = "lightdm";
@@ -33,6 +35,7 @@
         in
           [
             {
+              _module.args.version = version;
               _module.args.theme = theme;
               _module.args.dmanager = dmanager;
               _module.args.desktop = desktop;
