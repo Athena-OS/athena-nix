@@ -1,4 +1,4 @@
-{ pkgs, lib, username, ... }: {
+{ pkgs, lib, version, username, ... }: {
 
   imports = [
     ./installation-cd-graphical-mate.nix
@@ -97,7 +97,7 @@
 
   home-manager.users.${username} = { pkgs, ... }: {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "24.05";
+    home.stateVersion = if version == "unstable" then "24.05" else version; # 23.11 or 24.05
     nixpkgs.config.allowUnfree = true;
   };
 }

@@ -1,4 +1,4 @@
-{ config, options, pkgs, lib, home-manager, username, terminal ? "alacritty", browser, shell ? "bash", ... }:
+{ config, options, pkgs, lib, home-manager, version, username, terminal ? "alacritty", browser, shell ? "bash", ... }:
 with lib;
 let
   cfg = config.system.nixos;
@@ -64,7 +64,7 @@ in
 
   home-manager.users.${username} = { pkgs, ... }: {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "24.05";
+    home.stateVersion = if version == "unstable" then "24.05" else version; # 23.11 or 24.05
     nixpkgs.config.allowUnfree = true;
   };
 
@@ -104,5 +104,5 @@ in
   nixpkgs.config.allowUnfree = true;
    
   # Dont change.
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "${version}"; # 23.11 or unstable
 }
