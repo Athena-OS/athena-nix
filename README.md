@@ -83,7 +83,7 @@ git clone https://github.com/Athena-OS/athena-nix
 cd athena-nix
 sudo nixos-rebuild switch -I nixos-config=nixos/configuration.nix
 ```
-
+### Notes
 The default user and password in the configuration is `athena:athena`. Be sure to change user and password inside `athena-nix/flake.nix` file by editing `username` and `hashed` (or `hashedRoot` for your root account) attributes according to your needs when you deploy this configuration.
 
 Passwords must be set as hash (i.e., SHA-512) instead of cleartext. To create it in a secure way run:
