@@ -3,9 +3,6 @@
   home-manager.users.${username}.programs.alacritty = {
     enable = true;
     settings = {
-
-      draw_bold_text_with_bright_colors = true;
-
       window = {
         decorations = "full";
         decorations_theme_variant = "Dark";
@@ -34,6 +31,7 @@
       cursor.style = "Beam";
 
       colors = {
+        draw_bold_text_with_bright_colors = true;
         primary = {
           background = "0x000b1e";
           foreground = "0x0abdc6";
