@@ -44,7 +44,7 @@ Athena OS
 
 <h3 align="center">
   💞
-  <a href="https://hub.athenaos.org/athena-images/23.11/">
+  <a href="https://github.com/Athena-OS/athena/releases/tag/v23.11">
   Download Athena OS Now
     </a>
   💞
