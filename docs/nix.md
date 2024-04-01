@@ -108,17 +108,19 @@ and reboot.
 
 Then:
 ```
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 ```
 Otherwise (not suggested):
 ```
-sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs
 sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 sudo nix-channel --update
 ```
-Testing nmap by installing it by nix. After install reboot the system.
+Note that here we use `nixos-unstable`, but we can also use `nixpkgs-unstable` channel. The difference between them is that `nixos-unstable` has additional tests that ensure kernel and bootloaders actually work. And some other critical packages.
+
+Testing nmap by installing it by nix. After install reboot the system.`nixos-unstable
 
 In case for some reason you need to delete all Nix environments, run:
 ```
