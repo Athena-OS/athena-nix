@@ -6,7 +6,8 @@ Athena OS
 <p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-Yes-CD8335">
   <img src="https://badgen.net/github/release/Athena-OS/athena-nix">
-  <a href="https://sourceforge.net/projects/athena-iso/files/latest/download"><img alt="Download Athena OS" src="https://img.shields.io/sourceforge/dt/athena-iso.svg" ></a>
+  <a href="https://sourceforge.net/projects/athena-iso/files/latest/download"><img alt="Download Athena OS" src="https://img.shields.io/sourceforge/dt/athena-iso?style=flat&logo=sourceforge&label=SourceForge" ></a>
+  <a href="https://github.com/Athena-OS/athena/releases"><img alt="Download Athena OS" src="https://img.shields.io/github/downloads/Athena-OS/athena/total?style=flat&logo=github&label=GitHub"></a>
   <img src="https://badgen.net/github/stars/Athena-OS/athena-nix">
   <img src="https://img.shields.io/github/issues-raw/Athena-OS/athena-nix">
   <img src="https://img.shields.io/github/issues-closed-raw/Athena-OS/athena-nix">
@@ -25,7 +26,7 @@ Athena OS
 <!--<p align="center">
   <img src="https://user-images.githubusercontent.com/83867734/174499581-e0f74d41-36ce-4c01-af0d-6ecd98841a64.png" data-canonical-src="https://user-images.githubusercontent.com/83867734/174499581-e0f74d41-36ce-4c01-af0d-6ecd98841a64.png" width="600" height="496" />
 </p>-->
-![image](https://github.com/Athena-OS/athena-iso/assets/83867734/b130dd25-5e7f-4cc8-bc16-6f384b4210f3)
+![image](https://github.com/Athena-OS/athena-nix/assets/83867734/b130dd25-5e7f-4cc8-bc16-6f384b4210f3)
 
 <!--
 <p align="center">
