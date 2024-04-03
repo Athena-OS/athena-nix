@@ -7,6 +7,7 @@ Athena OS
   <img src="https://img.shields.io/badge/Maintained%3F-Yes-CD8335">
   <img src="https://badgen.net/github/release/Athena-OS/athena-nix">
   <a href="https://sourceforge.net/projects/athena-iso/files/latest/download"><img alt="Download Athena OS" src="https://img.shields.io/sourceforge/dt/athena-iso.svg" ></a>
+  <img src="https://img.shields.io/github/downloads/Athena-OS/athena/total?style=flat&logo=github&label=GitHub">
   <img src="https://badgen.net/github/stars/Athena-OS/athena-nix">
   <img src="https://img.shields.io/github/issues-raw/Athena-OS/athena-nix">
   <img src="https://img.shields.io/github/issues-closed-raw/Athena-OS/athena-nix">
