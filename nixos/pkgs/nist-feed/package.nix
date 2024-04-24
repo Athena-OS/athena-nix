@@ -11,7 +11,7 @@
 
 stdenv.mkDerivation rec {
   pname = "nist-feed";
-  version = "unstable-2024-01-20";
+  version = "0-unstable-2024-01-20";
 
   src = fetchFromGitHub {
     owner = "D3vil0p3r";

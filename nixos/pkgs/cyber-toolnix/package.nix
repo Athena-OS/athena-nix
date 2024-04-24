@@ -9,7 +9,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cyber-toolnix";
-  version = "unstable-2024-01-15";
+  version = "0-unstable-2024-01-15";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
