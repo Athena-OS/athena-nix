@@ -8,7 +8,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "aegis-nix";
-  version = "unstable-2024-02-05";
+  version = "0-unstable-2024-02-05";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";

@@ -8,7 +8,7 @@
 
 stdenvNoCC.mkDerivation {
   pname = "aegis-tui";
-  version = "unstable-2024-04-14";
+  version = "0-unstable-2024-04-14";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
