@@ -41,7 +41,7 @@ python3Packages.buildPythonApplication {
   installPhase = ''
     runHook preInstall
     mkdir -p $out/{bin,share/applications,share/athena-welcome,share/icons/hicolor/scalable/apps}
-    cp -r share/applications/ $out/share/applications/athena-welcome.desktop
+    cp -r share/applications/athena-welcome.desktop $out/share/applications/athena-welcome.desktop
     cp -r share/athena-welcome/* $out/share/athena-welcome/
     cp -r share/icons/hicolor/scalable/apps/athenaos-hello.svg $out/share/icons/hicolor/scalable/apps/
     makeWrapper ${python3}/bin/python $out/bin/athena-welcome \
