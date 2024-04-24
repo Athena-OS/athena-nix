@@ -48,6 +48,8 @@
 
           zoxide init fish | source
 
+          set -g fish_color_autosuggestion 848cb5
+
           #set -x BFETCH_INFO "pfetch"
           #set -x BFETCH_ART "$HOME/.local/textart/fetch/unix.textart"
           #set -x PF_INFO "Unix Genius"
