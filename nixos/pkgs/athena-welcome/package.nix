@@ -36,6 +36,8 @@ python3Packages.buildPythonApplication {
       --replace /usr/bin/athena-welcome $out/bin/athena-welcome
     substituteInPlace autostart/athena-welcome.desktop \
       --replace /usr/bin/athena-welcome $out/bin/athena-welcome
+    substituteInPlace share/athena-welcome/ui/GUI.py \
+      --replace images/htb.png $out/share/athena-welcome/images/htb.png
   '';
 
   installPhase = ''
