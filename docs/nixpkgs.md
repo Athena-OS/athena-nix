@@ -10,7 +10,7 @@ There are several ways to build local packages. What I'm currently using are `ni
 
 ### nix-build
 
-Once you created your `package.nix`, you can use `nix-build` command to build your `package.nix` package file. The arguments of `niix-build` command can change according to the type of package we are trying to build.
+Once you created your `package.nix`, you can use `nix-build` command to build your `package.nix` package file. The arguments of `nix-build` command can change according to the type of package we are trying to build.
 
 Note that, if you using VSCode/VSCodium, `package.nix` must end by a new line. GitHub online editor, instead, adds it automatically. Indeed, [.editorconfig](https://github.com/NixOS/nixpkgs/blob/master/.editorconfig) says that the last line of the file must end with a new line. VScode/VSCodium editor could be [configured](https://stackoverflow.com/questions/44704968/visual-studio-code-insert-newline-at-the-end-of-files) to add it automatically.
 
