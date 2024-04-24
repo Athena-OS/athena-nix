@@ -17,8 +17,8 @@ python3Packages.buildPythonApplication {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-welcome";
-    rev = "347a620cc4fe2a45c103703d801ad6468b1b56eb";
-    hash = "sha256-M1ncs5hcqjebFYthLQa+SVlaqYz0sv1XkPXAFAamQT8=";
+    rev = "6cd3530525d2de22c6e67bf19a898fe14634a82b";
+    hash = "sha256-GDVqaxwbZHGdhelFeV9YNDvInEZ8KifDfe+kiCh9Wew=";
   };
 
   format = "other";
