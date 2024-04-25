@@ -49,7 +49,7 @@ let
     ############################################################
     # Get the options
     while getopts ":c:h" option; do #When using getopts, putting : after an option character means that it requires an argument (i.e., 'i:' requires arg).
-       case "${option}" in
+       case "$option" in
           c)
              command=$OPTARG
              ;;
@@ -75,9 +75,10 @@ let
     fi
     
     if [[ -n "$NO_REPETITION" ]]; then
-      "${command[@]}"
+      # Nix is trying to interpret the variable below as its own string interpolation syntax. To prevent this, needed to use an extra $
+      "$${command[@]}"
     else
-      NO_REPETITION=1 $TERMINAL_EXEC ${lib.getExe pkgs.bash} -c "$command;$SHELL"
+      NO_REPETITION=1 $TERMINAL_EXEC ${lib.getExe pkgs.bash} -c "$command"
     fi
   '';
   
