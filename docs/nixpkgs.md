@@ -530,6 +530,14 @@ or
     })
   ];
 ```
+or consider to add also the `name` attribute:
+```nix
+    (fetchurl {
+      name = "add-GCC-hardening.patch";
+      url = "https://salsa.debian.org/pkg-security-team/rifiuti/-/raw/f237358a91b12776beb9942c79ccb3aea180968a/debian/patches/add-GCC-hardening";
+      hash = "sha256-4cQSNtnHRD88TEP2iESgFlY16Y8WZZityIQh+M1kchQ=";
+    })
+```
 Note that we must replace `debian/master` by the last commit ID of the single patch file. it is needed because, if we use `debian/master`, the file could change over time and it can generate issues.
 
 If you are using local patch file, use:
