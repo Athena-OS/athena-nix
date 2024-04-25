@@ -142,7 +142,8 @@
     wavemon
     wifite2
     wireshark
-    wstunnel
+    # haskell connection-0.3.1 dependency marked as broken
+    #wstunnel
     yersinia
     zap
     zdns

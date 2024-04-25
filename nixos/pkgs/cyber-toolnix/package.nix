@@ -9,16 +9,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cyber-toolnix";
-  version = "0-unstable-2024-01-15";
+  version = "0-unstable-2024-04-25";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "cyber-toolnix";
-    rev = "cc30742f39d2a4ede201c6b2d115d25a107d51b4";
-    hash = "sha256-+M8pQrF1ZuKX6IUC+Kx9tgh39cRGmrglarRYEx++3hA=";
+    rev = "5b6c24a88ef5d1ac255fe5100f21f9d0f9fa8d23";
+    hash = "sha256-b02yi0svqZ+lmYkTRN/UM/KL1hKINGFch3H4LcuyeWg=";
   };
 
-  cargoHash = "sha256-27KArq1C1X87rjugGoIVvcabuDLrNDEXXa6NsAE7awQ=";
+  cargoHash = "sha256-gROuQlqHCFG30tb63HxXkpHw4h8/EBNLTdEE6YTNeik=";
 
   buildInputs = lib.optionals stdenv.isDarwin [
     darwin.apple_sdk.frameworks.Security

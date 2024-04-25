@@ -268,7 +268,6 @@
     redsocks
     responder
     retdec
-    retdec-full
     rinetd
     #rita #To be backported to 23.11
     rizin
