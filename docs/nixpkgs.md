@@ -536,7 +536,7 @@ or consider to add also the `name` attribute:
     (fetchurl {
       name = "add-GCC-hardening.patch";
       url = "https://salsa.debian.org/pkg-security-team/rifiuti/-/raw/f237358a91b12776beb9942c79ccb3aea180968a/debian/patches/add-GCC-hardening";
-      hash = "sha256-4cQSNtnHRD88TEP2iESgFlY16Y8WZZityIQh+M1kchQ=";
+      hash = "sha256-Z4UajJ8WydoCKjkG4q7WsBSXWwkM8B6UXBoWN1Qas60=";
     })
   ];
 ```
