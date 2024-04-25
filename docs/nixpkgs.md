@@ -506,6 +506,8 @@ diff -Naur a/src/utils.rs b/src/utils.rs > utils.patch
 
 Usually, if patches are available online, it is a good practice to use `fetchpatch` instead of using local patch files.
 
+`fetchpatch` is only needed over `fetchurl` when the patch is dynamically generated from a source control system. When it seems to be a static file, `fetchurl` should be used.
+
 As example, in `package.nix`:
 ```nix
   patches = [
