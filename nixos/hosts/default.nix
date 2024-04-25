@@ -27,6 +27,46 @@ let
     VARIANT_ID = cfg.variant_id;
   };
   shellrocket = pkgs.writeShellScriptBin "shell-rocket" ''
+    ############################################################
+    # Help                                                     #
+    ############################################################
+    Help()
+    {
+       # Display Help
+       echo "$(basename "$0") [-c <command>] [-h]"
+       echo
+       echo "Options:"
+       echo "-c     Specify the command to launch."
+       echo "-h     Print this Help."
+       echo
+       echo "Usage Examples:"
+       echo "$(basename "$0") -c \"echo \"Disconnecting all VPN sessions...\";sudo killall openvpn\""
+       echo
+    }
+    
+    ############################################################
+    # Process the input options. Add options as needed.        #
+    ############################################################
+    # Get the options
+    while getopts ":c:h" option; do #When using getopts, putting : after an option character means that it requires an argument (i.e., 'i:' requires arg).
+       case "${option}" in
+          c)
+             command=$OPTARG
+             ;;
+          h) # display Help
+             Help >&2
+             exit 0
+             ;;
+          : )
+            echo "Missing option argument for -$OPTARG" >&2; exit 0;;
+          #*  )
+            #echo "Unimplemented option: -$OPTARG" >&2; exit 0;;
+         \?) # Invalid option
+             echo "Error: Invalid option" >&2
+             ;;
+       esac
+    done
+
     TERMINAL_EXEC="$TERMINAL -e"
     
     # Set fallback terminal if needed
@@ -35,9 +75,9 @@ let
     fi
     
     if [[ -n "$NO_REPETITION" ]]; then
-      "$@"
+      "${command[@]}"
     else
-      NO_REPETITION=1 $TERMINAL_EXEC ${lib.getExe pkgs.bash} -c "$@"
+      NO_REPETITION=1 $TERMINAL_EXEC ${lib.getExe pkgs.bash} -c "$command;$SHELL"
     fi
   '';
   
