@@ -10,8 +10,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-gruvbox-base";
-    rev = "61da69842c2c67177263e021b3ea3ca5cbc4a227";
-    hash = "sha256-ddVw7xp8U5JTmArAEhWdAJj1LnUHGLHxqV0Q6y+RWrM=";
+    rev = "35c861957472ffdfffc4834957fd9ab7692c3fdf";
+    hash = "sha256-lvhRfAXXEabDKcguizzJuKrRuWcF8KdDpFPu4jX6K9s=";
   };
 
   installPhase = ''
