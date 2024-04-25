@@ -506,6 +506,8 @@ diff -Naur a/src/utils.rs b/src/utils.rs > utils.patch
 
 Usually, if patches are available online, it is a good practice to use `fetchpatch` instead of using local patch files.
 
+`fetchpatch` is only needed over `fetchurl` when the patch is dynamically generated from a source control system. When it seems to be a static file, `fetchurl` should be used.
+
 As example, in `package.nix`:
 ```nix
   patches = [
@@ -525,6 +527,16 @@ or
     (fetchpatch {
       url = "https://github.com/GoldenCheetah/GoldenCheetah/commit/e1f42f8b3340eb4695ad73be764332e75b7bce90.patch";
       sha256 = "1h0y9vfji5jngqcpzxna5nnawxs77i1lrj44w8a72j0ah0sznivb";
+    })
+  ];
+```
+or consider to add also the `name` attribute:
+```nix
+  patches = [
+    (fetchurl {
+      name = "add-GCC-hardening.patch";
+      url = "https://salsa.debian.org/pkg-security-team/rifiuti/-/raw/f237358a91b12776beb9942c79ccb3aea180968a/debian/patches/add-GCC-hardening";
+      hash = "sha256-Z4UajJ8WydoCKjkG4q7WsBSXWwkM8B6UXBoWN1Qas60=";
     })
   ];
 ```
@@ -615,7 +627,7 @@ If `CC` is not defined, just use `substituteInPlace` to replace `gcc` by `cc`, f
 ```nix
   postPatch = ''
     substituteInPlace src/Makefile \
-      --replace gcc cc
+      --replace-fail gcc cc
   '';
 ```
 
