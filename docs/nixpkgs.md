@@ -506,7 +506,7 @@ diff -Naur a/src/utils.rs b/src/utils.rs > utils.patch
 
 Usually, if patches are available online, it is a good practice to use `fetchpatch` instead of using local patch files.
 
-`fetchpatch` is only needed over `fetchurl` when the patch is dynamically generated from a source control system. When it seems to be a static file, `fetchurl` should be used.
+`fetchpatch` is only needed over `fetchurl` when the patch is dynamically generated from a source control system. When it seems to be a static file, `fetchurl` should be used. An example of a dynamically generated patch would be [GitHub's generated diff for this PR](https://github.com/NixOS/nixpkgs/pull/289535.patch). A file that's inside a repo would be considered static.
 
 As example, in `package.nix`:
 ```nix
