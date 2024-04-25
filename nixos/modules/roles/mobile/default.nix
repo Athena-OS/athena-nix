@@ -41,7 +41,6 @@
     quark-engine
     radare2
     retdec
-    retdec-full
     rizin
     rizinPlugins.rz-ghidra
     scanmem
