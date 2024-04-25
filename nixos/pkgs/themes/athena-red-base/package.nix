@@ -10,8 +10,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-red-base";
-    rev = "4c69f4264faef2ea9998a975efe68788a8449589";
-    hash = "sha256-VNd9TksPxSD0RZwHkWxQXVjjgkWM//XNXSGGxzSODUU=";
+    rev = "1e26aa7ed53eb0b524dc2ee4cae6bea87a44aaf6";
+    hash = "sha256-MY/AHuYqznmxwdK2BcHYfoi0EgrHOFYyLf9UcJGzRdA=";
   };
 
   installPhase = ''
