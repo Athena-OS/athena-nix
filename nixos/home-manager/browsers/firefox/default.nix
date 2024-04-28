@@ -5,7 +5,7 @@
     programs.firefox = {
       enable = true;
       # package = pkgs.firefox.override {cfg.enableTridactylNative = true;};
-      package = pkgs.firefox;
+      package = pkgs.firefox-esr;
       
       profiles = {
         "${username}" = {
