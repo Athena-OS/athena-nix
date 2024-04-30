@@ -17,7 +17,7 @@
     hardware.bolt.enable = true;
     printing.enable = false;
     timesyncd.enable = true;
-    xserver.libinput.enable = true;
+    libinput.enable = true;
   };
   zramSwap.enable = true; # To not change upstream! It is managed by the installer
   hardware = {
