@@ -28,7 +28,7 @@
     dnschef
     driftnet
     dsniff
-    #dublin-traceroute # To be backported to 23.11
+    dublin-traceroute
     dump1090
     etherape
     ettercap
@@ -96,13 +96,13 @@
     proxychains-ng
     pwnat
     pwncat
-    python311Packages.impacket
-    python311Packages.ldapdomaindump
-    python311Packages.netmap
-    python311Packages.scapy
-    python311Packages.sshtunnel
-    python311Packages.torpy
-    python311Packages.websockify
+    python312Packages.impacket
+    python312Packages.ldapdomaindump
+    python312Packages.netmap
+    python312Packages.scapy
+    python312Packages.sshtunnel
+    python312Packages.torpy
+    python312Packages.websockify
     rathole
     reaverwps-t6x
     redsocks
@@ -116,7 +116,8 @@
     soapui
     socat
     spiped
-    ssh-mitm
+    # https://github.com/NixOS/nixpkgs/pull/308093
+    #ssh-mitm
     sshuttle
     ssldump
     sslh
@@ -142,7 +143,7 @@
     wavemon
     wifite2
     wireshark
-    # haskell connection-0.3.1 dependency marked as broken
+    # haskell connection-0.3.1 dependency of wstunnel marked as broken
     #wstunnel
     yersinia
     zap
