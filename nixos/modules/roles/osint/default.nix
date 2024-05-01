@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    #ad-miner # To be backported to 23.11
+    ad-miner # To be backported to 23.11
     aiodnsbrute
     amass
     asn
@@ -29,7 +29,7 @@
     gau
     geoip
     ghdorker
-    #git-hound https://github.com/NixOS/nixpkgs/issues/276787
+    git-hound # To be backported https://github.com/NixOS/nixpkgs/issues/276787
     gitleaks
     gomapenum
     gowitness
@@ -52,13 +52,15 @@
     parsero
     photon
     proxmark3
-    python311Packages.shodan
-    python311Packages.scrapy
-    python311Packages.scrapy-deltafetch
-    python311Packages.scrapy-fake-useragent
-    python311Packages.scrapy-splash
-    python311Packages.spyse-python
-    #rita # To be backported to 23.11
+    python312Packages.shodan
+    # https://github.com/NixOS/nixpkgs/issues/308235
+    #python312Packages.scrapy
+    # https://github.com/NixOS/nixpkgs/issues/308232
+    #python312Packages.scrapy-deltafetch
+    #python312Packages.scrapy-fake-useragent
+    #python312Packages.scrapy-splash
+    python312Packages.spyse-python
+    rita
     sherlock
     sleuthkit
     smbmap

@@ -11,8 +11,9 @@
     capstone
     cargo-ndk
     ctypes_sh
-    cutter
-    cutterPlugins.rz-ghidra
+    # https://github.com/NixOS/nixpkgs/issues/308262
+    #cutter
+    #cutterPlugins.rz-ghidra
     dex2jar
     edb
     eresi
@@ -23,7 +24,8 @@
     hopper
     iaito
     jadx
-    jd-cli
+    # https://github.com/NixOS/nixpkgs/issues/308260
+    #jd-cli
     jd-gui
     jsbeautifier
     kalibrate-rtl
