@@ -55,14 +55,16 @@
     photon
     plecost
     psudohash
-    python311Packages.arsenic
-    python311Packages.httpx
-    python311Packages.pyjsparser
-    python311Packages.scrapy
-    python311Packages.scrapy-deltafetch
-    python311Packages.scrapy-fake-useragent
-    python311Packages.scrapy-splash
-    python311Packages.thefuzz
+    python312Packages.arsenic
+    python312Packages.httpx
+    python312Packages.pyjsparser
+    # https://github.com/NixOS/nixpkgs/issues/308235
+    #python312Packages.scrapy
+    # https://github.com/NixOS/nixpkgs/issues/308232
+    #python312Packages.scrapy-deltafetch
+    #python312Packages.scrapy-fake-useragent
+    #python312Packages.scrapy-splash
+    python312Packages.thefuzz
     radamsa
     responder
     ruler
