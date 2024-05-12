@@ -4,12 +4,12 @@
 
 **nix** is a build system first and foremost, it does not only work for package management.
 [**nixpkgs**](https://github.com/NixOS/nixpkgs) refers to the collection of Nix packages and package definitions that provide a vast array of software packages and configurations. It is the core repository of packages used by the Nix package manager and is a fundamental component of NixOS. It is just a repository on GitHub.
-[**channels**](https://nixos.wiki/wiki/Nix_channels) correspond to identically named branches of said repository.
+[**channels**](https://wiki.nixos.org/wiki/Nix_channels) correspond to identically named branches of said repository.
 **nix-*** are commands that operate on said channels.
 
 In Nix ecosystem, about pkg repositories, there are no mirrors. The package definitions (`default.nix`) are distributed either by **GH+flakes**, or from **Fastly/S3+channels**. The S3 bucket is served through **Fastly**. Fastly is the CDN, there is no inconsistency between CDNs. When you ask your CDN node about a store path, it pulls it from S3. Currently fastly is a non-issue unless you live in India because there, Fastly is slower. **nixpkgs**, instead, is a GitHub repository that gets copied to S3 as a channel.
 
-There is only one official binary cache containing the pkgs. There are no mirrors for anything. Each user can create its custom binary cache with its own packages. [Hydra](https://nixos.wiki/wiki/Hydra) is used to build packages and it pushes to the binary cache every commit constantly.
+There is only one official binary cache containing the pkgs. There are no mirrors for anything. Each user can create its custom binary cache with its own packages. [Hydra](https://wiki.nixos.org/wiki/Hydra) is used to build packages and it pushes to the binary cache every commit constantly.
 
 Channels guarantee you that, whatever is in it is part of a specific revision at least, and doesn't magically move forward in time or has some deps updating but not the others or if it's not in the cache or if ur inputs are not compatible with the channel, Nix will fall back to building the thing locally.
 
@@ -61,7 +61,7 @@ Which one should we use?
 
 The other three could be good.
 
-**nix-shell** is an **ephemeral shell**, so if you need to run a particular command for a one-off thing, but don't want to store it on the system all times, this kind of shell allows you to gain **temporary access** to a command and after you exit out of the shell, it is like the package was never installed. In order to use it, [Flakes](https://nixos.wiki/wiki/Flakes) must be enabled.
+**nix-shell** is an **ephemeral shell**, so if you need to run a particular command for a one-off thing, but don't want to store it on the system all times, this kind of shell allows you to gain **temporary access** to a command and after you exit out of the shell, it is like the package was never installed. In order to use it, [Flakes](https://wiki.nixos.org/wiki/Flakes) must be enabled.
 
 **home-manager** could be used if you need to set user profiles in the new environment, since it is declarative. **nix profile** could be used too as imperative. So, the choice depends on the use case to implement.
 
@@ -81,7 +81,7 @@ Generation is different from snapshot concept. Generations are for config, snaps
 In practice you can install a package in several ways:
 * by **nix-env**: If you want to install packages directly in your OS and not in a shell sandboxed environment, you can do it by `nix-env -iA nixpkgs.nmap`. I noted that also in this case we dont need to use sudo, and the binaries will be put in `/home/youruser/.nix-profile/bin/nmap`.
 * by **nix-shell**: in my Athena I have FISH shell. When I add the nix-channel to unstable repo and I install nmap by `nix-shell -p nmap`, it creates a new environment with a BASH shell (not more FISH because the colors of my Athena prompt change to BASH one)  and it runs nmap in this environment. For the install I didnt have the need to install by sudo. In this environment nmap binary exists in a nix sandboxed dir (test by which nmap) Then, if I type `exit`, I go out from the env and I come back to FISH shell and nmap cannot be called anymore. Maybe it is a secure approach because we dont need to sudo. Note that the new environment is not an isolated or sandboxed environment. It just install and remove the declared package for on-off usage.
-* by **nix profile**: run `nix --experimental-features nix-command profile install nixpkgs#nmap --extra-experimental-features flakes`. To remove it, for first check the `Index` of the application by `nix --experimental-features nix-command profile list`, then one of [these](https://nixos.wiki/wiki/Nix_command/profile_remove#Examples) or simply `nix --experimental-features nix-command profile remove ".*nmap.*"`.
+* by **nix profile**: run `nix --experimental-features nix-command profile install nixpkgs#nmap --extra-experimental-features flakes`. To remove it, for first check the `Index` of the application by `nix --experimental-features nix-command profile list`, then one of [these](https://wiki.nixos.org/wiki/Nix_command/profile_remove#Examples) or simply `nix --experimental-features nix-command profile remove ".*nmap.*"`.
 * by **home-manager**: it is a good choice to deploy packages at user level and to deploy files in user home folder. The [warnings](https://github.com/nix-community/home-manager#words-of-warning) here are just saying that any error caused by the user could be hard to debug, but currently home-manager should be stable, indeed it is also used in production by NixOS devs.
 * by editing **/etc/nixos/configuration.nix** file: it is the current standard method.
 * by **flakes**: experimental, we will talk about them later.
@@ -167,7 +167,7 @@ nix build .#nixosConfigurations.live-image.config.system.build.isoImage
 ```
 Source: https://hoverbear.org/blog/nix-flake-live-media/
 
-In case you would like to change squashfs compression, refers to [Creating_a_NixOS_live_CD](https://nixos.wiki/wiki/Creating_a_NixOS_live_CD#Building_faster). Note that the default compression algorithm is the one with the least resulting size.
+In case you would like to change squashfs compression, refers to [Creating_a_NixOS_live_CD](https://wiki.nixos.org/wiki/Creating_a_NixOS_live_CD#Building_faster). Note that the default compression algorithm is the one with the least resulting size.
 
 In general, flake nix files are composed of two parts: input and output sections. Input section contains the import of repositories or tools by their flake files.
 
@@ -182,7 +182,7 @@ https://github.com/NixOS/nixpkgs/blob/master/flake.nix
 
 Flakes docs: \
 https://www.tweag.io/blog/2020-05-25-flakes/ \
-https://nixos.wiki/wiki/Flakes
+https://wiki.nixos.org/wiki/Flakes
 
 ### Deploy configuration by Flakes
 
