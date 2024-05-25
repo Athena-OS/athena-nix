@@ -16,6 +16,6 @@
   ];*/
 
   environment.systemPackages = with pkgs; [
-    armcord
+    goofcord
   ];
 }
