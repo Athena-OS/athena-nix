@@ -54,6 +54,6 @@ in
 {
   environment.systemPackages = devel ++ utilities ++ exploits ++ wordlists;
   imports = [
-    ./armcord
+    ./goofcord
   ];
 }
