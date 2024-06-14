@@ -44,9 +44,9 @@
     phrasendrescher
     pixiewps
     psudohash
-    python311Packages.myjwt
-    python311Packages.patator
-    python311Packages.pypykatz
+    python312Packages.myjwt
+    python312Packages.patator
+    python312Packages.pypykatz
     rarcrack
     reaverwps-t6x
     sha1collisiondetection
