@@ -179,7 +179,8 @@
     log4j-scan
     lynis
     macchanger
-    maigret
+    # pyhanko error on maigret
+    #maigret
     mailsend
     maltego
     mapcidr
@@ -233,7 +234,8 @@
     pwnat
     pwncat
     pwndbg
-    python312Packages.angrop
+    # capstone-5.0.1 not supported for interpreter python3.12
+    python311Packages.angrop
     python312Packages.arsenic
     python312Packages.dnspython
     python312Packages.httpx
@@ -243,11 +245,14 @@
     python312Packages.minikerberos
     python312Packages.myjwt
     python312Packages.netmap
-    python312Packages.patator
+    # nose-1.3.7 not supported for interpreter python3.12
+    python311Packages.patator
     python312Packages.pyjsparser
     python312Packages.pypykatz
     python312Packages.rfcat
-    python312Packages.ropgadget
+    # capstone-5.0.1 not supported for interpreter python3.12
+    python311Packages.ropgadget
+    # capstone-5.0.1 not supported for interpreter python3.12
     python312Packages.ropper
     python312Packages.scapy
     # https://github.com/NixOS/nixpkgs/issues/308235
