@@ -40,8 +40,8 @@
     nuclei
     psudohash
     pwncat
-    python311Packages.httpx
-    python311Packages.patator
+    python312Packages.httpx
+    python312Packages.patator
     rustscan
     sqlmap
     subfinder
