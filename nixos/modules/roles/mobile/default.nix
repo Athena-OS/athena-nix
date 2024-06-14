@@ -34,12 +34,12 @@
     pe-bear
     pev
     pwntools
-    python311Packages.angr
-    python311Packages.distorm3
-    python311Packages.frida-python
-    python311Packages.pwntools
-    python311Packages.pyaxmlparser
-    python311Packages.pyjsparser
+    python312Packages.angr
+    python312Packages.distorm3
+    python312Packages.frida-python
+    python312Packages.pwntools
+    python312Packages.pyaxmlparser
+    python312Packages.pyjsparser
     quark-engine
     radare2
     retdec
