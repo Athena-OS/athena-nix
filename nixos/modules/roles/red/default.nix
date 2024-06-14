@@ -73,6 +73,7 @@
     dirstalk
     dive
     dnsenum
+    dnsmasq
     dnsrecon
     dnstracer
     dnstwist
