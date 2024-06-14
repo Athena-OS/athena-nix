@@ -26,6 +26,7 @@
     creds
     darkstat
     dnschef
+    dnsmasq
     driftnet
     dsniff
     dublin-traceroute
