@@ -44,9 +44,10 @@
     phrasendrescher
     pixiewps
     psudohash
-    python311Packages.myjwt
+    python312Packages.myjwt
+    # nose-1.3.7 not supported for interpreter python3.12
     python311Packages.patator
-    python311Packages.pypykatz
+    python312Packages.pypykatz
     rarcrack
     reaverwps-t6x
     sha1collisiondetection

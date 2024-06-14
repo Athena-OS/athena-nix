@@ -63,8 +63,9 @@
     crlfuzz
     crowbar
     ctypes_sh
-    cutter
-    cutterPlugins.rz-ghidra
+    # https://github.com/NixOS/nixpkgs/issues/308262
+    #cutter
+    #cutterPlugins.rz-ghidra
     dalfox
     darkstat
     davtest
@@ -72,6 +73,7 @@
     dirstalk
     dive
     dnsenum
+    dnsmasq
     dnsrecon
     dnstracer
     dnstwist
@@ -148,7 +150,8 @@
     iputils
     jadx
     jaeles
-    jd-cli
+    # https://github.com/NixOS/nixpkgs/issues/308260
+    #jd-cli
     jd-gui
     jnetmap
     john
@@ -177,7 +180,8 @@
     log4j-scan
     lynis
     macchanger
-    maigret
+    # pyhanko error on maigret
+    #maigret
     mailsend
     maltego
     mapcidr
@@ -231,34 +235,40 @@
     pwnat
     pwncat
     pwndbg
+    # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.angrop
-    python311Packages.arsenic
-    python311Packages.dnspython
-    python311Packages.httpx
-    python311Packages.impacket
-    python311Packages.ldapdomaindump
-    python311Packages.minidump
-    python311Packages.minikerberos
-    python311Packages.myjwt
-    python311Packages.netmap
+    python312Packages.arsenic
+    python312Packages.dnspython
+    python312Packages.httpx
+    python312Packages.impacket
+    python312Packages.ldapdomaindump
+    python312Packages.minidump
+    python312Packages.minikerberos
+    python312Packages.myjwt
+    python312Packages.netmap
+    # nose-1.3.7 not supported for interpreter python3.12
     python311Packages.patator
-    python311Packages.pyjsparser
-    python311Packages.pypykatz
-    python311Packages.rfcat
+    python312Packages.pyjsparser
+    python312Packages.pypykatz
+    python312Packages.rfcat
+    # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.ropgadget
+    # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.ropper
-    python311Packages.scapy
-    python311Packages.scrapy
-    python311Packages.scrapy-deltafetch
-    python311Packages.scrapy-fake-useragent
-    python311Packages.scrapy-splash
-    python311Packages.shodan
-    python311Packages.spyse-python
-    python311Packages.sshtunnel
-    python311Packages.thefuzz
-    python311Packages.torpy
-    #python311Packages.uncompyle6
-    python311Packages.websockify
+    python312Packages.scapy
+    # https://github.com/NixOS/nixpkgs/issues/308235
+    #python312Packages.scrapy
+    # https://github.com/NixOS/nixpkgs/issues/308232
+    #python312Packages.scrapy-deltafetch
+    #python312Packages.scrapy-fake-useragent
+    #python312Packages.scrapy-splash
+    python312Packages.shodan
+    python312Packages.spyse-python
+    python312Packages.sshtunnel
+    python312Packages.thefuzz
+    python312Packages.torpy
+    #python312Packages.uncompyle6
+    python312Packages.websockify
     radamsa
     radare2
     rarcrack

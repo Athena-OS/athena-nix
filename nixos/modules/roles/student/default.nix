@@ -29,7 +29,7 @@
     nmap
     proxychains-ng
     pwncat
-    python311Packages.pypykatz
+    python312Packages.pypykatz
     radare2
     responder
     social-engineer-toolkit

@@ -41,7 +41,8 @@
     knockpy
     ldeep
     linux-exploit-suggester
-    maigret
+    # pyhanko error on maigret
+    #maigret
     maltego
     metabigor
     metasploit
