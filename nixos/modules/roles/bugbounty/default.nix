@@ -41,7 +41,8 @@
     psudohash
     pwncat
     python312Packages.httpx
-    python312Packages.patator
+    # nose-1.3.7 not supported for interpreter python3.12
+    python311Packages.patator
     rustscan
     sqlmap
     subfinder
