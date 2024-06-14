@@ -253,7 +253,7 @@
     # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.ropgadget
     # capstone-5.0.1 not supported for interpreter python3.12
-    python312Packages.ropper
+    python311Packages.ropper
     python312Packages.scapy
     # https://github.com/NixOS/nixpkgs/issues/308235
     #python312Packages.scrapy
