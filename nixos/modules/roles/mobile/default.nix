@@ -34,10 +34,13 @@
     pe-bear
     pev
     pwntools
-    python312Packages.angr
-    python312Packages.distorm3
+    # capstone-5.0.1 not supported for interpreter python3.12
+    python311Packages.angr
+    # distorm3-3.5.2 not supported for interpreter python3.12
+    python311Packages.distorm3
     python312Packages.frida-python
-    python312Packages.pwntools
+    # capstone-5.0.1 not supported for interpreter python3.12
+    python311Packages.pwntools
     python312Packages.pyaxmlparser
     python312Packages.pyjsparser
     quark-engine
