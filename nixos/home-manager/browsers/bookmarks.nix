@@ -8,7 +8,7 @@
 		bookmarks = [
 			{
 				name = "Athena OS Website";
-				url = "https://athenaos.org/";
+				url = "https://athenaos.org";
 			}
 			{
 				name = "Docker Hub Images";
