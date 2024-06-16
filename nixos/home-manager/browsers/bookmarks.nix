@@ -19,7 +19,7 @@
 				url = "https://github.com/Athena-OS/athena-nix";
 			}
 			{
-				name = "Project";
+				name = "Project Source";
 				url = "https://github.com/Athena-OS";
 			}
 			{
