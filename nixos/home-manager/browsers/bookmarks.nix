@@ -7,29 +7,45 @@
 		name = "Athena OS";
 		bookmarks = [
 			{
-				name = "Official Website";
-				url = "https://athenaos.org/";
+				name = "Athena OS Website";
+				url = "https://athenaos.org";
 			}
 			{
-				name = "Repository";
+				name = "Docker Hub Images";
+				url = "https://hub.docker.com/u/athenaos";
+			}
+			{
+				name = "Nix Configuration";
 				url = "https://github.com/Athena-OS/athena-nix";
+			}
+			{
+				name = "Project Source";
+				url = "https://github.com/Athena-OS";
+			}
+			{
+				name = "WSL - Microsoft Apps";
+				url = "https://apps.microsoft.com/detail/9n1m7q4f1kqf?hl=en-us&gl=US";
 			}
 		];
 	}
 	{
-		name = "Awesome";
+		name = "Artificial Intelligence";
 		bookmarks = [
-			{
-				name = "AttackerKB";
-				url = "https://attackerkb.com/";
-			}
 			{
 				name = "ChatGPT - OpenAI";
 				url = "https://chat.openai.com/";
 			}
 			{
-				name = "CyberSpace Gitbook - CyberSpace";
-				url = "https://martian1337.gitbook.io/cyberspace/";
+				name = "Colab - Welcome To Colab";
+				url = "https://colab.research.google.com";
+			}
+			{
+				name = "PyTorch - Documentation";
+				url = "https://pytorch.org/docs/stable/index.html";
+			}
+			{
+				name = "PyTorch - Zero to Mastery Learn PyTorch for Deep Learning";
+				url = "https://www.learnpytorch.io";
 			}
 		];
 	}
@@ -935,6 +951,10 @@
 				url = "https://hackforums.net/showthread.php?tid=5982826";
 			}
 			{
+				name = "AttackerKB";
+				url = "https://attackerkb.com/";
+			}
+			{
 				name = "AutoRegex: Convert from English to RegEx with Natural Language Processing";
 				url = "https://www.autoregex.xyz/";
 			}
@@ -945,6 +965,10 @@
 			{
 				name = "Chapter 14. iptables firewall";
 				url = "http://linux-training.be/networking/ch14.html#:~:text=The%20filter%20table%20in%20iptables,(routed)%20through%20the%20system.";
+			}
+			{
+				name = "CyberSpace Gitbook - CyberSpace";
+				url = "https://martian1337.gitbook.io/cyberspace/";
 			}
 			{
 				name = "Darknet Markets Tips";
