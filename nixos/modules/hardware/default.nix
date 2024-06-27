@@ -25,7 +25,7 @@
     bluetooth.enable = true;
     #enableAllFirmware = true; # Need allowUnfree = true
     enableRedistributableFirmware = true;
-    opengl = {
+    graphics = {
       enable = true;
     };
   };
