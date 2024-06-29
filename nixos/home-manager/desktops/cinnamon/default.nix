@@ -30,6 +30,9 @@ in
   environment.pathsToLink = [
     "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
   ];
+  xdg.portal = {
+    enable = true;
+  };
   environment.systemPackages = cinnamon-packages;
 
   # ---- Home Configuration ----
@@ -38,22 +41,20 @@ in
 
     dconf.settings = {
         "org/cinnamon/desktop/background" = {
-            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+            picture-uri = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+            picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
         };
         "org/cinnamon/desktop/background" = {
-            "picture-options" = "stretched";
+            picture-options = "stretched";
         };
         "org/cinnamon/desktop/interface" = {
-            "gtk-theme" = gtkTheme;
+            gtk-theme = gtkTheme;
+            icon-theme = gtkIconTheme;
+            cursor-theme = gtkCursorTheme;
+            color-scheme = "prefer-dark";
         };
         "org/cinnamon/desktop/wm/preferences" = {
-            "theme" = gtkTheme;
-        };
-        "org/cinnamon/desktop/interface" = {
-            "icon-theme" = gtkIconTheme;
-        };
-        "org/cinnamon/desktop/interface" = {
-            "cursor-theme" = gtkCursorTheme;
+            theme = gtkTheme;
         };
     };
 
