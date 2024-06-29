@@ -8,6 +8,7 @@ let
     hackthebox = "forest";
     samurai = "sky";
     sweet = "violet";
+    temple = "sky";
   }."${theme}" or (throw "tmux unsupported theme '${theme}'");
 in
 {

@@ -34,6 +34,9 @@ in
   environment.pathsToLink = [
     "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
   ];
+  xdg.portal = {
+    enable = true;
+  };
   environment.systemPackages = mate-packages ++ [
     pkgs.xdg-user-dirs
   ];
@@ -51,19 +54,18 @@ in
 
     dconf.settings = {
         "org/mate/desktop/interface" = {
-            "gtk-theme" = gtkTheme;
+            gtk-theme = gtkTheme;
+            icon-theme = gtkIconTheme;
+            color-scheme = "prefer-dark";
         };
         "org/mate/marco/general" = {
-            "theme" = gtkTheme;
-        };
-        "org/mate/desktop/interface" = {
-            "icon-theme" = gtkIconTheme;
+            theme = gtkTheme;
         };
         "org/mate/desktop/peripherals/mouse" = {
-            "cursor-theme" = gtkCursorTheme;
+            cursor-theme = gtkCursorTheme;
         };
         "org/mate/desktop/background" = {
-            "picture-filename" = "/run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+            picture-filename = "/run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
         };
     };
 
