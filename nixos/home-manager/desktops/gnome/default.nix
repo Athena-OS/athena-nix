@@ -68,16 +68,12 @@ in
 
     dconf.settings = {
         "org/gnome/desktop/background" = {
-            "picture-uri" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-        };
-        "org/gnome/desktop/background" = {
-            "picture-uri-dark" = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-        };
-        "org/gnome/desktop/background" = {
-            "picture-options" = "stretched";
+            picture-uri = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+            picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
+            picture-options = "stretched";
         };
         "org/gnome/shell/extensions/user-theme" = {
-            "name" = gnomeshellTheme;
+            name = gnomeshellTheme;
         };
     };
 
@@ -123,6 +119,7 @@ in
         font-hinting = "slight";
         monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
         font-name = "JetBrainsMono Nerd Font Mono 11";
+        color-scheme = "prefer-dark";
       };
 
       # /desktop/wm/keybindings
