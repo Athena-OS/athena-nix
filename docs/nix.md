@@ -433,7 +433,7 @@ home.packages = [
 ```
 HM usually adds a custom shell script sourced by your shell to set environment variables, so you need to manage your shell via HM with programs.name.enable. This means that env variables only will be visible to child processes of the shell, not graphical applications started from your launcher.
 
-Note that the wiki at https://nixos.wiki unofficial and has a lot of wrong things, so don't follow it. There is also an official wiki at https://wiki.nixos.
+Note that the wiki at https://nixos.wiki is unofficial and has a lot of wrong things, so don't follow it. There is also an official wiki at https://wiki.nixos.org.
 
 The official docs are [here](https://nixos.org/learn).
 
