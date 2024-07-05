@@ -43,7 +43,7 @@ in
 
   gtk.iconCache.enable = true;
 
-  environment.systemPackages = with pkgs; [ gnome.eog gnome.gnome-tweaks gnome.gnome-screenshot ];
+  environment.systemPackages = with pkgs; [ eog gnome-tweaks gnome-screenshot ];
 
   environment.gnome.excludePackages = (with pkgs; [
     epiphany
