@@ -21,6 +21,7 @@ let
     netcat-openbsd
     nixpkgs-review
     nyancat
+    openvpn
     orca
     pciutils
     pfetch
