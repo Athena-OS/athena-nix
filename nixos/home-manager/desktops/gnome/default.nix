@@ -1,8 +1,8 @@
 { pkgs, home-manager, username, terminal, theme-components, ... }:
 let
   gnomeExtensionsList = with pkgs.gnomeExtensions; [
-	  appindicator
-	  arcmenu
+    appindicator
+    arcmenu
     dash-to-dock
     desktop-icons-ng-ding
     fly-pie
@@ -43,18 +43,18 @@ in
 
   gtk.iconCache.enable = true;
 
-  environment.systemPackages = with pkgs; [ gnome.eog gnome.gnome-tweaks gnome.gnome-screenshot ];
+  environment.systemPackages = with pkgs; [ eog gnome-tweaks gnome-screenshot ];
 
   environment.gnome.excludePackages = (with pkgs; [
+    epiphany
+    evince
+    geary
     gnome-photos
     gnome-tour
+    totem
     ]) ++ (with pkgs.gnome; [
     gnome-music
-    epiphany
-    geary
-    evince
     gnome-characters
-    totem
     tali
     iagno
     hitori
