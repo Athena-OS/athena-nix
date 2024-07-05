@@ -337,7 +337,7 @@
     tlsx
     tor
     traceroute
-    trinity
+    #trinity
     trivy
     trufflehog
     udp2raw

@@ -73,7 +73,7 @@
     sqlmap
     subjs
     #swftools
-    trinity
+    #trinity
     wafw00f
     wapiti
     webanalyze
