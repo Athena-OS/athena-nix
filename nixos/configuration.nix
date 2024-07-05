@@ -52,4 +52,7 @@ in
     ];
   networking.enableIPv6 = false;
   services.flatpak.enable = true;
+  networking.extraHosts =
+  ''
+  '';
 }
