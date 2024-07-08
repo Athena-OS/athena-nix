@@ -16,7 +16,7 @@ let
   shell = "fish";
   terminal = "kitty";
   browser = "firefox";
-  bootloader = "grub";
+  bootloader = "systemd";
   hm-version = if version == "unstable" then "master" else "release-"version; # "master" or "release-23.11"; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
