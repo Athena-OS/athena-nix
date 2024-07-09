@@ -13,7 +13,7 @@
     fwbuilder
     ghidra
     netsniff-ng
-    python311Packages.impacket
+    python312Packages.impacket
     recoverjpeg
     sleuthkit
     wapiti
