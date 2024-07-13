@@ -2,7 +2,7 @@
 let
   theme-components = {
     gtk-theme = "Matrix-Dark";
-    icon-theme = "HackTheBox";
+    icon-theme = "Matrix-Sweet";
     cursor-theme = "Afterglow-Recolored-Dracula-Green";
     background = "nix-hackthebox.png";
   };
@@ -20,7 +20,7 @@ in
     ];
   environment.systemPackages = with pkgs; [
     (callPackage ../../../pkgs/themes/athena-green-base/package.nix { })
-    (callPackage ../../../pkgs/themes/matrix-gtk/package.nix { colorVariants = [ "dark" ]; tweakVersions = [ "macos" ]; iconVariants = [ "Dark" ]; })
+    (callPackage ../../../pkgs/themes/matrix-gtk/package.nix { colorVariants = [ "dark" ]; tweakVersions = [ "macos" ]; iconVariants = [ "Sweet" ]; })
   ];
   home-manager.users.${username} = { pkgs, ...}: {
     # Needed to apply the theme on GTK4 windows (like Nautilus)
