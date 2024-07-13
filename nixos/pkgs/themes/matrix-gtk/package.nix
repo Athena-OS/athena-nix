@@ -79,7 +79,7 @@ stdenvNoCC.mkDerivation {
     runHook preInstall
     mkdir -p $out/share/themes
     cd themes
-    ./install.sh -n Nightfox \
+    ./install.sh -n Matrix \
     ${ lib.optionalString(colorVariants != []) "-c " + toString colorVariants } \
     ${ lib.optionalString(sizeVariants != []) "-s " + toString sizeVariants } \
     ${ lib.optionalString(themeVariants != []) "-t " + toString themeVariants } \
