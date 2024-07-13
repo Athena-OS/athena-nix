@@ -37,7 +37,8 @@
     thc-hydra
     theharvester
     wafw00f
-    wfuzz
+    # https://github.com/NixOS/nixpkgs/issues/326902
+    #wfuzz
     wifite2
     wireshark
     wpscan
