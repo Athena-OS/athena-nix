@@ -46,6 +46,7 @@ let
   iconVariantList = [
     "Dark"
     "Light"
+    "Sweet"
   ];
 in
 lib.checkListOfEnum "${pname}: colorVariants" colorVariantList colorVariants lib.checkListOfEnum
@@ -73,8 +74,8 @@ lib.checkListOfEnum "${pname}: colorVariants" colorVariantList colorVariants lib
     src = fetchFromGitHub {
       owner = "D3vil0p3r";
       repo = "Matrix-GTK-Theme";
-      rev = "ed0383d64406b76215e128b09b1f066ae319795d";
-      hash = "sha256-YXOei/+35jvykv596oP5zRbAC0WnE3vTITm3YpzPy2g=";
+      rev = "813563453b6ff03dfbff186c91acb1a5dc55b608";
+      hash = "sha256-Cx3vMRy0DlH+dnQLi4EijJpjebszGJYAh1dCgaA08XI=";
     };
 
     propagatedUserEnvPkgs = [ gtk-engine-murrine ];
@@ -102,8 +103,15 @@ lib.checkListOfEnum "${pname}: colorVariants" colorVariantList colorVariants lib
       ${lib.optionalString (tweakVersions != [ ]) "--tweaks " + toString tweakVersions} \
       -d "$out/share/themes"
       cd ../icons
-      ${lib.optionalString (iconVariants != [ ]) "mkdir -p $out/share/icons"}
-      ${lib.optionalString (iconVariants != [ ]) "cp -a " + toString iconVariants + " $out/share/icons/"}
+      ${lib.optionalString (iconVariants != [ ]) ''
+        mkdir -p $out/share/icons
+        cp -a ${toString (map (v: "Matrix-${v}") iconVariants)} $out/share/icons/
+      ''}
+      ${
+        lib.optionalString (iconVariants != [ ]) "cp -a "
+        + toString (map (v: "Matrix-${v}") iconVariants)
+        + " $out/share/icons/"
+      }
       runHook postInstall
     '';
 
