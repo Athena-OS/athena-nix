@@ -21,9 +21,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     cp -r hackthebox.png $out/share/backgrounds/athena/
     cp -r nix-hackthebox.png $out/share/backgrounds/athena/
     cp -r HackTheBox $out/share/icons/
-    cp -r HackTheBox-GTK-Theme/HackTheBox-B $out/share/themes/
-    cp -r HackTheBox-GTK-Theme/HackTheBox-BBL $out/share/themes/
-    cp -r HackTheBox-GTK-Theme/HackTheBox-BL $out/share/themes/
   '';
 
   meta = with lib; {
