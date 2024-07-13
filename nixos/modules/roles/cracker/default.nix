@@ -34,7 +34,8 @@
     katana
     kerbrute
     libargon2
-    libbde
+    # https://github.com/NixOS/nixpkgs/issues/326909
+    #libbde
     libgcrypt
     medusa
     mfoc
