@@ -51,10 +51,12 @@
     trufflehog
     wafw00f
     webanalyze
-    wfuzz
+    # https://github.com/NixOS/nixpkgs/issues/326902
+    #wfuzz
     whatweb
     whispers
     wpscan
-    xsser
+    # error: nose-1.3.7 not supported for interpreter python3.12
+    #xsser
   ];
 }
