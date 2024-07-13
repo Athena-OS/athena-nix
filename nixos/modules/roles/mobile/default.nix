@@ -29,7 +29,8 @@
     jd-gui
     jsbeautifier
     kalibrate-rtl
-    klee
+    # https://github.com/NixOS/nixpkgs/issues/326927
+    #klee
     lief
     pe-bear
     pev
@@ -37,7 +38,8 @@
     # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.angr
     # distorm3-3.5.2 not supported for interpreter python3.12
-    python311Packages.distorm3
+    # https://github.com/NixOS/nixpkgs/issues/326920
+    #python311Packages.distorm3
     python312Packages.frida-python
     # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.pwntools
@@ -51,7 +53,6 @@
     scanmem
     #swftools
     udis86
-    uefi-firmware-parser
     vivisect
   ];
 }
