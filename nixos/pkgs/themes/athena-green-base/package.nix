@@ -1,26 +1,26 @@
-{ lib
-, stdenvNoCC
-, fetchFromGitHub
+{
+  lib,
+  stdenvNoCC,
+  fetchFromGitHub,
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-green-base";
-  version = "0-unstable-2024-02-10";
+  version = "0-unstable-2024-07-13";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-green-base";
-    rev = "a74e5d84ad73dd4e874f694e747c6cb5289cd39c";
-    hash = "sha256-fJxzVP2SCffyv9Y2EctCYxlAvDefV90PhedRVSTGa/w=";
+    rev = "2d74a76c6ac42efe3bbf20f12d7a3e3595618bfe";
+    hash = "sha256-pBoX5rTPaXlCFojlfFhE37l4u9QMWQHBJAKEAyMTFko=";
   };
 
   installPhase = ''
-    mkdir -p $out/share/{icons/hicolor/scalable/{apps,categories},backgrounds/athena,themes}
+    mkdir -p $out/share/{icons/hicolor/scalable/{apps,categories},backgrounds/athena}
     cp -r icons/apps/* $out/share/icons/hicolor/scalable/apps/
     cp -r icons/categories/* $out/share/icons/hicolor/scalable/categories/
     cp -r hackthebox.png $out/share/backgrounds/athena/
     cp -r nix-hackthebox.png $out/share/backgrounds/athena/
-    cp -r HackTheBox $out/share/icons/
   '';
 
   meta = with lib; {
