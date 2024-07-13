@@ -3,7 +3,8 @@
   # Installed at system-level to avoid conflicts
   environment.systemPackages = with pkgs; [
     amass
-    clamav
+    # https://github.com/NixOS/nixpkgs/pull/326533
+    #clamav
     cryptsetup
     ddrescue
     exploitdb
