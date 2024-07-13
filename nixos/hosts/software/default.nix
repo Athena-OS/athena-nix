@@ -26,7 +26,8 @@ let
     pciutils
     pfetch
     sl
-    timeline
+    #https://github.com/NixOS/nixpkgs/pull/326142 ?
+    #timeline
     toilet
     tree
     unzip
