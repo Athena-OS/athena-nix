@@ -3,7 +3,8 @@
   environment.systemPackages = with pkgs; [
     #_3proxy
     #ad-miner # To be backported to 23.11
-    adenum
+    # https://github.com/NixOS/nixpkgs/issues/326942
+    #adenum
     aesfix
     aeskeyfind
     aflplusplus
@@ -166,7 +167,8 @@
     kerbrute
     kismet
     kiterunner
-    # klee # https://github.com/NixOS/nixpkgs/issues/285896
+    # https://github.com/NixOS/nixpkgs/issues/326927
+    #klee
     knockpy
     kube-hunter
     ldapdomaindump
@@ -301,7 +303,8 @@
     snmpcheck
     snort
     snowman
-    snscrape
+    # https://github.com/NixOS/nixpkgs/issues/326940
+    #snscrape
     snyk
     soapui
     socat
@@ -348,14 +351,16 @@
     wapiti
     webanalyze
     websploit
-    wfuzz
+    # https://github.com/NixOS/nixpkgs/issues/326902
+    #wfuzz
     whatweb
     wifite2
     wireshark
     wpscan
     wuzz
     xcat
-    xsser
+    # https://github.com/NixOS/nixpkgs/issues/326943
+    #xsser
     yersinia
     zap
     zdns
