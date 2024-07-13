@@ -68,7 +68,8 @@
     sn0int
     sniffglue
     snmpcheck
-    snscrape
+    # https://github.com/NixOS/nixpkgs/issues/326940
+    #snscrape
     social-engineer-toolkit
     socialscan
     subfinder
