@@ -56,7 +56,7 @@
     whatweb
     whispers
     wpscan
-    # error: nose-1.3.7 not supported for interpreter python3.12
+    # https://github.com/NixOS/nixpkgs/issues/326943
     #xsser
   ];
 }
