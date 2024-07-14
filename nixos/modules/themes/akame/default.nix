@@ -1,7 +1,7 @@
 { pkgs, nixpkgs, home-manager, username, theme-components, ... }:
 let
   theme-components = {
-    gtk-theme = "Nightfox-Dusk-B";
+    gtk-theme = "Nightfox-Dark";
     icon-theme = "Material-Black-Cherry-Suru";
     cursor-theme = "Afterglow-Recolored-Dracula-Red";
     background = "akame.jpg";
