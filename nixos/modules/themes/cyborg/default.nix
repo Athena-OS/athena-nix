@@ -1,7 +1,7 @@
 { pkgs, nixpkgs, home-manager, username, theme-components, ... }:
 let
   theme-components = {
-    gtk-theme = "Gruvbox-Dark-B";
+    gtk-theme = "Gruvbox-Dark";
     icon-theme = "Material-Black-Mango-Suru";
     cursor-theme = "Fuchsia-Pop";
     background = "cyborg-gruv.png";
