@@ -31,7 +31,9 @@ in
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
       theme = {
         name = gtkTheme;
-        package = pkgs.tokyo-night-gtk;
+        package = pkgs.tokyonight-gtk-theme.override {
+          colorVariants = [ "dark" ];
+        };
       };
       iconTheme = {
         name = gtkIconTheme;
