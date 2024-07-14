@@ -1,7 +1,7 @@
 { pkgs, nixpkgs, home-manager, username, theme-components, ... }:
 let
   theme-components = {
-    gtk-theme = "Tokyonight-Dark-B";
+    gtk-theme = "Tokyonight-Dark";
     icon-theme = "Tokyonight-Dark";
     cursor-theme = "oreo_blue_cursors";
     background = "samurai-girl.jpg";
@@ -31,7 +31,9 @@ in
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
       theme = {
         name = gtkTheme;
-        package = pkgs.tokyo-night-gtk;
+        package = pkgs.tokyonight-gtk-theme.override {
+          colorVariants = [ "dark" ];
+        };
       };
       iconTheme = {
         name = gtkIconTheme;
