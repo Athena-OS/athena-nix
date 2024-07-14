@@ -1,8 +1,8 @@
 { pkgs, nixpkgs, home-manager, username, theme-components, ... }:
 let
   theme-components = {
-    gtk-theme = "Tokyonight-Dark-B";
-    icon-theme = "Tokyonight-Dark";
+    gtk-theme = "Tokyonight-Dark";
+    icon-theme = "FairyWren_Dark";
     cursor-theme = "oreo_blue_cursors";
     background = "temple.png";
   };
@@ -35,7 +35,9 @@ in
       };
       iconTheme = {
         name = gtkIconTheme;
-        #icon theme in this case is already installed by Tokyo Night GTK package
+        package = pkgs.fairywren.override {
+          colorVariants = [ "FairyWren_Dark" ];
+        };
       };
       cursorTheme = {
         name = gtkCursorTheme;
