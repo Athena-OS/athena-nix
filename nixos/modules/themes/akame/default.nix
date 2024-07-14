@@ -30,7 +30,9 @@ in
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
       theme = {
         name = gtkTheme;
-        package = pkgs.nightfox-gtk-theme;
+        package = pkgs.nightfox-gtk-theme.override {
+          colorVariants = [ "dark" ];
+        };
       };
       iconTheme = {
         name = gtkIconTheme;
