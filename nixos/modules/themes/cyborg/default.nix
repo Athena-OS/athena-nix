@@ -30,7 +30,9 @@ in
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
       theme = {
         name = gtkTheme;
-        package = pkgs.gruvbox-gtk-theme;
+        package = pkgs.gruvbox-gtk-theme.override {
+          colorVariants = [ "dark" ];
+        };
       };
       iconTheme = {
         name = gtkIconTheme;
