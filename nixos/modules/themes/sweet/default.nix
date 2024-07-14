@@ -31,7 +31,9 @@ in
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
       theme = {
         name = gtkTheme;
-        package = pkgs.sweet;
+        package = pkgs.sweet.override {
+          colorVariants = [ "Sweet-Dark-v40" ];
+        };
       };
       iconTheme = {
         name = gtkIconTheme;
