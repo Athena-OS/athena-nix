@@ -1,7 +1,7 @@
 { pkgs, nixpkgs, home-manager, username, theme-components, ... }:
 let
   theme-components = {
-    gtk-theme = "Tokyonight-Dark-B";
+    gtk-theme = "Tokyonight-Dark";
     icon-theme = "Tokyonight-Dark";
     cursor-theme = "oreo_blue_cursors";
     background = "samurai-girl.jpg";
