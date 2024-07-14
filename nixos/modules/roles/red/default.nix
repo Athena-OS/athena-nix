@@ -285,7 +285,8 @@
     rizin
     rizinPlugins.rz-ghidra
     ropgadget
-    routersploit
+    # https://github.com/NixOS/nixpkgs/issues/326970
+    #routersploit
     ruler
     rustcat
     rustscan
@@ -326,7 +327,8 @@
     subjs
     swaks
     #swftools
-    sysdig
+    # https://github.com/NixOS/nixpkgs/pull/326600
+    #sysdig
     tcpdump
     tcpflow
     tcpreplay
