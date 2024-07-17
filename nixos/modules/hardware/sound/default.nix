@@ -6,7 +6,7 @@
   # Sound settings
   security.rtkit.enable = true;
   # https://github.com/NixOS/nixpkgs/issues/319809
-  sound.enable = false;
+  # sound.enable = false;
   hardware.pulseaudio.enable = false;
   environment.systemPackages = with pkgs; [ pulseaudio ];
   services.pipewire = {
