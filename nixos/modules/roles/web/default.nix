@@ -9,6 +9,7 @@
     boofuzz
     brakeman
     burpsuite
+    caido
     cantoolz
     chipsec
     clairvoyance

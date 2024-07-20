@@ -37,6 +37,7 @@
     bully
     burpsuite
     cadaver
+    caido
     #cameradar
     cantoolz
     certgraph

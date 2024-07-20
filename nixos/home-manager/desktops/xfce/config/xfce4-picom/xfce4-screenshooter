@@ -1,7 +1,7 @@
 app=ristretto
 last_user=
 last_extension=png
-screenshot_dir=file:/home/kali/Pictures
+screenshot_dir=file:/home/athena/Pictures
 enable_imgur_upload=true
 show_in_folder=false
 action=1

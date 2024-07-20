@@ -74,7 +74,7 @@ in
 
     dconf.settings = {
 
-      "org/gnome/shell".favorite-apps = [ "kali-mimikatz.desktop" "kali-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "shell.desktop" "powershell.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
+      "org/gnome/shell".favorite-apps = [ "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "shell.desktop" "powershell.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
 
       # /desktop/applications/terminal
       "org/gnome/desktop/applications/terminal" = {
