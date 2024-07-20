@@ -4,6 +4,7 @@
     aircrack-ng
     binwalk
     burpsuite
+    caido
     cewl
     crunch
     dirb
