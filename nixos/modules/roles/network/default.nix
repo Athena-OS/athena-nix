@@ -18,6 +18,7 @@
     bully
     burpsuite
     cadaver
+    caido
     chisel
     cntlm
     coercer

@@ -5,6 +5,7 @@
     arjun
     assetfinder
     burpsuite
+    caido
     cewl
     chaos
     commix
