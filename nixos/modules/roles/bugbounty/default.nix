@@ -59,5 +59,8 @@
     wpscan
     # https://github.com/NixOS/nixpkgs/issues/326943
     #xsser
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }
