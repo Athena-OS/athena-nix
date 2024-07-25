@@ -43,5 +43,8 @@
     wifite2
     wireshark
     wpscan
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }

@@ -373,5 +373,8 @@
     zssh
     zulu
     zzuf
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }

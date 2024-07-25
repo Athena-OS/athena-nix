@@ -62,5 +62,8 @@
     veracrypt
     wifite2
     xortool
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }

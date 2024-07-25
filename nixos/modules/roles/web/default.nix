@@ -89,5 +89,8 @@
     yersinia
     zap
     zzuf
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }
