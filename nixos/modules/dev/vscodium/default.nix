@@ -1,9 +1,9 @@
-{ pkgs, nixpkgs, home-manager, username, ... }:
+{ config, ... }:
 {
   # To run VSCodium in Wayland
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;

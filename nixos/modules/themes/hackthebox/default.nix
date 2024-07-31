@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, home-manager, username, theme-components, ... }:
+{ pkgs, config, ... }:
 let
   theme-components = {
     gtk-theme = "Matrix-Dark";
@@ -22,7 +22,7 @@ in
     (callPackage ../../../pkgs/themes/athena-green-base/package.nix { })
     (callPackage ../../../pkgs/themes/matrix-gtk/package.nix { colorVariants = [ "dark" ]; tweakVersions = [ "macos" ]; iconVariants = [ "Sweet" ]; })
   ];
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     # Needed to apply the theme on GTK4 windows (like Nautilus)
     home.sessionVariables.GTK_THEME = gtkTheme;
     

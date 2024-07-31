@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, terminal, theme-components, ... }:
+{ config, pkgs, theme-components, ... }:
 let
   cinnamon-packages = with pkgs; [
     ffmpeg
@@ -36,7 +36,7 @@ in
   environment.systemPackages = cinnamon-packages;
 
   # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     home.packages = fontList;
 
     dconf.settings = {

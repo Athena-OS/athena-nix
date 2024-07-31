@@ -1,16 +1,15 @@
-{ pkgs, home-manager, username, ... }:
+{ config, ... }:
 {
-
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     programs.firefox = {
       enable = true;
       # package = pkgs.firefox.override {cfg.enableTridactylNative = true;};
       package = pkgs.firefox-esr;
-      
+
       profiles = {
-        "${username}" = {
+        "${config.athena-nix.homeManagerUser}" = {
           id = 0;
-          name = "${username}";
+          name = "${config.athena-nix.homeManagerUser}";
           bookmarks = import ../bookmarks.nix;
           search = {
             force = true;

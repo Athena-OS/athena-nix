@@ -1,6 +1,6 @@
-{ pkgs, home-manager, username, ... }:
+{ config, ... }:
 {
-  home-manager.users.${username}.programs.alacritty = {
+  home-manager.users.${config.athena-nix.homeManagerUser}.programs.alacritty = {
     enable = true;
     settings = {
       window = {

@@ -1,6 +1,6 @@
-{ pkgs, nixpkgs, home-manager, username, ... }:
+{ config, ... }:
 {
-  home-manager.users.${username} = {pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = {pkgs, ...}: {
     services.dunst = {
       enable = true;
       settings = {
