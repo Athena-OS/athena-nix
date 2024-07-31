@@ -1,22 +1,28 @@
-{ config, ... }: {
+{ lib, config, ... }: {
   imports = [
+    ./bash
+    ./fish
     ./powershell
+    ./zsh
   ];
 
-  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
-    home.file.".bash_aliases".source = ./bash_aliases;
-    #home.packages = with pkgs; [
-    #  neofetch
-    #  zoxide
-    #];
-    xdg.desktopEntries."shell" = {
-      type = "Application";
-      name = "Shell";
-      comment = "Shell";
-      icon = "shell";
-      exec = "${config.athena-nix.terminal}";
-      terminal = false;
-      categories = [ "Application" "Utility" ];
+  config = lib.mkIf config.athena.baseConfiguration {
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
+      home.file.".bash_aliases".source = ./bash_aliases;
+      # home.packages = with pkgs; [
+      #   neofetch
+      #   zoxide
+      # ];
+
+      xdg.desktopEntries."shell" = {
+        type = "Application";
+        name = "Shell";
+        comment = "Shell";
+        icon = "shell";
+        exec = "${config.athena.terminal}";
+        terminal = false;
+        categories = [ "Application" "Utility" ];
+      };
     };
   };
 }

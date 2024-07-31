@@ -1,8 +1,9 @@
-{ config, ... }:
-{
-  networking.networkmanager.enable = true;
-  services.vnstat.enable = true;
-  users.users.${config.athena-nix.homeManagerUser} = {
-    extraGroups = [ "networkmanager" ];
+{ lib, config, ... }: {
+  config = lib.mkIf config.athena.baseConfiguration {
+    networking.networkmanager.enable = true;
+    services.vnstat.enable = true;
+    users.users.${config.athena.homeManagerUser} = {
+      extraGroups = [ "networkmanager" ];
+    };
   };
 }
