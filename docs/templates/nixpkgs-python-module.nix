@@ -1,12 +1,27 @@
 # https://nixos.org/manual/nixpkgs/unstable/#python
 {
   lib,
+  buildPythonPackage,
+  callPackage,
   fetchPypi,
-  python3,
-  python3Packages,
+  # fetchFromGitHub,
+  pythonOlder,
+  pytestCheckHook,
+
+  # build-system
+  setuptools,
+
+  # dependencies
+  cachecontrol,
+  lxml-html-clean,
+  requests,
+  six,
+
+  # optional-dependencies
+  rich,
 }:
 
-python3.pkgs.buildPythonApplication rec {
+buildPythonPackage rec {
   pname = "NAME";
   version = "VERSION";
   pyproject = true;
@@ -24,11 +39,24 @@ python3.pkgs.buildPythonApplication rec {
   #   hash = "sha256-8MOpbyw4HEJMcv84bNkNLBSZfEmIm3RDSUi0s62t9ko=";
   # };
 
-  build-system = with python3Packages; [ setuptools ];
+  nativeCheckInputs = [ pytestCheckHook ];
 
-  dependencies = with python3Packages; [
+  build-system = [ setuptools ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
+
+  dependencies = [
+    cachecontrol
+    lxml-html-clean
+    requests
+    six
     whatever
-  ];
+  ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
+
+  optional-dependencies = {
+    rich = [ rich ];
+  };
+
+  # check in passthru.tests.pytest to escape infinite recursion on pytest
+  # doCheck = false;
 
   meta = {
     description = "Short description";
@@ -36,6 +64,5 @@ python3.pkgs.buildPythonApplication rec {
     license = lib.licenses.whatever; # https://github.com/NixOS/nixpkgs/blob/master/lib/licenses.nix
     mainProgram = "PROGRAM";
     maintainers = with lib.maintainers; [ whatever ]; # https://github.com/NixOS/nixpkgs/tree/master/maintainers
-    platforms = lib.platforms.whatever; # https://github.com/NixOS/nixpkgs/blob/master/lib/systems/platforms.nix
   };
 }
