@@ -392,9 +392,9 @@ packages = with pkgs; [
 ```
 Then, since we edited the system-level configuration file, we need to edit `sudo nano /root/.nix-channels` file and add:
 ```
-https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
 ```
-(note: also nixos channel version should be set as 23.11)
+(note: also nixos channel version should be set as 24.05)
 and run:
 ```
 sudo nix-channel --update
@@ -413,7 +413,7 @@ You can create a `home.nix` file referring to the actual derivation to install b
   ];
   home.username = "athena";
   home.homeDirectory = "/home/athena";
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
   athena.desktops.xfce.refined = true;
 }
 ```
@@ -448,7 +448,7 @@ The usage of `home-manager switch` command will apply the effect on the current 
     
     # The state version is required and should stay at the version you
     # originally installed.
-    home.stateVersion = "23.11";
+    home.stateVersion = "24.05";
   };
 ```
 
@@ -675,11 +675,11 @@ A very useful tool that can help you to create Nix derivations is [nix-init](htt
 
 ## Themes, Icons and Cursors
 
-Usually, themes, icons and cursors packages could install different flavors of a specific GTK or icon theme, for example [graphite-gtk-theme](https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/themes/graphite-gtk-theme) could have `Graphite`, `Graphite-Dark` and other themes.
+Usually, themes, icons and cursors packages could install different flavors of a specific GTK or icon theme, for example [graphite-gtk-theme](https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/themes/graphite-gtk-theme) could have `Graphite`, `Graphite-Dark` and other themes.
 
 How in Nix you can know the list of all possible themes inside a GTK or icon theme package?
 
-Let's guess we would like to have the list of all icon themes inside [tela-circle-icon-theme](https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/icons/tela-circle-icon-theme). The method is to build the package. Usually we can retrieve its `package.nix` package and all the needed files in the same directory, and then building it by:
+Let's guess we would like to have the list of all icon themes inside [tela-circle-icon-theme](https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/icons/tela-circle-icon-theme). The method is to build the package. Usually we can retrieve its `package.nix` package and all the needed files in the same directory, and then building it by:
 ```nix
 sudo nix-build -E 'with import <nixpkgs> {}; callPackage ./package.nix {}'
 ```
@@ -687,7 +687,7 @@ Some packages could return some error because they need to use other modules. In
 ```
 error: evaluation aborted with the following error message: 'Function called without required argument "adwaita-icon-theme" at /home/user/tela/default.nix:4'
 ```
-To run the correct build command, you need to give a look to [all-packages.nix](https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/top-level/all-packages.nix) and search for `tela-circle-icon-theme`. You will find the following:
+To run the correct build command, you need to give a look to [all-packages.nix](https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/top-level/all-packages.nix) and search for `tela-circle-icon-theme`. You will find the following:
 ```nix
   tela-circle-icon-theme = callPackage ../data/icons/tela-circle-icon-theme {
     inherit (gnome) adwaita-icon-theme;
@@ -773,7 +773,7 @@ gtk-update-icon-cache: Cache file created successfully.
 gtk-update-icon-cache: Cache file created successfully.
 gtk-update-icon-cache: The generated cache was invalid.
 error: builder for '/nix/store/gf4fp0qf42addb15xpplx472bprrczm9-system-path.drv' failed with exit code 1
-error: 1 dependencies of derivation '/nix/store/is3avirfqcb4a59ml9y2pc5ll66mn975-nixos-system-athenaos-23.11.3640.56911ef3403a.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/is3avirfqcb4a59ml9y2pc5ll66mn975-nixos-system-athenaos-24.05.3640.56911ef3403a.drv' failed to build
 ```
 it probably is caused by an icon set you are installing where one or more of its files contain a **space** inside their filename. Just rename them by removing or replacing the space by another character.
 

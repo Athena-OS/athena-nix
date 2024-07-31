@@ -95,7 +95,7 @@
     (callPackage ../pkgs/athena-config-nix/package.nix { })
   ];
 
-  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ... }: {
+  home-manager.users.${config.athena.homeManagerUser} = { pkgs, ... }: {
     /* The home.stateVersion option does not have a default and must be set */
     home.stateVersion = "24.05";
     nixpkgs.config.allowUnfree = true;

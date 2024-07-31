@@ -1,15 +1,16 @@
 { lib, config, ... }@inputs: let 
-  cfg = config.athena-nix;
+  cfg = config.athena;
 in {
   options = {
-    athena-nix = {
-      enable = lib.mkEnableOption "Enable athena-nix";
+    athena = {
+      enable = lib.mkEnableOption "Enable Athena";
       baseConfiguration = lib.mkEnableOption "Enable base configuration";
       baseSoftware = lib.mkEnableOption "Enable base software";
       baseLocale = lib.mkEnableOption "Enable base locale";
       baseHosts = lib.mkEnableOption "Make base changes. Such as setting the stateVersion.";
       homeManagerUser = lib.mkOption {
         type = lib.types.str;
+        default = "athena";
         description = ''
           The user to use for home-manager.
         '';
@@ -39,6 +40,12 @@ in {
         description = ''
           The theme to use.
         '';
+      };
+
+      theme-components = lib.mkOption {
+        type = lib.types.attrs;
+        description = "The components of the theme to use. Internal use.";
+        visible = false;
       };
 
       desktopManager = lib.mkOption {
@@ -103,21 +110,18 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.athena-nix.enable (let
-    imports = lib.optionals cfg.baseConfiguration [
-      ./home-manager
-      ./modules
-      ./pkgs
-    ] ++ [ ./modules/themes/${cfg.theme} ]
-    ++ (lib.optional (cfg.desktopManager != null) ./home-manager/desktops/${cfg.desktopManager})
-    ++ lib.optional (cfg.displayManager != null) ./modules/dms/${cfg.displayManager}
-    ++ lib.optional (cfg.shell != null) ./home-manager/shells/${cfg.shell}
-    ++ lib.optional (cfg.terminal != null) ./home-manager/terminals/${cfg.terminal}
-    ++ lib.optional (cfg.browser != null) ./home-manager/browsers/${cfg.browser}
-    ++ lib.optional (cfg.bootloader != null) ./modules/boot/${cfg.bootloader}
-    ++ lib.optional cfg.baseSoftware ./hosts/software
-    ++ lib.optional cfg.baseLocale ./hosts/locale
-    ++ lib.optional cfg.baseHosts ./hosts;
-  in lib.mergeAttrsList (map (v: import v inputs) imports));
+  imports = [
+    ./home-manager
+    ./modules
+    ./pkgs
+    ./modules/themes
+    ./home-manager/desktops
+    ./modules/dms
+    ./home-manager/shells
+    ./home-manager/terminals
+    ./home-manager/browsers
+    ./modules/boot
+    ./hosts
+  ];
 }
 

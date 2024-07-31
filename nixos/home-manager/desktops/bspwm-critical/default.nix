@@ -1,8 +1,9 @@
-{ pkgs, config, ... }:
+{ lib, pkgs, config, ... }:
 let
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
+
   bspwm-packages = with pkgs; [
     alacritty
     bat
@@ -65,46 +66,56 @@ let
     zoxide
     zsh-powerlevel10k
   ];
-in
-{
-  # ---- System Configuration ----
-  programs.zsh.ohMyZsh.enable = true;
-  security.polkit.enable = true;
-  services = {
-    mpd.enable = true;
-    picom.enable = true;
-    xserver = {
-      enable = true;
-      windowManager = {
-        bspwm.enable = true;
+in {
+  config = lib.mkIf (config.athena.desktopManager == "bspwm-critical") {
+    # ---- System Configuration ----
+    programs.zsh.ohMyZsh.enable = true;
+    security.polkit.enable = true;
+    services = {
+      mpd.enable = true;
+      picom.enable = true;
+      xserver = {
+        enable = true;
+        windowManager = {
+          bspwm.enable = true;
+        };
       };
     };
-  };
-  environment.pathsToLink = [
-    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
-  ];
-  environment.systemPackages = bspwm-packages ++ fontList;
 
-  # ---- Home Configuration ----
-  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
+    environment = {
+      pathsToLink = [ "/share/backgrounds" ]; # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+      systemPackages = bspwm-packages ++ fontList;
+    };
 
-    programs.eww.enable = true;
+    # ---- Home Configuration ----
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
+      programs.eww.enable = true;
 
-    # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
-    xdg.configFile."bspwm".source = ./config/bspwm;
-    xdg.configFile."btop".source = ./config/btop;
-    xdg.configFile."mpd".source = ./config/mpd;
-    xdg.configFile."ncmpcpp".source = ./config/ncmpcpp;
-    xdg.configFile."ranger".source = ./config/ranger;
-    xdg.configFile."rofi".source = ./config/rofi;
-    home.file.".local/bin/colorscript".source = ./local/bin/colorscript;
-    home.file.".local/bin/sysfetch".source = ./local/bin/sysfetch;
-    xdg.dataFile."applications/nvim.desktop".source = ./local/share/applications/nvim.desktop;
-    xdg.dataFile."applications/ranger.desktop".source = ./local/share/applications/ranger.desktop;
-    xdg.dataFile."applications/zfetch.desktop".source = ./local/share/applications/zfetch.desktop;
-    xdg.dataFile."asciiart".source = ./local/share/asciiart;
-    xdg.dataFile."fonts".source = ./local/share/fonts;
-    home.file.".p10k.zsh".source = ./p10k.zsh;
+      # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
+      xdg = {
+        configFile = {
+          "bspwm".source = ./config/bspwm;
+          "btop".source = ./config/btop;
+          "mpd".source = ./config/mpd;
+          "ncmpcpp".source = ./config/ncmpcpp;
+          "ranger".source = ./config/ranger;
+          "rofi".source = ./config/rofi;
+        };
 
+        dataFile = {
+          "applications/nvim.desktop".source = ./local/share/applications/nvim.desktop;
+          "applications/ranger.desktop".source = ./local/share/applications/ranger.desktop;
+          "applications/zfetch.desktop".source = ./local/share/applications/zfetch.desktop;
+          "asciiart".source = ./local/share/asciiart;
+          "fonts".source = ./local/share/fonts;
+        };
+      };
+
+      home.file = {
+        ".local/bin/colorscript".source = ./local/bin/colorscript;
+        ".local/bin/sysfetch".source = ./local/bin/sysfetch;
+        ".p10k.zsh".source = ./p10k.zsh;
+      };
+    };
   };
 }
