@@ -59,10 +59,10 @@ buildPythonPackage rec {
   # doCheck = false;
 
   meta = {
+    changelog = "https://github.com/NAME/REPO/blob/${version}/CHANGELOG.md";
     description = "Short description";
     homepage = "HOMEPAGE URL";
     license = lib.licenses.whatever; # https://github.com/NixOS/nixpkgs/blob/master/lib/licenses.nix
-    mainProgram = "PROGRAM";
     maintainers = with lib.maintainers; [ whatever ]; # https://github.com/NixOS/nixpkgs/tree/master/maintainers
   };
 }
