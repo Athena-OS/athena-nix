@@ -21,17 +21,17 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ({ config, pkgs, ...}: let
+          ({ lib, pkgs, config, ...}: let
             hostname = "athenaos";
             hashed = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
             hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
           in {
             networking.hostName = "${hostname}";
-            users = {
+            users = lib.mkIf config.athena.enable {
               mutableUsers = false;
               extraUsers.root.hashedPassword = "${hashedRoot}";
-              users.${config.athena-nix.homeManagerUser} = {
-                shell = pkgs.${config.athena-nix.shell};
+              users.${config.athena.homeManagerUser} = {
+                shell = pkgs.${config.athena.shell};
                 isNormalUser = true;
                 hashedPassword = "${hashed}";
                 extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
@@ -48,10 +48,11 @@
           home-manager.nixosModules.home-manager
           ./nixos
           {
-            athena-nix = {
+            athena = {
               enable = true;
-              homeManagerUser = "athena";
               baseHosts = true;
+              baseLocale = true;
+              homeManagerUser = "athena";
               desktopManager = "mate";
               terminal = "alacritty";
               theme = "graphite";
@@ -64,16 +65,16 @@
           home-manager.nixosModules.home-manager
           ./nixos
           {
-            athena-nix = {
-              inherit terminal theme shell browser;
-              enable = true;
-              homeManagerUser = username;
-              baseConfiguration = true;
-              baseSoftware = true;
-              desktopManager = desktop;
-              bootLoader = bootloader;
-              displayManager = dmanager;
-            };
+          athena = {
+            inherit bootloader terminal theme shell browser;
+            enable = true;
+            baseConfiguration = true;
+            baseSoftware = true;
+            baseLocale = true;
+            homeManagerUser = username;
+            desktopManager = desktop;
+            displayManager = dmanager;
+          };
           }
         ];
 
@@ -83,9 +84,13 @@
         ];
       };
 
-      packages."x86_64-linux" =
-        (builtins.mapAttrs (n: v: v.config.system.build.isoImage) self.nixosConfigurations) // {
-          default = self.packages."x86_64-linux"."live-image";
-        };
+      packages."x86_64-linux" = (builtins.mapAttrs (n: v: v.config.system.build.isoImage) self.nixosConfigurations) // {
+        default = self.packages."x86_64-linux"."live-image";
+      };
+
+      nixosModules = rec {
+        athena = ./nixos;
+        default = athena;
+      };
     };
 }
