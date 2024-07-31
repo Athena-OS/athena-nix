@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, home-manager, username, theme-components, ... }:
+{ pkgs, config, ... }:
 let
   theme-components = {
     gtk-theme = "Nightfox-Dusk-B";
@@ -21,7 +21,7 @@ in
   environment.systemPackages = with pkgs; [
     (callPackage ../../../pkgs/themes/athena-red-base/package.nix { })
   ];
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     # Needed to apply the theme on GTK4 windows (like Nautilus)
     home.sessionVariables.GTK_THEME = gtkTheme;
     

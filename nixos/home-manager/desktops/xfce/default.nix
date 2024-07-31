@@ -1,5 +1,5 @@
 # In XFCE module, home.nix is used to set if implementing xfce.refined or xfce.picom
-{ home-manager, username, theme, ... }:
+{ pkgs, config, ... }:
 {
   # ---- System Configuration ----
   services.xserver = {
@@ -25,11 +25,12 @@
   ];
 
   # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
-        imports = [
-          ./xfce.nix
-        ];
-    _module.args.theme = theme;
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
+    imports = [
+      ./xfce.nix
+    ];
+
+    _module.args.theme = config.athena-nix.theme;
     athena.desktops.xfce.refined = true;
   };
 }

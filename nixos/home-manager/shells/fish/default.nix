@@ -1,6 +1,6 @@
-{ home-manager, username, ... }:
+{ config, ... }:
 {
-    home-manager.users.${username} = { pkgs, ...}: {
+    home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
         neofetch
         zoxide

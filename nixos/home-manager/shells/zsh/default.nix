@@ -1,4 +1,4 @@
-{ pkgs, lib, home-manager, username, ... }:
+{ pkgs, lib, config, ... }:
 with lib;
 let
   shopt = pkgs.writeShellScriptBin "shopt"
@@ -11,7 +11,7 @@ in
       zsh-autosuggestions
       zsh-syntax-highlighting
     ];
-    home-manager.users.${username} = { pkgs, ...}: {
+    home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
         neofetch
         shopt

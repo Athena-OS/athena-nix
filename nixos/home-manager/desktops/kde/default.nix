@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, ... }:
+{ pkgs, config, ... }:
 let
   plasma-packages = with pkgs.libsForQt5; [
     bluez-qt
@@ -76,7 +76,7 @@ in
   environment.systemPackages = plasma-packages;
 
   # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     home.packages = fontList;
 
     # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
