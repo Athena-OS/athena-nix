@@ -1,3 +1,4 @@
+# https://nixos.org/manual/nixpkgs/unstable/#python
 {
   lib,
   fetchPypi,
@@ -5,7 +6,7 @@
   python3Packages,
 }:
 
-python3.pkgs.buildPythonPackage rec {
+python3.pkgs.buildPythonApplication rec {
   pname = "NAME";
   version = "VERSION";
   pyproject = true;
@@ -15,9 +16,17 @@ python3.pkgs.buildPythonPackage rec {
     hash = "sha256-H10GiPyAvX6UVM5by4TqW+z6tcwPqskMnTML3BWJdVU=";
   };
 
-  nativeBuildInputs = with python3Packages; [ setuptools ];
+  # Fetching from repo (e.g. GitHub) is preferred as published artifacts often don't include tests
+  # src = fetchFromGitHub {
+  #   owner = "OWNER";
+  #   repo = "REPO";
+  #   rev = "v${version}";
+  #   hash = "sha256-8MOpbyw4HEJMcv84bNkNLBSZfEmIm3RDSUi0s62t9ko=";
+  # };
 
-  propagatedBuildInputs = with python3Packages; [
+  build-system = with python3Packages; [ setuptools ];
+
+  dependencies = with python3Packages; [
     whatever
   ];
 
