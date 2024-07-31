@@ -1,11 +1,27 @@
+# https://nixos.org/manual/nixpkgs/unstable/#python
 {
   lib,
+  buildPythonPackage,
+  callPackage,
   fetchPypi,
-  python3,
-  python3Packages,
+  # fetchFromGitHub,
+  pythonOlder,
+  pytestCheckHook,
+
+  # build-system
+  setuptools,
+
+  # dependencies
+  cachecontrol,
+  lxml-html-clean,
+  requests,
+  six,
+
+  # optional-dependencies
+  rich,
 }:
 
-python3.pkgs.buildPythonPackage rec {
+buildPythonPackage rec {
   pname = "NAME";
   version = "VERSION";
   pyproject = true;
@@ -15,18 +31,40 @@ python3.pkgs.buildPythonPackage rec {
     hash = "sha256-H10GiPyAvX6UVM5by4TqW+z6tcwPqskMnTML3BWJdVU=";
   };
 
-  nativeBuildInputs = with python3Packages; [ setuptools ];
+  # Fetching from repo (e.g. GitHub) is preferred as published artifacts often don't include tests
+  # src = fetchFromGitHub {
+  #   owner = "OWNER";
+  #   repo = "REPO";
+  #   rev = "v${version}";
+  #   hash = "sha256-8MOpbyw4HEJMcv84bNkNLBSZfEmIm3RDSUi0s62t9ko=";
+  # };
 
-  propagatedBuildInputs = with python3Packages; [
+  nativeCheckInputs = [ pytestCheckHook ];
+
+  pythonImportsCheck = [ "NAME" ];
+
+  build-system = [ setuptools ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
+
+  dependencies = [
+    cachecontrol
+    lxml-html-clean
+    requests
+    six
     whatever
-  ];
+  ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
+
+  optional-dependencies = {
+    rich = [ rich ];
+  };
+
+  # check in passthru.tests.pytest to escape infinite recursion on pytest
+  # doCheck = false;
 
   meta = {
+    changelog = "https://github.com/NAME/REPO/blob/${version}/CHANGELOG.md";
     description = "Short description";
     homepage = "HOMEPAGE URL";
     license = lib.licenses.whatever; # https://github.com/NixOS/nixpkgs/blob/master/lib/licenses.nix
-    mainProgram = "PROGRAM";
     maintainers = with lib.maintainers; [ whatever ]; # https://github.com/NixOS/nixpkgs/tree/master/maintainers
-    platforms = lib.platforms.whatever; # https://github.com/NixOS/nixpkgs/blob/master/lib/systems/platforms.nix
   };
 }
