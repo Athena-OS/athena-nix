@@ -1,6 +1,6 @@
-{ pkgs, home-manager, username, theme, ... }:
+{ config, ... }:
 {
-  home-manager.users.${username}.programs.kitty = {
+  home-manager.users.${config.athena-nix.homeManagerUser}.programs.kitty = {
     enable = true;
     /*theme = if theme.module-name == "akame"
             then "Crayon Pony Fish"

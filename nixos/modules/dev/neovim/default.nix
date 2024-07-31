@@ -1,11 +1,5 @@
-{
-  pkgs,
-  lib,
-  username,
-  ...
-}:
-{
-  home-manager.users.${username} = { pkgs, ...}: {
+{ pkgs, lib, config, ... }: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     home.packages = with pkgs; [
       #gcc # during nixos-install on Arch seems to produce an error. To delete.
       gnumake

@@ -1,8 +1,7 @@
-{ config, options, pkgs, lib, home-manager, version, username, terminal ? "alacritty", browser, shell ? "bash", ... }:
+{ config, pkgs, lib, ... }:
 with lib;
 let
   cfg = config.system.nixos;
-  opt = options.system.nixos;
   needsEscaping = s: null != builtins.match "[a-zA-Z0-9]+" s;
   escapeIfNecessary = s: if needsEscaping s then s else ''"${lib.escape [ "\$" "\"" "\\" "\`" ] s}"'';
   attrsToText = attrs:
@@ -43,7 +42,7 @@ let
        echo "$(basename "$0") -c \"echo \"Disconnecting all VPN sessions...\";sudo killall openvpn\""
        echo
     }
-    
+
     ############################################################
     # Process the input options. Add options as needed.        #
     ############################################################
@@ -68,12 +67,12 @@ let
     done
 
     TERMINAL_EXEC="$TERMINAL -e"
-    
+
     # Set fallback terminal if needed
     if [[ "$TERMINAL_EXEC" =~ "terminator" ]] || [[ "$TERMINAL_EXEC" =~ "terminology" ]] || [[ "$TERMINAL_EXEC" =~ "xfce4-terminal" ]]; then
       TERMINAL_EXEC="$TERMINAL -e"
     fi
-    
+
     if [[ -n "$NO_REPETITION" ]]; then
       # Nix is trying to interpret the variable below as its own string interpolation syntax. To prevent this, needed to use an extra $
       "$${command[@]}"
@@ -81,7 +80,7 @@ let
       NO_REPETITION=1 $TERMINAL_EXEC ${lib.getExe pkgs.bash} -c "$command"
     fi
   '';
-  
+
 in
 {
   imports = [
@@ -98,22 +97,22 @@ in
     ssh.askPassword = ""; # Preventing OpenSSH popup during 'git push'
   };
 
-  #It is needed to enable the used shell also at system level because NixOS cannot see home-manager modules. Note: bash does not need to be enabled
-  programs.${shell} = mkIf ("${shell}" != "bash") {
+  # It is needed to enable the used shell also at system level because NixOS cannot see home-manager modules. Note: bash does not need to be enabled
+  programs.${config.athena-nix.shell} = mkIf ("${config.athena-nix.shell}" != "bash") {
     enable = true;
   };
 
-  home-manager.users.${username} = { pkgs, ... }: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ... }: {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = if version == "unstable" then "24.05" else version; # 23.11 or 24.05
+    home.stateVersion = "24.05";
     nixpkgs.config.allowUnfree = true;
   };
 
   environment.sessionVariables = {
     EDITOR = "nano";
-    BROWSER = "${browser}";
-    SHELL = "/run/current-system/sw/bin/${shell}";
-    TERMINAL = "${terminal}";
+    BROWSER = "${config.athena-nix.browser}";
+    SHELL = "/run/current-system/sw/bin/${config.athena-nix.shell}";
+    TERMINAL = "${config.athena-nix.terminal}";
     TERM = "xterm-256color";
     NIXPKGS_ALLOW_UNFREE = "1"; # To allow nix-shell to use unfree packages
   };
@@ -140,10 +139,10 @@ in
       allowed-users = ["@wheel"]; #locks down access to nix-daemon
     };
   };
-          
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-   
+
   # Dont change.
-  system.stateVersion = "${version}"; # 23.11 or unstable
+  system.stateVersion = "24.05";
 }

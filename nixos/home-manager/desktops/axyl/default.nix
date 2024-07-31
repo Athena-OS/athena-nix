@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, ... }:
+{ pkgs, config, ... }:
 let
   fontList = with pkgs; [
     noto-fonts-emoji
@@ -86,7 +86,7 @@ in
   };
 
   # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     programs.alacritty = {
         enable = true;
         settings = import ./alacritty.nix;

@@ -1,11 +1,8 @@
-{ hostname, username, ... }:
+{ config, ... }:
 {
-  networking = {
-    networkmanager.enable = true;
-    hostName = "${hostname}";
-  };
+  networking.networkmanager.enable = true;
   services.vnstat.enable = true;
-  users.users.${username} = {
+  users.users.${config.athena-nix.homeManagerUser} = {
     extraGroups = [ "networkmanager" ];
   };
 }

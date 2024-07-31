@@ -1,10 +1,9 @@
-{ home-manager, username, terminal, shell, ... }:
-{
+{ config, ... }: {
   imports = [
     ./powershell
   ];
 
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     home.file.".bash_aliases".source = ./bash_aliases;
     #home.packages = with pkgs; [
     #  neofetch
@@ -15,7 +14,7 @@
       name = "Shell";
       comment = "Shell";
       icon = "shell";
-      exec = "${terminal}";
+      exec = "${config.athena-nix.terminal}";
       terminal = false;
       categories = [ "Application" "Utility" ];
     };

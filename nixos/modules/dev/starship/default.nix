@@ -1,5 +1,5 @@
-{ username, ...}: {
-  home-manager.users.${username} = { pkgs, ...}: {
+{ config, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     programs.starship = {
       enable = false;
       enableZshIntegration = false;

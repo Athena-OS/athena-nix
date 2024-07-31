@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, terminal ? "alacritty", theme-components, ... }:
+{ pkgs, config, theme-components, ... }:
 let
   mate-packages = with pkgs.mate; [
     caja-with-extensions
@@ -42,7 +42,7 @@ in
   ];
 
   # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     home.packages = fontList;
 
     xdg.mimeApps = {
@@ -78,7 +78,7 @@ in
 
       # /desktop/applications/terminal
       "org/gnome/desktop/applications/terminal" = {
-        exec = "${terminal}";
+        exec = "${config.athena-nix.terminal}";
       };
 
       # /panel

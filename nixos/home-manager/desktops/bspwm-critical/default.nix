@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, ... }:
+{ pkgs, config, ... }:
 let
   fontList = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
@@ -86,7 +86,7 @@ in
   environment.systemPackages = bspwm-packages ++ fontList;
 
   # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
 
     programs.eww.enable = true;
 
