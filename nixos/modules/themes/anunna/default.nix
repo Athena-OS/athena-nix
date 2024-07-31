@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
   theme-components = {
-    gtk-theme = "Nightfox-Dusk-B";
+    gtk-theme = "Nightfox-Dark";
     icon-theme = "Material-Black-Cherry-Suru";
     cursor-theme = "Afterglow-Recolored-Dracula-Red";
     background = "redmoon.png";
@@ -30,7 +30,9 @@ in
       gtk3.extraConfig.gtk-decoration-layout = "menu:";
       theme = {
         name = gtkTheme;
-        package = pkgs.nightfox-gtk-theme;
+        package = pkgs.nightfox-gtk-theme.override {
+          colorVariants = [ "dark" ];
+        };
       };
       iconTheme = {
         name = gtkIconTheme;

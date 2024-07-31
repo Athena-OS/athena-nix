@@ -21,11 +21,14 @@ let
     netcat-openbsd
     nixpkgs-review
     nyancat
+    openvpn
     orca
     pciutils
     pfetch
+    python3
     sl
-    timeline
+    #https://github.com/NixOS/nixpkgs/pull/326142 ?
+    #timeline
     toilet
     tree
     unzip

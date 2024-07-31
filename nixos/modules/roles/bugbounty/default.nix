@@ -5,6 +5,7 @@
     arjun
     assetfinder
     burpsuite
+    caido
     cewl
     chaos
     commix
@@ -51,10 +52,15 @@
     trufflehog
     wafw00f
     webanalyze
-    wfuzz
+    # https://github.com/NixOS/nixpkgs/issues/326902
+    #wfuzz
     whatweb
     whispers
     wpscan
-    xsser
+    # https://github.com/NixOS/nixpkgs/issues/326943
+    #xsser
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }

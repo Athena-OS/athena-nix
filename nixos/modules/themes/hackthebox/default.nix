@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 let
   theme-components = {
-    gtk-theme = "HackTheBox-B";
-    icon-theme = "HackTheBox";
+    gtk-theme = "Matrix-Dark";
+    icon-theme = "Matrix-Sweet";
     cursor-theme = "Afterglow-Recolored-Dracula-Green";
     background = "nix-hackthebox.png";
   };
@@ -20,6 +20,7 @@ in
     ];
   environment.systemPackages = with pkgs; [
     (callPackage ../../../pkgs/themes/athena-green-base/package.nix { })
+    (callPackage ../../../pkgs/themes/matrix-gtk/package.nix { colorVariants = [ "dark" ]; tweakVersions = [ "macos" ]; iconVariants = [ "Sweet" ]; })
   ];
   home-manager.users.${config.athena-nix.homeManagerUser} = { pkgs, ...}: {
     # Needed to apply the theme on GTK4 windows (like Nautilus)

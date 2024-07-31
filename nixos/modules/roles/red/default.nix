@@ -3,7 +3,8 @@
   environment.systemPackages = with pkgs; [
     #_3proxy
     #ad-miner # To be backported to 23.11
-    adenum
+    # https://github.com/NixOS/nixpkgs/issues/326942
+    #adenum
     aesfix
     aeskeyfind
     aflplusplus
@@ -36,6 +37,7 @@
     bully
     burpsuite
     cadaver
+    caido
     #cameradar
     cantoolz
     certgraph
@@ -166,7 +168,8 @@
     kerbrute
     kismet
     kiterunner
-    # klee # https://github.com/NixOS/nixpkgs/issues/285896
+    # https://github.com/NixOS/nixpkgs/issues/326927
+    #klee
     knockpy
     kube-hunter
     ldapdomaindump
@@ -283,7 +286,8 @@
     rizin
     rizinPlugins.rz-ghidra
     ropgadget
-    routersploit
+    # https://github.com/NixOS/nixpkgs/issues/326970
+    #routersploit
     ruler
     rustcat
     rustscan
@@ -301,7 +305,8 @@
     snmpcheck
     snort
     snowman
-    snscrape
+    # https://github.com/NixOS/nixpkgs/issues/326940
+    #snscrape
     snyk
     soapui
     socat
@@ -323,7 +328,8 @@
     subjs
     swaks
     #swftools
-    sysdig
+    # https://github.com/NixOS/nixpkgs/pull/326600
+    #sysdig
     tcpdump
     tcpflow
     tcpreplay
@@ -337,7 +343,7 @@
     tlsx
     tor
     traceroute
-    trinity
+    #trinity
     trivy
     trufflehog
     udp2raw
@@ -348,14 +354,16 @@
     wapiti
     webanalyze
     websploit
-    wfuzz
+    # https://github.com/NixOS/nixpkgs/issues/326902
+    #wfuzz
     whatweb
     wifite2
     wireshark
     wpscan
     wuzz
     xcat
-    xsser
+    # https://github.com/NixOS/nixpkgs/issues/326943
+    #xsser
     yersinia
     zap
     zdns
@@ -365,5 +373,8 @@
     zssh
     zulu
     zzuf
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }

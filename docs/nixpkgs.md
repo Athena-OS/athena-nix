@@ -160,6 +160,10 @@ Only in case where the structure of the project does not allow to run autoconf p
 
 Note that, if you don't need to run C/C++ compiler, replace `stdenv.mkDerivation` by `stdenvNoCC.mkDerivation` and `stdenv` by `stdenvNoCC` on top of the file.
 
+## Themes and Icons
+
+Themes and icons can provide different variants. Nix allows to choose different variants of a theme or icon set. To do that, the `.nix` file must be created in a proper manner. A good example to follow is [Tokyonight-GTK-Theme](https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tokyonight-gtk-theme/package.nix).
+
 ### Usage of hooks
 
 #### autoconf
@@ -200,6 +204,17 @@ When using **mkDerivation** in a `.nix` package file, and its variables need to 
   })
 ```
 In this manner, all the declared variables like `pname` or `version` can be accessed by `finalAttrs.<variable-name>`.
+
+### Nix Formatter
+
+When you created a `.nix` file, use [nixfmt-rfc-style](https://github.com/NixOS/nixfmt) to easily formatting. You can install it by flakes:
+```
+nix profile install github:NixOS/nixfmt
+```
+and use it by:
+```
+nixfmt <path-to-package.nix>
+```
 
 ### Makefile
 

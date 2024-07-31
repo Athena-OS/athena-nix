@@ -9,6 +9,7 @@
     boofuzz
     brakeman
     burpsuite
+    caido
     cantoolz
     chipsec
     clairvoyance
@@ -73,18 +74,23 @@
     sqlmap
     subjs
     #swftools
-    trinity
+    #trinity
     wafw00f
     wapiti
     webanalyze
     websploit
-    wfuzz
+    # https://github.com/NixOS/nixpkgs/issues/326902
+    #wfuzz
     whatweb
     wpscan
     wuzz
-    xsser
+    # https://github.com/NixOS/nixpkgs/issues/326943
+    #xsser
     yersinia
     zap
     zzuf
+    ### payloads and wordlists
+    payloadsallthethings
+    seclists
   ];
 }

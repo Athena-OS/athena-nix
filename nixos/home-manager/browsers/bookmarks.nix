@@ -200,6 +200,10 @@
 				url = "https://hashkiller.io/";
 			}
 			{
+				name = "jwt.io - JSON Web Tokens";
+				url = "https://jwt.io/";
+			}
+			{
 				name = "rot13.com";
 				url = "https://rot13.com/";
 			}
@@ -481,8 +485,16 @@
 				url = "https://www.diffchecker.com/image-compare/";
 			}
 			{
+				name = "domain.glass - Domain DNS Record and WHOIS Information";
+				url = "https://domain.glass/";
+			}
+			{
 				name = "Forensic Magnifier - free online photo forensics tools - 29a.ch";
 				url = "https://29a.ch/photo-forensics/#forensic-magnifier";
+			}
+			{
+				name = "GrayhatWarfare - Public Buckets";
+				url = "https://buckets.grayhatwarfare.com/";
 			}
 			{
 				name = "GreyNoise Visualizer";
