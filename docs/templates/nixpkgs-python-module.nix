@@ -41,6 +41,8 @@ buildPythonPackage rec {
 
   nativeCheckInputs = [ pytestCheckHook ];
 
+  pythonImportsCheck = [ "NAME" ];
+
   build-system = [ setuptools ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
 
   dependencies = [
