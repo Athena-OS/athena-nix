@@ -1,8 +1,10 @@
-{ username, ...}: {
-  home-manager.users.${username} = { pkgs, ...}: {
-    programs.starship = {
-      enable = false;
-      enableZshIntegration = false;
+{ lib, config, ...}: {
+  config = lib.mkIf config.athena.baseConfiguration {
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
+      programs.starship = {
+        enable = false;
+        enableZshIntegration = false;
+      };
     };
   };
 }

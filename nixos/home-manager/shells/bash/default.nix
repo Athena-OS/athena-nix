@@ -1,15 +1,21 @@
-{ home-manager, username, ... }:
-{
-    home-manager.users.${username} = { pkgs, ...}: {
-      home.file.".bashrc".source = ./bashrc;
-      home.file.".blerc".source = ./blerc;
-      home.packages = with pkgs; [
-        blesh
-        nanorc
-        neofetch
-        nix-bash-completions
-        zoxide
-      ];
+{ lib, config, ... }: {
+  config = lib.mkIf (config.athena.shell == "bash") {
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
+      home = {
+        file = {
+          ".bashrc".source = ./bashrc;
+          ".blerc".source = ./blerc;
+        };
+
+        packages = with pkgs; [
+          blesh
+          nanorc
+          neofetch
+          nix-bash-completions
+          zoxide
+        ];
+      };
+
       programs.bash = {
         enableCompletion = true;
         # Below ''$ has been used to escape $ character
@@ -24,38 +30,38 @@
           }
           append_path "$HOME/bin"
           append_path "$HOME/.local/bin"
-          
+
           ### EXPORT ### Should be before the change of the shell
           export HISTCONTROL=ignoreboth:erasedups:ignorespace
           HISTSIZE=100000
           HISTFILESIZE=2000000
           shopt -s histappend
           export PAGER='most'
-          
+
           #Ibus settings if you need them
           #type ibus-setup in terminal to change settings and start the daemon
           #delete the hashtags of the next lines and restart
           #export GTK_IM_MODULE=ibus
           #export XMODIFIERS=@im=dbus
           #export QT_IM_MODULE=ibus
-          
+
           # COLOURS! YAAAY!
           export TERM=xterm-256color
-          
+
           export BFETCH_INFO="pfetch"
           export BFETCH_ART="cowsay '<3 Athena OS'"
           export BFETCH_COLOR="$HOME/.local/textart/color/icon/panes.textart"
-          
+
           export PAYLOADS="/run/current-system/sw/share/wordlists"
           export SECLISTS="$PAYLOADS/seclists"
           export PAYLOADSALLTHETHINGS="$PAYLOADS/PayloadsAllTheThings"
           export FUZZDB="$PAYLOADS/FuzzDB"
           export AUTOWORDLISTS="$PAYLOADS/Auto_Wordlists"
           export SECURITYWORDLIST="$PAYLOADS/Security-Wordlist"
-          
+
           export MIMIKATZ="/run/current-system/sw/share/mimikatz/"
           export POWERSPLOIT="/run/current-system/sw/share/powersploit/"
-          
+
           export ROCKYOU="$SECLISTS/Passwords/Leaked-Databases/rockyou.txt"
           export DIRSMALL="$SECLISTS/Discovery/Web-Content/directory-list-2.3-small.txt"
           export DIRMEDIUM="$SECLISTS/Discovery/Web-Content/directory-list-2.3-medium.txt"
@@ -64,32 +70,32 @@
           export WEBAPI_MAZEN="$SECLISTS/Discovery/Web-Content/common-api-endpoints-mazen160.txt"
           export WEBCOMMON="$SECLISTS/Discovery/Web-Content/common.txt"
           export WEBPARAM="$SECLISTS/Discovery/Web-Content/burp-parameter-names.txt"
-          
+
           # If not running interactively, don't do anything
           [[ $- != *i* ]] && return
-          
+
           # switch shell
           [[ $(ps --no-header --pid=$PPID --format=comm) != "''${SHELL#/run/current-system/sw/bin/}" && -z ''${BASH_EXECUTION_STRING} && ''${SHELL} != *"bash"* ]] && exec $SHELL
-          
+
           #Configure zoxide for bash
           eval "$(zoxide init bash)"
-          
+
           if [[ $(tty) == */dev/tty* ]]; then
             PS1="\e[1;32m[HQ:\e[1;31m$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev) | \u\e[1;32m]\n[>]\[\e[1;36m\]\$(pwd) $ \[\e[0m\]"
           else
             PS1="\e[1;32m┌──[HQ🚀🌐\e[1;31m$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)🔥\u\e[1;32m]\n└──╼[👾]\[\e[1;36m\]\$(pwd) $ \[\e[0m\]"
           fi
-          
+
           # Use bash-completion, if available
           [[ $PS1 && -f /run/current-system/sw/share/bash-completion/bash_completion ]] && \
               . /run/current-system/sw/share/bash-completion/bash_completion
-          
+
           # Bash aliases
           if [ -f ~/.bash_aliases ]; then
             . ~/.bash_aliases
           fi
-          
-          
+
+
           # Change up a variable number of directories
           # E.g:
           #   cu   -> cd ../
@@ -106,13 +112,13 @@
               done
               cd $path
           }
-          
-          
+
+
           # Open all modified files in vim tabs
           function vimod {
               vim -p $(git status -suall | awk '{print $2}')
           }
-          
+
           # Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
           # Examples:
           #     virev 49808d5
@@ -137,12 +143,12 @@
               fi
               vim -p ''${toOpen}
           }
-          
+
           # 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
           function gitPrompt {
             command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
           }
-          
+
           # Colours have names too. Stolen from Arch wiki
           txtblk='\[\e[0;30m\]' # Black - Regular
           txtred='\[\e[0;31m\]' # Red
@@ -177,7 +183,7 @@
           bakcyn='\[\e[46m\]'   # Cyan
           bakwht='\[\e[47m\]'   # White
           txtrst='\[\e[0m\]'    # Text Reset
-          
+
           # Prompt colours
           atC="''${txtpur}"
           nameC="''${txtpur}"
@@ -186,12 +192,12 @@
           gitC="''${txtpur}"
           pointerC="''${txtgrn}"
           normalC="''${txtwht}"
-          
+
           # Red name for root
           if [ "''${UID}" -eq "0" ]; then
             nameC="''${txtred}"
           fi
-          
+
           #shopt
           shopt -s autocd # change to named directory
           shopt -s cdspell # autocorrects cd misspellings
@@ -199,7 +205,7 @@
           shopt -s dotglob
           shopt -s histappend # do not overwrite history
           shopt -s expand_aliases # expand aliases
-          
+
           # # ex = EXtractor for all kinds of archives
           # # usage: ex <file>
           ex ()
@@ -226,17 +232,17 @@
               echo "'$1' is not a valid file"
             fi
           }
-          
+
           export PROMPT_COMMAND='source ~/.bashrc no-repeat-flag'
-          
+
           buffer_clean(){
             free -h && sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches' && free -h
           }
-          
+
           if [[ $1 != no-repeat-flag && -z $NO_REPETITION ]]; then
             neofetch
           fi
-          
+
           [[ $1 != no-repeat-flag && -f "$(which blesh-share)" ]] && source "$(blesh-share)"/ble.sh --attach=none
         '';
       };
@@ -260,4 +266,5 @@
       };
       */
     };
+  };
 }

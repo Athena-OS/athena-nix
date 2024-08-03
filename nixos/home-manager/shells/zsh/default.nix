@@ -1,21 +1,20 @@
-{ pkgs, lib, home-manager, username, ... }:
-with lib;
-let
-  shopt = pkgs.writeShellScriptBin "shopt"
-    (builtins.readFile ./shopt);
-in
-{
+{ lib, pkgs, config, ... }: with lib; let
+  shopt = pkgs.writeShellScriptBin "shopt" (builtins.readFile ./shopt);
+in {
+  config = mkIf (config.athena.shell == "fish") {
     # Needed to install at system-level to source their .zsh files in .zshrc
     environment.systemPackages = with pkgs; [
       nix-zsh-completions
       zsh-autosuggestions
       zsh-syntax-highlighting
     ];
-    home-manager.users.${username} = { pkgs, ...}: {
+
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
         neofetch
         shopt
       ];
+
       home.file.".zshrc".source = ./zshrc;
       programs.zsh = {
         enable = true;
@@ -37,12 +36,14 @@ in
             { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
           ];
         };
+
         history = {
           expireDuplicatesFirst = true;
           save = 1000;
           size = 10000;
           path = "~/.zsh_history";
         };
+
         completionInit = ''
           # The following lines were added by compinstall
           zstyle :compinstall filename '$HOME/.zshrc'
@@ -74,9 +75,11 @@ in
           autoload -U +X compinit && compinit
           # End of lines added by compinstall
         '';
+
         envExtra = ''
           export PROMPT_COMMAND='source ~/.zshrc no-repeat-flag'
         '';
+
         initExtra = ''
           setopt INC_APPEND_HISTORY
           bindkey -e
@@ -84,4 +87,5 @@ in
         '';
       };
     };
+  };
 }

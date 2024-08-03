@@ -1,4 +1,4 @@
-{ pkgs, lib, version, username, ... }: {
+{ pkgs, lib, config, ... }: {
 
   imports = [
     ./installation-cd-graphical-mate.nix
@@ -95,9 +95,9 @@
     (callPackage ../pkgs/athena-config-nix/package.nix { })
   ];
 
-  home-manager.users.${username} = { pkgs, ... }: {
+  home-manager.users.${config.athena.homeManagerUser} = { pkgs, ... }: {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = if version == "unstable" then "24.05" else version; # 23.11 or 24.05
+    home.stateVersion = "24.05";
     nixpkgs.config.allowUnfree = true;
   };
 }

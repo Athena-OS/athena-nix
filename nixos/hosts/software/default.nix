@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
   utilities = with pkgs; [
     asciinema
@@ -55,8 +55,11 @@ let
   ];
 in
 {
-  environment.systemPackages = devel ++ utilities ++ exploits ++ wordlists;
   imports = [
     ./goofcord
   ];
+
+  config = lib.mkIf config.athena.baseSoftware {
+    environment.systemPackages = devel ++ utilities ++ exploits ++ wordlists;
+  };
 }

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    ad-miner # To be backported to 23.11
+    ad-miner # To be backported to 24.05
     aiodnsbrute
     amass
     asn

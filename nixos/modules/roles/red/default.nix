@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     #_3proxy
-    #ad-miner # To be backported to 23.11
+    #ad-miner # To be backported to 24.05
     # https://github.com/NixOS/nixpkgs/issues/326942
     #adenum
     aesfix
@@ -85,7 +85,7 @@
     dorkscout
     driftnet
     dsniff
-    #dublin-traceroute #To be backported to 23.11
+    #dublin-traceroute #To be backported to 24.05
     dump1090
     edb
     enum4linux
@@ -282,7 +282,7 @@
     responder
     retdec
     rinetd
-    #rita #To be backported to 23.11
+    #rita #To be backported to 24.05
     rizin
     rizinPlugins.rz-ghidra
     ropgadget
