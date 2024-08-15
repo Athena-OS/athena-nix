@@ -1,19 +1,17 @@
-{ pkgs, username, ... }:
-{
-  users.users.${username} = {
-    extraGroups = [ "audio" ];
+{ lib, pkgs, config, ... }: {
+  config = lib.mkIf config.athena.baseConfiguration {
+    users.users.${config.athena.homeManagerUser} = { extraGroups = [ "audio" ]; };
+
+    # Sound settings
+    security.rtkit.enable = true;
+    hardware.pulseaudio.enable = false;
+    environment.systemPackages = with pkgs; [ pulseaudio ];
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
   };
-  # Sound settings
-  security.rtkit.enable = true;
-  # https://github.com/NixOS/nixpkgs/issues/319809
-  # sound.enable = false;
-  hardware.pulseaudio.enable = false;
-  environment.systemPackages = with pkgs; [ pulseaudio ];
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  }; 
 }

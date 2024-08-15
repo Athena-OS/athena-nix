@@ -1,10 +1,11 @@
-{ home-manager, username, ... }:
-{
-    home-manager.users.${username} = { pkgs, ...}: {
+{ lib, config, ... }: {
+  config = lib.mkIf (config.athena.shell == "fish") {
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
         neofetch
         zoxide
       ];
+
       programs.fish = {
         enable = true;
         functions = {
@@ -38,6 +39,7 @@
             end
           '';
         };
+
         interactiveShellInit = ''
           set fish_greeting # Disable greeting
           if status is-interactive
@@ -95,4 +97,5 @@
         '';
       };
     };
+  };
 }

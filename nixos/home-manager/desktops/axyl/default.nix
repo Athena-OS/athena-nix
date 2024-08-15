@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, ... }:
+{ lib, pkgs, config, ... }:
 let
   fontList = with pkgs; [
     noto-fonts-emoji
@@ -8,6 +8,7 @@ let
     inter
     (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" "Iosevka" ]; })
   ];
+
   bspwm-packages = with pkgs; [
     alacritty
     bat
@@ -70,58 +71,63 @@ let
     zoxide
     zsh-powerlevel10k
   ];
-in
-{
-  # ---- System Configuration ----
-  environment.systemPackages = bspwm-packages ++ fontList;
-  services.xserver = {
-    enable = true;
-    windowManager = {
-      bspwm.enable = true;
-    };
-  };
-  services.picom = {
-    enable = true;
-    settings = import ./picom.nix;
-  };
+in {
+  config = lib.mkIf (config.athena.desktopManager == "axyl") {
+    # ---- System Configuration ----
+    environment.systemPackages = bspwm-packages ++ fontList;
+    services = {
+      xserver = {
+        enable = true;
+        windowManager = {
+          bspwm.enable = true;
+        };
+      };
 
-  # ---- Home Configuration ----
-  home-manager.users.${username} = { pkgs, ...}: {
-    programs.alacritty = {
+      picom = {
+        enable = true;
+        settings = import ./picom.nix;
+      };
+    };
+
+    # ---- Home Configuration ----
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
+      programs.alacritty = {
         enable = true;
         settings = import ./alacritty.nix;
+      };
+
+      services = {
+        dunst = {
+          enable = true;
+          settings = import ./dunst.nix;
+        };
+
+        polybar = {
+          enable = true;
+          script = "";
+        };
+
+        sxhkd = {
+          enable = true;
+          keybindings = import ./sxhkd.nix;
+        };
+      };
+
+      # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
+      xdg.configFile = {
+        "bspwm/bspwmrc".source = ./bspwmrc;
+        "bspwm/.fehbg".source = ./.fehbg;
+        "bspwm/wallpaper.jpg".source = ./wallpaper.jpg;
+        "bspwm/polybar/colors".source = ./polybar/colors;
+        "bspwm/polybar/config".source = ./polybar/config;
+        "bspwm/polybar/decor".source = ./polybar/decor;
+        "bspwm/polybar/modules".source = ./polybar/modules;
+        "bspwm/polybar/system".source = ./polybar/system;
+        "bspwm/polybar/launch.sh".source = ./polybar/launch.sh;
+        "bspwm/scripts".source = ./scripts;
+        "bspwm/assets".source = ./assets;
+        "rofi".source = ./rofi;
+      };
     };
-
-    services.dunst = {
-        enable = true;
-        settings = import ./dunst.nix;
-    };
-
-    services.polybar = {
-        enable = true;
-        script = "";
-    };
-
-    services.sxhkd = {
-      enable = true;
-      keybindings = import ./sxhkd.nix;
-    };
-
-    programs.eww.enable = false;
-
-    # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
-    xdg.configFile."bspwm/bspwmrc".source = ./bspwmrc;
-    xdg.configFile."bspwm/.fehbg".source = ./.fehbg;
-    xdg.configFile."bspwm/wallpaper.jpg".source = ./wallpaper.jpg;
-    xdg.configFile."bspwm/polybar/colors".source = ./polybar/colors;
-    xdg.configFile."bspwm/polybar/config".source = ./polybar/config;
-    xdg.configFile."bspwm/polybar/decor".source = ./polybar/decor;
-    xdg.configFile."bspwm/polybar/modules".source = ./polybar/modules;
-    xdg.configFile."bspwm/polybar/system".source = ./polybar/system;
-    xdg.configFile."bspwm/polybar/launch.sh".source = ./polybar/launch.sh;
-    xdg.configFile."bspwm/scripts".source = ./scripts;
-    xdg.configFile."bspwm/assets".source = ./assets;
-    xdg.configFile."rofi".source = ./rofi;
-    
   };
 }
