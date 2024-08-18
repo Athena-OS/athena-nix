@@ -13,7 +13,7 @@ let
   theme = "temple";
   desktop = "gnome";
   dmanager = "gdm";
-  shell = "fish";
+  mainShell = "fish";
   terminal = "kitty";
   browser = "firefox";
   bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
@@ -24,7 +24,7 @@ in
   imports = [ # Include the results of the hardware scan.
     {
       athena = {
-        inherit bootloader terminal theme shell browser;
+        inherit bootloader terminal theme mainShell browser;
         enable = true;
         homeManagerUser = username;
         baseConfiguration = true;
@@ -44,7 +44,7 @@ in
     mutableUsers = false;
     extraUsers.root.hashedPassword = "${hashedRoot}";
     users.${config.athena.homeManagerUser} = {
-      shell = pkgs.${config.athena.shell};
+      shell = pkgs.${config.athena.mainShell};
       isNormalUser = true;
       hashedPassword = "${hashed}";
       extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];

@@ -1,5 +1,5 @@
 { lib, config, ... }: {
-  config = lib.mkIf (config.athena.shell == "bash") {
+  config = lib.mkIf (config.athena.mainShell == "bash") {
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home = {
         file = {

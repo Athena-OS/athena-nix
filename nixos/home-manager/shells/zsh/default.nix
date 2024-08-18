@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }: with lib; let
   shopt = pkgs.writeShellScriptBin "shopt" (builtins.readFile ./shopt);
 in {
-  config = mkIf (config.athena.shell == "fish") {
+  config = mkIf (config.athena.mainShell == "zsh") {
     # Needed to install at system-level to source their .zsh files in .zshrc
     environment.systemPackages = with pkgs; [
       nix-zsh-completions
