@@ -74,11 +74,10 @@ in {
         '';
       };
 
-      shell = lib.mkOption {
+      mainShell = lib.mkOption {
         type = with lib.types; nullOr (enum [
           "bash"
           "fish"
-          "powershell"
           "zsh"
         ]);
 
