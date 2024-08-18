@@ -1,5 +1,5 @@
 { lib, config, ... }: {
-  config = lib.mkIf (config.athena.shell == "fish") {
+  config = lib.mkIf (config.athena.mainShell == "fish") {
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
         neofetch

@@ -92,7 +92,7 @@ in {
     };
 
     # It is needed to enable the used shell also at system level because NixOS cannot see home-manager modules. Note: bash does not need to be enabled
-    programs.${config.athena.shell} = mkIf ("${config.athena.shell}" != "bash") {
+    programs.${config.athena.mainShell} = mkIf ("${config.athena.mainShell}" != "bash") {
       enable = true;
     };
 
@@ -107,7 +107,7 @@ in {
       sessionVariables = {
         EDITOR = "nano";
         BROWSER = "${config.athena.browser}";
-        SHELL = "/run/current-system/sw/bin/${config.athena.shell}";
+        SHELL = "/run/current-system/sw/bin/${config.athena.mainShell}";
         TERMINAL = "${config.athena.terminal}";
         TERM = "xterm-256color";
         NIXPKGS_ALLOW_UNFREE = "1"; # To allow nix-shell to use unfree packages

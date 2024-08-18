@@ -13,7 +13,7 @@
       theme = "graphite";
       desktop = "mate";
       dmanager = "lightdm";
-      shell = "bash";
+      mainShell = "bash";
       terminal = "alacritty";
       browser = "firefox";
       bootloader = "systemd";
@@ -31,7 +31,7 @@
               mutableUsers = false;
               extraUsers.root.hashedPassword = "${hashedRoot}";
               users.${config.athena.homeManagerUser} = {
-                shell = pkgs.${config.athena.shell};
+                shell = pkgs.${config.athena.mainShell};
                 isNormalUser = true;
                 hashedPassword = "${hashed}";
                 extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
@@ -66,7 +66,7 @@
           ./nixos
           {
           athena = {
-            inherit bootloader terminal theme shell browser;
+            inherit bootloader terminal theme mainShell browser;
             enable = true;
             baseConfiguration = true;
             baseSoftware = true;
