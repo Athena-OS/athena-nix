@@ -24,7 +24,7 @@ in
   imports = [ # Include the results of the hardware scan.
     {
       athena = {
-        inherit bootloader terminal theme shell browser;
+        inherit bootloader terminal theme mainShell browser;
         enable = true;
         homeManagerUser = username;
         baseConfiguration = true;

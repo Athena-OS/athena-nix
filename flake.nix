@@ -13,7 +13,7 @@
       theme = "graphite";
       desktop = "mate";
       dmanager = "lightdm";
-      shell = "bash";
+      mainShell = "bash";
       terminal = "alacritty";
       browser = "firefox";
       bootloader = "systemd";
@@ -66,7 +66,7 @@
           ./nixos
           {
           athena = {
-            inherit bootloader terminal theme shell browser;
+            inherit bootloader terminal theme mainShell browser;
             enable = true;
             baseConfiguration = true;
             baseSoftware = true;
