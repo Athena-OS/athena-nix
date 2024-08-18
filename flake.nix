@@ -31,7 +31,7 @@
               mutableUsers = false;
               extraUsers.root.hashedPassword = "${hashedRoot}";
               users.${config.athena.homeManagerUser} = {
-                shell = pkgs.${config.athena.shell};
+                shell = pkgs.${config.athena.mainShell};
                 isNormalUser = true;
                 hashedPassword = "${hashed}";
                 extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];

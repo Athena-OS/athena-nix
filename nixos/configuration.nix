@@ -13,7 +13,7 @@ let
   theme = "temple";
   desktop = "gnome";
   dmanager = "gdm";
-  shell = "fish";
+  mainShell = "fish";
   terminal = "kitty";
   browser = "firefox";
   bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
@@ -44,7 +44,7 @@ in
     mutableUsers = false;
     extraUsers.root.hashedPassword = "${hashedRoot}";
     users.${config.athena.homeManagerUser} = {
-      shell = pkgs.${config.athena.shell};
+      shell = pkgs.${config.athena.mainShell};
       isNormalUser = true;
       hashedPassword = "${hashed}";
       extraGroups = [ "wheel" "input" "video" "render" "networkmanager" ];
