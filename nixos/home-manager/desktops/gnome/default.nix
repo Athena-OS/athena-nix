@@ -94,20 +94,19 @@ in {
       pathsToLink = [ "/share/backgrounds" ]; # TODO: https://github.com/NixOS/nixpkgs/issues/47173
       systemPackages = with pkgs; [ eog gnome-tweaks gnome-screenshot ];
       gnome.excludePackages = (with pkgs; [
+        atomix
         epiphany
         evince
         geary
+        gnome-characters
+        gnome-music
         gnome-photos
         gnome-tour
-        totem
-        ]) ++ (with pkgs.gnome; [
-        gnome-music
-        gnome-characters
-        tali
-        iagno
         hitori
-        atomix
-      ]);
+        iagno
+        tali
+        totem
+        ]);
     };
 
     # ---- Home Configuration ----
