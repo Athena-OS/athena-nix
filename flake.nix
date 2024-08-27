@@ -10,13 +10,13 @@
   outputs = { self, nixpkgs, home-manager }:
     let
       username = "athena";
-      theme = "graphite";
-      desktop = "mate";
-      dmanager = "lightdm";
-      mainShell = "bash";
-      terminal = "alacritty";
+      theme = "temple";
+      desktop = "gnome";
+      dmanager = "gdm";
+      mainShell = "fish";
+      terminal = "kitty";
       browser = "firefox";
-      bootloader = "systemd";
+      bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
       mkSystem = extraModules:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
