@@ -4,12 +4,12 @@ let
     asciinema
     bat
     bfetch
-    bless
     cmatrix
     cowsay
     figlet
     file
     fortune
+    ghex
     glxinfo
     gparted
     htb-toolkit
