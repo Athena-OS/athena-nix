@@ -94,7 +94,8 @@
     etherape
     ettercap
     evillimiter
-    evil-winrm
+    # https://github.com/NixOS/nixpkgs/issues/340969
+    #evil-winrm
     exabgp
     exploitdb
     fcrackzip
