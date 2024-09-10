@@ -6,7 +6,8 @@
         gnumake
         nodejs
         nodePackages.npm
-        vscode-extensions.ms-vscode.cpptools
+        # https://github.com/NixOS/nixpkgs/issues/331738
+        #vscode-extensions.ms-vscode.cpptools
         vscode-extensions.vadimcn.vscode-lldb
       ];
       programs = {
