@@ -8,6 +8,7 @@
     cewl
     crunch
     dirb
+    dnsmasq
     edb
     enum4linux
     enum4linux-ng
