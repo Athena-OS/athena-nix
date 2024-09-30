@@ -48,7 +48,7 @@ in {
       };
 
       programs = {
-        kitty.themeFile = "Crayon Pony Fish";
+        kitty.themeFile = "CrayonPonyFish";
         vscode = {
           extensions = with pkgs.vscode-extensions; [ dracula-theme.theme-dracula ];
 
