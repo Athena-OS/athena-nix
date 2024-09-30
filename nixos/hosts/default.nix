@@ -115,14 +115,14 @@ if [[ -z "$command" ]]; then
         echo "$binary is not installed. Installing..."
         sudo pacman -S "$pkg"
       else
-        NO_REPETITION=1 $TERMINAL_EXEC /usr/bin/bash -c "echo \"$binary is not installed. Installing...\" && sudo pacman -S $pkg |& tee $temp_file;if grep -q "error:" "$temp_file"; then $SHELL;fi"
+        NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "echo \"$binary is not installed. Installing...\" && sudo pacman -S $pkg |& tee $temp_file;if grep -q "error:" "$temp_file"; then $SHELL;fi"
       fi
     else
       if [[ -n "$NO_REPETITION" ]]; then
         echo "$binary is not installed. Installing..."
         sudo pacman -S "$binary"
       else
-        NO_REPETITION=1 $TERMINAL_EXEC /usr/bin/bash -c "echo \"$binary is not installed. Installing...\" && sudo pacman -S $binary |& tee $temp_file;if grep -q "error:" "$temp_file"; then $SHELL;fi"
+        NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "echo \"$binary is not installed. Installing...\" && sudo pacman -S $binary |& tee $temp_file;if grep -q "error:" "$temp_file"; then $SHELL;fi"
       fi
     fi
 
@@ -150,20 +150,20 @@ if [[ -z "$command" ]]; then
     if [[ -n "$NO_REPETITION" ]] || [[ "$guiapp" ]]; then
       "${binary[@]}"
     else
-      NO_REPETITION=1 $TERMINAL_EXEC /usr/bin/bash -c "$binary;$SHELL"
+      NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "$binary;$SHELL"
     fi
   else
     if [[ -n "$NO_REPETITION" ]]; then
       cd $directory;$SHELL
     else
-      NO_REPETITION=1 $TERMINAL_EXEC /usr/bin/bash -c "cd $directory;$SHELL"
+      NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "cd $directory;$SHELL"
     fi
   fi
 else
     if [[ -n "$NO_REPETITION" ]]; then
       "${command[@]}"
     else
-      NO_REPETITION=1 $TERMINAL_EXEC /usr/bin/bash -c "$command;$SHELL"
+      NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "$command;$SHELL"
     fi
 fi
   '';
