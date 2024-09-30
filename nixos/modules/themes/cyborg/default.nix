@@ -47,7 +47,7 @@ in {
       };
 
       programs = {
-        kitty.themeFile = "Gruvbox Dark";
+        kitty.themeFile = "gruvbox-dark";
         vscode = {
           extensions = with pkgs.vscode-extensions; [
             jdinhlife.gruvbox
