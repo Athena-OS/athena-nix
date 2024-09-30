@@ -75,7 +75,7 @@
       # Nix is trying to interpret the variable below as its own string interpolation syntax. To prevent this, needed to use an extra $
       "$${command[@]}"
     else
-      NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "$command"
+      NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "$command;$SHELL"
     fi
   '';
 

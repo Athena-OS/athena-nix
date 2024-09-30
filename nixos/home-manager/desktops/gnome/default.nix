@@ -23,7 +23,7 @@ in {
   config = lib.mkIf (config.athena.desktopManager == "gnome") {
     # ---- System Configuration ----
     services = {
-      udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+      udev.packages = with pkgs; [ gnome-settings-daemon ];
       xserver = {
         enable = true;
         desktopManager.gnome.enable = true;
