@@ -44,7 +44,7 @@ in {
       };
 
       programs = {
-        kitty.theme = "Tokyo Night Storm";
+        kitty.themeFile = "Tokyo Night Storm";
         vscode = {
           extensions = with pkgs.vscode-extensions; [
             enkia.tokyo-night

@@ -9,7 +9,7 @@
 
     virtualisation = {
       # VM guest additions to improve host-guest interaction
-      vmware.guest.enable = lib.mkDefault false;
+      vmware.guest.enable = lib.mkDefault true;
       hypervGuest.enable = lib.mkDefault false;
       # The VirtualBox guest additions rely on an out-of-tree kernel module
       # which lags behind kernel releases, potentially causing broken builds.
