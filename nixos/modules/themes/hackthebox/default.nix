@@ -42,7 +42,7 @@ in {
       };
 
       programs = {
-        kitty.theme = "Box";
+        kitty.themeFile = "Box";
         vscode = {
           extensions = with pkgs.vscode-extensions; [
             silofy.hackthebox

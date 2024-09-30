@@ -43,7 +43,7 @@ in {
       };
 
       programs = {
-        kitty.theme = "Adventure Time";
+        kitty.themeFile = "Adventure Time";
         vscode = {
           extensions = with pkgs.vscode-extensions; [
             dhedgecock.radical-vscode

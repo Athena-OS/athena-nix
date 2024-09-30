@@ -44,7 +44,7 @@ in {
       };
 
       programs = {
-        kitty.theme = "Atom";
+        kitty.themeFile = "Atom";
         vscode = {
           extensions = with pkgs.vscode-extensions; [
             nur.just-black
