@@ -57,4 +57,9 @@ in
   };
 
   services.flatpak.enable = true;
+
+  cyber = {
+    enable = false;
+    role = "student"; 
+  };
 }
