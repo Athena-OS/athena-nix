@@ -7,7 +7,6 @@ let
     desktop-icons-ng-ding
     fly-pie
     hide-activities-button
-    pop-shell
     top-bar-organizer
     vitals
     window-title-is-back
@@ -144,7 +143,6 @@ in {
           "ding@rastersoft.com"
           "flypie@schneegans.github.com"
           "Hide_Activities@shay.shayel.org"
-          "pop-shell@system76.com"
           "top-bar-organizer@julian.gse.jsts.xyz"
           "Vitals@CoreCoding.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
@@ -288,14 +286,10 @@ in {
           check-x11wayland = true;
         };
 
-        "org/gnome/shell/extensions/pop-shell" = {
-          show-skip-taskbar = false;
-        };
-
         "org/gnome/shell/extensions/top-bar-organizer" = {
           center-box-order = ["Workspace Indicator" "media-player" "Space Bar" "media-player-controls"];
           left-box-order = ["LogoMenu" "ArcMenu" "menuButton" "appMenu" "Notifications" "places-menu" "apps-menu" "dateMenu" "activities"];
-          right-box-order = ["dash-button" "power-menu" "battery-bar" "vitalsMenu" "pop-shell" "screenRecording" "screenSharing" "dwellClick" "a11y" "keyboard" "quickSettings"];
+          right-box-order = ["dash-button" "power-menu" "battery-bar" "vitalsMenu" "screenRecording" "screenSharing" "dwellClick" "a11y" "keyboard" "quickSettings"];
         };
 
         "org/gnome/shell/extensions/window-title-is-back" = {
