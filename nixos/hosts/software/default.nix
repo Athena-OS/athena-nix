@@ -4,6 +4,7 @@ let
     asciinema
     bat
     bfetch
+    bind
     cmatrix
     cowsay
     figlet
