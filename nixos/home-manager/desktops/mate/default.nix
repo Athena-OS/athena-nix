@@ -154,7 +154,7 @@ in {
         };
 
         "org/mate/panel/objects/object-1" = {
-          launcher-location = "${pkgs.firefox}/share/applications/firefox.desktop";
+          launcher-location = "${pkgs.firefox-esr}/share/applications/firefox-esr.desktop";
           object-type = "launcher";
           panel-right-stick = false;
           position = -1;
