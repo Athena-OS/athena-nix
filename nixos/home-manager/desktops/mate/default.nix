@@ -73,7 +73,7 @@ in {
       xdg.configFile."menus/applications-merged/mate-applications.menu".source = ./config/menus/applications-merged/mate-applications.menu;
 
       dconf.settings = {
-        "org/gnome/shell".favorite-apps = [ "athena-welcome.desktop" "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "codium.desktop" "shell.desktop" "powershell.desktop" "firefox.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
+        "org/gnome/shell".favorite-apps = [ "athena-welcome.desktop" "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "codium.desktop" "shell.desktop" "powershell.desktop" "firefox-esr.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
 
         # /desktop/applications/terminal
         "org/gnome/desktop/applications/terminal" = {
