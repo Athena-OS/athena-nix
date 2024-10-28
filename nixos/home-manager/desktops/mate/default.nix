@@ -73,7 +73,7 @@ in {
       xdg.configFile."menus/applications-merged/mate-applications.menu".source = ./config/menus/applications-merged/mate-applications.menu;
 
       dconf.settings = {
-        "org/gnome/shell".favorite-apps = [ "athena-welcome.desktop" "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "vscodium.desktop" "shell.desktop" "powershell.desktop" "firefox-esr.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
+        "org/gnome/shell".favorite-apps = [ "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "shell.desktop" "powershell.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
 
         # /desktop/applications/terminal
         "org/gnome/desktop/applications/terminal" = {
@@ -96,6 +96,7 @@ in {
             "object-3"
             "object-4"
             "object-5"
+            "object-6"
           ];
         };
 
@@ -145,7 +146,7 @@ in {
         # };
 
         "org/mate/panel/objects/object-0" = {
-          launcher-location = "${pkgs.firefox}/share/applications/firefox.desktop";
+          launcher-location = "${pkgs.vscodium}/share/applications/codium.desktop";
           object-type = "launcher";
           panel-right-stick = false;
           position = -1;
@@ -153,7 +154,7 @@ in {
         };
 
         "org/mate/panel/objects/object-1" = {
-          launcher-location = "/run/current-system/sw/share/applications/shell.desktop";
+          launcher-location = "${pkgs.firefox}/share/applications/firefox.desktop";
           object-type = "launcher";
           panel-right-stick = false;
           position = -1;
@@ -169,7 +170,7 @@ in {
         };
 
         "org/mate/panel/objects/object-3" = {
-          launcher-location = "/run/current-system/sw/share/applications/payloadsallthethings.desktop";
+          launcher-location = "/run/current-system/sw/share/applications/shell.desktop";
           object-type = "launcher";
           panel-right-stick = false;
           position = -1;
@@ -177,7 +178,23 @@ in {
         };
 
         "org/mate/panel/objects/object-4" = {
+          launcher-location = "/run/current-system/sw/share/applications/payloadsallthethings.desktop";
+          object-type = "launcher";
+          panel-right-stick = false;
+          position = -1;
+          toplevel-id = "top";
+        };
+
+        "org/mate/panel/objects/object-5" = {
           launcher-location = "/run/current-system/sw/share/applications/seclists.desktop";
+          object-type = "launcher";
+          panel-right-stick = false;
+          position = -1;
+          toplevel-id = "top";
+        };
+
+        "org/mate/panel/objects/object-6" = {
+          launcher-location = "/run/current-system/sw/share/applications/athena-welcome.desktop";
           object-type = "launcher";
           panel-right-stick = false;
           position = -1;
