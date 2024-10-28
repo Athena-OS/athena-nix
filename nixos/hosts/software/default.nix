@@ -7,6 +7,7 @@ let
     bind
     cmatrix
     cowsay
+    cyberchef
     figlet
     file
     fortune
