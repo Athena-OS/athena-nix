@@ -170,7 +170,7 @@
             "shell.desktop",
             "powershell.desktop",
             "cyberchef.desktop",
-            "firefox.desktop",
+            "firefox-esr.desktop",
             "codium.desktop"
         ]
     },
