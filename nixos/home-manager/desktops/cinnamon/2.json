@@ -170,8 +170,8 @@
             "shell.desktop",
             "powershell.desktop",
             "cyberchef.desktop",
-            "firefox-esr.desktop",
-            "vscodium.desktop"
+            "firefox.desktop",
+            "codium.desktop"
         ]
     },
     "group-apps": {
