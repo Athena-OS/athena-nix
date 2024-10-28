@@ -159,7 +159,7 @@
         "type": "generic",
         "default": [
             "nemo.desktop",
-            "firefox.desktop",
+            "firefox-esr.desktop",
             "org.gnome.Terminal.desktop"
         ],
         "value": [
