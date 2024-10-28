@@ -155,7 +155,7 @@ in {
           "apps-menu@gnome-shell-extensions.gcampax.github.com"
         ];
 
-        "org/gnome/shell".favorite-apps = [ "athena-welcome.desktop" "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "codium.desktop" "shell.desktop" "powershell.desktop" "firefox-esr.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
+        "org/gnome/shell".favorite-apps = [ "athena-welcome.desktop" "athena-mimikatz.desktop" "athena-powersploit.desktop" "seclists.desktop" "payloadsallthethings.desktop" "powershell.desktop" "shell.desktop" "codium.desktop" "firefox-esr.desktop" "cyberchef.desktop" "fuzzdb.desktop" "securitywordlist.desktop" "autowordlists.desktop" ];
 
         # /desktop/applications/terminal
         "org/gnome/desktop/applications/terminal" = {
