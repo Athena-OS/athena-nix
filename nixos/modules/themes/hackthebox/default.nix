@@ -25,7 +25,7 @@ in {
         gtk3.extraConfig.gtk-decoration-layout = "menu:";
         theme = {
           name = gtkTheme;
-          package = pkgs.tokyonight-gtk-theme.override {
+          package = pkgs.matrix-gtk-theme.override {
             colorVariants = [ "dark" ];
             tweakVersions = [ "macos" ];
             iconVariants = [ "Sweet" ];
