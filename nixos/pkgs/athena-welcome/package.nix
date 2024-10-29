@@ -12,13 +12,13 @@
 
 python3Packages.buildPythonApplication {
   pname = "athena-welcome";
-  version = "0-unstable-2024-10-28";
+  version = "0-unstable-2024-10-29";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-welcome";
-    rev = "0da8a561cc415bb7e89b3a494e0aba20b02329c9";
-    hash = "sha256-XWuOxkuxEjMd9ZMahZ/f5MkXaEmEJlyv6y/SYofsSWE=";
+    rev = "5318c49104294ce6790ca95f8f23a0f2fd00649d";
+    hash = "sha256-NSfavXdUnLW0GUHbtTuDzmLqSjBgVGE/JbXgA8g0CFM=";
   };
 
   format = "other";
@@ -45,7 +45,7 @@ python3Packages.buildPythonApplication {
     mkdir -p $out/{bin,share/applications,share/athena-welcome,share/icons/hicolor/scalable/apps}
     cp -r share/applications/athena-welcome.desktop $out/share/applications/athena-welcome.desktop
     cp -r share/athena-welcome/* $out/share/athena-welcome/
-    cp -r share/icons/hicolor/scalable/apps/athenaos-hello.svg $out/share/icons/hicolor/scalable/apps/
+    cp -r share/icons/hicolor/scalable/apps/athenaos.svg $out/share/icons/hicolor/scalable/apps/
     makeWrapper ${python3}/bin/python $out/bin/athena-welcome \
       --add-flags "$out/share/athena-welcome/athena-welcome.py" \
       --prefix PYTHONPATH : "$PYTHONPATH"
