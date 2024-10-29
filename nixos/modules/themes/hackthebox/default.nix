@@ -14,7 +14,6 @@ in {
     athena.theme-components = theme-components;
     environment.systemPackages = with pkgs; [
       (callPackage ../../../pkgs/themes/athena-green-base/package.nix { })
-      (callPackage ../../../pkgs/themes/matrix-gtk/package.nix { colorVariants = [ "dark" ]; tweakVersions = [ "macos" ]; iconVariants = [ "Sweet" ]; })
     ];
 
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
@@ -26,6 +25,11 @@ in {
         gtk3.extraConfig.gtk-decoration-layout = "menu:";
         theme = {
           name = gtkTheme;
+          package = pkgs.tokyonight-gtk-theme.override {
+            colorVariants = [ "dark" ];
+            tweakVersions = [ "macos" ];
+            iconVariants = [ "Sweet" ];
+          };
         };
 
         iconTheme = {
