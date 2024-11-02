@@ -27,7 +27,7 @@ in {
           name = gtkTheme;
           package = pkgs.matrix-gtk-theme.override {
             colorVariants = [ "dark" ];
-            tweakVersions = [ "macos" ];
+            tweakVariants = [ "macos" ];
             iconVariants = [ "Sweet" ];
           };
         };
