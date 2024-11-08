@@ -61,7 +61,7 @@ with pkgs;
   corkscrew
   cowpatty
   crackle
-  crackmapexec
+  #crackmapexec
   crackql
   creds
   crlfuzz
