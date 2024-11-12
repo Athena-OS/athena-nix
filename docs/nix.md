@@ -657,6 +657,21 @@ At the end, once you edited the code of all commits, run:
 git push -f origin <branch-name>
 ```
 
+#### Rebase a Forked Branch on Upstream Master
+```
+git clone https://github.com/D3vil0p3r/nixpkgs -b patch-M --depth N
+git remote add upstream https://github.com/NixOS/nixpkgs.git
+git fetch upstream
+git checkout patch-9
+git rebase upstream/master
+git push -f origin patch-M
+```
+If there are some conflicts after `git rebase upstream/master`, run:
+```
+git add <file-name>
+git rebase --continue
+```
+
 ### Test existing packages
 
 If you want to test an existing package in [nixpkgs](https://github.com/NixOS/nixpkgs) repository, for example `OSCAR`,  just get its `default.nix` file locally, then run:
