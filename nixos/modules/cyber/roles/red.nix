@@ -61,7 +61,6 @@ with pkgs;
   corkscrew
   cowpatty
   crackle
-  #crackmapexec
   crackql
   creds
   crlfuzz
@@ -157,7 +156,7 @@ with pkgs;
   jaeles
   # https://github.com/NixOS/nixpkgs/issues/308260
   # jd-cli
-  jd-gui
+  # jd-gui
   jnetmap
   john
   johnny
@@ -208,6 +207,7 @@ with pkgs;
   nbtscanner
   ncrack
   netdiscover
+  netexec
   netmask
   netsniff-ng
   networkminer
@@ -241,7 +241,7 @@ with pkgs;
   pwnat
   pwncat
   # capstone-5.0.1 not supported for interpreter python3.12
-  python311Packages.angrop
+  # python311Packages.angrop
   python312Packages.arsenic
   python312Packages.dnspython
   python312Packages.httpx
