@@ -77,6 +77,7 @@ alias spotify='spotify --no-zygote'
 # Alias's to user support
 alias tb='nc termbin.com 9999'
 alias journalctl-upload='sudo journalctl | tb'
+alias nixconfig-upload="sed 's/^\(\s*hashed\s*=\s*\).*$/\1"**REDACTED**";/; s/^\(\s*hashedRoot\s*=\s*\).*$/\1"**REDACTED**";/' /etc/nixos/configuration.nix | tb"
 
 #keyboard
 alias give-me-azerty-be="sudo localectl set-x11-keymap be"
