@@ -28,7 +28,7 @@ with pkgs;
   jadx
   # https://github.com/NixOS/nixpkgs/issues/308260
   # jd-cli
-  jd-gui
+  # jd-gui
   jsbeautifier
   kalibrate-rtl
   # https://github.com/NixOS/nixpkgs/issues/326927
@@ -38,7 +38,7 @@ with pkgs;
   pev
   pwntools
   # capstone-5.0.1 not supported for interpreter python3.12
-  python311Packages.angr
+  # python311Packages.angr
   # distorm3-3.5.2 not supported for interpreter python3.12
   # https://github.com/NixOS/nixpkgs/issues/326920
   # python311Packages.distorm3
