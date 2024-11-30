@@ -6,7 +6,9 @@ let
     liberation_ttf
     source-code-pro
     inter
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" "Iosevka" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+    nerd-fonts.iosevka
   ];
 
   bspwm-packages = with pkgs; [
