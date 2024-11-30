@@ -24,7 +24,8 @@ in
   config = mkIf (cfg != null) (mkMerge [
     {
       home.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.symbols-only
         #mugshot
         networkmanagerapplet # NetworkManager control applet for GNOME
         xdg-user-dirs # A tool to help manage well known user directories like the desktop folder and the music folder

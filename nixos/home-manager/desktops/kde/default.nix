@@ -30,7 +30,8 @@ let
     systemsettings
   ];
   fontList = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 in {
   config = lib.mkIf (config.athena.desktopManager == "kde") {
