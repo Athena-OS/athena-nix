@@ -1,7 +1,8 @@
 { lib, pkgs, config, ... }:
 let
   fontList = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
   bspwm-packages = with pkgs; [

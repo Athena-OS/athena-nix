@@ -16,7 +16,8 @@
   ];
 
   fontList = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
   gtkTheme = "${config.athena.theme-components.gtk-theme}";
