@@ -243,6 +243,7 @@ with pkgs;
   # capstone-5.0.1 not supported for interpreter python3.12
   # python311Packages.angrop
   python312Packages.arsenic
+  python312Packages.certipy-ad
   python312Packages.dnspython
   python312Packages.httpx
   python312Packages.impacket
