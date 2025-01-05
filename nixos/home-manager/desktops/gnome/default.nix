@@ -29,61 +29,10 @@ in {
         desktopManager.gnome.enable = true;
       };
 
-<<<<<<< HEAD
-  # Adding this because probably the pathsToLink lines to "share" folder https://github.com/NixOS/nixpkgs/blob/nixos-23.11/nixos/modules/services/x11/desktop-managers/gnome.nix#L369-L371 will be removed because "shared" directory is too broad to link. So, below we link only the needed subdirectories of "share" dir
-  environment.pathsToLink = [
-    "/share/backgrounds" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
-  ];
-
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-
-  programs.dconf.enable = true;
-
-  services.gnome = {
-    evolution-data-server.enable = true;
-    gnome-keyring.enable = true;
-  };
-
-  gtk.iconCache.enable = true;
-
-  environment.systemPackages = with pkgs; [ eog gnome-tweaks gnome-screenshot ];
-
-  environment.gnome.excludePackages = (with pkgs; [
-    epiphany
-    evince
-    geary
-    gnome-photos
-    gnome-tour
-    totem
-    ]) ++ (with pkgs.gnome; [
-    gnome-music
-    gnome-characters
-    tali
-    iagno
-    hitori
-    atomix
-  ]);
-
-  # ---- Home Configuration ----
-
-  home-manager.users.${username} = { pkgs, ...}: {
-    home.packages = gnomeExtensionsList ++ fontList;
-
-    dconf.settings = {
-        "org/gnome/desktop/background" = {
-            picture-uri = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-            picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;
-            picture-options = "stretched";
-        };
-        "org/gnome/shell/extensions/user-theme" = {
-            name = gnomeshellTheme;
-        };
-=======
       gnome = {
         evolution-data-server.enable = true;
         gnome-keyring.enable = true;
       };
->>>>>>> ef15c1df (finish up nixosModule)
     };
 
     programs.dconf.enable = true;
@@ -120,15 +69,9 @@ in {
           picture-options = "stretched";
         };
 
-<<<<<<< HEAD
-      # /desktop/applications/terminal
-      "org/gnome/desktop/applications/terminal" = {
-        exec = "${terminal}";
-=======
         "org/gnome/shell/extensions/user-theme" = {
           name = gnomeshellTheme;
         };
->>>>>>> ef15c1df (finish up nixosModule)
       };
 
       # It copies "./config/menus/gnome-applications.menu" source file to the nix store, and then symlinks it to the location.
