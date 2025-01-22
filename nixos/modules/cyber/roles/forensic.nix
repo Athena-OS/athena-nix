@@ -3,7 +3,7 @@
 with pkgs;
 
 [
-  acquire
+  #acquire
   aesfix
   aeskeyfind
   afflib
