@@ -14,7 +14,7 @@ with pkgs;
   chkrootkit
   chntpw
   dc3dd
-  dcfldd
+  #dcfldd
   ddrescue
   dmg2img
   exiftool
@@ -41,10 +41,10 @@ with pkgs;
   safecopy
   scalpel
   sleuthkit
-  snort
+  #snort
   tell-me-your-secrets
   testdisk
-  tracee
+  #tracee
   usbrip
   volatility3
 ]
