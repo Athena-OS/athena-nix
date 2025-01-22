@@ -28,7 +28,7 @@ with pkgs;
   mac-robber
   mdbtools
   ms-sys
-  networkminer
+  #networkminer
   ntfs3g
   oletools
   osquery
