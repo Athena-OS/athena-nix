@@ -85,7 +85,7 @@ with pkgs;
   multimon-ng
   netdiscover
   netsniff-ng
-  networkminer
+  #networkminer
   nfdump
   ngrep
   ngrok
