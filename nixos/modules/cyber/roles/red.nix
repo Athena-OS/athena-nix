@@ -210,7 +210,7 @@ with pkgs;
   netexec
   netmask
   netsniff-ng
-  networkminer
+  #networkminer
   nfdump
   ngrep
   ngrok
