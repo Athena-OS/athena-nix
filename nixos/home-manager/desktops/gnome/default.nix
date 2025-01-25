@@ -58,10 +58,12 @@ in {
         ]);
     };
 
+    fonts.packages = fontList;
+
     # ---- Home Configuration ----
 
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
-      home.packages = gnomeExtensionsList ++ fontList;
+      home.packages = gnomeExtensionsList;
       dconf.settings = {
         "org/gnome/desktop/background" = {
           picture-uri = "file:///run/current-system/sw/share/backgrounds/athena/"+backgroundTheme;

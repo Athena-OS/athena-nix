@@ -12,7 +12,7 @@
       username = "athena";
       theme = "temple";
       desktop = "gnome";
-      dmanager = "gdm";
+      dmanager = "sddm";
       mainShell = "fish";
       terminal = "kitty";
       browser = "firefox";
