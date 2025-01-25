@@ -2,5 +2,6 @@
   imports = [
     ./gdm
     ./lightdm
+    ./sddm
   ];
 }
