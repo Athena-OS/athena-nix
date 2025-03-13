@@ -49,7 +49,7 @@ in {
       programs = {
         kitty.themeFile = "CrayonPonyFish";
         vscode = {
-          extensions = with pkgs.vscode-extensions; [
+          profiles.default.extensions = with pkgs.vscode-extensions; [
             dracula-theme.theme-dracula
           ];
 

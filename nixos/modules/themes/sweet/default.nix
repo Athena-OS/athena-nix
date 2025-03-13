@@ -45,7 +45,7 @@ in {
       programs = {
         kitty.themeFile = "AdventureTime";
         vscode = {
-          extensions = with pkgs.vscode-extensions; [
+          profiles.default.extensions = with pkgs.vscode-extensions; [
             dhedgecock.radical-vscode
           ];
 
