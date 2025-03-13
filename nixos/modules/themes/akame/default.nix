@@ -50,7 +50,7 @@ in {
       programs = {
         kitty.themeFile = "CrayonPonyFish";
         vscode = {
-          extensions = with pkgs.vscode-extensions; [ dracula-theme.theme-dracula ];
+          profiles.default.extensions = with pkgs.vscode-extensions; [ dracula-theme.theme-dracula ];
 
           # In case extensions are not loaded, refer to https://github.com/nix-community/home-manager/issues/3507
           userSettings = { "workbench.colorTheme" = "Dracula"; };

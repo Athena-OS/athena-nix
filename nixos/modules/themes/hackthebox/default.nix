@@ -48,7 +48,7 @@ in {
       programs = {
         kitty.themeFile = "Box";
         vscode = {
-          extensions = with pkgs.vscode-extensions; [
+          profiles.default.extensions = with pkgs.vscode-extensions; [
             silofy.hackthebox
           ];
 
