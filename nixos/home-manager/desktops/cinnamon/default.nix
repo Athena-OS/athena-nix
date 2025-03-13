@@ -2,7 +2,7 @@
 let
   cinnamon-packages = with pkgs; [
     ffmpeg
-    gnome.gnome-screenshot
+    gnome-screenshot
     xdg-user-dirs
     xdotool
     xorg.xdpyinfo
@@ -37,9 +37,10 @@ in {
       systemPackages = cinnamon-packages;
     };
 
+    fonts.packages = fontList;
+
     # ---- Home Configuration ----
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
-      home.packages = fontList;
       dconf.settings = {
         "org/cinnamon/desktop/background" = {
           picture-uri = "file:///run/current-system/sw/share/backgrounds/athena/${backgroundTheme}";
