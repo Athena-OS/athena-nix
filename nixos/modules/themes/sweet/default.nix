@@ -50,7 +50,7 @@ in {
           ];
 
           # In case extensions are not loaded, refer to https://github.com/nix-community/home-manager/issues/3507
-          userSettings = { "workbench.colorTheme" = "Radical"; };
+          profiles.default.userSettings = { "workbench.colorTheme" = "Radical"; };
         };
       };
     };

@@ -13,7 +13,7 @@
           pkief.material-icon-theme
         ];
         # In case extensions are not loaded, refer to https://github.com/nix-community/home-manager/issues/3507
-        userSettings = {
+        profiles.default.userSettings = {
           "workbench.iconTheme" = "material-icon-theme";
           "window.dialogStyle" = "custom";
           "window.titleBarStyle" = "custom";
