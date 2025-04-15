@@ -2,21 +2,6 @@
   config = lib.mkIf (config.athena.terminal == "kitty") {
     home-manager.users.${config.athena.homeManagerUser}.programs.kitty = {
       enable = true;
-      /*theme = if theme.module-name == "akame"
-              then "Crayon Pony Fish"
-              else if theme.module-name == "cyborg"
-              then "Gruvbox Dark"
-              else if theme.module-name == "everblush"
-              then "Atom"
-              else if theme.module-name == "hackthebox"
-              then "Box"
-              else if theme.module-name == "samurai"
-              then "Tokyo Night Storm"
-              else if theme.module-name == "sweetdark"
-              then "Adventure Time"
-              else if theme.module-name == "xxe"
-              then "Gruvbox Dark"
-              else "Atom";*/
       settings = {
         font_family = "JetBrainsMono NF Medium";
         bold_font = "JetBrainsMono NF Bold";

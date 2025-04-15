@@ -4,14 +4,14 @@ let
     gtk-theme = "Nightfox-Dark";
     icon-theme = "Material-Black-Cherry-Suru";
     cursor-theme = "Afterglow-Recolored-Dracula-Red";
-    background = "akame.jpg";
+    background = "redmoon.png";
   };
 
   gtkTheme = "${theme-components.gtk-theme}";
   gtkIconTheme = "${theme-components.icon-theme}";
   gtkCursorTheme = "${theme-components.cursor-theme}";
 in {
-  config = lib.mkIf (config.athena.theme == "akame") {
+  config = lib.mkIf (config.athena.theme == "redmoon") {
     athena.theme-components = theme-components;
     environment.systemPackages = with pkgs; [
       (callPackage ../../../pkgs/themes/athena-red-base/package.nix { })
