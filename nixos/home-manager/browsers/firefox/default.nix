@@ -13,7 +13,7 @@
             bookmarks = import ../bookmarks.nix;
             search = {
               force = true;
-              default = "DuckDuckGo";
+              default = "ddg";
               engines = {
                 "Nix Packages" = {
                     urls = [{
@@ -29,16 +29,16 @@
 
                 "NixOS Wiki" = {
                     urls = [{ template = "https://wiki.nixos.org/index.php?search={searchTerms}"; }];
-                    iconUpdateURL = "https://wiki.nixos.org/favicon.png";
+                    icon = "https://wiki.nixos.org/favicon.png";
                     updateInterval = 24 * 60 * 60 * 1000;
                     definedAliases = [ "@nw" ];
                 };
 
-                "Wikipedia (en)".metaData.alias = "@wiki";
-                "Google".metaData.hidden = true;
-                "Amazon.com".metaData.hidden = true;
-                "Bing".metaData.hidden = true;
-                "eBay".metaData.hidden = true;
+                "wikipedia".metaData.alias = "@wiki";
+                "google".metaData.hidden = true;
+                "amazondotcom-us".metaData.hidden = true;
+                "bing".metaData.hidden = true;
+                "ebay".metaData.hidden = true;
               };
             };
 
