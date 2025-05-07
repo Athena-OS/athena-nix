@@ -80,7 +80,7 @@ in {
           export PROMPT_COMMAND='source ~/.zshrc no-repeat-flag'
         '';
 
-        initExtra = ''
+        initContent = ''
           setopt INC_APPEND_HISTORY
           bindkey -e
           precmd() { eval "$PROMPT_COMMAND" }
