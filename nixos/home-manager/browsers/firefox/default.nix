@@ -10,7 +10,10 @@
           "${config.athena.homeManagerUser}" = {
             id = 0;
             name = "${config.athena.homeManagerUser}";
-            bookmarks = import ../bookmarks.nix;
+            bookmarks = {
+              force = true;
+              settings = import ../bookmarks.nix;
+            };
             search = {
               force = true;
               default = "ddg";
