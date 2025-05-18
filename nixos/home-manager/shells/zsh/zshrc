@@ -33,13 +33,13 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 
 # --- Alias ---
-alias shopt='/usr/bin/shopt'
+alias shopt='/run/current-system/sw/bin/shopt'
 
 # --- One-time plugin & environment setup ---
 if [[ -z $NO_REPETITION ]]; then
   source ~/.bash_aliases
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /run/current-system/sw/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /run/current-system/sw/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fastfetch
   export NO_REPETITION=1
 fi
