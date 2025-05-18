@@ -38,7 +38,7 @@ in {
 
         default = "graphite";
         description = ''
-          The theme to use.
+          The design to use.
         '';
       };
 
@@ -113,7 +113,7 @@ in {
     ./home-manager
     ./modules
     ./pkgs
-    ./modules/themes
+    ./modules/design
     ./home-manager/desktops
     ./modules/dms
     ./home-manager/shells
