@@ -11,7 +11,7 @@ in {
 
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
-        neofetch
+        fastfetch
         shopt
       ];
 
