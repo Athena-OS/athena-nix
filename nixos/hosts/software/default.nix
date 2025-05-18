@@ -8,7 +8,6 @@ let
     cmatrix
     cowsay
     cyberchef
-    fastfetch
     figlet
     file
     fortune
