@@ -2,7 +2,7 @@
   config = lib.mkIf (config.athena.mainShell == "fish") {
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
-        neofetch
+        fastfetch
         zoxide
       ];
 
@@ -77,10 +77,7 @@
         };
 
         interactiveShellInit = ''
-          set fish_greeting # Disable greeting
-          if status is-interactive
-              # Commands to run in interactive sessions can go here
-          end
+          set -U fish_greeting ""
 
           source ~/.bash_aliases
 
@@ -126,9 +123,9 @@
           set -gx TERM xterm-256color
           if status is-interactive
               # Commands to run in interactive sessions can go here
-              #if not set -q NO_REPETITION
-              #    neofetch
-              #end
+              if not set -q NO_REPETITION
+                  fastfetch
+              end
           end
         '';
       };
