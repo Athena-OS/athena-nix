@@ -1,18 +1,18 @@
-name: "🖼️Submit theme"
-description: Submit a theme
-title: "[THEME]: "
-labels: ["theme"]
+name: "🖼️Submit design"
+description: Submit a design
+title: "[DESIGN]: "
+labels: ["design"]
 body:
 - type: markdown
   attributes:
     value: |
-      Refer to [Submitting Themes](https://www.athenaos.org/en/community/submitting-themes/) to know how to submit a theme.
+      Refer to [Submitting Design](https://www.athenaos.org/en/community/submitting-design/) to know how to submit a design.
 
 - type: checkboxes
   attributes:
-    label: Which environment the theme is intended for?
+    label: Which environment the design is intended for?
     description: |
-      Tell us which environment the theme is intended for. 
+      Tell us which environment the design is intended for. 
     options:
       - label: "GNOME"
       - label: "KDE Plasma"
