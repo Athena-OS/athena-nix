@@ -28,7 +28,7 @@
                   *:"$1":*)
                       ;;
                   *)
-                      PATH="${PATH:+$PATH:}$1"
+                      PATH="''${PATH:+$PATH:}$1"
               esac
           }
           append_path "$HOME/bin"
@@ -124,7 +124,7 @@
           }
 
           virev () {
-            local commit=${1:-HEAD}
+            local commit=''${1:-HEAD}
             local rootdir=$(git rev-parse --show-toplevel)
             local sourceFiles=$(git show --name-only --pretty="format:" "$commit" | grep -v '^$')
             local toOpen=""
@@ -203,7 +203,7 @@
 
             local line2="\[\e[1;32m\]╰─>$robot\[\e[1;36m\]$cwd \$\[\e[0m\]"
 
-            PS1="${line1}\n${line2} "
+            PS1="''${line1}\n''${line2} "
           }
 
           PROMPT_COMMAND='set_bash_prompt'
