@@ -13,7 +13,7 @@ append_path "$HOME/bin"
 append_path "$HOME/.local/bin"
 
 ### EXPORT ### Should be before the change of the shell
-export EDITOR=/usr/bin/nvim
+export EDITOR=/run/current-system/sw/bin/nvim
 export VISUAL='nano'
 export HISTCONTROL=ignoreboth:erasedups:ignorespace
 HISTSIZE=100000
@@ -24,15 +24,15 @@ export PAGER='most'
 export TERM=xterm-256color
 export SHELL=$(which bash)
 
-export PAYLOADS="/usr/share/payloads"
+export PAYLOADS="/run/current-system/sw/share/payloads"
 export SECLISTS="$PAYLOADS/seclists"
 export PAYLOADSALLTHETHINGS="$PAYLOADS/payloadsallthethings"
 export FUZZDB="$PAYLOADS/fuzzdb"
 export AUTOWORDLISTS="$PAYLOADS/autowordlists"
 export SECURITYWORDLIST="$PAYLOADS/security-wordlist"
 
-export MIMIKATZ="/usr/share/windows/mimikatz/"
-export POWERSPLOIT="/usr/share/windows/powersploit/"
+export MIMIKATZ="/run/current-system/sw/share/windows/mimikatz/"
+export POWERSPLOIT="/run/current-system/sw/share/windows/powersploit/"
 
 export ROCKYOU="$SECLISTS/Passwords/Leaked-Databases/rockyou.txt"
 export DIRSMALL="$SECLISTS/Discovery/Web-Content/directory-list-2.3-small.txt"
@@ -53,10 +53,10 @@ if [[ $1 != no-repeat-flag && -z $NO_REPETITION ]]; then
 fi
 
 # Optional: Source Blesh if installed
-[[ $1 != no-repeat-flag && -f /usr/share/blesh/ble.sh ]] && source /usr/share/blesh/ble.sh
+[[ $1 != no-repeat-flag && -f /run/current-system/sw/share/blesh/ble.sh ]] && source /run/current-system/sw/share/blesh/ble.sh
 
 # --- Bash completion ---
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
+[[ $PS1 && -f /run/current-system/sw/share/bash-completion/bash_completion ]] && . /run/current-system/sw/share/bash-completion/bash_completion
 
 # --- Aliases ---
 if [ -f ~/.bash_aliases ]; then
