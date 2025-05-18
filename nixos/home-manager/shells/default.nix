@@ -10,7 +10,7 @@
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.file.".bash_aliases".source = ./bash_aliases;
       # home.packages = with pkgs; [
-      #   neofetch
+      #   fastfetch
       #   zoxide
       # ];
 
