@@ -104,6 +104,10 @@ in
           "backdrop/screen0/monitorVirtual1/workspace1/last-image" = "${bg-path}";
           "backdrop/screen0/monitorVirtual1/workspace2/last-image" = "${bg-path}";
           "backdrop/screen0/monitorVirtual1/workspace3/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual-1/workspace0/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual-1/workspace1/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual-1/workspace2/last-image" = "${bg-path}";
+          "backdrop/screen0/monitorVirtual-1/workspace3/last-image" = "${bg-path}";
         };
       };
     }
