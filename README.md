@@ -24,7 +24,7 @@ Athena OS
 <!--<p align="center">
   <img src="https://user-images.githubusercontent.com/83867734/174499581-e0f74d41-36ce-4c01-af0d-6ecd98841a64.png" data-canonical-src="https://user-images.githubusercontent.com/83867734/174499581-e0f74d41-36ce-4c01-af0d-6ecd98841a64.png" width="600" height="496" />
 </p>-->
-![image](https://github.com/Athena-OS/athena-nix/assets/83867734/b130dd25-5e7f-4cc8-bc16-6f384b4210f3)
+![image](https://private-user-images.githubusercontent.com/83867734/243190362-b130dd25-5e7f-4cc8-bc16-6f384b4210f3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc3MzMzMzgsIm5iZiI6MTc0NzczMzAzOCwicGF0aCI6Ii84Mzg2NzczNC8yNDMxOTAzNjItYjEzMGRkMjUtNWU3Zi00Y2M4LWJjMTYtNmYzODRiNDIxMGYzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTIwVDA5MjM1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU2MDM2ODdhMDhmNDgwNTQ4OWJjYzZiZTgxYjZiZDBhZTAwYTVhNWI0MzBhZGFiODhiZmZkNGYwMjRmNDk4MDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.L--Q3XLLt0_fmdO1jsmD51VASbUhcJwraNBUGO_PsU4)
 
 <!--
 <p align="center">
