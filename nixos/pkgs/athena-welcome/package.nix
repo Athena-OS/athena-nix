@@ -12,13 +12,13 @@
 
 python3Packages.buildPythonApplication {
   pname = "athena-welcome";
-  version = "0-unstable-2024-11-22";
+  version = "0-unstable-2025-05-31";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-welcome";
-    rev = "f28582a7278b7a497dacc6d6fd3ab9f5dfbd36d5";
-    hash = "sha256-ZP0WnWNebhMlkJEoK8zb6vGCI+alJlHLJtxFbHTjiPY=";
+    rev = "c16fef5c9b71245c2204540228b0fd47dfda2453";
+    hash = "sha256-ZP0WnWNebhMlkJEoK8zb6vGCI+alJxHLJtxFbHTjiPY=";
   };
 
   format = "other";
