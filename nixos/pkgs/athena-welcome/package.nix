@@ -18,7 +18,7 @@ python3Packages.buildPythonApplication {
     owner = "Athena-OS";
     repo = "athena-welcome";
     rev = "c16fef5c9b71245c2204540228b0fd47dfda2453";
-    hash = "sha256-ZP0WnWNebhMlkJEoK8zb6vGCI+alJxHLJtxFbHTjiPY=";
+    hash = "sha256-TwGjglTRkkxQ5RV1Du0mKwyWkf/kEp1FlQwA9JRp7J8=";
   };
 
   format = "other";
