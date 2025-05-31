@@ -34,8 +34,6 @@ python3Packages.buildPythonApplication {
   postPatch = ''
     substituteInPlace share/applications/athena-welcome.desktop \
       --replace /usr/bin/athena-welcome $out/bin/athena-welcome
-    substituteInPlace autostart/athena-welcome.desktop \
-      --replace /usr/bin/athena-welcome $out/bin/athena-welcome
     substituteInPlace share/athena-welcome/ui/GUI.py \
       --replace images/htb.png $out/share/athena-welcome/images/htb.png
   '';
@@ -53,7 +51,7 @@ python3Packages.buildPythonApplication {
   '';
 
   postInstall = ''
-    install -Dm644 autostart/athena-welcome.desktop $out/etc/xdg/autostart/athena-welcome.desktop
+    install -Dm644 share/applications/athena-welcome.desktop $out/etc/xdg/autostart/athena-welcome.desktop
   '';
 
   meta = with lib; {
