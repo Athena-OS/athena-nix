@@ -27,6 +27,7 @@ in {
           name = gtkTheme;
           package = pkgs.tokyonight-gtk-theme.override {
             colorVariants = [ "dark" ];
+            tweakVariants = [ "macos" ];
           };
         };
 
