@@ -8,6 +8,7 @@ let
     fly-pie
     hide-activities-button
     top-bar-organizer
+    user-themes
     vitals
     window-title-is-back
   ];
@@ -24,10 +25,8 @@ in {
     # ---- System Configuration ----
     services = {
       udev.packages = with pkgs; [ gnome-settings-daemon ];
-      xserver = {
-        enable = true;
-        desktopManager.gnome.enable = true;
-      };
+      xserver.enable = true;
+      desktopManager.gnome.enable = true;
 
       gnome = {
         evolution-data-server.enable = true;
