@@ -28,6 +28,7 @@ in {
           name = gtkTheme;
           package = pkgs.nightfox-gtk-theme.override {
             colorVariants = [ "dark" ];
+            tweakVariants = [ "macos" ];
           };
         };
 
