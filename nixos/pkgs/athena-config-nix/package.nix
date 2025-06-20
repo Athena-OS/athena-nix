@@ -7,19 +7,19 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-config-nix";
-  version = "0-unstable-2025-06-20";
+  version = "0-unstable-2025-06-21";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config-nix";
-    rev = "09c1e7eecc9915dca85f6a0349ba563397ee8bfe";
-    hash = "sha256-xaqyfR3IwGkjQP0J/8sPQlkrBki98LsLl7r8qyQqw00=";
+    rev = "f56e886174738d624558305a8311d4a0e5c4cba1";
+    hash = "sha256-xaqyfR3IwGkjQPxJ/8sPQlkrBki98LsLl7r8qyQqw00=";
   };
 
   buildInputs = [ pciutils ];
 
   postPatch = ''
-    patchShebangs athena-motd troubleshoot
+    patchShebangs athena-motd shell-rocket troubleshoot
   '';
 
   installPhase = ''
