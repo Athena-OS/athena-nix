@@ -19,7 +19,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   buildInputs = [ pciutils ];
 
   postPatch = ''
-    patchShebangs athena-motd shell-rocket troubleshoot
+    patchShebangs athena-motd troubleshoot
   '';
 
   installPhase = ''
