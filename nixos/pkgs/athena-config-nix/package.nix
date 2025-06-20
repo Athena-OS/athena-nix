@@ -7,13 +7,13 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-config-nix";
-  version = "0-unstable-2024-07-19";
+  version = "0-unstable-2025-06-20";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config-nix";
-    rev = "ba4f940bcbbedbffadb33d607a9585dd154457fa";
-    hash = "sha256-a60WZClAN36fSrpnM70B3mCZGBd6+6atx6qgakv/Rcc=";
+    rev = "09c1e7eecc9915dca85f6a0349ba563397ee8bfe";
+    hash = "sha256-a60WZClAN36fSrpnM70B3mCZGBd6+6axx6qgakv/Rcc=";
   };
 
   buildInputs = [ pciutils ];
