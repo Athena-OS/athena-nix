@@ -12,7 +12,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "Athena-OS";
     repo = "athena-gruvbox-base";
     rev = "1ffba73796771c1b2a7744951b38c11425ff7123";
-    hash = "sha256-yzamkv9bPEgG1MHKaKg/mHPDnekxmsfcLAAf5vARedw=";
+    hash = "sha256-Vkwkq0XcjfrSYo4AvG6gwl4NqmqqOrIBavS7nZ7YCTI=";
   };
 
   postPatch = ''
