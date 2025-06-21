@@ -12,7 +12,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "Athena-OS";
     repo = "athena-purple-base";
     rev = "76bdcda2fe04b9df4bcc80930644492adfc73764";
-    hash = "sha256-CqmNOQIk0G8Fh4kdDrquTxwxh4gK3/Xx0+xCCnf0p3E=";
+    hash = "sha256-+07xJGp+iwVp1v72HqCxIae1gW/P8dQrvZu2DbWfTXI=";
   };
 
   postPatch = ''
