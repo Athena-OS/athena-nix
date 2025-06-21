@@ -29,7 +29,7 @@ let
     pfetch
     python3
     sl
-    #https://github.com/NixOS/nixpkgs/pull/326142 ?
+    #https://github.com/NixOS/nixpkgs/pull/326142
     #timeline
     toilet
     tree
