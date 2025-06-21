@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-gruvbox-base";
-  version = "0-unstable-2024-08-15";
+  version = "0-unstable-2025-06-21";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-gruvbox-base";
-    rev = "040342e2dff273e74320e95f4c4659bba6d1a2ce";
-    hash = "sha256-yzamkv9bPEgG1MHKaKg/mHPDnekxmsfILAAf5vARedw=";
+    rev = "1ffba73796771c1b2a7744951b38c11425ff7123";
+    hash = "sha256-yzamkv9bPEgG1MHKaKg/mHPDnekxmsfcLAAf5vARedw=";
   };
 
   postPatch = ''
