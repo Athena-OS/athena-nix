@@ -12,7 +12,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-config-nix";
-    rev = "41a147365156e231392e8cf0c4e6cb03dffc172d";
+    rev = "348effa618c5507cf611c9eda8169ca05c00ec6b";
     hash = "sha256-JTqCjKUeNSoT5lfWTfhwHX8ieD6EWQH3a9j+jGb7QjI=";
   };
 
