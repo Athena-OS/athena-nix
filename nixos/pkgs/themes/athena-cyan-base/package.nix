@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-cyan-base";
-  version = "0-unstable-2024-08-15";
+  version = "0-unstable-2025-06-21";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-cyan-base";
-    rev = "938493ccfad8868532c238e2e69c444bf075eb66";
-    hash = "sha256-9IzEPVtsY8zb2yzM/14qw2TZ1X3KPq7YbfZg8T9kCZg=";
+    rev = "bbeb536c5a90ce6532f5e63ec7be7e10222a418a";
+    hash = "sha256-9IzEPVtsY8zb2yzM/14qw2TZ1X3KPq7cbfZg8T9kCZg=";
   };
 
   postPatch = ''
