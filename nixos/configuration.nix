@@ -5,7 +5,7 @@
 { lib, config, pkgs, ... }:
 let
   # These variable names are used by Aegis backend
-  version = "unstable"; #or 24.05
+  version = "25.05"; #unstable or 25.05
   username = "athena";
   hashed = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
   hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
@@ -17,7 +17,7 @@ let
   terminal = "kitty";
   browser = "firefox";
   bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
-  hm-version = if version == "unstable" then "master" else "release-"version; # "master" or "release-24.05"; # Correspond to home-manager GitHub branches
+  hm-version = if version == "unstable" then "master" else "release-"version; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
 {
