@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "Athena-OS";
     repo = "athena-config-nix";
     rev = "348effa618c5507cf611c9eda8169ca05c00ec6b";
-    hash = "sha256-JTqCjKUeNSoT5lfWTfhwHX8ieD6EWQH3a9j+jGb7QjI=";
+    hash = "sha256-lAFWyG/0JqRM5PfJ4ZgwFKTrxOKiXENe8AJT5dHrrpE=";
   };
 
   buildInputs = [ pciutils ];
