@@ -206,7 +206,8 @@ with pkgs;
   mtr-gui
   naabu
   nbtscanner
-  ncrack
+  # https://github.com/NixOS/nixpkgs/issues/425354
+  # ncrack
   netdiscover
   netexec
   netmask
