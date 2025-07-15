@@ -3,8 +3,7 @@
 with pkgs;
 
 [
-  # _3proxy
-  afpfs-ng
+  _3proxy
   aircrack-ng
   airgeddon
   argus
@@ -32,7 +31,8 @@ with pkgs;
   dnsmasq
   driftnet
   dsniff
-  dublin-traceroute
+  # https://github.com/NixOS/nixpkgs/issues/425350
+  # dublin-traceroute
   dump1090
   etherape
   ettercap
@@ -43,29 +43,32 @@ with pkgs;
   freeradius
   geoip
   girsh
-  gnuradio
-  gpredict
-  gqrx
-  gsocket
+  # https://github.com/NixOS/nixpkgs/issues/425465
+  # gnuradio # Too long time for building
+  # https://github.com/NixOS/nixpkgs/issues/425346
+  # gpredict
+  # https://github.com/NixOS/nixpkgs/issues/425469
+  # gqrx
+  gsocket # Too long time for building
   hackrf
-  haka
   hcxdumptool
   hcxtools
   hostapd-mana
   hping
   httping
   httptunnel
-  hyenae
   i2pd
   iodine
   ipmitool
   iputils
   jnetmap
-  junkie
+  # https://github.com/NixOS/nixpkgs/issues/425343
+  # junkie
   kismet
   ldapdomaindump
   libosmocore
-  libtins
+  # https://github.com/NixOS/nixpkgs/issues/425358
+  # libtins
   ligolo-ng
   # linuxKernel.packages.linux_zen.batman_adv
   macchanger
@@ -76,7 +79,8 @@ with pkgs;
   mfcuk
   mfoc
   miredo
-  mitm6
+  # https://github.com/NixOS/nixpkgs/issues/425338
+  # mitm6
   mitmproxy
   mitmproxy2swagger
   mtr
@@ -85,7 +89,7 @@ with pkgs;
   multimon-ng
   netdiscover
   netsniff-ng
-  #networkminer
+  # networkminer
   nfdump
   ngrep
   ngrok
@@ -100,13 +104,13 @@ with pkgs;
   proxychains-ng
   pwnat
   pwncat
-  python312Packages.impacket
-  python312Packages.ldapdomaindump
-  python312Packages.netmap
-  python312Packages.scapy
-  python312Packages.sshtunnel
-  python312Packages.torpy
-  python312Packages.websockify
+  python313Packages.impacket
+  python313Packages.ldapdomaindump
+  python313Packages.netmap
+  python313Packages.scapy
+  python313Packages.sshtunnel
+  python313Packages.torpy
+  python313Packages.websockify
   rathole
   reaverwps-t6x
   redsocks
@@ -120,8 +124,7 @@ with pkgs;
   soapui
   socat
   spiped
-  # https://github.com/NixOS/nixpkgs/pull/308093
-  # ssh-mitm
+  ssh-mitm
   sshuttle
   ssldump
   sslh
@@ -144,17 +147,18 @@ with pkgs;
   udp2raw
   udpreplay
   udptunnel
-  urh
+  # https://github.com/NixOS/nixpkgs/issues/425439
+  # urh
   wavemon
   wifite2
   wireshark
-  # haskell connection-0.3.1 dependency of wstunnel marked as broken
-  # wstunnel
+  wstunnel
   yersinia
   zap
   zdns
-  zeek
+  # https://github.com/NixOS/nixpkgs/issues/425374
+  # zeek
   zssh
   zulu
-  # zzuf
+  zzuf
 ]
