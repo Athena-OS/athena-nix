@@ -3,19 +3,18 @@
 with pkgs;
 
 [
-  # _3proxy
-  # ad-miner # To be backported to 24.05
-  # https://github.com/NixOS/nixpkgs/issues/326942
-  # adenum
+  _3proxy
+  ad-miner
+  adenum
   aesfix
   aeskeyfind
   aflplusplus
-  afpfs-ng
   aiodnsbrute
   amass
   apache-users
   apachetomcatscanner
-  # archivebox https://github.com/NixOS/nixpkgs/issues/276947
+  # django deps of archivebox is tagged as insecure
+  # archivebox
   ares-rs
   argus
   argus-clients
@@ -31,7 +30,8 @@ with pkgs;
   bkcrack
   bloodhound
   bloodhound-py
-  boofuzz
+  # https://github.com/NixOS/nixpkgs/issues/425333
+  # boofuzz
   braa
   brakeman
   bruteforce-luks
@@ -40,7 +40,7 @@ with pkgs;
   burpsuite
   cadaver
   caido
-  # cameradar
+  # cameradar # broken
   cantoolz
   certgraph
   certipy
@@ -66,9 +66,8 @@ with pkgs;
   crlfuzz
   crowbar
   ctypes_sh
-  # https://github.com/NixOS/nixpkgs/issues/308262
-  # cutter
-  # cutterPlugins.rz-ghidra
+  cutter
+  cutterPlugins.rz-ghidra
   dalfox
   darkstat
   davtest
@@ -86,7 +85,8 @@ with pkgs;
   dorkscout
   driftnet
   dsniff
-  # dublin-traceroute # To be backported to 24.05
+  # https://github.com/NixOS/nixpkgs/issues/425350
+  # dublin-traceroute
   dump1090
   edb
   enum4linux
@@ -95,15 +95,15 @@ with pkgs;
   etherape
   ettercap
   evillimiter
-  # https://github.com/NixOS/nixpkgs/issues/340969
-  # evil-winrm
+  evil-winrm
   exabgp
   exploitdb
   fcrackzip
   feroxbuster
   ffuf
   fierce
-  findomain
+  # https://github.com/NixOS/nixpkgs/issues/425366
+  # findomain
   firewalk
   flasm
   fping
@@ -118,20 +118,20 @@ with pkgs;
   ghdorker
   ghidra
   girsh
-  # git-hound # Marked as broken
+  git-hound
   gitleaks
   go-cve-search
   gobuster
   gomapenum
   gospider
   gowitness
-  gpredict
+  # https://github.com/NixOS/nixpkgs/issues/425346
+  # gpredict
   graphinder
   graphqlmap
   graphw00f
   grype
   gsocket
-  haka
   hakrawler
   hashcat
   hashcat-utils
@@ -140,12 +140,12 @@ with pkgs;
   hcxtools
   holehe
   honggfuzz
-  hopper
+  # https://github.com/NixOS/nixpkgs/issues/425348
+  # hopper
   hping
   httping
   httprobe
   httpx
-  hyenae
   i2pd
   iaito
   ike-scan
@@ -154,38 +154,37 @@ with pkgs;
   iputils
   jadx
   jaeles
-  # https://github.com/NixOS/nixpkgs/issues/308260
-  # jd-cli
-  # jd-gui
   jnetmap
   john
   johnny
   joomscan
   jpexs
   jsbeautifier
-  junkie
+  # https://github.com/NixOS/nixpkgs/issues/425343
+  # junkie
   jwt-hack
   kalibrate-rtl
   katana
   kerbrute
   kismet
   kiterunner
-  # https://github.com/NixOS/nixpkgs/issues/326927
-  # klee
+  klee
   knockpy
-  kube-hunter
+  # https://github.com/NixOS/nixpkgs/issues/425336
+  # kube-hunter
   ldapdomaindump
   ldeep
   libargon2
   libpst
-  libtins
+  # https://github.com/NixOS/nixpkgs/issues/425358
+  # libtins
   ligolo-ng
   linux-exploit-suggester
   lldb
   log4j-scan
   lynis
   macchanger
-  # pyhanko error on maigret
+  # https://github.com/NixOS/nixpkgs/issues/425353
   # maigret
   mailsend
   maltego
@@ -196,7 +195,8 @@ with pkgs;
   metabigor
   metasploit
   mfoc
-  mitm6
+  # https://github.com/NixOS/nixpkgs/issues/425338
+  # mitm6
   mitmproxy
   mitmproxy2swagger
   mongoaudit
@@ -240,41 +240,40 @@ with pkgs;
   psudohash
   pwnat
   pwncat
-  # capstone-5.0.1 not supported for interpreter python3.12
-  # python311Packages.angrop
-  python312Packages.arsenic
-  python312Packages.certipy-ad
-  python312Packages.dnspython
-  python312Packages.httpx
-  python312Packages.impacket
-  python312Packages.ldapdomaindump
-  python312Packages.minidump
-  python312Packages.minikerberos
-  python312Packages.myjwt
-  python312Packages.netmap
-  # nose-1.3.7 not supported for interpreter python3.12
-  python311Packages.patator
-  python312Packages.pyjsparser
-  python312Packages.pypykatz
-  python312Packages.rfcat
-  # capstone-5.0.1 not supported for interpreter python3.12
-  python311Packages.ropgadget
-  # capstone-5.0.1 not supported for interpreter python3.12
-  python311Packages.ropper
-  python312Packages.scapy
-  # https://github.com/NixOS/nixpkgs/issues/308235
-  # python312Packages.scrapy
+  # https://github.com/NixOS/nixpkgs/issues/425357
+  # python313Packages.angrop
+  python313Packages.arsenic
+  python313Packages.certipy-ad
+  python313Packages.dnspython
+  python313Packages.httpx
+  python313Packages.impacket
+  python313Packages.ldapdomaindump
+  python313Packages.minidump
+  python313Packages.minikerberos
+  python313Packages.myjwt
+  python313Packages.netmap
+  # python313Packages.patator # marked as broken
+  python313Packages.pyjsparser
+  python313Packages.pypykatz
+  # https://github.com/NixOS/nixpkgs/issues/425342
+  # python313Packages.rfcat
+  python313Packages.ropgadget
+  python313Packages.ropper
+  python313Packages.scapy
+  # https://github.com/NixOS/nixpkgs/issues/425363
+  # python313Packages.scrapy
   # https://github.com/NixOS/nixpkgs/issues/308232
   # python312Packages.scrapy-deltafetch
   # python312Packages.scrapy-fake-useragent
   # python312Packages.scrapy-splash
-  python312Packages.shodan
-  python312Packages.spyse-python
-  python312Packages.sshtunnel
-  python312Packages.thefuzz
-  python312Packages.torpy
+  python313Packages.shodan
+  python313Packages.spyse-python
+  python313Packages.sshtunnel
+  python313Packages.thefuzz
+  python313Packages.torpy
+  # https://github.com/NixOS/nixpkgs/issues/425365
   # python312Packages.uncompyle6
-  python312Packages.websockify
+  python313Packages.websockify
   radamsa
   radare2
   rarcrack
@@ -285,11 +284,11 @@ with pkgs;
   responder
   retdec
   rinetd
-  # rita # To be backported to 24.05
+  rita
   rizin
   rizinPlugins.rz-ghidra
   ropgadget
-  # https://github.com/NixOS/nixpkgs/issues/326970
+  # https://github.com/NixOS/nixpkgs/issues/425369
   # routersploit
   ruler
   rustcat
@@ -308,8 +307,7 @@ with pkgs;
   snmpcheck
   snort
   snowman
-  # https://github.com/NixOS/nixpkgs/issues/326940
-  # snscrape
+  snscrape
   snyk
   soapui
   socat
@@ -330,9 +328,8 @@ with pkgs;
   subfinder
   subjs
   swaks
-  # swftools
-  # https://github.com/NixOS/nixpkgs/pull/326600
-  # sysdig
+  # swftools # Insecure
+  sysdig
   tcpdump
   tcpflow
   tcpreplay
@@ -346,6 +343,7 @@ with pkgs;
   tlsx
   tor
   traceroute
+  # https://github.com/NixOS/nixpkgs/issues/425370
   # trinity
   trivy
   trufflehog
@@ -357,20 +355,18 @@ with pkgs;
   wapiti
   webanalyze
   websploit
-  # https://github.com/NixOS/nixpkgs/issues/326902
-  # wfuzz
+  wfuzz
   whatweb
   wifite2
   wireshark
   wpscan
   wuzz
   xcat
-  # https://github.com/NixOS/nixpkgs/issues/326943
-  # xsser
   yersinia
   zap
   zdns
-  zeek
+  # https://github.com/NixOS/nixpkgs/issues/425374
+  # zeek
   zgrab2
   zmap
   zssh
