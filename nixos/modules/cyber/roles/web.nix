@@ -47,7 +47,8 @@ with pkgs;
   log4j-scan
   mdk4
   metasploit
-  mitm6
+  # https://github.com/NixOS/nixpkgs/issues/425338
+  # mitm6
   mitmproxy
   mitmproxy2swagger
   mongoaudit
@@ -58,16 +59,16 @@ with pkgs;
   photon
   plecost
   psudohash
-  python312Packages.arsenic
-  python312Packages.httpx
-  python312Packages.pyjsparser
-  # https://github.com/NixOS/nixpkgs/issues/308235
-  # python312Packages.scrapy
+  python313Packages.arsenic
+  python313Packages.httpx
+  python313Packages.pyjsparser
+  # https://github.com/NixOS/nixpkgs/issues/425363
+  # python313Packages.scrapy
   # https://github.com/NixOS/nixpkgs/issues/308232
   # python312Packages.scrapy-deltafetch
   # python312Packages.scrapy-fake-useragent
   # python312Packages.scrapy-splash
-  python312Packages.thefuzz
+  python313Packages.thefuzz
   radamsa
   responder
   ruler
@@ -75,19 +76,17 @@ with pkgs;
   soapui
   sqlmap
   subjs
-  # swftools
+  # swftools # Insecure
+  # https://github.com/NixOS/nixpkgs/issues/425370
   # trinity
   wafw00f
   wapiti
   webanalyze
   websploit
-  # https://github.com/NixOS/nixpkgs/issues/326902
-  # wfuzz
+  wfuzz
   whatweb
   wpscan
   wuzz
-  # https://github.com/NixOS/nixpkgs/issues/326943
-  # xsser
   yersinia
   zap
   zzuf
