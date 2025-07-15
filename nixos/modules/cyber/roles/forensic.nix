@@ -27,9 +27,10 @@ with pkgs;
   libewf
   libpst
   mac-robber
-  mdbtools
+  # https://github.com/NixOS/nixpkgs/issues/425426
+  # mdbtools
   ms-sys
-  #networkminer
+  # networkminer
   ntfs3g
   oletools
   osquery
