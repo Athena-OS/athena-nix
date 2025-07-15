@@ -8,7 +8,8 @@ with pkgs;
   apachetomcatscanner
   arjun
   assetfinder
-  boofuzz
+  # https://github.com/NixOS/nixpkgs/issues/425333
+  # boofuzz
   brakeman
   burpsuite
   caido
