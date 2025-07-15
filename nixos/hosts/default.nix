@@ -43,7 +43,7 @@ in {
 
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ... }: {
       /* The home.stateVersion option does not have a default and must be set */
-      home.stateVersion = "25.05";
+      home.stateVersion = "25.11";
       nixpkgs.config.allowUnfree = true;
     };
 
@@ -86,6 +86,6 @@ in {
     nixpkgs.config.allowUnfree = mkDefault true;
 
     # Dont change
-    system.stateVersion = "25.05";
+    system.stateVersion = "25.11";
   };
 }
