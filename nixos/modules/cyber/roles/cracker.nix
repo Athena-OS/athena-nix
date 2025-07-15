@@ -36,21 +36,20 @@ with pkgs;
   katana
   kerbrute
   libargon2
-  # https://github.com/NixOS/nixpkgs/issues/326909
-  # libbde
+  libbde
   libgcrypt
   medusa
   mfoc
-  ncrack
+  # https://github.com/NixOS/nixpkgs/issues/425354
+  # ncrack
   onesixtyone
   pdfcrack
   phrasendrescher
   pixiewps
   psudohash
-  python312Packages.myjwt
-  # nose-1.3.7 not supported for interpreter python3.12
-  python311Packages.patator
-  python312Packages.pypykatz
+  python313Packages.myjwt
+  # python313Packages.patator # marked as broken
+  python313Packages.pypykatz
   rarcrack
   reaverwps-t6x
   sha1collisiondetection
