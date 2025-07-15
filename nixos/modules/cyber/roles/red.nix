@@ -158,7 +158,8 @@ with pkgs;
   john
   johnny
   joomscan
-  jpexs
+  # https://github.com/NixOS/nixpkgs/issues/425402
+  # jpexs # It needs openjdk to be built and takes a lot of time. Probably no worth to keep
   jsbeautifier
   # https://github.com/NixOS/nixpkgs/issues/425343
   # junkie
