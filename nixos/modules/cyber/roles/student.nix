@@ -14,8 +14,7 @@ with pkgs;
   edb
   enum4linux
   enum4linux-ng
-  # https://github.com/NixOS/nixpkgs/issues/340969
-  # evil-winrm
+  evil-winrm
   exploitdb
   ffuf
   fierce
@@ -34,7 +33,7 @@ with pkgs;
   nmap
   proxychains-ng
   pwncat
-  python312Packages.pypykatz
+  python313Packages.pypykatz
   radare2
   responder
   social-engineer-toolkit
@@ -42,8 +41,7 @@ with pkgs;
   thc-hydra
   theharvester
   wafw00f
-  # https://github.com/NixOS/nixpkgs/issues/326902
-  # wfuzz
+  wfuzz
   wifite2
   wireshark
   wpscan
