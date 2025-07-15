@@ -21,7 +21,8 @@ with pkgs;
   exploitdb
   feroxbuster
   ffuf
-  findomain
+  # https://github.com/NixOS/nixpkgs/issues/425366
+  # findomain
   gau
   gitleaks
   gobuster
@@ -43,9 +44,8 @@ with pkgs;
   nuclei
   psudohash
   pwncat
-  python312Packages.httpx
-  # nose-1.3.7 not supported for interpreter python3.12
-  python311Packages.patator
+  python313Packages.httpx
+  # python313Packages.patator # marked as broken
   rustscan
   sqlmap
   subfinder
@@ -54,13 +54,10 @@ with pkgs;
   trufflehog
   wafw00f
   webanalyze
-  # https://github.com/NixOS/nixpkgs/issues/326902
-  # wfuzz
+  wfuzz
   whatweb
   whispers
   wpscan
-  # https://github.com/NixOS/nixpkgs/issues/326943
-  # xsser
   ### payloads and wordlists
   payloadsallthethings
   seclists
