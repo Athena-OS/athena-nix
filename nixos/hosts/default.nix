@@ -65,7 +65,7 @@ in {
 
     system.nixos = {
       distroName = "Athena OS";
-      distroId = "athenaos";
+      distroId = "athena-nix";
     };
 
 
