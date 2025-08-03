@@ -373,7 +373,8 @@ with pkgs;
   zmap
   zssh
   zulu
-  zzuf
+  # https://github.com/NixOS/nixpkgs/issues/429836
+  # zzuf
   ### payloads and wordlists
   payloadsallthethings
   seclists
