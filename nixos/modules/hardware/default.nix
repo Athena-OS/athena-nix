@@ -22,7 +22,7 @@
       libinput.enable = true;
     };
 
-    zramSwap.enable = true; # To not change upstream! It is managed by the installer
+    zramSwap.enable = true;
     hardware = {
       cpu.intel.updateMicrocode = true; # To not change upstream! It is managed by the installer
       bluetooth.enable = true;
