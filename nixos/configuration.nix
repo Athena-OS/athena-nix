@@ -13,6 +13,7 @@ let
   theme = "temple";
   desktop = "gnome";
   dmanager = "sddm";
+  sddmtheme = "cyberpunk";
   mainShell = "fish";
   terminal = "kitty";
   browser = "firefox";
@@ -32,6 +33,7 @@ in
         baseLocale = true;
         desktopManager = desktop;
         displayManager = dmanager;
+        sddmTheme = sddmtheme;
       };
     }
     (import "${home-manager}/nixos")
