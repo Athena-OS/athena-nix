@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-red-base";
-  version = "0-unstable-2025-06-21";
+  version = "0-unstable-2025-10-05";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-red-base";
-    rev = "fc62750806586883356fdd23c406f8d81c6f8276";
-    hash = "sha256-3M/Pqlf0MN9E4PnNXEZEv73TIY9VcZtDOoUwHrvbM+s=";
+    rev = "c73ed607e5dd78a94ae2b869cd397d9e0fb1cddf";
+    hash = "sha256-YjRSnucrD48ZKl+fR9c2tnuQ/7xP6RbZKRB+1c+MK7s=";
   };
 
   postPatch = ''
@@ -24,8 +24,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     mkdir -p $out/share/{icons/hicolor/scalable/{apps,categories},backgrounds/athena,gnome-background-properties}
     cp -r icons/apps/* $out/share/icons/hicolor/scalable/apps/
     cp -r icons/categories/* $out/share/icons/hicolor/scalable/categories/
-    cp -r wallpapers/akame.jpg $out/share/backgrounds/athena/
-    cp -r wallpapers/murasame.jpg $out/share/backgrounds/athena/
+    cp -r wallpapers/akame.png $out/share/backgrounds/athena/
+    cp -r wallpapers/murasame.png $out/share/backgrounds/athena/
     cp -r wallpapers/redmoon.png $out/share/backgrounds/athena/
     cp -r gnome-background-properties/akame.xml $out/share/gnome-background-properties/
     cp -r gnome-background-properties/murasame.xml $out/share/gnome-background-properties/
