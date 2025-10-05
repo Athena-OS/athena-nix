@@ -74,6 +74,14 @@ in {
         '';
       };
 
+      sddmTheme = lib.mkOption {
+        type = with lib.types; nullOr (enum [ "astronaut" "black_hole" "cyberpunk" "japanese_aesthetic" "hyprland_kath" "jake_the_dog" "pixel_sakura" "post-apocalyptic_hacker" "purple_leaves"]);
+        default = "cyberpunk";
+        description = ''
+          The SDDM theme to apply.
+        '';
+      };
+
       mainShell = lib.mkOption {
         type = with lib.types; nullOr (enum [
           "bash"

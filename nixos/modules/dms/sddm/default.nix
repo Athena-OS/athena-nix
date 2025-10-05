@@ -13,7 +13,7 @@
     };
     environment.systemPackages = with pkgs; [
       (sddm-astronaut.override {
-        embeddedTheme = "cyberpunk";
+        embeddedTheme = config.athena.sddmTheme;
       })
     ];
   };
