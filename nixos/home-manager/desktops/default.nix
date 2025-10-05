@@ -9,5 +9,6 @@
     ./kde
     ./mate
     ./xfce
+    ./none
   ];
 }

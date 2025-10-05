@@ -58,6 +58,7 @@ in {
           "kde"
           "mate"
           "xfce"
+          "none"
         ]);
 
         default = "mate";
