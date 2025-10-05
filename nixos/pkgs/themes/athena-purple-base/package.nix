@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "athena-purple-base";
-  version = "0-unstable-2025-06-21";
+  version = "0-unstable-2025-10-05";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-purple-base";
-    rev = "76bdcda2fe04b9df4bcc80930644492adfc73764";
-    hash = "sha256-+07xJGp+iwVp1v72HqCxIae1gW/P8dQrvZu2DbWfTXI=";
+    rev = "f47a7b38d3603ee39ec997e8693462719790de12";
+    hash = "sha256-iXbgzo4gllRGwE12FgK7pPeHsjppZw2+2IOp7dltZk4=";
   };
 
   postPatch = ''
@@ -24,8 +24,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     mkdir -p $out/share/{icons/hicolor/scalable/{apps,categories},backgrounds/athena,gnome-background-properties}
     cp -r icons/apps/* $out/share/icons/hicolor/scalable/apps/
     cp -r icons/categories/* $out/share/icons/hicolor/scalable/categories/
-    cp -r wallpapers/neon-circle.jpg $out/share/backgrounds/athena/
-    cp -r wallpapers/nix-neon-circle.jpg $out/share/backgrounds/athena/
+    cp -r wallpapers/neon-circle.png $out/share/backgrounds/athena/
+    cp -r wallpapers/nix-neon-circle.png $out/share/backgrounds/athena/
     cp -r gnome-background-properties/neon-circle.xml $out/share/gnome-background-properties/
     cp -r gnome-background-properties/nix-neon-circle.xml $out/share/gnome-background-properties/
   '';

@@ -4,7 +4,7 @@ let
     gtk-theme = "Sweet-Dark-v40";
     icon-theme = "Sweet-Purple";
     cursor-theme = "oreo_spark_purple_cursors";
-    background = "nix-neon-circle.jpg";
+    background = "nix-neon-circle.png";
   };
   gtkTheme = "${theme-components.gtk-theme}";
   gtkIconTheme = "${theme-components.icon-theme}";
