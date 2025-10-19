@@ -17,6 +17,7 @@ let
     htb-toolkit
     hw-probe
     imagemagick
+    kando
     lolcat
     lsd
     ncdu
@@ -55,9 +56,9 @@ let
   ];
 in
 {
-  imports = [
-    ./goofcord
-  ];
+  #imports = [
+  #  ./goofcord
+  #];
 
   config = lib.mkIf config.athena.baseSoftware {
     environment.systemPackages = devel ++ utilities ++ exploits ++ wordlists;
