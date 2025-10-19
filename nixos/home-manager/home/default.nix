@@ -5,6 +5,8 @@
       xdg.configFile."menus/blue-applications.menu".source = ./config/menus/blue-applications.menu;
       xdg.configFile."menus/red-applications.menu".source = ./config/menus/red-applications.menu;
       xdg.configFile."menus/mitre-applications.menu".source = ./config/menus/mitre-applications.menu;
+      xdg.configFile."kando/config.json".source = ./config/kando/config.json;
+      xdg.configFile."kando/menus.json".source = ./config/kando/menus.json;
     };
   };
 }
