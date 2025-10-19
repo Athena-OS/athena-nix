@@ -102,7 +102,7 @@ in {
           "kitty"
         ]);
 
-        default = "alacritty";
+        default = "kitty";
         description = ''
           The terminal to use.
         '';
