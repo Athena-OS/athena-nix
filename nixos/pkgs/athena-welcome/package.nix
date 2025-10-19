@@ -12,13 +12,13 @@
 
 python3Packages.buildPythonApplication {
   pname = "athena-welcome";
-  version = "0-unstable-2025-08-03";
+  version = "0-unstable-2025-10-19";
 
   src = fetchFromGitHub {
     owner = "Athena-OS";
     repo = "athena-welcome";
-    rev = "77fd59df7fe2d2339974d2bdaf904ab3a4f68e2d";
-    hash = "sha256-dru0dUM/T0YoD7STKhE4fq0Xtt9Td9vyiebisU53Rps=";
+    rev = "40a897170e3e3eb7df44154e56d18fa17309947b";
+    hash = "sha256-KLmN4qT3+AmFrbGCzzkRoHyfOgttURA+82Kn7C1dPlY=";
   };
 
   format = "other";
@@ -32,18 +32,18 @@ python3Packages.buildPythonApplication {
   ];
 
   postPatch = ''
-    substituteInPlace share/applications/athena-welcome.desktop \
+    substituteInPlace athena-welcome.desktop \
       --replace /usr/bin/athena-welcome $out/bin/athena-welcome
-    substituteInPlace share/athena-welcome/ui/GUI.py \
+    substituteInPlace athena-welcome/ui/GUI.py \
       --replace images/htb.png $out/share/athena-welcome/images/htb.png
   '';
 
   installPhase = ''
     runHook preInstall
     mkdir -p $out/{bin,share/applications,share/athena-welcome,share/icons/hicolor/scalable/apps}
-    cp -r share/applications/athena-welcome.desktop $out/share/applications/athena-welcome.desktop
-    cp -r share/athena-welcome/* $out/share/athena-welcome/
-    cp -r share/icons/hicolor/scalable/apps/athenaos.svg $out/share/icons/hicolor/scalable/apps/
+    cp -r athena-welcome.desktop $out/share/applications/athena-welcome.desktop
+    cp -r athena-welcome/* $out/share/athena-welcome/
+    cp -r athenaos.svg $out/share/icons/hicolor/scalable/apps/
     makeWrapper ${python3}/bin/python $out/bin/athena-welcome \
       --add-flags "$out/share/athena-welcome/athena-welcome.py" \
       --prefix PYTHONPATH : "$PYTHONPATH"
@@ -51,7 +51,7 @@ python3Packages.buildPythonApplication {
   '';
 
   postInstall = ''
-    install -Dm644 share/applications/athena-welcome.desktop $out/etc/xdg/autostart/athena-welcome.desktop
+    install -Dm644 athena-welcome.desktop $out/etc/xdg/autostart/athena-welcome.desktop
   '';
 
   meta = with lib; {
