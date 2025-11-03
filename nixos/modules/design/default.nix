@@ -2,6 +2,7 @@
 {
   imports = [
     ./cyborg
+    ./frost
     ./graphite
     ./hackthebox
     ./redmoon
