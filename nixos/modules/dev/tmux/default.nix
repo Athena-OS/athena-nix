@@ -1,6 +1,5 @@
 { lib, config, ... }: let
   tmuxcolor = {
-    anunna = "redwine";
     cyborg = "gold";
     graphite = "snow";
     hackthebox = "forest";
