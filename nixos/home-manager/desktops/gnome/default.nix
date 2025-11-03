@@ -211,13 +211,14 @@ in {
         "org/gnome/shell/extensions/dash-to-dock" = {
           apply-custom-theme = true;
           autohide-in-fullscreen = false;
+          background-color="rgb(21,21,21)";
           background-opacity = 0.9;
-          custom-theme-shrink = true;
+          custom-background-color=true;
           dash-max-icon-size = 48;
           dock-position = "BOTTOM";
           height-fraction = 0.9;
           intellihide = true;
-          intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+          intellihide-mode = "MAXIMIZED_WINDOWS";
           multi-monitor = true;
           preferred-monitor = -2;
           preferred-monitor-by-connector = "Virtual-1";
