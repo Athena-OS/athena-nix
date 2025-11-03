@@ -26,7 +26,6 @@ in {
 
       theme = lib.mkOption {
         type = lib.types.enum [
-          "anunna"
           "cyborg"
           "graphite"
           "hackthebox"
