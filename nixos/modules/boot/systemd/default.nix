@@ -3,7 +3,7 @@
     # Bootloader
     boot.loader = {
       efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
+      efi.efiSysMountPoint = "/efi";
       systemd-boot = {
         enable = true;
         configurationLimit = 5;
