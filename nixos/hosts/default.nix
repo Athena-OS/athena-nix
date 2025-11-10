@@ -72,7 +72,7 @@ in {
     # ----- System Config -----
     # nix config
     nix = {
-      package = pkgs.nixStable;
+      package = pkgs.nixVersions.stable;
       settings = {
         allowed-users = ["@wheel"]; #locks down access to nix-daemon
         extra-experimental-features = [
