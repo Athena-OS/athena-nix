@@ -12,7 +12,6 @@ let
     file
     fortune
     ghex
-    glxinfo
     gparted
     htb-toolkit
     hw-probe
@@ -20,6 +19,7 @@ let
     kando
     lolcat
     lsd
+    mesa-demos
     ncdu
     netcat-openbsd
     nixpkgs-review
