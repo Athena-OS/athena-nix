@@ -7,7 +7,7 @@
 , glib
 , gtk3
 , python3Packages
-, wrapGAppsHook
+, wrapGAppsHook3
 }:
 
 python3Packages.buildPythonApplication {
@@ -23,7 +23,7 @@ python3Packages.buildPythonApplication {
 
   format = "other";
   
-  nativeBuildInputs = [ gobject-introspection wrapGAppsHook ];
+  nativeBuildInputs = [ gobject-introspection wrapGAppsHook3 ];
   buildInputs = [ glib gtk3 libwnck ];
   propagatedBuildInputs = with python3Packages; [ pygobject3 ];
 
