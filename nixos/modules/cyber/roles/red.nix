@@ -3,7 +3,6 @@
 with pkgs;
 
 [
-  _3proxy
   ad-miner
   adenum
   aesfix
@@ -11,8 +10,6 @@ with pkgs;
   aflplusplus
   aiodnsbrute
   amass
-  apache-users
-  apachetomcatscanner
   # django deps of archivebox is tagged as insecure
   # archivebox
   ares-rs
@@ -27,13 +24,10 @@ with pkgs;
   atftp
   bettercap
   bind
-  bkcrack
   bloodhound
   bloodhound-py
   # https://github.com/NixOS/nixpkgs/issues/425333
   # boofuzz
-  braa
-  brakeman
   bruteforce-luks
   brutespray
   bully
@@ -58,21 +52,13 @@ with pkgs;
   cmospwd
   coercer
   commix
-  corkscrew
-  cowpatty
   crackle
   crackql
-  creds
   crlfuzz
   crowbar
-  ctypes_sh
   cutter
   cutterPlugins.rz-ghidra
-  dalfox
-  darkstat
-  davtest
   dirb
-  dirstalk
   dive
   dnsenum
   dnsmasq
@@ -80,21 +66,16 @@ with pkgs;
   dnstracer
   dnstwist
   dnsx
-  dontgo403
-  doona
   dorkscout
-  driftnet
   dsniff
   # https://github.com/NixOS/nixpkgs/issues/425350
   # dublin-traceroute
-  dump1090-fa
   edb
   enum4linux
   enum4linux-ng
   eresi
   etherape
   ettercap
-  evillimiter
   evil-winrm
   exabgp
   exploitdb
@@ -105,7 +86,6 @@ with pkgs;
   # https://github.com/NixOS/nixpkgs/issues/425366
   # findomain
   firewalk
-  flasm
   fping
   freeipmi
   freerdp
@@ -117,7 +97,6 @@ with pkgs;
   ghauri
   ghdorker
   ghidra
-  girsh
   git-hound
   gitleaks
   go-cve-search
@@ -130,31 +109,21 @@ with pkgs;
   graphinder
   graphqlmap
   graphw00f
-  grype
   gsocket
-  hakrawler
   hashcat
   hashcat-utils
   hashpump
   hcxdumptool
   hcxtools
-  holehe
-  honggfuzz
   # https://github.com/NixOS/nixpkgs/issues/425348
   # hopper
   hping
-  httping
   httprobe
   httpx
-  i2pd
   iaito
   ike-scan
-  interactsh
-  ipmitool
   iputils
   jadx
-  jaeles
-  jnetmap
   john
   johnny
   joomscan
@@ -171,19 +140,16 @@ with pkgs;
   kiterunner
   # Marked as broken
   # klee
-  knockpy
   # https://github.com/NixOS/nixpkgs/issues/425336
   # kube-hunter
   ldapdomaindump
   ldeep
   libargon2
-  libpst
   # https://github.com/NixOS/nixpkgs/issues/425358
   # libtins
   ligolo-ng
   linux-exploit-suggester
   lldb
-  lynis
   macchanger
   # https://github.com/NixOS/nixpkgs/issues/425353
   # maigret
@@ -195,24 +161,19 @@ with pkgs;
   medusa
   metabigor
   metasploit
-  mfoc
   # https://github.com/NixOS/nixpkgs/issues/425338
   # mitm6
   mitmproxy
   mitmproxy2swagger
   mongoaudit
-  monsoon
   mtr
   mtr-gui
-  naabu
-  nbtscanner
   # https://github.com/NixOS/nixpkgs/issues/425354
   # ncrack
   netdiscover
   netexec
   netmask
   netsniff-ng
-  #networkminer
   nfdump
   ngrep
   ngrok
@@ -221,23 +182,15 @@ with pkgs;
   nosqli
   ntlmrecon
   nuclei
-  obfs4
   onesixtyone
   osslsigncode
   ostinato
-  p0f
   padbuster
-  parsero
   pcapfix
   pdfcrack
-  pe-bear
   photon
-  phrasendrescher
   pixiewps
-  plecost
   powersploit
-  pmacct
-  procyon
   proxmark3
   psudohash
   pwnat
@@ -259,7 +212,6 @@ with pkgs;
   python313Packages.pypykatz
   # https://github.com/NixOS/nixpkgs/issues/425342
   # python313Packages.rfcat
-  python313Packages.ropgadget
   python313Packages.ropper
   python313Packages.scapy
   # https://github.com/NixOS/nixpkgs/issues/425363
@@ -276,9 +228,7 @@ with pkgs;
   # https://github.com/NixOS/nixpkgs/issues/425365
   # python312Packages.uncompyle6
   python313Packages.websockify
-  radamsa
   radare2
-  rarcrack
   rathole
   reaverwps-t6x
   redfang
@@ -286,26 +236,15 @@ with pkgs;
   responder
   # https://github.com/NixOS/nixpkgs/issues/466575
   # retdec
-  rinetd
   rita
   rizin
   rizinPlugins.rz-ghidra
-  ropgadget
   # https://github.com/NixOS/nixpkgs/issues/425369
   # routersploit
-  ruler
-  rustcat
-  rustscan
-  saleae-logic
-  saleae-logic-2
-  samplicator
-  seclists
   shellnoob
   sherlock
   sipvicious
-  slither-analyzer
   smbmap
-  snallygaster
   sniffglue
   snmpcheck
   snort
@@ -314,29 +253,19 @@ with pkgs;
   soapui
   socat
   social-engineer-toolkit
-  socialscan
-  spiped
   sqlmap
-  ssh-audit
   ssh-mitm
-  sshocker
-  sshuttle
   ssldump
-  sslh
   sslscan
   sslsplit
-  stacs
   stunnel
   subfinder
-  subjs
-  swaks
   # swftools # Insecure
   sysdig
   tcpdump
   tcpflow
   tcpreplay
   tcptraceroute
-  testssl
   tfsec
   thc-hydra
   thc-ipv6
@@ -350,13 +279,10 @@ with pkgs;
   trivy
   trufflehog
   udp2raw
-  udptunnel
-  uncover
   # qtwebengine deps is insecure
   # vivisect
   wafw00f
   wapiti
-  webanalyze
   websploit
   wfuzz
   whatweb
