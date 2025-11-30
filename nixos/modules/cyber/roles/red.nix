@@ -87,7 +87,7 @@ with pkgs;
   dsniff
   # https://github.com/NixOS/nixpkgs/issues/425350
   # dublin-traceroute
-  dump1090
+  dump1090-fa
   edb
   enum4linux
   enum4linux-ng
@@ -169,7 +169,8 @@ with pkgs;
   kerbrute
   kismet
   kiterunner
-  klee
+  # Marked as broken
+  # klee
   knockpy
   # https://github.com/NixOS/nixpkgs/issues/425336
   # kube-hunter
@@ -182,7 +183,6 @@ with pkgs;
   ligolo-ng
   linux-exploit-suggester
   lldb
-  log4j-scan
   lynis
   macchanger
   # https://github.com/NixOS/nixpkgs/issues/425353
@@ -284,7 +284,8 @@ with pkgs;
   redfang
   redsocks
   responder
-  retdec
+  # https://github.com/NixOS/nixpkgs/issues/466575
+  # retdec
   rinetd
   rita
   rizin
@@ -308,7 +309,6 @@ with pkgs;
   sniffglue
   snmpcheck
   snort
-  snowman
   snscrape
   snyk
   soapui
@@ -352,7 +352,8 @@ with pkgs;
   udp2raw
   udptunnel
   uncover
-  vivisect
+  # qtwebengine deps is insecure
+  # vivisect
   wafw00f
   wapiti
   webanalyze

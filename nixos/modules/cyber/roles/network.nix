@@ -33,7 +33,7 @@ with pkgs;
   dsniff
   # https://github.com/NixOS/nixpkgs/issues/425350
   # dublin-traceroute
-  dump1090
+  dump1090-fa
   etherape
   ettercap
   evillimiter
