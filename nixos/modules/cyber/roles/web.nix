@@ -45,7 +45,6 @@ with pkgs;
   jwt-hack
   katana
   kiterunner
-  log4j-scan
   mdk4
   metasploit
   # https://github.com/NixOS/nixpkgs/issues/425338
