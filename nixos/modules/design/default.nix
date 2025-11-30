@@ -1,8 +1,8 @@
 { ... }:
 {
   imports = [
+    ./anunna
     ./cyborg
-    ./frost
     ./graphite
     ./hackthebox
     ./redmoon

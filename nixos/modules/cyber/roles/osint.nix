@@ -3,7 +3,7 @@
 with pkgs;
 
 [
-  ad-miner
+  ad-miner # To be backported to 24.05
   aiodnsbrute
   amass
   asn
@@ -26,13 +26,12 @@ with pkgs;
   enum4linux
   enum4linux-ng
   fierce
-  # https://github.com/NixOS/nixpkgs/issues/425366
-  # findomain
+  findomain
   fping
   gau
   geoip
   ghdorker
-  git-hound
+  git-hound # To be backported https://github.com/NixOS/nixpkgs/issues/276787
   gitleaks
   gomapenum
   gowitness
@@ -44,7 +43,7 @@ with pkgs;
   knockpy
   ldeep
   linux-exploit-suggester
-  # https://github.com/NixOS/nixpkgs/issues/425353
+  # pyhanko error on maigret
   # maigret
   maltego
   metabigor
@@ -56,14 +55,14 @@ with pkgs;
   parsero
   photon
   proxmark3
-  python313Packages.shodan
-  # https://github.com/NixOS/nixpkgs/issues/425363
-  # python313Packages.scrapy
+  python312Packages.shodan
+  # https://github.com/NixOS/nixpkgs/issues/308235
+  # python312Packages.scrapy
   # https://github.com/NixOS/nixpkgs/issues/308232
   # python312Packages.scrapy-deltafetch
   # python312Packages.scrapy-fake-useragent
   # python312Packages.scrapy-splash
-  python313Packages.spyse-python
+  python312Packages.spyse-python
   rita
   sherlock
   sleuthkit
@@ -71,7 +70,8 @@ with pkgs;
   sn0int
   sniffglue
   snmpcheck
-  snscrape
+  # https://github.com/NixOS/nixpkgs/issues/326940
+  # snscrape
   social-engineer-toolkit
   socialscan
   subfinder

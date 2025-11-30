@@ -21,50 +21,50 @@
 
   <Menu>
     <Name>Identify</Name>
-    <Directory>blue-identify.directory</Directory>
+    <Directory>001-identify.directory</Directory>
     <Include>
       <And>
-        <Category>blue-identify</Category>
+        <Category>001-identify</Category>
       </And>
     </Include>
   </Menu>
 
   <Menu>
     <Name>Protect</Name>
-    <Directory>blue-protect.directory</Directory>
+    <Directory>002-protect.directory</Directory>
     <Include>
       <And>
-        <Category>blue-protect</Category>
+        <Category>002-protect</Category>
       </And>
     </Include>
   </Menu>
 
   <Menu>
     <Name>Detect</Name>
-    <Directory>blue-detect.directory</Directory>
+    <Directory>003-detect.directory</Directory>
     <Include>
       <And>
-        <Category>blue-detect</Category>
+        <Category>003-detect</Category>
       </And>
     </Include>
   </Menu>
 
   <Menu>
     <Name>Respond</Name>
-    <Directory>blue-respond.directory</Directory>
+    <Directory>004-respond.directory</Directory>
     <Include>
       <And>
-        <Category>blue-respond</Category>
+        <Category>004-respond</Category>
       </And>
     </Include>
   </Menu>
 
   <Menu>
     <Name>Recover</Name>
-    <Directory>blue-recover.directory</Directory>
+    <Directory>005-recover.directory</Directory>
     <Include>
       <And>
-        <Category>blue-recover</Category>
+        <Category>005-recover</Category>
       </And>
     </Include>
   </Menu>

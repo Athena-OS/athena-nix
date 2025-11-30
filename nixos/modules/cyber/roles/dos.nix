@@ -4,6 +4,7 @@ with pkgs;
 
 [
   ddosify
+  hyenae
   katana
   netsniff-ng
   siege

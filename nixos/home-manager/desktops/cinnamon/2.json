@@ -159,18 +159,22 @@
         "type": "generic",
         "default": [
             "nemo.desktop",
+            "brave.desktop",
             "org.gnome.Terminal.desktop"
         ],
         "value": [
-            "nemo.desktop",
             "athena-welcome.desktop",
+	    "nemo.desktop",
+	    "virtualbox.desktop",
+	    "brave-browser.desktop",
+	    "goofcord.desktop",
             "seclists.desktop",
             "payloadsallthethings.desktop",
             "shell.desktop",
             "powershell.desktop",
-            "org.mozilla.firefox.desktop",
-            "vscodium.desktop"
-        ]
+            "cyberchef.desktop",
+            "codium.desktop"
+	]
     },
     "group-apps": {
         "type": "checkbox",

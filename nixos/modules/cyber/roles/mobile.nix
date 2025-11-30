@@ -13,8 +13,9 @@ with pkgs;
   capstone
   cargo-ndk
   ctypes_sh
-  cutter
-  cutterPlugins.rz-ghidra
+  # https://github.com/NixOS/nixpkgs/issues/308262
+  # cutter
+  # cutterPlugins.rz-ghidra
   dex2jar
   edb
   eresi
@@ -22,32 +23,37 @@ with pkgs;
   frida-tools
   ghidra
   ghost
-  # https://github.com/NixOS/nixpkgs/issues/425348
-  # hopper
+  hopper
   iaito
   jadx
+  # https://github.com/NixOS/nixpkgs/issues/308260
+  # jd-cli
+  # jd-gui
   jsbeautifier
   kalibrate-rtl
-  klee
+  # https://github.com/NixOS/nixpkgs/issues/326927
+  # klee
   lief
   pe-bear
   pev
   pwntools
-  # https://github.com/NixOS/nixpkgs/issues/425357
-  # python313Packages.angrop
-  python313Packages.distorm3
-  python313Packages.frida-python
-  python313Packages.pwntools
-  python313Packages.pyaxmlparser
-  python313Packages.pyjsparser
+  # capstone-5.0.1 not supported for interpreter python3.12
+  # python311Packages.angr
+  # distorm3-3.5.2 not supported for interpreter python3.12
+  # https://github.com/NixOS/nixpkgs/issues/326920
+  # python311Packages.distorm3
+  python312Packages.frida-python
+  # capstone-5.0.1 not supported for interpreter python3.12
+  python311Packages.pwntools
+  python312Packages.pyaxmlparser
+  python312Packages.pyjsparser
   quark-engine
   radare2
   retdec
   rizin
   rizinPlugins.rz-ghidra
-  # https://github.com/NixOS/nixpkgs/issues/425430
-  # scanmem
-  # swftools # Insecure
+  scanmem
+  # swftools
   udis86
   vivisect
 ]

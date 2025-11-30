@@ -1,6 +1,6 @@
 { lib, config, ... }: {
   config = lib.mkIf (config.athena.displayManager == "gdm") {
-    services.displayManager.gdm = {
+    services.xserver.displayManager.gdm = {
       enable = true;
       wayland = true;
     };

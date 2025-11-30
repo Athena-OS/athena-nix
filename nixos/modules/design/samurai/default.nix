@@ -4,7 +4,7 @@ let
     gtk-theme = "Tokyonight-Dark";
     icon-theme = "Tokyonight-Dark";
     cursor-theme = "oreo_blue_cursors";
-    background = "samurai-girl.png";
+    background = "samurai-girl.jpg";
   };
   gtkTheme = "${theme-components.gtk-theme}";
   gtkIconTheme = "${theme-components.icon-theme}";

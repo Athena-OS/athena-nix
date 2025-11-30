@@ -7,6 +7,10 @@
           decorations = "full";
           decorations_theme_variant = "Dark";
           opacity = 0.8;
+	  dimensions = {
+	    lines = 32;
+	    columns = 130;
+	  };
         };
 
         font = {
@@ -28,7 +32,9 @@
 
         #shell.program = "${pkgs.zsh}/bin/zsh";
 
-        cursor.style = "Beam";
+        cursor = {
+	   style = "Beam";
+	};
 
         colors = {
           draw_bold_text_with_bright_colors = true;

@@ -4,7 +4,8 @@ with pkgs;
 
 [
   amass
-  clamav
+  # https://github.com/NixOS/nixpkgs/pull/326533
+  # clamav
   cryptsetup
   ddrescue
   exploitdb
@@ -14,7 +15,7 @@ with pkgs;
   fwbuilder
   ghidra
   netsniff-ng
-  python313Packages.impacket
+  python312Packages.impacket
   recoverjpeg
   sleuthkit
   wapiti

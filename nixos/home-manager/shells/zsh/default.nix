@@ -1,75 +1,55 @@
-{ lib, pkgs, config, ... }:
-with lib;
-let
+{ lib, pkgs, config, ... }: with lib; let
   shopt = pkgs.writeShellScriptBin "shopt" (builtins.readFile ./shopt);
 in {
   config = mkIf (config.athena.mainShell == "zsh") {
-    # System-level packages so their .zsh files are available
+    # Needed to install at system-level to source their .zsh files in .zshrc
     environment.systemPackages = with pkgs; [
       nix-zsh-completions
       zsh-autosuggestions
       zsh-syntax-highlighting
     ];
 
-    home-manager.users.${config.athena.homeManagerUser} = { pkgs, config, ...}: {
+    home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       home.packages = with pkgs; [
         fastfetch
         shopt
       ];
 
+      home.file.".zshrc".source = ./zshrc;
       programs.zsh = {
         enable = true;
-
-        # ---------- History ----------
-        history = {
-          path = "${config.home.homeDirectory}/.zsh_history";
-          size = 10000;   # HISTSIZE
-          save = 1000;    # SAVEHIST
-          expireDuplicatesFirst = true;
-        };
-
-        # ---------- Options ----------
-        setOptions = [
-          "INC_APPEND_HISTORY"
-        ];
-
-        # ---------- Completions & zplug ----------
-        enableCompletion = true;
         autosuggestion.enable = true;
+        enableCompletion = true;
         syntaxHighlighting.enable = true;
-
+        /*shellAliases = {
+          ll = "ls -l";
+          update = "sudo nixos-rebuild switch";
+        };*/
+        #histSize = 10000;
+        #histFile = "${config.xdg.dataHome}/zsh/history";
         zplug = {
           enable = true;
           plugins = [
-            { name = "zsh-users/zsh-autosuggestions"; }
-            { name = "zsh-users/zsh-history-substring-search"; }
-            { name = "zsh-users/zsh-syntax-highlighting"; }
-            # { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Uncomment to use powerlevel10k plugin
+            { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
+            { name = "zsh-users/zsh-history-substring-search"; } # Simple plugin installation
+            { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
+            { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
           ];
         };
 
-        # ---------- Aliases ----------
-        shellAliases = {
-          shopt = "/run/current-system/sw/bin/shopt";
-          # ll = "ls -l";
-          # update = "sudo nixos-rebuild switch";
+        history = {
+          expireDuplicatesFirst = true;
+          save = 1000;
+          size = 10000;
+          path = "~/.zsh_history";
         };
 
-        # ---------- What compinit adds (kept from your file) ----------
         completionInit = ''
           # The following lines were added by compinstall
-          zstyle :compinstall filename "$HOME/.zshrc"
-          autoload -U +X bashcompinit && bashcompinit
-          autoload -U +X compinit && compinit
-          # End of lines added by compinstall
-        '';
+          zstyle :compinstall filename '$HOME/.zshrc'
 
-        # ---------- Content init after completion ----------
-        initContent = ''
-          # Emacs-style keymap
-          bindkey -e
+          alias shopt='/run/current-system/sw/bin/shopt'
 
-          # Keybindings
           bindkey "^[[1;5C" forward-word
           bindkey "^[[1;5D" backward-word
           bindkey "\e[1~" beginning-of-line
@@ -91,65 +71,19 @@ in {
           bindkey "\e[H" beginning-of-line
           bindkey "\e[F" end-of-line
 
-          # Things you wanted once per interactive shell start
-          source ~/.bash_aliases 2>/dev/null || true
-          fastfetch || true
+          autoload -U +X bashcompinit && bashcompinit
+          autoload -U +X compinit && compinit
+          # End of lines added by compinstall
+        '';
 
-        # ---------- Prompt & precmd hook ----------
-          function build_prompt() {
-            local last_status=$?
-            local tty_device=$(tty)
-            local ip=$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' \
-              | grep -oP '(?<=inet\s)\d+(\.\d+){3}' \
-              | sed -z 's/\n/|/g;s/|\$/\n/' \
-              | rev | cut -c 2- | rev)
+        envExtra = ''
+          export PROMPT_COMMAND='source ~/.zshrc no-repeat-flag'
+        '';
 
-            local user="%n"
-            local host="%m"
-            local cwd="%~"
-            local branch=""
-            local hq_prefix=""
-            local flame=""
-            local robot=""
-
-            # Git branch detection
-            if command -v git &>/dev/null; then
-              branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-            fi
-
-            # Emoji mode detection
-            if [[ "$tty_device" == /dev/tty* ]]; then
-              hq_prefix="HQ─"
-              flame=""
-              robot="[>]"
-            else
-              hq_prefix="HQ🚀🌐"
-              flame="🔥"
-              robot="[👾]"
-            fi
-
-            # Color for user@host based on last status
-            local user_host
-            if [[ $last_status -eq 0 ]]; then
-              user_host="%F{blue}($user@$host)%f"
-            else
-              user_host="%F{red}($user@$host)%f"
-            fi
-
-            # First line
-            local line1="%F{46}╭─[$hq_prefix%F{196}$ip%F{46}$flame]─$user_host"
-            if [[ -n "$branch" ]]; then
-              line1+="%F{220}[ $branch]%f"
-            fi
-
-            # Second line
-            local line2="%F{46}╰─>$robot%F{44}$cwd $%f"
-
-            PROMPT="$line1"$'\n'"$line2 "
-          }
-
-          autoload -Uz add-zsh-hook
-          add-zsh-hook precmd build_prompt
+        initContent = ''
+          setopt INC_APPEND_HISTORY
+          bindkey -e
+          precmd() { eval "$PROMPT_COMMAND" }
         '';
       };
     };

@@ -8,8 +8,7 @@ with pkgs;
   apachetomcatscanner
   arjun
   assetfinder
-  # https://github.com/NixOS/nixpkgs/issues/425333
-  # boofuzz
+  boofuzz
   brakeman
   burpsuite
   caido
@@ -48,8 +47,7 @@ with pkgs;
   log4j-scan
   mdk4
   metasploit
-  # https://github.com/NixOS/nixpkgs/issues/425338
-  # mitm6
+  mitm6
   mitmproxy
   mitmproxy2swagger
   mongoaudit
@@ -60,16 +58,16 @@ with pkgs;
   photon
   plecost
   psudohash
-  python313Packages.arsenic
-  python313Packages.httpx
-  python313Packages.pyjsparser
-  # https://github.com/NixOS/nixpkgs/issues/425363
-  # python313Packages.scrapy
+  python312Packages.arsenic
+  python312Packages.httpx
+  python312Packages.pyjsparser
+  # https://github.com/NixOS/nixpkgs/issues/308235
+  # python312Packages.scrapy
   # https://github.com/NixOS/nixpkgs/issues/308232
   # python312Packages.scrapy-deltafetch
   # python312Packages.scrapy-fake-useragent
   # python312Packages.scrapy-splash
-  python313Packages.thefuzz
+  python312Packages.thefuzz
   radamsa
   responder
   ruler
@@ -77,17 +75,19 @@ with pkgs;
   soapui
   sqlmap
   subjs
-  # swftools # Insecure
-  # https://github.com/NixOS/nixpkgs/issues/425370
+  # swftools
   # trinity
   wafw00f
   wapiti
   webanalyze
   websploit
-  wfuzz
+  # https://github.com/NixOS/nixpkgs/issues/326902
+  # wfuzz
   whatweb
   wpscan
   wuzz
+  # https://github.com/NixOS/nixpkgs/issues/326943
+  # xsser
   yersinia
   zap
   zzuf

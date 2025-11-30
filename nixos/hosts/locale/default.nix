@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }: {
   config = lib.mkIf config.athena.baseLocale {
     # Set your time zone.
-    time.timeZone = "Europe/Zurich";
+    time.timeZone = "US/Eastern";
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";

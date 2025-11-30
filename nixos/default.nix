@@ -26,8 +26,8 @@ in {
 
       theme = lib.mkOption {
         type = lib.types.enum [
+          "anunna"
           "cyborg"
-          "frost"
           "graphite"
           "hackthebox"
           "redmoon"
@@ -58,7 +58,6 @@ in {
           "kde"
           "mate"
           "xfce"
-          "none"
         ]);
 
         default = "mate";
@@ -72,14 +71,6 @@ in {
         default = "sddm";
         description = ''
           The display manager to use.
-        '';
-      };
-
-      sddmTheme = lib.mkOption {
-        type = with lib.types; nullOr (enum [ "astronaut" "black_hole" "cyberpunk" "japanese_aesthetic" "hyprland_kath" "jake_the_dog" "pixel_sakura" "post-apocalyptic_hacker" "purple_leaves"]);
-        default = "cyberpunk";
-        description = ''
-          The SDDM theme to apply.
         '';
       };
 
@@ -102,14 +93,16 @@ in {
           "kitty"
         ]);
 
-        default = "kitty";
+        default = "alacritty";
         description = ''
           The terminal to use.
         '';
       };
 
       browser = lib.mkOption {
-        type = with lib.types; nullOr (enum [ "firefox" ]);
+        type = with lib.types; nullOr (enum [ 
+	  "firefox"
+	  "brave" ]);
         default = "firefox";
         description = ''
           The browser to use.

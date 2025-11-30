@@ -23,6 +23,62 @@
     VARIANT_ID = cfg.variant_id;
   };
 
+  shellrocket = pkgs.writeShellScriptBin "shell-rocket" ''
+    ############################################################
+    # Help                                                     #
+    ############################################################
+    Help()
+    {
+       # Display Help
+       echo "$(basename "$0") [-c <command>] [-h]"
+       echo
+       echo "Options:"
+       echo "-c     Specify the command to launch."
+       echo "-h     Print this Help."
+       echo
+       echo "Usage Examples:"
+       echo "$(basename "$0") -c \"echo \"Disconnecting all VPN sessions...\";sudo killall openvpn\""
+       echo
+    }
+
+    ############################################################
+    # Process the input options. Add options as needed.        #
+    ############################################################
+    # Get the options
+    while getopts ":c:h" option; do #When using getopts, putting : after an option character means that it requires an argument (i.e., 'i:' requires arg).
+       case "$option" in
+          c)
+             command=$OPTARG
+             ;;
+          h) # display Help
+             Help >&2
+             exit 0
+             ;;
+          : )
+            echo "Missing option argument for -$OPTARG" >&2; exit 0;;
+          #*  )
+            #echo "Unimplemented option: -$OPTARG" >&2; exit 0;;
+         \?) # Invalid option
+             echo "Error: Invalid option" >&2
+             ;;
+       esac
+    done
+
+    TERMINAL_EXEC="$TERMINAL -e"
+
+    # Set fallback terminal if needed
+    if [[ "$TERMINAL_EXEC" =~ "terminator" ]] || [[ "$TERMINAL_EXEC" =~ "terminology" ]] || [[ "$TERMINAL_EXEC" =~ "xfce4-terminal" ]]; then
+      TERMINAL_EXEC="$TERMINAL -e"
+    fi
+
+    if [[ -n "$NO_REPETITION" ]]; then
+      # Nix is trying to interpret the variable below as its own string interpolation syntax. To prevent this, needed to use an extra $
+      "$${command[@]}"
+    else
+      NO_REPETITION=1 $TERMINAL_EXEC ${getExe pkgs.bash} -c "$command;$SHELL"
+    fi
+  '';
+
 in {
   imports = [
     ./locale
@@ -43,11 +99,12 @@ in {
 
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ... }: {
       /* The home.stateVersion option does not have a default and must be set */
-      home.stateVersion = "25.11";
+      home.stateVersion = "25.05";
       nixpkgs.config.allowUnfree = true;
     };
 
     environment = {
+      systemPackages = [ shellrocket ];
       sessionVariables = {
         EDITOR = "nano";
         BROWSER = "${config.athena.browser}";
@@ -64,7 +121,7 @@ in {
     };
 
     system.nixos = {
-      distroName = "Athena OS Nix";
+      distroName = "Athena OS";
       distroId = "athenaos";
     };
 
@@ -86,6 +143,6 @@ in {
     nixpkgs.config.allowUnfree = mkDefault true;
 
     # Dont change
-    system.stateVersion = "25.11";
+    system.stateVersion = "25.05";
   };
 }

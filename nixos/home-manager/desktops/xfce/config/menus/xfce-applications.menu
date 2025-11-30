@@ -39,12 +39,6 @@
     <MergeFile>blue-applications.menu</MergeFile>
   </Menu>
 
-  <Menu>
-    <Name>MITRE</Name>
-    <Directory>00-mitre-menu.directory</Directory>
-    <MergeFile>../mitre-applications.menu</MergeFile>
-  </Menu>
-
     <Menu>
         <Name>Settings</Name>
         <Directory>xfce-settings.directory</Directory>

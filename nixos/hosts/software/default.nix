@@ -12,14 +12,13 @@ let
     file
     fortune
     ghex
+    mesa-demos #glxinfo
     gparted
     htb-toolkit
     hw-probe
     imagemagick
-    kando
     lolcat
     lsd
-    mesa-demos
     ncdu
     netcat-openbsd
     nixpkgs-review
@@ -30,6 +29,8 @@ let
     pfetch
     python3
     sl
+    #https://github.com/NixOS/nixpkgs/pull/326142 ?
+    #timeline
     toilet
     tree
     unzip
@@ -47,20 +48,28 @@ let
   #  python3
   ];
 
+  user = with pkgs; [
+    _1password-gui
+    ncspot
+    libreoffice
+    onedrive
+    obsidian
+    #gfn-electron
+  ];
   exploits = with pkgs; [
-    #powersploit
+    powersploit
   ];
 
   wordlists = with pkgs; [
-    #seclists
+    seclists
   ];
 in
 {
-  #imports = [
-  #  ./goofcord
-  #];
+  imports = [
+    ./goofcord
+  ];
 
   config = lib.mkIf config.athena.baseSoftware {
-    environment.systemPackages = devel ++ utilities ++ exploits ++ wordlists;
+    environment.systemPackages = devel ++ utilities ++ exploits ++ wordlists ++user;
   };
 }
