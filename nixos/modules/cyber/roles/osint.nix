@@ -23,6 +23,7 @@ with pkgs;
   dnstwist
   dnsx
   dorkscout
+  dump1090-fa
   enum4linux
   enum4linux-ng
   fierce
