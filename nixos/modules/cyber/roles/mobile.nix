@@ -4,7 +4,6 @@ with pkgs;
 
 [
   amoco
-  android-udev-rules
   apkid
   apkleaks
   apktool
@@ -28,7 +27,8 @@ with pkgs;
   jadx
   jsbeautifier
   kalibrate-rtl
-  klee
+  # Marked as broken
+  # klee
   lief
   pe-bear
   pev
@@ -42,12 +42,14 @@ with pkgs;
   python313Packages.pyjsparser
   quark-engine
   radare2
-  retdec
+  # https://github.com/NixOS/nixpkgs/issues/466575
+  # retdec
   rizin
   rizinPlugins.rz-ghidra
   # https://github.com/NixOS/nixpkgs/issues/425430
   # scanmem
   # swftools # Insecure
   udis86
-  vivisect
+  # qtwebengine deps is insecure
+  # vivisect
 ]
