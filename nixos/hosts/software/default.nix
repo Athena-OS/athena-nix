@@ -11,6 +11,7 @@ let
     figlet
     file
     fortune
+    #gfn-electron #GeForce Now
     ghex
     mesa-demos #glxinfo
     gparted
