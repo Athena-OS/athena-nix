@@ -7,11 +7,11 @@ with pkgs;
   aesfix
   aeskeyfind
   afflib
-  bmap-tools
+  autopsy
+  bmaptool
   bulk_extractor
   chainsaw
   chipsec
-  chkrootkit
   chntpw
   dc3dd
   #dcfldd

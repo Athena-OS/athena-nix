@@ -44,7 +44,6 @@ with pkgs;
   jwt-hack
   katana
   kiterunner
-  log4j-scan
   mdk4
   metasploit
   mitm6
