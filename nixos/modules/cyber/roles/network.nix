@@ -31,7 +31,8 @@ with pkgs;
   dnsmasq
   # https://github.com/NixOS/nixpkgs/issues/468668
   # driftnet
-  dsniff
+  # https://github.com/NixOS/nixpkgs/issues/468669
+  # dsniff
   # https://github.com/NixOS/nixpkgs/issues/425350
   # dublin-traceroute
   dump1090-fa
