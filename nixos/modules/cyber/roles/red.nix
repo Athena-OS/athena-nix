@@ -34,7 +34,8 @@ with pkgs;
   dnstracer
   dnstwist
   dnsx
-  dsniff
+  # https://github.com/NixOS/nixpkgs/issues/468669
+  # dsniff
   # https://github.com/NixOS/nixpkgs/issues/425350
   # dublin-traceroute
   edb
