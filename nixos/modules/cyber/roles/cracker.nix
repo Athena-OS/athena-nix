@@ -7,7 +7,8 @@ with pkgs;
   aeskeyfind
   aespipe
   ares-rs
-  asleap
+  # https://github.com/NixOS/nixpkgs/issues/468666
+  # asleap
   bkcrack
   bruteforce-luks
   brutespray

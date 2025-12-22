@@ -13,7 +13,6 @@ with pkgs;
   bloodhound-py
   # https://github.com/NixOS/nixpkgs/issues/425333
   # boofuzz
-  bruteforce-luks
   brutespray
   burpsuite
   caido
@@ -34,7 +33,8 @@ with pkgs;
   dnstracer
   dnstwist
   dnsx
-  dsniff
+  # https://github.com/NixOS/nixpkgs/issues/468669
+  # dsniff
   # https://github.com/NixOS/nixpkgs/issues/425350
   # dublin-traceroute
   edb
@@ -115,7 +115,6 @@ with pkgs;
   # https://github.com/NixOS/nixpkgs/issues/425354
   netdiscover
   netexec
-  netsniff-ng
   nfdump
   ngrep
   nikto
@@ -152,7 +151,6 @@ with pkgs;
   # python312Packages.scrapy-fake-useragent
   # python312Packages.scrapy-splash
   python313Packages.shodan
-  python313Packages.sshtunnel
   python313Packages.thefuzz
   # https://github.com/NixOS/nixpkgs/issues/425365
   # python312Packages.uncompyle6
@@ -167,9 +165,7 @@ with pkgs;
   # https://github.com/NixOS/nixpkgs/issues/425369
   # routersploit
   sherlock
-  sipvicious
   smbmap
-  sniffglue
   snmpcheck
   snort
   snscrape
@@ -192,7 +188,6 @@ with pkgs;
   tcptraceroute
   tfsec
   thc-hydra
-  thc-ipv6
   theharvester
   tor
   traceroute
