@@ -59,6 +59,7 @@ in
     host.enableExtensionPack = true;
   };
   environment.systemPackages = with pkgs; [
+   pkgs.inetutils #ftp and other tools
    usbutils	#Play with USB devices (lsusb, etc)
    postman         #API Hacking
    #mesaPackages.utils #for glxinfo
