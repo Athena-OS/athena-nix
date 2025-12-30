@@ -17,7 +17,8 @@ let
   mainShell = "fish";
   terminal = "kitty";
   browser = "firefox";
-  bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
+  #bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
+  bootloader = "systemd";
   hm-version = if version == "unstable" then "master" else "release-" + version; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
