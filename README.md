@@ -75,6 +75,14 @@ sudo nixos-rebuild switch --flake '<local-path-to-dir-containing-flake.nix>/.#ru
 ```
 `--impure` is used because the deployment can be applied according to your `hardware-configuration.nix`.
 
+#### Update
+
+Flakes are updated separetely from Nix channels, so, in order to keep them aligned with the latest changes on Nix repositories, it's needed to clone this repository, run:
+```
+sudo nix flake update
+```
+and push the changes.
+
 ### Configuration
 
 ```
