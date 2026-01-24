@@ -26,7 +26,7 @@ in {
     services = {
       udev.packages = with pkgs; [ gnome-settings-daemon ];
       xserver.enable = true;
-      gnome.enable = true;
+      desktopManager.gnome.enable = true;
 
       gnome = {
         evolution-data-server.enable = true;
