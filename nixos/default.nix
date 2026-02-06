@@ -68,8 +68,8 @@ in {
       };
 
       displayManager = lib.mkOption {
-        type = with lib.types; nullOr (enum [ "gdm" "lightdm" "sddm" ]);
-        default = "sddm";
+        type = with lib.types; nullOr (enum [ "gdm" "lightdm" "ly" "sddm" ]);
+        default = "ly";
         description = ''
           The display manager to use.
         '';
