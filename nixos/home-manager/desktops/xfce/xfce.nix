@@ -115,7 +115,7 @@ in
     (mkIf cfg.refined rec {
       # If xfce refined is enabled
       home.packages = with pkgs; [
-        gnome.nautilus  
+        nautilus  
       ];
       xdg.configFile."xfce4" = {
         source = ./config/xfce4-refined;
