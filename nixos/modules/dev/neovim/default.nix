@@ -6,7 +6,7 @@
         #gcc # during nixos-install on Arch seems to produce an error. To delete.
         gnumake
         #nodejs #pinnedNodejs
-        nodePackages.npm
+        npm
         vscode-extensions.ms-vscode.cpptools
         vscode-extensions.vadimcn.vscode-lldb
       ];
