@@ -5,10 +5,10 @@
 
   config = lib.mkIf config.athena.baseConfiguration {
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
-      programs.vscode = {
+      programs.vscodium = {
         enable = true;
         package = pkgs.vscodium;
-        profiles.default.extensions = with pkgs.vscode-extensions; [
+        profiles.default.extensions = with pkgs.vscodium-extensions; [
           bbenoist.nix
           pkief.material-icon-theme
         ];

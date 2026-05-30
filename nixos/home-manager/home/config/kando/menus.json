@@ -2077,7 +2077,7 @@
               "delayed": false
             },
             "name": "VSCodium",
-            "icon": "vscode.svg",
+            "icon": "vscodium.svg",
             "iconTheme": "athena-theme",
             "children": [
               {

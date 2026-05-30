@@ -600,7 +600,7 @@ pkgs.mkShell {
     libwnck
   ];
   
-  # Workaround: make vscode's python extension read the .venv
+  # Workaround: make vscodium's python extension read the .venv
   shellHook = ''
     export PYTHONPATH="$PYTHONPATH:${libwnck}"
     venv="$(cd $(dirname $(which python)); cd ..; pwd)"

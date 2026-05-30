@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscodium-lua/master/setting/schema.json",
     "Lua.diagnostics.globals": [
         "vim",
         "require",

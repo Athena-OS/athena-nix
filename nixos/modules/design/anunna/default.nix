@@ -49,8 +49,8 @@ in {
 
       programs = {
         kitty.themeFile = "CrayonPonyFish";
-        vscode = {
-          profiles.default.extensions = with pkgs.vscode-extensions; [
+        vscodium = {
+          profiles.default.extensions = with pkgs.vscodium-extensions; [
             dracula-theme.theme-dracula
           ];
 

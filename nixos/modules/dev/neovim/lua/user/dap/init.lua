@@ -1,2 +1,2 @@
-require "user.dap.vscode-js"
+require "user.dap.vscodium-js"
 require "user.dap.dap"
