@@ -5,8 +5,8 @@ let
     gnome-screenshot
     xdg-user-dirs
     xdotool
-    xorg.xdpyinfo
-    xorg.xwininfo
+    xdpyinfo
+    xwininfo
   ];
 
   fontList = with pkgs; [
