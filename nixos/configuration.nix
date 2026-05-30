@@ -59,9 +59,11 @@ in
   security.pam = {
     u2f = {
       enable = true;
-      cue = true;             #Prompt for device
-      interactive = true;     #Prompt for missing key
-      control = "sufficient"; #Only YubiKey, use "required" for 2FA
+      settings = {
+        cue = true;             #Prompt for device
+        interactive = true;     #Prompt for missing key
+        control = "sufficient"; #Only YubiKey, use "required" for 2FA
+      };
     };
     services = {
       login.u2fAuth = true;  #login only
