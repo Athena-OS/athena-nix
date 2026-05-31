@@ -196,10 +196,6 @@
 				url = "https://hashes.com/en/decrypt/hash";
 			}
 			{
-				name = "Hashkiller.io";
-				url = "https://hashkiller.io/";
-			}
-			{
 				name = "jwt.io - JSON Web Tokens";
 				url = "https://jwt.io/";
 			}
@@ -265,10 +261,6 @@
 			{
 				name = "Proving Grounds | Offensive Security";
 				url = "https://www.offensive-security.com/labs/";
-			}
-			{
-				name = "PWNX";
-				url = "https://pwnx.io/";
 			}
 			{
 				name = "Root Me - Hacking and Information Security learning platform";
@@ -445,8 +437,8 @@
 				url = "https://search.censys.io/certificates";
 			}
 			{
-				name = "Censys - Hosts";
-				url = "https://censys.io/ipv4";
+				name = "Censys Platform";
+				url = "https://platform.censys.io/search";
 			}
 			{
 				name = "Cisco Talos Intelligence Group - Comprehensive Threat Intelligence";
@@ -589,10 +581,6 @@
 				url = "https://viewdns.info/";
 			}
 			{
-				name = "Vigilante.pw ‐ The Breached Database Directory";
-				url = "https://vigilante.pw/";
-			}
-			{
 				name = "VirusTotal";
 				url = "https://www.virustotal.com/gui/";
 			}
@@ -605,16 +593,12 @@
 				url = "https://www.wigle.net/";
 			}
 			{
-				name = "xResolver • Dashboard";
-				url = "https://xresolver.com/index";
-			}
-			{
 				name = "Yandex Images: search for images online or search by image";
 				url = "https://yandex.com/images/";
 			}
 			{
-				name = "ZoomEye - Cyberspace surveying and mapping, network security, vulnerability analysis, dynamic surveying and mapping, Zhong Kui's eye, spatiotemporal surveying and mapping, cyberspace surveying and Mapping - zoomeye ('Zhong Kui's eye') cyberspace search engine";
-				url = "https://www.zoomeye.org/";
+				name = "ZoomEye - Search Engine for Internet Asset Discovery";
+				url = "https://www.zoomeye.ai/";
 			}
 			{
 				name = "ZorexEye - The Hacker's Search Engine";
@@ -694,8 +678,8 @@
 								name = "Linux";
 								bookmarks = [
 									{
-										name = "Checklist - Linux Privilege Escalation - HackTricks";
-										url = "https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist";
+										name = "HackTricks - Linux Privilege Escalation";
+										url = "https://hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html";
 									}
 									{
 										name = "GitHub - rebootuser/LinEnum: Scripted Local Linux Enumeration & Privilege Escalation Checks";
@@ -715,16 +699,16 @@
 								name = "Windows";
 								bookmarks = [
 									{
-										name = "Checklist - Local Windows Privilege Escalation - HackTricks";
-										url = "https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation";
-									}
-									{
 										name = "GitHub - 411Hall/JAWS: JAWS - Just Another Windows (Enum) Script";
 										url = "https://github.com/411Hall/JAWS";
 									}
 									{
 										name = "GitHub - GhostPack/Seatbelt: Seatbelt is a C# project that performs a number of security oriented host-survey safety checks relevant from both offensive and defensive security perspectives.";
 										url = "https://github.com/GhostPack/Seatbelt";
+									}
+									{
+										name = "HackTricks - Windows Local Privilege Escalation";
+										url = "https://hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html";
 									}
 									{
 										name = "LOLBAS";
@@ -764,8 +748,8 @@
 						url = "https://github.com/swisskyrepo/PayloadsAllTheThings";
 					}
 					{
-						name = "HackTricks - HackTricks";
-						url = "https://book.hacktricks.xyz/";
+						name = "HackTricks";
+						url = "https://hacktricks.wiki/";
 					}
 					{
 						name = "John The Ripper Hash Formats | pentestmonkey";
@@ -835,10 +819,6 @@
 						url = "https://app.interactsh.com/";
 					}
 					{
-						name = "pingb.in";
-						url = "http://pingb.in/";
-					}
-					{
 						name = "Webhook.site - Test, process and transform emails and HTTP requests";
 						url = "https://webhook.site/";
 					}
@@ -873,16 +853,8 @@
 				name = "Network";
 				bookmarks = [
 					{
-						name = "\(Cheat Sheet - Common Ports\) - common-ports.pdf";
-						url = "https://packetlife.net/media/library/23/common-ports.pdf";
-					}
-					{
 						name = "Check ALL open ports, scan open ports online free tool";
 						url = "http://ports.my-addr.com/check-all-open-ports-online.php";
-					}
-					{
-						name = "Common Ports";
-						url = "https://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-sg-en-4/ch-ports.html";
 					}
 					{
 						name = "List of HTTP status codes - Wikipedia";
@@ -991,10 +963,6 @@
 				url = "https://nitesculucian.github.io/2019/07/01/exploiting-the-xmlrpc-php-on-all-wordpress-versions/";
 			}
 			{
-				name = "File Inclusion/Path traversal - HackTricks";
-				url = "https://book.hacktricks.xyz/pentesting-web/file-inclusion#top-25-parameters";
-			}
-			{
 				name = "Get-CIMInstance - PowerShell - SS64.com";
 				url = "https://ss64.com/ps/get-ciminstance.html";
 			}
@@ -1003,8 +971,12 @@
 				url = "https://github.com/fastfire/deepdarkCTI";
 			}
 			{
-				name = "HackTricks: pentesting-web";
-				url = "https://book.hacktricks.xyz/pentesting-web";
+				name = "HackTricks - File Inclusion/Path traversal";
+				url = "https://hacktricks.wiki/en/pentesting-web/file-inclusion/index.html#top-25-parameters";
+			}
+			{
+				name = "HackTricks - Pentesting Web";
+				url = "https://hacktricks.wiki/en/pentesting-web/web-vulnerabilities-methodology.html";
 			}
 			{
 				name = "Helpful free tools and resources.";
@@ -1049,10 +1021,6 @@
 			{
 				name = "URL-encoding Reference";
 				url = "https://www.eso.org/~ndelmott/url_encode.html";
-			}
-			{
-				name = "Windows Local Privilege Escalation - HackTricks";
-				url = "https://book.hacktricks.xyz/windows/windows-local-privilege-escalation";
 			}
 		];
 	}
