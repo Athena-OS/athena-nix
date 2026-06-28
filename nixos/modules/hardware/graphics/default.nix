@@ -5,21 +5,21 @@
         enable = true;
       };
       nvidia = {
-        modesetting.enable = true;
-        powerManagement.enable = true;
-        open = true;
-        nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
-        prime = {
-          sync.enable = true; 
+        modesetting.enable = false;
+        powerManagement.enable = false;
+        open = false;
+        nvidiaSettings = false;
+        #package = config.boot.kernelPackages.nvidiaPackages.stable;
+        prime.sync.enable = false;
+        #prime = {
           #offload.enable = true;
           #offload.enableOffloadCmd = true;
           # intelBusId = "PCI:0@0:2:0";
           # nvidiaBusId = "PCI:2@0:0:0";
-          # amdgpuBusId = "PCI:5@0:0:0"; # If you have an AMD iGPU
-        };
+          # amdgpuBusId = "PCI:5@0:0:0";
+        #};
       };
     };
-    services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+    #services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
   };
 }
