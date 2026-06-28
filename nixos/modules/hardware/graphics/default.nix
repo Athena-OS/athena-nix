@@ -10,14 +10,14 @@
         open = false;
         nvidiaSettings = false;
         #package = config.boot.kernelPackages.nvidiaPackages.stable;
-        prime.sync.enable = false;
-        #prime = {
-          #offload.enable = true;
-          #offload.enableOffloadCmd = true;
-          # intelBusId = "PCI:0@0:2:0";
-          # nvidiaBusId = "PCI:2@0:0:0";
-          # amdgpuBusId = "PCI:5@0:0:0";
-        #};
+        prime = {
+          prime.sync.enable = false;
+          offload.enable = false;
+          offload.enableOffloadCmd = false;
+          intelBusId = "PCI:0@0:2:0";
+          nvidiaBusId = "PCI:1@0:0:0";
+          #amdgpuBusId = "PCI:5@0:0:0";
+        };
       };
     };
     #services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
