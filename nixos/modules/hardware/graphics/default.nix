@@ -5,19 +5,21 @@
         enable = true;
       };
       nvidia = {
-        modesetting.enable = false;
-        powerManagement.enable = false;
-        open = false;
-        nvidiaSettings = false;
-        #package = config.boot.kernelPackages.nvidiaPackages.stable;
-        #prime = {
+        modesetting.enable = true;
+        powerManagement.enable = true;
+        open = true;
+        nvidiaSettings = true;
+        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        prime = {
+          sync.enable = true; 
           #offload.enable = true;
           #offload.enableOffloadCmd = true;
-          #intelBusId = "PCI:0:2:0"; -> run lspci | grep -E 'VGA|3D' to get the PCI ID of Intel
-          #nvidiaBusId = "PCI:1:0:0"; -> run lspci | grep -E 'VGA|3D' to get the PCI ID of Nvidia
-        #};
+          # intelBusId = "PCI:0@0:2:0";
+          # nvidiaBusId = "PCI:2@0:0:0";
+          # amdgpuBusId = "PCI:5@0:0:0"; # If you have an AMD iGPU
+        };
       };
     };
-    #services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+    services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
   };
 }
