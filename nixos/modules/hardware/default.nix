@@ -1,6 +1,7 @@
 { lib, config, ... }: {
   imports = [
     ./bluetooth
+    ./graphics
     ./kernel
     ./network
     ./sound

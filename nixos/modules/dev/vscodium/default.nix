@@ -7,8 +7,7 @@
     home-manager.users.${config.athena.homeManagerUser} = { pkgs, ...}: {
       programs.vscodium = {
         enable = true;
-        package = pkgs.vscodium;
-        profiles.default.extensions = with pkgs.vscodium-extensions; [
+        profiles.default.extensions = with pkgs.vscode-extensions; [
           bbenoist.nix
           pkief.material-icon-theme
         ];

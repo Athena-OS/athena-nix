@@ -194,12 +194,13 @@ in {
           menu-background-color = "rgba(48,48,49,0.98)";
           menu-border-color = "rgb(60,60,60)";
           menu-button-appearance = "Icon";
+          menu-button-icon="resource:///org/gnome/shell/extensions/arcmenu/icons/scalable/actions/distro-nixos.svg";
           menu-foreground-color = "rgb(223,223,223)";
           menu-item-active-bg-color = "rgb(25,98,163)";
           menu-item-active-fg-color = "rgb(255,255,255)";
           menu-item-hover-bg-color = "rgb(21,83,158)";
           menu-item-hover-fg-color = "rgb(255,255,255)";
-          menu-layout = "Whisker";
+          menu-layout = "whisker";
           menu-separator-color = "rgba(255,255,255,0.1)";
           multi-monitor = false;
           #pop-folders-data = { "Library Home" = "Library Home"; "Utilities" = "Utilities"; };
