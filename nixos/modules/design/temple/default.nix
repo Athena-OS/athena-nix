@@ -47,7 +47,7 @@ in {
       programs = {
         kitty.themeFile = "tokyo_night_storm";
         vscodium = {
-          profiles.default.extensions = with pkgs.vscodium-extensions; [
+          profiles.default.extensions = with pkgs.vscode-extensions; [
             enkia.tokyo-night
           ];
 

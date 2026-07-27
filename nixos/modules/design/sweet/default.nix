@@ -45,8 +45,8 @@ in {
       programs = {
         kitty.themeFile = "AdventureTime";
         vscodium = {
-          profiles.default.extensions = with pkgs.vscodium-extensions; [
-            dhedgecock.radical-vscodium
+          profiles.default.extensions = with pkgs.vscode-extensions; [
+            dhedgecock.radical-vscode
           ];
 
           # In case extensions are not loaded, refer to https://github.com/nix-community/home-manager/issues/3507

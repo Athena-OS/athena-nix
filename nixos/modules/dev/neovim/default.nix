@@ -7,8 +7,8 @@
         gnumake
         nodejs #pinnedNodejs
         #npm
-        vscodium-extensions.ms-vscodium.cpptools
-        vscodium-extensions.vadimcn.vscodium-lldb
+        vscode-extensions.ms-vscode.cpptools
+        vscode-extensions.vadimcn.vscodium-lldb
       ];
       programs = {
         neovim = {

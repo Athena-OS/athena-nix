@@ -46,7 +46,7 @@ in {
       programs = {
         kitty.themeFile = "Atom";
         vscodium = {
-          profiles.default.extensions = with pkgs.vscodium-extensions; [
+          profiles.default.extensions = with pkgs.vscode-extensions; [
             nur.just-black
           ];
 

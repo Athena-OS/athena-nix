@@ -50,7 +50,7 @@ in {
       programs = {
         kitty.themeFile = "CrayonPonyFish";
         vscodium = {
-          profiles.default.extensions = with pkgs.vscodium-extensions; [
+          profiles.default.extensions = with pkgs.vscode-extensions; [
             dracula-theme.theme-dracula
           ];
 
