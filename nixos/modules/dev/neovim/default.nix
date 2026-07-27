@@ -8,7 +8,7 @@
         nodejs #pinnedNodejs
         #npm
         vscode-extensions.ms-vscode.cpptools
-        vscode-extensions.vadimcn.vscodium-lldb
+        vscode-extensions.vadimcn.vscode-lldb
       ];
       programs = {
         neovim = {
