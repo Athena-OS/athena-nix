@@ -16,20 +16,9 @@ let
 	mainShell = personal.mainShell;
 	terminal = personal.terminal;
 	browser = personal.browser;
-  
-  #username = "***REMOVED***";
-  #hashed = "REDACTED";
-  #hashedRoot = "REDACTED";
-  #hostname = "REDACTED";
-  #theme = "sweet";
-  #desktop = "cinnamon";
-  #dmanager = "sddm";
-  #mainShell = "fish";
-  #terminal = "alacritty";
-  #browser = "brave";
-  bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
-  hm-version = if version == "unstable" then "master" else "release-" + version; # "master" or "release-24.05"; # Correspond to home-manager GitHub branches
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
+   bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
+   hm-version = if version == "unstable" then "master" else "release-" + version; # "master" or "release-24.05"; # Correspond to home-manager GitHub branches
+   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
 {
   imports = [ # Include the results of the hardware scan.
