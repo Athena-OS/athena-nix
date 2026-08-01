@@ -5,16 +5,28 @@
 let
   # These variable names are used by Aegis backend
   version = "unstable"; #or 24.05
-  username = "***REMOVED***";
-  hashed = "REDACTED";
-  hashedRoot = "REDACTED";
-  hostname = "REDACTED";
-  theme = "sweet";
-  desktop = "cinnamon";
-  dmanager = "sddm";
-  mainShell = "fish";
-  terminal = "alacritty";
-  browser = "brave";
+  personal = import ../secrets.nix;
+	username = personal.username;
+	hashed = personal.hashed;
+	hashedRoot = personal.hashedRoot;
+	hostname = personal.hostname;
+	theme = personal.theme;
+	desktop = personal.desktop;
+	dmanager = personal.dmanager;
+	mainShell = personal.mainShell;
+	terminal = personal.terminal;
+	browser = personal.browser;
+  
+  #username = "***REMOVED***";
+  #hashed = "REDACTED";
+  #hashedRoot = "REDACTED";
+  #hostname = "REDACTED";
+  #theme = "sweet";
+  #desktop = "cinnamon";
+  #dmanager = "sddm";
+  #mainShell = "fish";
+  #terminal = "alacritty";
+  #browser = "brave";
   bootloader = if builtins.pathExists "/sys/firmware/efi" then "systemd" else "grub";
   hm-version = if version == "unstable" then "master" else "release-" + version; # "master" or "release-24.05"; # Correspond to home-manager GitHub branches
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
