@@ -48,7 +48,6 @@ in {
         geary
         gnome-characters
         gnome-music
-        gnome-photos
         gnome-tour
         hitori
         iagno
