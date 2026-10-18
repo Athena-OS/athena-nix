@@ -9,7 +9,7 @@ with pkgs;
   asn
   assetfinder
   bind
-  bloodhound
+  # bloodhound
   bloodhound-py
   cantoolz
   certgraph

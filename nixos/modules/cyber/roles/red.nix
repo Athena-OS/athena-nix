@@ -9,7 +9,7 @@ with pkgs;
   # archivebox
   arp-scan
   bettercap
-  bloodhound
+  # bloodhound
   bloodhound-py
   # https://github.com/NixOS/nixpkgs/issues/425333
   # boofuzz

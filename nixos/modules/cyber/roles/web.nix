@@ -22,7 +22,7 @@ with pkgs;
   dalfox
   dirb
   dirstalk
-  dontgo403
+  nomore403
   doona
   feroxbuster
   ffuf

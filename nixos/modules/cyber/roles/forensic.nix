@@ -11,7 +11,7 @@ with pkgs;
   bmaptool
   bulk_extractor
   chainsaw
-  chipsec
+  # chipsec
   chntpw
   dc3dd
   dcfldd
