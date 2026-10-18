@@ -14,7 +14,7 @@ with pkgs;
   burpsuite
   caido
   cantoolz
-  chipsec
+  # chipsec
   # clairvoyance
   commix
   crackql

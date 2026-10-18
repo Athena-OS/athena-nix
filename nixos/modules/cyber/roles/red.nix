@@ -117,7 +117,7 @@ with pkgs;
   # https://github.com/NixOS/nixpkgs/issues/425354
   # ncrack
   netdiscover
-  netexec
+  # netexec
   nfdump
   ngrep
   nikto
