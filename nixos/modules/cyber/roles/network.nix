@@ -122,7 +122,7 @@ with pkgs;
   samplicator
   sniffglue
   snmpcheck
-  snort
+  # snort
   soapui
   socat
   spiped

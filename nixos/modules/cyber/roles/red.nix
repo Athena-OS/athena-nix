@@ -170,7 +170,7 @@ with pkgs;
   sherlock
   smbmap
   snmpcheck
-  snort
+  # snort
   snscrape
   snyk
   soapui

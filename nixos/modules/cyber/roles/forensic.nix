@@ -42,7 +42,7 @@ with pkgs;
   safecopy
   scalpel
   sleuthkit
-  snort
+  # snort
   tell-me-your-secrets
   testdisk
   tracee
