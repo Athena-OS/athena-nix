@@ -15,7 +15,7 @@ with pkgs;
   caido
   cantoolz
   chipsec
-  clairvoyance
+  # clairvoyance
   commix
   crackql
   crlfuzz

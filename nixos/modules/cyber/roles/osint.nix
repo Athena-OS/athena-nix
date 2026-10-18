@@ -15,7 +15,7 @@ with pkgs;
   certgraph
   chaos
   checkpwn
-  clairvoyance
+  # clairvoyance
   cloudlist
   dnsenum
   dnsrecon

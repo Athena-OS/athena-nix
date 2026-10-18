@@ -132,7 +132,7 @@ with pkgs;
   sslh
   sslscan
   sslsplit
-  stacs
+  # stacs
   stunnel
   suricata
   swaks

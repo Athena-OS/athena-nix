@@ -22,7 +22,7 @@ with pkgs;
   cewl
   cfr
   checksec
-  clairvoyance
+  # clairvoyance
   coercer
   commix
   dirb
